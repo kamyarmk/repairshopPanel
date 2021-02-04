@@ -17,15 +17,12 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Icons CSS -->
-    <link href="{{ asset('css/icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- <link href="{{ asset('css/app-rtl.min.css') }}" rel="stylesheet"> -->
 
 </head>
@@ -55,11 +52,11 @@
                                         <ul class="navigation-menu">
                                             <li>
                                                 <a href="index.html">
-                                                    <span><i class="ti-home"></i></span><span> Dashboard </span> </a>
+                                                    <span><i class="ti-home"></i></span><span> {{ __('Dashboard') }} </span> </a>
                                             </li>
 
                                             <li class="has-submenu">
-                                                <a href="#"> <span><i class="ti-files"></i></span><span> Pages </span> </a>
+                                                <a href="#"> <span><i class="ti-files"></i></span><span> {{ __('Register Device') }} </span> </a>
                                                 <ul class="submenu">
                                                     <li><a href="pages-login.html">Login</a></li>
                                                     <li><a href="pages-register.html">Register</a></li>
@@ -73,7 +70,7 @@
                                             </li>
 
                                             <li class="has-submenu">
-                                                <a href="#"><span><i class="ti-spray"></i></span><span> Other </span> </a>
+                                                <a href="#"><span><i class="ti-spray"></i></span><span> {{ __('List Device') }} </span> </a>
                                                 <ul class="submenu">
                                                     <li>
                                                         <a href="ui-elements.html">UI Elements</a>
@@ -121,7 +118,33 @@
                                             </li>
 
                                             <li class="has-submenu">
-                                                <a href="#"> <span><i class="ti-widget"></i></span><span> Extra Pages </span> </a>
+                                                <a href="#"> <span><i class="ti-widget"></i></span><span> {{ __('Users') }} </span> </a>
+                                                <ul class="submenu">
+                                                    <li><a href="extras-timeline.html">Timeline</a></li>
+                                                    <li><a href="extras-invoice.html">Invoice</a></li>
+                                                    <li><a href="extras-profile.html">Profile</a></li>
+                                                    <li><a href="extras-calendar.html">Calendar</a></li>
+                                                    <li><a href="extras-faqs.html">FAQs</a></li>
+                                                    <li><a href="extras-pricing.html">Pricing</a></li>
+                                                    <li><a href="extras-contacts.html">Contacts</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="has-submenu">
+                                                <a href="#"> <span><i class="ti-widget"></i></span><span> {{ __('Reports') }} </span> </a>
+                                                <ul class="submenu">
+                                                    <li><a href="extras-timeline.html">Timeline</a></li>
+                                                    <li><a href="extras-invoice.html">Invoice</a></li>
+                                                    <li><a href="extras-profile.html">Profile</a></li>
+                                                    <li><a href="extras-calendar.html">Calendar</a></li>
+                                                    <li><a href="extras-faqs.html">FAQs</a></li>
+                                                    <li><a href="extras-pricing.html">Pricing</a></li>
+                                                    <li><a href="extras-contacts.html">Contacts</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="has-submenu">
+                                                <a href="#"> <span><i class="ti-widget"></i></span><span> {{ __('Products') }} </span> </a>
                                                 <ul class="submenu">
                                                     <li><a href="extras-timeline.html">Timeline</a></li>
                                                     <li><a href="extras-invoice.html">Invoice</a></li>
@@ -153,7 +176,7 @@
                                     </li>
                                     <li class="hidden-xs">
                                         <form role="search" class="navbar-left app-search pull-left">
-                                            <input type="text" placeholder="Search..." class="form-control">
+                                            <input type="text" placeholder="{{ __('Search...') }}" class="form-control">
                                             <a href=""><i class="fa fa-search"></i></a>
                                         </form>
                                     </li>

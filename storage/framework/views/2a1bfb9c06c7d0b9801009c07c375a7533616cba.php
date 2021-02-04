@@ -8,59 +8,106 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h4 class="header-title m-t-0 m-b-20">Dashboard</h4>
+                <h4 class="header-title m-t-0 m-b-20"><?php echo e(__('Dashboard')); ?></h4>
             </div>
         </div> <!-- end row -->
 
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="card-box">
-                    <a href="#" class="btn btn-sm btn-default pull-right">View</a>
-                    <h6 class="text-muted m-t-0 text-uppercase">Product Sold</h6>
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Under Review')); ?></h6>
                     <h2 class="m-b-20"><span>1,890</span></h2>
-                    <div class="progress progress-sm m-0">
-                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;">
-                            <span class="sr-only">77% Complete</span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <div class="card-box">
-                    <a href="#" class="btn btn-sm btn-default pull-right">View</a>
-                    <h6 class="text-muted m-t-0 text-uppercase">Average Price</h6>
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Device In Queue')); ?></h6>
                     <h2 class="m-b-20">$<span>22.56</span></h2>
-                    <div class="progress progress-sm m-0">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;">
-                            <span class="sr-only">77% Complete</span>
-                        </div>
-                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="card-box">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Under Repair')); ?></h6>
+                    <h2 class="m-b-20">9,754</h2>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card-box">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Under Test')); ?></h6>
+                    <h2 class="m-b-20"><span>1,890</span></h2>
                 </div>
             </div>
 
             <div class="col-sm-4">
-                <div class="card-box">
-                    <a href="#" class="btn btn-sm btn-default pull-right">View</a>
-                    <h6 class="text-muted m-t-0 text-uppercase">Orders</h6>
-                    <h2 class="m-b-20">9,754</h2>
-                    <div class="progress progress-sm m-0">
-                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%;">
-                            <span class="sr-only">77% Complete</span>
-                        </div>
-                    </div>
+                <div class="card-box bg-info text-white">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Repaired')); ?></h6>
+                    <h2 class="m-b-20">$<span>22.56</span></h2>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card-box bg-primary text-white">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Ready To Deliver')); ?></h6>
+                    <h2 class="m-b-20"><span>1,890</span></h2>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card-box bg-success text-white">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Delivered')); ?></h6>
+                    <h2 class="m-b-20">$<span>22.56</span></h2>
                 </div>
             </div>
 
         </div>
         <!-- end row -->
 
+        <div class="row">
+            
+
+            <div class="col-sm-4">
+                <div class="card-box bg-warning text-dark">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-dark m-t-0 text-uppercase"><?php echo e(__('Late Delivery')); ?></h6>
+                    <h2 class="m-b-20">9,754</h2>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card-box bg-danger text-white">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Delivery Problem')); ?></h6>
+                    <h2 class="m-b-20"><span>1,890</span></h2>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="card-box bg-danger text-white">
+                    <a href="#" class="btn btn-sm btn-default pull-right"><?php echo e(__('View')); ?></a>
+                    <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Refund')); ?></h6>
+                    <h2 class="m-b-20">$<span>22.56</span></h2>
+                </div>
+            </div>
+
+        </div>
+        <!-- end row -->
+
+        <!-- main Data  -->
+
 
 
         <div class="row">
             <div class="col-lg-6">
                 <div class="card-box">
-                    <h4 class="m-t-0">Total Revenue</h4>
+                    <h4 class="m-t-0"><?php echo e(__('Total Revenue')); ?></h4>
                     <div class="text-center">
                         <ul class="list-inline chart-detail-list">
                             <li>
@@ -77,7 +124,7 @@
 
             <div class="col-lg-6">
                 <div class="card-box">
-                    <h4 class="m-t-0">Sales Analytics</h4>
+                    <h4 class="m-t-0"><?php echo e(__('Device Comparison')); ?></h4>
                     <div class="text-center">
                         <ul class="list-inline chart-detail-list">
                             <li>
@@ -97,7 +144,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="m-t-0">Contacts</h4>
+                    <h4 class="m-t-0"><?php echo e(__('Users')); ?></h4>
                     <div class="table-responsive">
                         <table class="table table-hover mails m-0 table table-actions-bar">
                             <thead>
@@ -118,10 +165,10 @@
                                             <!--</ul>-->
                                         <!--</div>-->
                                     </th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Products</th>
-                                    <th>Start Date</th>
+                                    <th><?php echo e(__('Name')); ?></th>
+                                    <th><?php echo e(__('E-Mail Address')); ?></th>
+                                    <th><?php echo e(__('Products')); ?></th>
+                                    <th><?php echo e(__('Start Date')); ?></th>
                                 </tr>
                             </thead>
 

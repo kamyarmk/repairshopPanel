@@ -77,7 +77,7 @@
                 @if (Route::has('register'))
                     <div class="row m-t-50">
                         <div class="col-sm-12 text-center">
-                            <p class="text-muted">Don't have an account? <a href="{{ route('register') }}" class="text-dark m-l-5">{{ __('Register') }}</a></p>
+                            <p class="text-muted">{{ __('Dont have an account?') }} <a href="{{ route('register') }}" class="text-dark m-l-5">{{ __('Register') }}</a></p>
                         </div>
                     </div>
                 @endif

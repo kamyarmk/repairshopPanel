@@ -106,7 +106,7 @@ unset($__errorArgs, $__bag); ?>
                 <?php if(Route::has('register')): ?>
                     <div class="row m-t-50">
                         <div class="col-sm-12 text-center">
-                            <p class="text-muted">Don't have an account? <a href="<?php echo e(route('register')); ?>" class="text-dark m-l-5"><?php echo e(__('Register')); ?></a></p>
+                            <p class="text-muted"><?php echo e(__('Dont have an account?')); ?> <a href="<?php echo e(route('register')); ?>" class="text-dark m-l-5"><?php echo e(__('Register')); ?></a></p>
                         </div>
                     </div>
                 <?php endif; ?>

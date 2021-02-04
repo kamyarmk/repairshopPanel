@@ -21,7 +21,7 @@
 
                             <div class="form-group m-b-20">
                                 <div class="col-12">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                    <label for="name">{{ __('Name') }}</label>
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                     @error('name')
@@ -69,7 +69,7 @@
                                     <div class="checkbox checkbox-primary">
                                         <input id="checkbox5" type="checkbox">
                                         <label for="checkbox5">
-                                            I accept <a href="#">Terms and Conditions</a>
+                                            <a href="#">{{ __('I accept Terms and Conditions') }}</a>
                                         </label>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                 @if (Route::has('login'))
                     <div class="row m-t-50">
                         <div class="col-sm-12 text-center">
-                            <p class="text-muted">Already have an account?  <a href="{{ route('login') }}" class="text-dark m-l-5">{{ __('Login') }}</a></p>
+                            <p class="text-muted">{{ __('Already have an account?') }} <a href="{{ route('login') }}" class="text-dark m-l-5">{{ __('Login') }}</a></p>
                         </div>
                     </div>
                 @endif

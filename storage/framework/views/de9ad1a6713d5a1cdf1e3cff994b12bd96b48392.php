@@ -19,7 +19,7 @@
 
                             <div class="form-group m-b-20">
                                 <div class="col-12">
-                                    <label for="name" class="col-md-4 col-form-label text-md-right"><?php echo e(__('Name')); ?></label>
+                                    <label for="name"><?php echo e(__('Name')); ?></label>
                                     <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -109,7 +109,7 @@ unset($__errorArgs, $__bag); ?>
                                     <div class="checkbox checkbox-primary">
                                         <input id="checkbox5" type="checkbox">
                                         <label for="checkbox5">
-                                            I accept <a href="#">Terms and Conditions</a>
+                                            <a href="#"><?php echo e(__('I accept Terms and Conditions')); ?></a>
                                         </label>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@ unset($__errorArgs, $__bag); ?>
                 <?php if(Route::has('login')): ?>
                     <div class="row m-t-50">
                         <div class="col-sm-12 text-center">
-                            <p class="text-muted">Already have an account?  <a href="<?php echo e(route('login')); ?>" class="text-dark m-l-5"><?php echo e(__('Login')); ?></a></p>
+                            <p class="text-muted"><?php echo e(__('Already have an account?')); ?> <a href="<?php echo e(route('login')); ?>" class="text-dark m-l-5"><?php echo e(__('Login')); ?></a></p>
                         </div>
                     </div>
                 <?php endif; ?>
