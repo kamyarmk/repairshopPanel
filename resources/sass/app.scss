@@ -2,20 +2,7 @@
 @import 'iransans/css/fontiran.css';
 
 // Variables
-// @import 'variables';
+@import 'variables';
 
 // Bootstrap
-// @import '~bootstrap/scss/bootstrap';
-@import 'css/bootstrap.min.css';
-@import 'css/icons.css';
-@import 'css/jquery.smartmenus.bootstrap.css';
-@import 'css/style.css';
-// @import 'css/app-rtl.min.css';
-
-// import Styles
-@import 'admin_styles/style.scss';
-
-@import 'custome.scss';
-
-
-
+@import '~bootstrap/scss/bootstrap';
