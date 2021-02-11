@@ -7,96 +7,84 @@
 <!-- START PAGE CONTENT -->
 <div id="page-right-content">
 
-    <div class="container">
-        <div class="row">
+    <div class="container card p-4">
+        <div class="row mb-3">
             <div class="col-sm-12">
-                <h4 class="header-title m-t-0 m-b-20">{{ __('Dashboard') }}</h4>
+                <h4 class="header-title mt-0 mb-3"><i class="fas fa-tachometer-alt mr-3"></i>{{ __('Dashboard') }}</h4>
+                <div class="dropdown-divider"></div>
             </div>
         </div> <!-- end row -->
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-sm-3">
-                <div class="card-box">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-muted m-t-0 text-uppercase">{{ __('Under Review') }}</h6>
-                    <h2 class="m-b-20"><span>1,890</span></h2>
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <div class="card-box">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-muted m-t-0 text-uppercase">{{ __('Device In Queue') }}</h6>
-                    <h2 class="m-b-20">$<span>22.56</span></h2>
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <div class="card-box">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-muted m-t-0 text-uppercase">{{ __('Under Repair') }}</h6>
-                    <h2 class="m-b-20">9,754</h2>
-                </div>
+                <a href="#" class="card d-flex justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
+                    <div class="card-body">
+                        <h2 class="mb-20">$<span>22.56</span></h2>
+                        <h6 class="text-muted m-t-0 text-uppercase">{{ __('Device In Queue') }}</h6>
+                    </div>
+                </a>
             </div>
             <div class="col-sm-3">
-                <div class="card-box">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-muted m-t-0 text-uppercase">{{ __('Under Test') }}</h6>
-                    <h2 class="m-b-20"><span>1,890</span></h2>
-                </div>
+                <a href="#" class="card d-flex justify-content-center align-items-center border border-info btn btn-info shadow-sm rounded">
+                    <div class="card-body">
+                        <h2 class="mb-20">9,754</h2>
+                        <h6 class="text-muted m-t-0 text-uppercase">{{ __('Under Repair') }}</h6>
+                    </div>
+                </a>
             </div>
-
-            <div class="col-sm-4">
-                <div class="card-box bg-info text-white">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-white m-t-0 text-uppercase">{{ __('Repaired') }}</h6>
-                    <h2 class="m-b-20">$<span>22.56</span></h2>
-                </div>
+            <div class="col-sm-3">
+                <a href="#" class=" card d-flex justify-content-center align-items-center border border-primary btn btn-primary shadow-sm rounded">
+                    <div class="card-body">
+                        <h2 class="mb-20 text-muted">1,890</h2>
+                        <h6 class="text-muted m-t-0 text-uppercase">{{ __('Under Test') }}</h6>
+                    </div>
+                </a>
             </div>
-
-            <div class="col-sm-4">
-                <div class="card-box bg-primary text-white">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-white m-t-0 text-uppercase">{{ __('Ready To Deliver') }}</h6>
-                    <h2 class="m-b-20"><span>1,890</span></h2>
-                </div>
+            <div class="col-sm-3">
+                <a href="#" class=" card d-flex justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
+                    <div class="card-body">
+                        <h2 class="mb-20 text-muted">$ 22.56</h2>
+                        <h6 class="text-muted m-t-0 text-uppercase">{{ __('Repaired') }}</h6>
+                    </div>
+                </a>
             </div>
-
-            <div class="col-sm-4">
-                <div class="card-box bg-success text-white">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-white m-t-0 text-uppercase">{{ __('Delivered') }}</h6>
-                    <h2 class="m-b-20">$<span>22.56</span></h2>
-                </div>
-            </div>
-
         </div>
         <!-- end row -->
 
-        <div class="row">
-            
-
-            <div class="col-sm-4">
-                <div class="card-box bg-warning text-dark">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-dark m-t-0 text-uppercase">{{ __('Late Delivery') }}</h6>
-                    <h2 class="m-b-20">9,754</h2>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="card-box bg-danger text-white">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-white m-t-0 text-uppercase">{{ __('Delivery Problem') }}</h6>
-                    <h2 class="m-b-20"><span>1,890</span></h2>
-                </div>
+        <div class="row mb-5">
+            <div class="col-sm-3">
+                <a href="#" class=" card d-flex bg-success justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
+                    <div class="card-body text-white">
+                        <h6 class="text-white m-t-0 text-uppercase">{{ __('Delivered') }}</h6>
+                        <h2 class="m-b-20">$<span>22.56</span></h2>
+                    </div>
+                </a>
             </div>
 
-            <div class="col-sm-4 ">
-                <div class="card-box bg-danger text-white">
-                    <a href="#" class="btn btn-sm btn-default pull-right">{{ __('View') }}</a>
-                    <h6 class="text-white m-t-0 text-uppercase">{{ __('Refund') }}</h6>
-                    <h2 class="m-b-20">$<span>22.56</span></h2>
-                </div>
+            <div class="col-sm-3">
+                <a href="#" class=" card d-flex bg-warning justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
+                    <div class="card-body text-dark">
+                        <h6 class="text-dark m-t-0 text-uppercase">{{ __('Late Delivery') }}</h6>
+                        <h2 class="m-b-20">9,754</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-3">
+                <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
+                    <div class="card-body text-white">
+                        <h6 class="text-white m-t-0 text-uppercase">{{ __('Delivery Problem') }}</h6>
+                        <h2 class="m-b-20"><span>1,890</span></h2>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-sm-3 ">
+                <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
+                    <div class="card-body text-white">
+                        <h6 class="text-white m-t-0 text-uppercase">{{ __('Refund') }}</h6>
+                        <h2 class="m-b-20">$<span>22.56</span></h2>
+                    </div>
+                </a>
             </div>
 
         </div>

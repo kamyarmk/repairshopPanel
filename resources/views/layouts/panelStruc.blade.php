@@ -18,19 +18,21 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Bootstrap core CSS -->
+
 
 </head>
 <body>
     <div id="app">
         <div  id="page-wrapper">
             <!-- Top Bar Start -->
-            <div class="topbar container" id="topnav">
+            <div class="topbar container-fluid bg-primary" id="topnav">
                 <!-- Top navbar -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-primary" role="navigation">
+                <nav class="navbar navbar-expand-lg navbar-light " role="navigation">
                     <!-- LOGO -->
                     <div class="topbar-left col-2">
                         <div class="">
@@ -46,24 +48,33 @@
                             <!-- Navigation Menu-->
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a href="{{ route('home') }}" class="nav-link">
-                                        <span><i class="ti-home"></i></span><span> {{ __('Dashboard') }} </span> </a>
+                                    <a href="{{ route('home') }}" class="nav-link text-light">
+                                        <span class="mr-1"><i class="fas fa-tachometer-alt"></i></span><span> {{ __('Dashboard') }} </span> 
+                                    </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('RegisterDevice') }}" class="nav-link"> <span><i class="ti-files"></i></span><span> {{ __('Register Device') }} </span> </a>
+                                    <a href="{{ route('RegisterDevice') }}" class="nav-link text-light">
+                                        <span class="mr-1"><i class="fas fa-laptop-medical"></i></span><span> {{ __('Register Device') }} </span> 
+                                    </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('DeviceList') }}" class="nav-link"><span><i class="ti-spray"></i></span><span> {{ __('List Device') }} </span> </a>
+                                    <a href="{{ route('DeviceList') }}" class="nav-link text-light">
+                                        <span class="mr-1"><i class="fas fa-tablet-alt"></i></span><span> {{ __('List Device') }} </span> 
+                                    </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('UserList') }}" class="nav-link"> <span><i class="ti-widget"></i></span><span> {{ __('Users') }} </span> </a>
+                                    <a href="{{ route('UserList') }}" class="nav-link text-light"> 
+                                        <span class="mr-1"><i class="fas fa-users"></i></span><span> {{ __('Users') }} </span> 
+                                    </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('Devices') }}" class="nav-link"> <span><i class="ti-widget"></i></span><span> {{ __('Reports') }} </span> </a>
+                                    <a href="{{ route('Devices') }}" class="nav-link text-light">
+                                        <span class="mr-1"><i class="fas fa-file-alt"></i></span><span> {{ __('Reports') }} </span> 
+                                    </a>
 
                                 </li>
 
@@ -92,122 +103,141 @@
                                     <a href=""><i class="fa fa-search"></i></a>
                                 </form>
                             </li> -->
-                            <li class="nav-item dropdown">
-                                <a href="#" data-target="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="mdi mdi-bell"></i> <span class="label label-danger">3</span>
+                            <li class="nav-item dropdown justify-content-between d-flex align-items-center">
+                                <a href="#" data-target="#" class="text-light mr-3" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-bell mt-3" style="font-size: 2em;"></i> <span class="badge badge-danger" style="position: absolute; top:15px; left: 1.2em;">3</span>
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <!--<li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>-->
-                                    <li class="list-group notification-list" style="height: 267px;">
-                                    <div class="slimscroll">
-                                        <!-- list item-->
-                                        <a href="javascript:void(0);" class="list-group-item">
-                                            <div class="media">
-                                                <div class="media-left p-r-10">
-                                                    <em class="fa fa-diamond bg-primary"></em>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                    <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <!-- list item-->
-                                        <a href="javascript:void(0);" class="list-group-item">
-                                            <div class="media">
-                                                <div class="media-left p-r-10">
-                                                    <em class="fa fa-cog bg-warning"></em>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New settings</h5>
-                                                    <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <!-- list item-->
-                                        <a href="javascript:void(0);" class="list-group-item">
-                                            <div class="media">
-                                                <div class="media-left p-r-10">
-                                                    <em class="fa fa-bell-o bg-custom"></em>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">Updates</h5>
-                                                    <p class="m-0">
-                                                        <small>There are <span class="text-primary font-600">2</span> new updates available</small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <!-- list item-->
-                                        <a href="javascript:void(0);" class="list-group-item">
-                                            <div class="media">
-                                                <div class="media-left p-r-10">
-                                                    <em class="fa fa-user-plus bg-danger"></em>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New user registered</h5>
-                                                    <p class="m-0">
-                                                        <small>You have 10 unread messages</small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                            <!-- list item-->
-                                        <a href="javascript:void(0);" class="list-group-item">
-                                            <div class="media">
-                                                <div class="media-left p-r-10">
-                                                    <em class="fa fa-diamond bg-primary"></em>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
-                                                    <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <!-- list item-->
-                                        <a href="javascript:void(0);" class="list-group-item">
-                                            <div class="media">
-                                                <div class="media-left p-r-10">
-                                                    <em class="fa fa-cog bg-warning"></em>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="media-heading">New settings</h5>
-                                                    <p class="m-0">
-                                                        <small>There are new settings available</small>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="    right: 0em; left: unset; width: 300px !important;">
+                                    <li class="notifi-title dropdown-item">
+                                        <span class="label label-default pull-right font-700">New 3</span> Notification
                                     </li>
-                                    <!--<li>-->
-                                        <!--<a href="javascript:void(0);" class="list-group-item text-right">-->
-                                            <!--<small class="font-600">See all notifications</small>-->
-                                        <!--</a>-->
-                                    <!--</li>-->
+                                    <li class="dropdown-item list-group-item">
+                                        <div>
+                                            <a href="javascript:void(0);" class="">
+                                                <div class="media">
+                                                    <div class="media-left p-r-10">
+                                                        <em class="fa fa-diamond bg-primary"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5 class="media-heading">A new order has been placed</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item list-group-item">
+                                        <div>
+                                            <a href="javascript:void(0);" class="">
+                                                <div class="media">
+                                                    <div class="media-left p-r-10">
+                                                        <em class="fa fa-cog bg-warning"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5 class="media-heading">New settings</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item list-group-item">
+                                        <div>
+                                            <a href="javascript:void(0);" class="">
+                                                <div class="media">
+                                                    <div class="media-left p-r-10">
+                                                        <em class="fa fa-bell-o bg-custom"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5 class="media-heading">Updates</h5>
+                                                        <p class="m-0">
+                                                            <small>There are <span class="text-primary font-600">2</span> new updates available</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item list-group-item">
+                                        <div>
+                                            <a href="javascript:void(0);" class="">
+                                                <div class="media">
+                                                    <div class="media-left p-r-10">
+                                                        <em class="fa fa-user-plus bg-danger"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5 class="media-heading">New user registered</h5>
+                                                        <p class="m-0">
+                                                            <small>You have 10 unread messages</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item list-group-item">
+                                        <div>
+                                            <a href="javascript:void(0);" class="">
+                                                <div class="media">
+                                                    <div class="media-left p-r-10">
+                                                        <em class="fa fa-diamond bg-primary"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5 class="media-heading">A new order has been placed</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item list-group-item">
+                                        <div>
+                                            <a href="javascript:void(0);" class="">
+                                                <div class="media">
+                                                    <div class="media-left p-r-10">
+                                                        <em class="fa fa-cog bg-warning"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h5 class="media-heading">New settings</h5>
+                                                        <p class="m-0">
+                                                            <small>There are new settings available</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-item bg-primary list-group-item">
+                                        <a href="javascript:void(0);" class="text-center text-light bg-primary">
+                                            <small class="font-600">See all notifications</small>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 
-                            <li class="nav-item dropdown">
-                                <a href="" class="dropdown-toggle menu-right-item profile" data-toggle="dropdown" aria-expanded="true"><img src="{{ asset('/images/users/avatar-1.jpg') }}" alt="user-img" class="rounded-circle w-50"> </a>
+                            <li class="nav-item dropdown justify-content-between d-flex align-items-center">
+                                <a href="" class="dropdown-toggle menu-right-item profile text-light" data-toggle="dropdown" aria-expanded="true"> 
+                                    <i class="fas fa-user mt-3" style="font-size: 2em"></i>
+                                </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="javascript:void(0)"><i class="ti-user m-r-10"></i> Profile</a></li>
-                                    <li><a href="javascript:void(0)"><i class="ti-settings m-r-10"></i> Settings</a></li>
-                                    <li><a href="javascript:void(0)"><i class="ti-lock m-r-10"></i> Lock screen</a></li>
+                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                        <i class="fas fa-id-badge"></i> Profile</a>
+                                    </li>
+                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                        <i class="fas fa-cog"></i> Settings</a>
+                                    </li>
+                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                        <i class="fas fa-lock"></i> Lock screen</a>
+                                    </li>
                                     <li class="divider"></li>
-                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"><i class="ti-power-off m-r-10"></i> Logout</a></li>
+                                    <li class="dropdown-item"><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
