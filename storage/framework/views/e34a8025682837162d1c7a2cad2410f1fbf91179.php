@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>" dir="rtl">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,19 +9,31 @@
 
     <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.0/Chart.min.js"></script>
+    <script src="<?php echo e(asset('js/utils.js')); ?>" defer></script>
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
 
+    <style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+
 
     <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="<?php echo e(asset('plugins/morris/morris.css')); ?>">
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.rtl.min.css" integrity="sha384-4dNpRvNX0c/TdYEbYup8qbjvjaMrgUPh+g4I03CnNtANuv+VAvPL6LqdwzZKV38G" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    
     <!-- Bootstrap core CSS -->
 
 
@@ -30,7 +42,7 @@
     <div id="app">
         <div  id="page-wrapper">
             <!-- Top Bar Start -->
-            <div class="topbar container-fluid bg-primary" id="topnav">
+            <div class="topbar container-fluid bg-primary p-2" id="topnav">
                 <!-- Top navbar -->
                 <nav class="navbar navbar-expand-lg navbar-light " role="navigation">
                     <!-- LOGO -->
@@ -49,31 +61,31 @@
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
                                     <a href="<?php echo e(route('home')); ?>" class="nav-link text-light">
-                                        <span class="mr-1"><i class="fas fa-tachometer-alt"></i></span><span> <?php echo e(__('Dashboard')); ?> </span> 
+                                        <span class="ml-1"><i class="fas fa-tachometer-alt"></i></span><span> <?php echo e(__('Dashboard')); ?> </span> 
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="<?php echo e(route('RegisterDevice')); ?>" class="nav-link text-light">
-                                        <span class="mr-1"><i class="fas fa-laptop-medical"></i></span><span> <?php echo e(__('Register Device')); ?> </span> 
+                                        <span class="ml-1"><i class="fas fa-laptop-medical"></i></span><span> <?php echo e(__('Register Device')); ?> </span> 
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="<?php echo e(route('DeviceList')); ?>" class="nav-link text-light">
-                                        <span class="mr-1"><i class="fas fa-tablet-alt"></i></span><span> <?php echo e(__('List Device')); ?> </span> 
+                                        <span class="ml-1"><i class="fas fa-tablet-alt"></i></span><span> <?php echo e(__('List Device')); ?> </span> 
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="<?php echo e(route('UserList')); ?>" class="nav-link text-light"> 
-                                        <span class="mr-1"><i class="fas fa-users"></i></span><span> <?php echo e(__('Users')); ?> </span> 
+                                        <span class="ml-1"><i class="fas fa-users"></i></span><span> <?php echo e(__('Users')); ?> </span> 
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="<?php echo e(route('Devices')); ?>" class="nav-link text-light">
-                                        <span class="mr-1"><i class="fas fa-file-alt"></i></span><span> <?php echo e(__('Reports')); ?> </span> 
+                                        <span class="ml-1"><i class="fas fa-file-alt"></i></span><span> <?php echo e(__('Reports')); ?> </span> 
                                     </a>
 
                                 </li>
@@ -104,10 +116,10 @@
                                 </form>
                             </li> -->
                             <li class="nav-item dropdown justify-content-between d-flex align-items-center">
-                                <a href="#" data-target="#" class="text-light mr-3" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a href="#" data-target="#" class="text-light ml-3" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-bell mt-3" style="font-size: 2em;"></i> <span class="badge badge-danger" style="position: absolute; top:15px; left: 1.2em;">3</span>
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="    right: 0em; left: unset; width: 300px !important;">
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 300px !important;">
                                     <li class="notifi-title dropdown-item">
                                         <span class="label label-default pull-right font-700">New 3</span> Notification
                                     </li>
@@ -262,11 +274,10 @@
     <script src="<?php echo e(asset('js/jquery.slimscroll.min.js')); ?>"></script>
 
     <!--Morris Chart-->
-    <script src="<?php echo e(asset('plugins/morris/morris.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('plugins/raphael/raphael-min.js')); ?>"></script>
+    
 
     <!-- Dashboard init -->
-    <script src="<?php echo e(asset('pages/jquery.dashboard.js')); ?>"></script>
+    
 
     <!-- App Js -->
     <script src="<?php echo e(asset('js/jquery.app.js')); ?>"></script>

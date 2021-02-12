@@ -11015,4 +11015,26 @@ a.text-dark:focus {
   }
 }
 
+.checkbox label {
+  font-family: IRANSans;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute !important;
+}
+
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1920px;
+  }
+}
+
+.bg-section {
+  background-color: #fce38a;
+}
+
 

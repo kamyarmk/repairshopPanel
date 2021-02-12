@@ -8,327 +8,254 @@
     <div class="container card p-4">
         <div class="row mb-3">
             <div class="col-sm-12">
-                <h4 class="header-title mt-0 mb-3"><i class="fas fa-tachometer-alt mr-3"></i><?php echo e(__('Dashboard')); ?></h4>
+                <h4 class="header-title mt-0 mb-3 text-right"><i class="fas fa-tachometer-alt ml-3"></i><?php echo e(__('Dashboard')); ?></h4>
                 <div class="dropdown-divider"></div>
             </div>
         </div> <!-- end row -->
 
-        <div class="row mb-3">
-            <div class="col-sm-3">
-                <a href="#" class="card d-flex justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
-                    <div class="card-body">
-                        <h2 class="mb-20">$<span>22.56</span></h2>
-                        <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Device In Queue')); ?></h6>
+        <div class="row p-5">
+            <div class="col-md-12">
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                        <a href="#" class="card d-flex justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
+                            <div class="card-body">
+                                <h2 class="mb-20"><span><?php echo e($openCondition); ?></span></h2>
+                                <h6 class="m-t-0 text-uppercase"><?php echo e(__('Device In Queue')); ?></h6>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="col-sm-3">
-                <a href="#" class="card d-flex justify-content-center align-items-center border border-info btn btn-info shadow-sm rounded">
-                    <div class="card-body">
-                        <h2 class="mb-20">9,754</h2>
-                        <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Under Repair')); ?></h6>
+                    <div class="col-sm-3">
+                        <a href="#" class="card d-flex justify-content-center align-items-center border border-info btn btn-info shadow-sm rounded">
+                            <div class="card-body">
+                                <h2 class="mb-20"><?php echo e($repairingCondition); ?></h2>
+                                <h6 class="m-t-0 text-uppercase"><?php echo e(__('Under Repair')); ?></h6>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="col-sm-3">
-                <a href="#" class=" card d-flex justify-content-center align-items-center border border-primary btn btn-primary shadow-sm rounded">
-                    <div class="card-body">
-                        <h2 class="mb-20 text-muted">1,890</h2>
-                        <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Under Test')); ?></h6>
+                    <div class="col-sm-3">
+                        <a href="#" class=" card d-flex justify-content-center align-items-center border border-primary btn btn-outline-primary shadow-sm rounded">
+                            <div class="card-body">
+                                <h2 class="mb-20"><?php echo e($testingCondition); ?></h2>
+                                <h6 class="m-t-0 text-uppercase"><?php echo e(__('Under Test')); ?></h6>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="col-sm-3">
-                <a href="#" class=" card d-flex justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
-                    <div class="card-body">
-                        <h2 class="mb-20 text-muted">$ 22.56</h2>
-                        <h6 class="text-muted m-t-0 text-uppercase"><?php echo e(__('Repaired')); ?></h6>
+                    <div class="col-sm-3">
+                        <a href="#" class=" card d-flex justify-content-center align-items-center border border-success btn btn-outline-success shadow-sm rounded">
+                            <div class="card-body">
+                                <h2 class="mb-20"><?php echo e($repairedCondition); ?></h2>
+                                <h6 class="m-t-0 text-uppercase"><?php echo e(__('Repaired')); ?></h6>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-        </div>
-        <!-- end row -->
+                </div>
+                <!-- end row -->
 
-        <div class="row mb-5">
-            <div class="col-sm-3">
-                <a href="#" class=" card d-flex bg-success justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
-                    <div class="card-body text-white">
-                        <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Delivered')); ?></h6>
-                        <h2 class="m-b-20">$<span>22.56</span></h2>
+                <div class="row mb-5">
+                    <div class="col-sm-3">
+                        <a href="#" class=" card d-flex bg-success justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
+                            <div class="card-body text-white">
+                                <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Delivered')); ?></h6>
+                                <h2 class="m-b-20"><span><?php echo e($deliveredCondition); ?></span></h2>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
 
-            <div class="col-sm-3">
-                <a href="#" class=" card d-flex bg-warning justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
-                    <div class="card-body text-dark">
-                        <h6 class="text-dark m-t-0 text-uppercase"><?php echo e(__('Late Delivery')); ?></h6>
-                        <h2 class="m-b-20">9,754</h2>
+                    <div class="col-sm-3">
+                        <a href="#" class=" card d-flex bg-warning justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
+                            <div class="card-body text-dark">
+                                <h6 class="text-dark m-t-0 text-uppercase"><?php echo e(__('Late Delivery')); ?></h6>
+                                <h2 class="m-b-20"><?php echo e($delayedCondition); ?></h2>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
-            <div class="col-sm-3">
-                <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
-                    <div class="card-body text-white">
-                        <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Delivery Problem')); ?></h6>
-                        <h2 class="m-b-20"><span>1,890</span></h2>
+                    <div class="col-sm-3">
+                        <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
+                            <div class="card-body text-white">
+                                <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Delivery Problem')); ?></h6>
+                                <h2 class="m-b-20"><span><?php echo e($unsuccesfulCondition); ?></span></h2>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
 
-            <div class="col-sm-3 ">
-                <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
-                    <div class="card-body text-white">
-                        <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Refund')); ?></h6>
-                        <h2 class="m-b-20">$<span>22.56</span></h2>
+                    <div class="col-sm-3 ">
+                        <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
+                            <div class="card-body text-white">
+                                <h6 class="text-white m-t-0 text-uppercase"><?php echo e(__('Refund')); ?></h6>
+                                <h2 class="m-b-20"><span><?php echo e($refundCondition); ?></span></h2>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
 
+                </div>
+            </div>
         </div>
         <!-- end row -->
 
         <!-- main Data  -->
 
+        <div class="dropdown-divider mb-5"></div>
 
 
-        <div class="row">
-            <div class="col-lg-6">
+        <div class="row bg-section bg-gradient p-5">
+            <div class="col-lg-12">
                 <div class="card-box">
-                    <h4 class="m-t-0"><?php echo e(__('Total Revenue')); ?></h4>
-                    <div class="text-center">
-                        <ul class="list-inline chart-detail-list">
-                            <li>
-                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-primary"></i>Series A</h5>
-                            </li>
-                            <li>
-                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-muted"></i>Series B</h5>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="dashboard-bar-stacked" style="height: 300px;"></div>
-                </div>
-            </div> <!-- end col -->
+                    <h4 class="m-t-0 text-right"><i class="fas fa-chart-line ml-3"></i><?php echo e(__('Total Revenue')); ?></h4>
+                    <div class="dropdown-divider mb-5 text-white bg-white"></div>
+                    <!-- <div id="dashboard-bar-stacked" style="height: 300px;"></div> -->
+                    <canvas id="canvas"></canvas>
+                    <script type="application/javascript">
+                        var chartData = {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [{
+                            type: 'line',
+                            label: 'Dataset 1',
+                            borderColor: window.chartColors.blue,
+                            borderWidth: 2,
+                            fill: false,
+                            data: [
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor()
+                            ]
+                        }, {
+                            type: 'bar',
+                            label: 'Dataset 2',
+                            backgroundColor: window.chartColors.red,
+                            data: [
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor()
+                            ],
+                            borderColor: 'white',
+                            borderWidth: 2
+                        }, {
+                            type: 'bar',
+                            label: 'Dataset 3',
+                            backgroundColor: window.chartColors.green,
+                            data: [
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor(),
+                                randomScalingFactor()
+                            ]
+                        }]
 
-            <div class="col-lg-6">
-                <div class="card-box">
-                    <h4 class="m-t-0"><?php echo e(__('Device Comparison')); ?></h4>
-                    <div class="text-center">
-                        <ul class="list-inline chart-detail-list">
-                            <li>
-                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-primary"></i>Mobiles</h5>
-                            </li>
-                            <li>
-                                <h5 class="font-normal"><i class="fa fa-circle m-r-10 text-info"></i>Tablets</h5>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="dashboard-line-chart" style="height: 300px;"></div>
+                        };
+                        window.onload = function() {
+                            var ctx = document.getElementById('canvas').getContext('2d');
+                            window.myMixedChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: chartData,
+                                options: {
+                                    responsive: true,
+                                    title: {
+                                        display: true,
+                                        text: 'Chart.js Combo Bar Line Chart'
+                                    },
+                                    tooltips: {
+                                        mode: 'index',
+                                        intersect: true
+                                    }
+                                }
+                            });
+                        };
+
+                        document.getElementById('randomizeData').addEventListener('click', function() {
+                            chartData.datasets.forEach(function(dataset) {
+                                dataset.data = dataset.data.map(function() {
+                                    return randomScalingFactor();
+                                });
+                            });
+                            window.myMixedChart.update();
+                        });
+                    </script>
                 </div>
             </div> <!-- end col -->
         </div> <!-- end row -->
 
+        <div class="dropdown-divider mb-5"></div>
 
-        <div class="row">
+        <div class="row p-5">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="m-t-0"><?php echo e(__('Users')); ?></h4>
+                    <h4 class="m-t-0 text-right"><i class="fas fa-users ml-3"></i><?php echo e(__('Users')); ?></h4>
                     <div class="table-responsive">
                         <table class="table table-hover mails m-0 table table-actions-bar">
                             <thead>
                                 <tr>
-                                    <th style="min-width: 95px;">
+                                    <th style="min-width: 100px;">
                                         <div class="checkbox checkbox-primary checkbox-single m-r-15">
                                             <input id="action-checkbox" type="checkbox">
                                             <label for="action-checkbox"></label>
                                         </div>
-                                        <!--<div class="btn-group dropdown">-->
-                                            <!--<button type="button" class="btn btn-default btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><i class="caret"></i></button>-->
-                                            <!--<ul class="dropdown-menu" role="menu">-->
-                                                <!--<li><a href="#">Action</a></li>-->
-                                                <!--<li><a href="#">Another action</a></li>-->
-                                                <!--<li><a href="#">Something else here</a></li>-->
-                                                <!--<li class="divider"></li>-->
-                                                <!--<li><a href="#">Separated link</a></li>-->
-                                            <!--</ul>-->
-                                        <!--</div>-->
+                                        <div class="btn-group dropdown">
+                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><?php echo e(__('Action')); ?><i class="caret"></i></button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
                                     </th>
                                     <th><?php echo e(__('Name')); ?></th>
                                     <th><?php echo e(__('E-Mail Address')); ?></th>
-                                    <th><?php echo e(__('Products')); ?></th>
-                                    <th><?php echo e(__('Start Date')); ?></th>
+                                    <th><?php echo e(__('Phone Number')); ?></th>
+                                    <th>
+                                        
+                                    </th>
+                                    <th>
+                                        
+                                    </th>
                                 </tr>
                             </thead>
-
                             <tbody>
+                                <?php $__currentLoopData = $users->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
                                     <td>
                                         <div class="checkbox checkbox-primary m-r-15">
                                             <input id="checkbox2" type="checkbox">
                                             <label for="checkbox2"></label>
                                         </div>
-
-                                        <img src="assets/images/users/avatar-2.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
                                     </td>
-
                                     <td>
-                                        Tomaslau
+                                        <?php echo e($user->name); ?>
+
                                     </td>
-
                                     <td>
-                                        <a href="#" class="text-muted">tomaslau@dummy.com</a>
+                                        <a href="mailto:<?php echo e($user->email); ?>" class="text-muted"><?php echo e($user->email); ?></a>
                                     </td>
-
                                     <td>
-                                        <b><a href="" class="text-dark"><b>356</b></a> </b>
+                                        <b><a href="" class="text-dark"><b><?php echo e($user->created_at); ?></b></a> </b>
                                     </td>
-
                                     <td>
-                                        01/11/2003
+                                        <a href="" class="btn btn-danger">
+                                            <?php echo e(__('Remove')); ?>
+
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="" class="btn btn-success">
+                                            <?php echo e(__('Edit')); ?>
+
+                                        </a>
                                     </td>
 
                                 </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbox checkbox-primary m-r-15">
-                                            <input id="checkbox1" type="checkbox">
-                                            <label for="checkbox1"></label>
-                                        </div>
-
-                                        <img src="assets/images/users/avatar-1.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                    </td>
-
-                                    <td>
-                                        Chadengle
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="text-muted">chadengle@dummy.com</a>
-                                    </td>
-
-                                    <td>
-                                        <b><a href="" class="text-dark"><b>568</b></a> </b>
-                                    </td>
-
-                                    <td>
-                                        01/11/2003
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbox checkbox-primary m-r-15">
-                                            <input id="checkbox3" type="checkbox">
-                                            <label for="checkbox3"></label>
-                                        </div>
-
-                                        <img src="assets/images/users/avatar-3.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                    </td>
-
-                                    <td>
-                                        Stillnotdavid
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="text-muted">stillnotdavid@dummy.com</a>
-                                    </td>
-                                    <td>
-                                        <b><a href="" class="text-dark"><b>201</b></a> </b>
-                                    </td>
-
-                                    <td>
-                                        12/11/2003
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbox checkbox-primary m-r-15">
-                                            <input id="checkbox4" type="checkbox">
-                                            <label for="checkbox4"></label>
-                                        </div>
-
-                                        <img src="assets/images/users/avatar-4.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                    </td>
-
-                                    <td>
-                                        Kurafire
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="text-muted">kurafire@dummy.com</a>
-                                    </td>
-
-                                    <td>
-                                        <b><a href="" class="text-dark"><b>56</b></a> </b>
-                                    </td>
-
-                                    <td>
-                                        14/11/2003
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbox checkbox-primary m-r-15">
-                                            <input id="checkbox5" type="checkbox">
-                                            <label for="checkbox5"></label>
-                                        </div>
-
-                                        <img src="assets/images/users/avatar-5.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                    </td>
-
-                                    <td>
-                                        Shahedk
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="text-muted">shahedk@dummy.com</a>
-                                    </td>
-
-                                    <td>
-                                        <b><a href="" class="text-dark"><b>356</b></a> </b>
-                                    </td>
-
-                                    <td>
-                                        20/11/2003
-                                    </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="checkbox checkbox-primary m-r-15">
-                                            <input id="checkbox6" type="checkbox">
-                                            <label for="checkbox6"></label>
-                                        </div>
-
-                                        <img src="assets/images/users/avatar-6.jpg" alt="contact-img" title="contact-img" class="img-circle thumb-sm" />
-                                    </td>
-
-                                    <td>
-                                        Adhamdannaway
-                                    </td>
-
-                                    <td>
-                                        <a href="#" class="text-muted">adhamdannaway@dummy.com</a>
-                                    </td>
-
-                                    <td>
-                                        <b><a href="" class="text-dark"><b>956</b></a> </b>
-                                    </td>
-
-                                    <td>
-                                        24/11/2003
-                                    </td>
-
-                                </tr>
-
-
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>
@@ -345,9 +272,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="pull-right hidden-xs">
-                        Project Completed <strong class="text-custom">43%</strong>.
-                    </div>
                     <div>
                         <strong>Simple Admin</strong> - Copyright &copy; 2017
                     </div>

@@ -22,9 +22,26 @@ class DeviceListController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {  
-        $Devices = DB::table('registered_devices')->select('id','userId','Device', 'IMEI', 'created_at', 'Condition')->get();
-        return view('DeviceList')->with('Devices', $Devices);
+        $Devices = DB::table('registered_devices')->select('id','userId','Device', 'IMEI', 'created_at', 'Condition');
+
+        if($request['IMEI'] != null){
+            $Devices->where('IMEI', 'LIKE', '%' . $request['IMEI'] . '%'); 
+        }
+        if($request['device'] != null){
+            $Devices->where('device', '=', $request['Device']);
+        }
+        if($request['created_at'] != null){
+            $Devices->where('created_at', '=', $request['created_at']);
+        }
+        if($request['finished_at'] != null){
+            $Devices->where('finished_at', '=', $request['finished_at']);
+        }
+        if($request['Condition'] != null){
+            $Devices->where('condition', '=', $request['Condition']);
+        }
+        $deviceList = $Devices->get();
+        return view('DeviceList')->with('Devices', $deviceList);
     }
 }

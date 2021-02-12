@@ -29,3 +29,12 @@ Route::get('/Devices', [App\Http\Controllers\DevicesController::class, 'index'])
 
 Route::post('/RegisterDevice', [App\Http\Controllers\RegisterDeviceController::class, 'create'])->name('RegisterDevice');
 Route::post('/Devices', [App\Http\Controllers\DevicesController::class, 'create'])->name('Devices');
+
+
+Route::get('/deviceEdit/{DeviceID}', [App\Http\Controllers\DeviceEditController::class, 'index'])->name('deviceEdit');
+Route::get('/UserEdit/{UserID}', [App\Http\Controllers\UserEditController::class, 'index'])->name('UserEdit');
+Route::post('/deviceEdit/{DeviceID}', [App\Http\Controllers\DeviceEditController::class, 'update'])->name('deviceEdit');
+Route::post('/UserEdit/{UserID}', [App\Http\Controllers\UserEditController::class, 'update'])->name('UserEdit');
+
+Route::post('/deviceEdit/{DeviceID}', [App\Http\Controllers\DeviceEditController::class, 'remove'])->name('deviceEdit');
+Route::post('/UserEdit/{UserID}', [App\Http\Controllers\UserEditController::class, 'remove'])->name('UserEdit');

@@ -35,7 +35,7 @@
                     <div class="row mb-4">
                         <label class="col-sm-2 col-form-label">{{ __('Device')}}</label>
                         <div class="col-sm-10">
-                            <select class="form-select" name="Device">
+                            <select class="form-control" name="Device">
                                 @foreach ($Devices->all() as $device)
                                 <option value="{{ $device->DeviceName }}">{{$device->DeviceName}}</option>
                                 @endforeach
