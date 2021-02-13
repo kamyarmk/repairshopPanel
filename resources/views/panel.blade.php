@@ -19,7 +19,7 @@
             <div class="col-md-12">
                 <div class="row mb-3">
                     <div class="col-sm-3">
-                        <a href="#" class="card d-flex justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Open" class="card d-flex justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
                             <div class="card-body">
                                 <h2 class="mb-20"><span>{{ $openCondition }}</span></h2>
                                 <h6 class="m-t-0 text-uppercase">{{ __('Device In Queue') }}</h6>
@@ -27,7 +27,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="#" class="card d-flex justify-content-center align-items-center border border-info btn btn-info shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Repairing" class="card d-flex justify-content-center align-items-center border border-info btn btn-info shadow-sm rounded">
                             <div class="card-body">
                                 <h2 class="mb-20">{{ $repairingCondition }}</h2>
                                 <h6 class="m-t-0 text-uppercase">{{ __('Under Repair') }}</h6>
@@ -35,7 +35,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="#" class=" card d-flex justify-content-center align-items-center border border-primary btn btn-outline-primary shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Testing" class=" card d-flex justify-content-center align-items-center border border-primary btn btn-outline-primary shadow-sm rounded">
                             <div class="card-body">
                                 <h2 class="mb-20">{{ $testingCondition }}</h2>
                                 <h6 class="m-t-0 text-uppercase">{{ __('Under Test') }}</h6>
@@ -43,7 +43,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="#" class=" card d-flex justify-content-center align-items-center border border-success btn btn-outline-success shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Repaired" class=" card d-flex justify-content-center align-items-center border border-success btn btn-outline-success shadow-sm rounded">
                             <div class="card-body">
                                 <h2 class="mb-20">{{ $repairedCondition }}</h2>
                                 <h6 class="m-t-0 text-uppercase">{{ __('Repaired') }}</h6>
@@ -55,7 +55,7 @@
 
                 <div class="row mb-5">
                     <div class="col-sm-3">
-                        <a href="#" class=" card d-flex bg-success justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Delivered" class=" card d-flex bg-success justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
                             <div class="card-body text-white">
                                 <h6 class="text-white m-t-0 text-uppercase">{{ __('Delivered') }}</h6>
                                 <h2 class="m-b-20"><span>{{ $deliveredCondition }}</span></h2>
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="col-sm-3">
-                        <a href="#" class=" card d-flex bg-warning justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Delayed" class=" card d-flex bg-warning justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
                             <div class="card-body text-dark">
                                 <h6 class="text-dark m-t-0 text-uppercase">{{ __('Late Delivery') }}</h6>
                                 <h2 class="m-b-20">{{ $delayedCondition }}</h2>
@@ -72,7 +72,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Unsuccessful" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
                             <div class="card-body text-white">
                                 <h6 class="text-white m-t-0 text-uppercase">{{ __('Delivery Problem') }}</h6>
                                 <h2 class="m-b-20"><span>{{ $unsuccesfulCondition }}</span></h2>
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="col-sm-3 ">
-                        <a href="#" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Refund" class=" card bg-section d-flex bg-warning justify-content-center align-items-center border border-section btn btn-section shadow-sm rounded">
                             <div class="card-body text-white">
                                 <h6 class="text-white m-t-0 text-uppercase">{{ __('Refund') }}</h6>
                                 <h2 class="m-b-20"><span>{{ $refundCondition }}</span></h2>
@@ -99,7 +99,7 @@
         <div class="dropdown-divider mb-5"></div>
 
 
-        <div class="row bg-section bg-gradient p-5">
+        <div class="row bg-gradient p-5">
             <div class="col-lg-12">
                 <div class="card-box">
                     <h4 class="m-t-0 text-right"><i class="fas fa-chart-line ml-3"></i>{{ __('Total Revenue') }}</h4>
