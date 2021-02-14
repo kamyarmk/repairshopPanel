@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="wrapper-page">
-                <div class="row d-flex justify-content-center">
-                    <div class="mt-4 card col-md-6">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="mt-4 card col-md-6" style="max-width: 520px; border: 2px solid rgba(98, 103, 115, 0.3); padding: 30px; border-radius: 9px;">
                         <div class="text-center">
-                            <h2 class="text-uppercase mt-3 mb-3">
+                            <h2 class="text-uppercase mt-0 mb-4">
                                 <a href="index.html" class="text-success">
                                     <span><img src="{{ asset('/images/logo_dark.png')}}" alt="" height="30"></span>
                                 </a>
@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group account-btn text-center mt-1">
+                                <div class="form-group account-btn text-center mt-5">
                                     <div class="col-12">
                                         <button type="submit" class="btn btn-lg btn-primary btn-block">
                                             {{ __('Login') }}

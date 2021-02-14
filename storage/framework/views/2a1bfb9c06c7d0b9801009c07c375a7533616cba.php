@@ -15,6 +15,8 @@
 
         <div class="row p-5">
             <div class="col-md-12">
+                <h4 class="m-t-0 text-right header-title"><i class="fas fa-chart-line ml-3"></i><?php echo e(__('Quick Access')); ?></h4>
+                <div class="dropdown-divider mb-5 text-white bg-white"></div>
                 <div class="row mb-3">
                     <div class="col-sm-3">
                         <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Open" class="card d-flex justify-content-center align-items-center border border-orangeSection btn btn-outline-orangeSection shadow-sm rounded">
@@ -34,7 +36,7 @@
                     </div>
                     <div class="col-sm-3">
                         <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Testing" class=" card d-flex justify-content-center align-items-center border border-warning btn btn-outline-warning shadow-sm rounded">
-                            <div class="card-body">
+                            <div class="card-body text-dark">
                                 <h2 class="mb-20"><?php echo e($testingCondition); ?></h2>
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Under Test')); ?></h6>
                             </div>
@@ -114,26 +116,26 @@
                             borderWidth: 2,
                             fill: false,
                             data: [
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor()
+                                20,
+                                10,
+                                30,
+                                40,
+                                50,
+                                25,
+                                45
                             ]
                         }, {
                             type: 'bar',
                             label: 'مرجوعی',
                             backgroundColor: window.chartColors.red,
                             data: [
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor()
+                                10,
+                                5,
+                                25,
+                                45,
+                                32,
+                                60,
+                                12
                             ],
                             borderColor: 'white',
                             borderWidth: 2
@@ -143,13 +145,13 @@
                             label: 'تحویل گرفته شده',
                             backgroundColor: window.chartColors.yellow,
                             data: [
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor()
+                                15,
+                                30,
+                                60,
+                                70,
+                                75,
+                                62,
+                                35
                             ]
                         }
                         , {
@@ -157,13 +159,13 @@
                             label: 'تحویل داده شده',
                             backgroundColor: window.chartColors.green,
                             data: [
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor(),
-                                randomScalingFactor()
+                                30,
+                                40,
+                                55,
+                                42,
+                                56,
+                                72,
+                                28
                             ]
                         }]
 
@@ -206,15 +208,17 @@
         <div class="row p-5">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="m-t-0 text-right"><i class="fas fa-users ml-3"></i><?php echo e(__('Search')); ?></h4>
+                    <h4 class="m-t-0 text-right header-title"><i class="fas fa-search ml-3"></i><?php echo e(__('Search Invoice')); ?></h4>
                     <div class="row mb-5 mt-5">
                         <div class="col-md-12">
                             <form action="">
                             <?php echo csrf_field(); ?>
                                 <div class="row d-flex justify-content-center">
-                                    <div class="col-md-8 input-group input-group-lg btn btn-outline-transparent p-0 shadow-sm">
-                                        <input type="text" class="form-controll col-10" placeholder="<?php echo e(__('Search...')); ?>" />
-                                        <input type="submit" class="btn btn-outline-primary col-2 m-0" value="<?php echo e(__('Search')); ?>" />
+                                    <div class="col-md-8 input-group input-group-lg btn btn-outline-transparent p-0">
+                                        <input type="text" class="form-controll rounded" placeholder="<?php echo e(__('Search...')); ?>" />
+                                        <button type="submit" class="btn" >
+                                            <i class="fas fa-search"></i>
+                                        </button>
                                     </div>
                                     
                                 </div>
@@ -222,73 +226,28 @@
                         </div>
                     </div>
                     
-                    <div class="table-responsive">
-                        <table class="table table-hover mails m-0 table table-actions-bar">
-                            <thead>
-                                <tr>
-                                    <th style="min-width: 100px;">
-                                        <div class="checkbox checkbox-primary checkbox-single m-r-15">
-                                            <input id="action-checkbox" type="checkbox">
-                                            <label for="action-checkbox"></label>
-                                        </div>
-                                        <div class="btn-group dropdown">
-                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><?php echo e(__('Action')); ?><i class="caret"></i></button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                    </th>
-                                    <th><?php echo e(__('Name')); ?></th>
-                                    <th><?php echo e(__('E-Mail Address')); ?></th>
-                                    <th><?php echo e(__('Phone Number')); ?></th>
-                                    <th>
-                                        
-                                    </th>
-                                    <th>
-                                        
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $__currentLoopData = $users->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <tr>
-                                    <td>
-                                        <div class="checkbox checkbox-primary m-r-15">
-                                            <input id="checkbox2" type="checkbox">
-                                            <label for="checkbox2"></label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <?php echo e($user->name); ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
 
-                                    </td>
-                                    <td>
-                                        <a href="mailto:<?php echo e($user->email); ?>" class="text-muted"><?php echo e($user->email); ?></a>
-                                    </td>
-                                    <td>
-                                        <b><a href="" class="text-dark"><b><?php echo e($user->created_at); ?></b></a> </b>
-                                    </td>
-                                    <td>
-                                        <a href="" class="btn btn-danger">
-                                            <?php echo e(__('Remove')); ?>
+                                </div>
+                                <div class="col-md-6">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
 
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="" class="btn btn-success">
-                                            <?php echo e(__('Edit')); ?>
+                            </div>
+                            <div class="col-md-6">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-12">
 
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </tbody>
-                        </table>
+                        </div>
                     </div>
                 </div>
             </div>

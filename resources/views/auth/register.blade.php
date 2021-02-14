@@ -6,9 +6,9 @@
         <div class="col-md-12">
             <div class="wrapper-page">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-6 mt-4 card">
+                    <div class="col-md-6 mt-4 card" style="max-width: 520px; border: 2px solid rgba(98, 103, 115, 0.3); padding: 30px; border-radius: 9px;">
                         <div class="text-center">
-                            <h2 class="text-uppercase mt-3 mb-3">
+                            <h2 class="text-uppercase mt-0 mb-4">
                                 <a href="index.html" class="text-success">
                                     <span><img src="{{asset('/images/logo_dark.png')}}" alt="" height="30"></span>
                                 </a>
