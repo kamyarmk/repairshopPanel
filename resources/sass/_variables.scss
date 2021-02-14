@@ -7,13 +7,25 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
+$blue: #008CBA;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66d9b;
-$red: #e3342f;
+$red: #f44336;
 $orange: #f6993f;
 $yellow: #ffed4a;
-$green: #38c172;
+$green: #4CAF50;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$black: #555555;
+$gray: #e7e7e7;
+$transparent: transparent;
+
+$theme-colors: (
+  "info": $gray,
+  "secondary": $black,
+  "section": $black,
+  "orangeSection": $orange,
+  "purpleSection": $purple,
+  "transparent": $transparent,
+);

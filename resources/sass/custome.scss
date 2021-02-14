@@ -15,3 +15,36 @@
 .bg-section{
     background-color: #fce38a;
 }
+
+.rounded{
+    border-radius: 9px !important;
+}
+
+.header-title{
+    color: $black;
+}
+
+@each $color, $value in $theme-colors {
+    .card.btn-#{$color} {
+        &:hover{
+            background-color: #FFF !important;
+            color: $value;
+        }
+    }
+}
+
+.btn-outline-transparent{
+    border: 1px solid $black;
+    &:hover{
+        border: 1px solid $black;
+        input{
+            color: $black;
+        }
+    }
+    input{
+        border: 0;
+        &:focus{
+            outline: none;
+        }
+    }
+}
