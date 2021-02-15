@@ -80,3 +80,18 @@ input{
         color: #fff;
     }
 }
+
+.rounded-bottom{
+    border-bottom-right-radius: 9px !important;
+    border-bottom-left-radius: 9px !important;
+    box-shadow: 0 0 9px 0 rgba(0,0,0,.11) !important;
+}
+
+.btn-outline-success{
+    &:hover{
+        color: #FFF;
+    }
+}
+.btn-success{
+    color: #FFF;
+}

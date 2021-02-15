@@ -42,9 +42,9 @@
     <div id="app">
         <div  id="page-wrapper">
             <!-- Top Bar Start -->
-            <div class="topbar container-fluid bg-primary p-2" id="topnav">
+            <div class="topbar container bg-white p-1 border-1 rounded-bottom border" id="topnav">
                 <!-- Top navbar -->
-                <nav class="navbar navbar-expand-lg navbar-light " role="navigation">
+                <nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
                     <!-- LOGO -->
                     <div class="topbar-left col-2">
                         <div class="">
@@ -59,32 +59,32 @@
                         <div id="navigation">
                             <!-- Navigation Menu-->
                             <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a href="{{ route('home') }}" class="nav-link text-light">
+                                <li class="nav-item ml-3">
+                                    <a href="{{ route('home') }}" class="nav-link text-dark fw-bold">
                                         <span class="ml-1"><i class="fas fa-tachometer-alt"></i></span><span> {{ __('Dashboard') }} </span> 
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{{ route('RegisterDevice') }}" class="nav-link text-light">
+                                <li class="nav-item ml-3">
+                                    <a href="{{ route('RegisterDevice') }}" class="nav-link text-dark fw-bold">
                                         <span class="ml-1"><i class="fas fa-laptop-medical"></i></span><span> {{ __('Register Device') }} </span> 
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{{ route('DeviceList') }}" class="nav-link text-light">
+                                <li class="nav-item ml-3">
+                                    <a href="{{ route('DeviceList') }}" class="nav-link text-dark fw-bold">
                                         <span class="ml-1"><i class="fas fa-tablet-alt"></i></span><span> {{ __('List Device') }} </span> 
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{{ route('UserList') }}" class="nav-link text-light"> 
+                                <li class="nav-item ml-3">
+                                    <a href="{{ route('UserList') }}" class="nav-link text-dark fw-bold"> 
                                         <span class="ml-1"><i class="fas fa-users"></i></span><span> {{ __('Users') }} </span> 
                                     </a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a href="{{ route('Devices') }}" class="nav-link text-light">
+                                <li class="nav-item ml-3">
+                                    <a href="{{ route('Devices') }}" class="nav-link text-dark fw-bold">
                                         <span class="ml-1"><i class="fas fa-file-alt"></i></span><span> {{ __('Reports') }} </span> 
                                     </a>
 
@@ -115,8 +115,8 @@
                                     <a href=""><i class="fa fa-search"></i></a>
                                 </form>
                             </li> -->
-                            <li class="nav-item dropdown justify-content-between d-flex align-items-center">
-                                <a href="#" data-target="#" class="text-light ml-3" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav-item ml-3 dropdown justify-content-between d-flex align-items-center">
+                                <a href="#" data-target="#" class="text-dark fw-bold ml-3" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-bell mt-3" style="font-size: 2em;"></i> <span class="badge badge-danger" style="position: absolute; top:15px; left: 1.2em;">3</span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 300px !important;">
@@ -233,8 +233,8 @@
                                 </ul>
                             </li>
 
-                            <li class="nav-item dropdown justify-content-between d-flex align-items-center">
-                                <a href="" class="dropdown-toggle menu-right-item profile text-light" data-toggle="dropdown" aria-expanded="true"> 
+                            <li class="nav-item ml-3 dropdown justify-content-between d-flex align-items-center">
+                                <a href="" class="dropdown-toggle menu-right-item profile text-dark fw-bold" data-toggle="dropdown" aria-expanded="true"> 
                                     <i class="fas fa-user mt-3" style="font-size: 2em"></i>
                                 </a>
                                 <ul class="dropdown-menu">
