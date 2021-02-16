@@ -92,6 +92,18 @@ input{
         color: #FFF;
     }
 }
-.btn-success{
+.btn-success, .btn-danger, .btn-orangeSection{
     color: #FFF;
+}
+.border{
+    border-width: 2px !important;
+}
+.text-menu{
+    font-size: $MenuText;
+}
+
+a{
+    &:focus{
+        outline: none !important;
+    }
 }

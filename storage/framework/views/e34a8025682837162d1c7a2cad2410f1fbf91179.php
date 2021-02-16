@@ -44,7 +44,7 @@
             <!-- Top Bar Start -->
             <div class="topbar container bg-white p-1 border-1 rounded-bottom border" id="topnav">
                 <!-- Top navbar -->
-                <nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
+                <nav class="navbar navbar-expand-lg navbar-dark text-menu" role="navigation">
                     <!-- LOGO -->
                     <div class="topbar-left col-2">
                         <div class="">
@@ -117,7 +117,7 @@
                             </li> -->
                             <li class="nav-item ml-3 dropdown justify-content-between d-flex align-items-center">
                                 <a href="#" data-target="#" class="text-dark fw-bold ml-3" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-bell mt-3" style="font-size: 2em;"></i> <span class="badge badge-danger" style="position: absolute; top:15px; left: 1.2em;">3</span>
+                                    <i class="fas fa-bell mt-3" style="font-size: 1.5em;"></i> <span class="badge badge-danger" style="position: absolute; top:14px; left: 1.2em; color: #fff;">3</span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 300px !important;">
                                     <li class="notifi-title dropdown-item">
@@ -235,7 +235,7 @@
 
                             <li class="nav-item ml-3 dropdown justify-content-between d-flex align-items-center">
                                 <a href="" class="dropdown-toggle menu-right-item profile text-dark fw-bold" data-toggle="dropdown" aria-expanded="true"> 
-                                    <i class="fas fa-user mt-3" style="font-size: 2em"></i>
+                                    <i class="fas fa-user mt-3" style="font-size: 1.5em"></i>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="javascript:void(0)">

@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="col-sm-3">
-                        <a href="{{ route('DeviceList')}}/?Condition=Delayed" class=" card d-flex bg-warning justify-content-center align-items-center border border-warning btn btn-warning shadow-sm rounded">
+                        <a href="{{ route('DeviceList')}}/?Condition=Delayed" class=" card d-flex bg-orangeSection justify-content-center align-items-center border border-orangeSection btn btn-orangeSection shadow-sm rounded">
                             <div class="card-body">
                                 <h6 class="m-t-0 text-uppercase">{{ __('Late Delivery') }}</h6>
                                 <h2 class="m-b-20">{{ $delayedCondition }}</h2>
