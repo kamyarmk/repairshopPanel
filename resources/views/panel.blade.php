@@ -212,6 +212,9 @@
                 <div class="card-box">
                     <home-search
                         search-term="{{ __('Search') }}"
+                        invoice-search="{{ __('Invoice') }}"
+                        user-search="{{ __('Users') }}"
+                        device-search="{{ __('Device') }}"
                     >
                     </home-search>
                 </div>

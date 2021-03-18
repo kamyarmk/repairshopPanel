@@ -6,37 +6,69 @@
                 <form>
                     <div class="row d-flex justify-content-center">
                         <div class="col-md-8 input-group input-group-lg btn btn-outline-transparent p-0">
-                            <input type="text" class="form-controll rounded" name="invoice_id" :placeholder="searchTerm" />
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
+                            
+                            <input type="text" class="form-controll rounded" name="invoice_id" :placeholder="searchTerm" v-model="keyword1"/>
+                            <button type="submit" class="btn" >
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <select class="form-select" name="searchCategory" v-model="searchCategory" @change="clearSearch()">
+                                <option value="invoicesvue" selected>{{ invoiceSearch }}</option>
+                                <option value="UsersVue">{{ userSearch }}</option>
+                                <option value="regdevicevue">{{ deviceSearch }}</option>
+                            </select>
                         </div>   
                     </div>
                 </form>
+                <div v-if="results" class="row d-flex justify-content-center">
+                    <transition-group name="datalist" tag="span">
+                    <ul class="list-group" v-for="data in results" :key="data.id">
+                        <li class="list-group-item list-group-item-action">
+                            <div class="table-responsive">
+                                <table class="table table-hover mails m-0 table table-actions-bar text-center">
+                                    <tr @click="moreDetailes(data.id)">
+                                        <td class="w-25">
+                                           <span v-if="searchCategory == 'invoicesvue'">{{ data.id }}</span> 
+                                           <span v-if="searchCategory == 'UsersVue'">{{ data.name }}</span> 
+                                           <span v-if="searchCategory == 'regdevicevue'">{{ data.IMEI }}</span> 
+                                        </td>
+                                        <td class="w-25">
+                                            <span v-if="searchCategory == 'invoicesvue'">{{ data.Condition }}</span> 
+                                            <span v-if="searchCategory == 'UsersVue'">{{ data.phone_number }}</span> 
+                                            <span v-if="searchCategory == 'regdevicevue'">{{ data.Condition }}</span> 
+                                        </td>
+                                        <td class="w-25">
+                                            <span v-if="searchCategory == 'invoicesvue'">{{ data.Price }}</span> 
+                                            <span v-if="searchCategory == 'UsersVue'">{{ data.email }}</span> 
+                                            <span v-if="searchCategory == 'regdevicevue'"></span> 
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
+                    </transition-group>
+                </div>
             </div>
-        </div>    
+        </div>
     </div>
 </template>
 
 <script>
-import searchDevices from './tables/search-devices.vue';
-// data-bs-toggle="dropdown" 
 export default {
-  components: { searchDevices },
     data() {
         return {
             keyword1: null,
+            searchCategory: null,
             results: [],
+            routeToGo: null,
             
         };
     },
     props:{
-        searchTerm: ''
+        searchTerm: '',
+        invoiceSearch: '',
+        userSearch: '',
+        deviceSearch: ''
     },
     watch: {
         keyword1(after, before) {
@@ -45,18 +77,25 @@ export default {
     },
     methods:{
         getResults() {
-            axios.get('/' + this.searchItem , { 
-                params: { keyword1: this.keyword1} 
+            this.results = [];
+            axios.get('/' + this.searchCategory , { 
+                params: { homesearch: this.keyword1} 
                 })
                 .then(res => this.results = res.data)
                 .catch(error => {});
         },
-        dataDelete(dataID){
-            axios.get('/' + this.searchItem + '/delete/', { 
-                params: { keyword1: this.keyword1 } 
-                })
-                .then(res => this.results = res.data)
-                .catch(error => {});
+        clearSearch(){
+            this.results = [];
+            if(this.searchCategory == 'invoicesvue'){
+                this.routeToGo = 'Invoice';
+            }else if(this.searchCategory == 'UsersVue'){
+                this.routeToGo = 'UserList';
+            }else if(this.searchCategory == 'regdevicevue'){
+                this.routeToGo = 'DeviceList';
+            }
+        },
+        moreDetailes(data){
+            window.location.href = '/' + this.routeToGo + '/' + data;
         },
         mounted(){
 

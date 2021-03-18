@@ -100,6 +100,9 @@ class UserListController extends Controller
         if($request['keyword3'] != null){
             $Users->where('phone_number', 'LIKE', '%' . $request['keyword3'] . '%'); 
         }
+        if($request['homesearch'] != null){
+            $Users->where('phone_number', 'LIKE', '%' . $request['homesearch'] . '%');
+        }
 
         $userList = $Users->get();
         return $userList;

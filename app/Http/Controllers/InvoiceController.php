@@ -105,6 +105,10 @@ class InvoiceController extends Controller
         if($request['keyword5'] != null){
             $Invoices->where('condition', '=', $request['keyword4']);
         }
+
+        if($request['homesearch'] != null){
+            $Invoices->where('id', 'LIKE', '%' . $request['homesearch'] . '%');
+        }
         $invoiceList = $Invoices->get();
 
         return $invoiceList;

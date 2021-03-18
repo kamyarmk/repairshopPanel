@@ -113,6 +113,10 @@ class DeviceListController extends Controller
         if($request['keyword5'] != null){
             $Devices->where('condition', '=', $request['keyword5']);
         }
+        if($request['homesearch'] != null){
+            $Devices->where('IMEI', 'LIKE', '%' . $request['homesearch'] . '%');
+        }
+
         $deviceList = $Devices->get();
         return $deviceList;
     }

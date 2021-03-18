@@ -210,6 +210,9 @@
                 <div class="card-box">
                     <home-search
                         search-term="<?php echo e(__('Search')); ?>"
+                        invoice-search="<?php echo e(__('Invoice')); ?>"
+                        user-search="<?php echo e(__('Users')); ?>"
+                        device-search="<?php echo e(__('Device')); ?>"
                     >
                     </home-search>
                 </div>

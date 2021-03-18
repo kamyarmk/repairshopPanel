@@ -1845,7 +1845,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _tables_search_devices_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tables/search-devices.vue */ "./resources/js/components/tables/search-devices.vue");
 //
 //
 //
@@ -1871,20 +1870,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
- // data-bs-toggle="dropdown" 
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    searchDevices: _tables_search_devices_vue__WEBPACK_IMPORTED_MODULE_0__.default
-  },
   data: function data() {
     return {
       keyword1: null,
-      results: []
+      searchCategory: null,
+      results: [],
+      routeToGo: null
     };
   },
   props: {
-    searchTerm: ''
+    searchTerm: '',
+    invoiceSearch: '',
+    userSearch: '',
+    deviceSearch: ''
   },
   watch: {
     keyword1: function keyword1(after, before) {
@@ -1895,24 +1924,28 @@ __webpack_require__.r(__webpack_exports__);
     getResults: function getResults() {
       var _this = this;
 
-      axios.get('/' + this.searchItem, {
+      this.results = [];
+      axios.get('/' + this.searchCategory, {
         params: {
-          keyword1: this.keyword1
+          homesearch: this.keyword1
         }
       }).then(function (res) {
         return _this.results = res.data;
       })["catch"](function (error) {});
     },
-    dataDelete: function dataDelete(dataID) {
-      var _this2 = this;
+    clearSearch: function clearSearch() {
+      this.results = [];
 
-      axios.get('/' + this.searchItem + '/delete/', {
-        params: {
-          keyword1: this.keyword1
-        }
-      }).then(function (res) {
-        return _this2.results = res.data;
-      })["catch"](function (error) {});
+      if (this.searchCategory == 'invoicesvue') {
+        this.routeToGo = 'Invoice';
+      } else if (this.searchCategory == 'UsersVue') {
+        this.routeToGo = 'UserList';
+      } else if (this.searchCategory == 'regdevicevue') {
+        this.routeToGo = 'DeviceList';
+      }
+    },
+    moreDetailes: function moreDetailes(data) {
+      window.location.href = '/' + this.routeToGo + '/' + data;
     },
     mounted: function mounted() {}
   }
@@ -38831,32 +38864,199 @@ var render = function() {
               },
               [
                 _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.keyword1,
+                      expression: "keyword1"
+                    }
+                  ],
                   staticClass: "form-controll rounded",
                   attrs: {
                     type: "text",
                     name: "invoice_id",
                     placeholder: _vm.searchTerm
+                  },
+                  domProps: { value: _vm.keyword1 },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.keyword1 = $event.target.value
+                    }
                   }
                 }),
                 _vm._v(" "),
+                _vm._m(0),
+                _vm._v(" "),
                 _c(
-                  "button",
+                  "select",
                   {
-                    staticClass: "btn btn-outline-secondary dropdown-toggle",
-                    attrs: {
-                      type: "button",
-                      "data-bs-toggle": "dropdown",
-                      "aria-expanded": "false"
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.searchCategory,
+                        expression: "searchCategory"
+                      }
+                    ],
+                    staticClass: "form-select",
+                    attrs: { name: "searchCategory" },
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.searchCategory = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
+                        function($event) {
+                          return _vm.clearSearch()
+                        }
+                      ]
                     }
                   },
-                  [_vm._v("Dropdown")]
-                ),
-                _vm._v(" "),
-                _vm._m(0)
+                  [
+                    _c(
+                      "option",
+                      { attrs: { value: "invoicesvue", selected: "" } },
+                      [_vm._v(_vm._s(_vm.invoiceSearch))]
+                    ),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "UsersVue" } }, [
+                      _vm._v(_vm._s(_vm.userSearch))
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "regdevicevue" } }, [
+                      _vm._v(_vm._s(_vm.deviceSearch))
+                    ])
+                  ]
+                )
               ]
             )
           ])
-        ])
+        ]),
+        _vm._v(" "),
+        _vm.results
+          ? _c(
+              "div",
+              { staticClass: "row d-flex justify-content-center" },
+              [
+                _c(
+                  "transition-group",
+                  { attrs: { name: "datalist", tag: "span" } },
+                  _vm._l(_vm.results, function(data) {
+                    return _c(
+                      "ul",
+                      { key: data.id, staticClass: "list-group" },
+                      [
+                        _c(
+                          "li",
+                          {
+                            staticClass:
+                              "list-group-item list-group-item-action"
+                          },
+                          [
+                            _c("div", { staticClass: "table-responsive" }, [
+                              _c(
+                                "table",
+                                {
+                                  staticClass:
+                                    "table table-hover mails m-0 table table-actions-bar text-center"
+                                },
+                                [
+                                  _c(
+                                    "tr",
+                                    {
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.moreDetailes(data.id)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("td", { staticClass: "w-25" }, [
+                                        _vm.searchCategory == "invoicesvue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.id))
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.searchCategory == "UsersVue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.name))
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.searchCategory == "regdevicevue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.IMEI))
+                                            ])
+                                          : _vm._e()
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { staticClass: "w-25" }, [
+                                        _vm.searchCategory == "invoicesvue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.Condition))
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.searchCategory == "UsersVue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.phone_number))
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.searchCategory == "regdevicevue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.Condition))
+                                            ])
+                                          : _vm._e()
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("td", { staticClass: "w-25" }, [
+                                        _vm.searchCategory == "invoicesvue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.Price))
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.searchCategory == "UsersVue"
+                                          ? _c("span", [
+                                              _vm._v(_vm._s(data.email))
+                                            ])
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _vm.searchCategory == "regdevicevue"
+                                          ? _c("span")
+                                          : _vm._e()
+                                      ])
+                                    ]
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ],
+              1
+            )
+          : _vm._e()
       ])
     ])
   ])
@@ -38866,32 +39066,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "dropdown-menu" }, [
-      _c("li", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _vm._v("Action")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _vm._v("Another action")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _vm._v("Something else here")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("li", [_c("hr", { staticClass: "dropdown-divider" })]),
-      _vm._v(" "),
-      _c("li", [
-        _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-          _vm._v("Separated link")
-        ])
-      ])
+    return _c("button", { staticClass: "btn", attrs: { type: "submit" } }, [
+      _c("i", { staticClass: "fas fa-search" })
     ])
   }
 ]

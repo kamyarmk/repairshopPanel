@@ -60,6 +60,15 @@
     button[type="submit"]{
         position: absolute;
         top: 0;
+        left: 200px;
+        bottom: 0;
+        margin: auto;
+    }
+    select{
+        flex: none !important;
+        width: 200px !important;
+        position: absolute !important;
+        top: 0;
         left: 0;
         bottom: 0;
         margin: auto;
