@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RegisteredDevices extends Migration
+class CreateRegisteredDevicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class RegisteredDevices extends Migration
     {
         Schema::create('registered_devices', function (Blueprint $table) {
             $table->id();
-            $table->string('userId');
-            $table->string('Device');
+            $table->string('user_id')->index();
+            $table->string('devices_id')->index();
             $table->string('DeviceType');
             $table->string('DeviceColor');
             $table->string('IMEI');
@@ -25,6 +25,8 @@ class RegisteredDevices extends Migration
             $table->string('password')->nullable();
             $table->string('DeviceAccessories');
             $table->string('Tips');
+            $table->string('FirstQC')->nullable();
+            $table->string('SeccondQC')->nullable();
             $table->string('MaxBudget');
             $table->string('Condition');
             $table->timestamps();
@@ -38,6 +40,6 @@ class RegisteredDevices extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('RegisteredDevices');
+        Schema::dropIfExists('registered_devices');
     }
 }

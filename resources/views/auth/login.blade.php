@@ -10,7 +10,7 @@
                         <div class="text-center">
                             <h2 class="text-uppercase mt-0 mb-4">
                                 <a href="index.html" class="text-success">
-                                    <span><img src="{{ asset('/images/logo_dark.png')}}" alt="" height="30"></span>
+                                    <span><img src="{{ asset('assets/logo.png')}}" alt="" height="30"></span>
                                 </a>
                             </h2>
                             <!--<h4 class="text-uppercase font-bold m-b-0">{{ __('Login') }}</h4>-->

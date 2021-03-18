@@ -107,3 +107,12 @@ a{
         outline: none !important;
     }
 }
+.datalist-enter-active,
+.datalist-leave-active {
+    transition: all 0.25s ease;
+}
+.datalist-enter-from,
+.datalist-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}

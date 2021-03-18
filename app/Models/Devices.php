@@ -9,13 +9,11 @@ class Devices extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'DeviceName',
-        'DeviceType',
-    ];
+    public function registered_devices(){
+        return $this->hasMany(registered_devices::class);
+    }
+
+    public function device__configs(){
+        return $this->hasMany(Device_Config::class);
+    }
 }

@@ -22,9 +22,15 @@
 	}
 	</style>
 
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon_io/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon_io/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon_io/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('assets/favicon_io/site.webmanifest') }}">
 
     <!--Morris Chart CSS -->
     
+    <!-- persian DatePicker -->
+    <link rel="stylesheet" href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -49,7 +55,7 @@
                     <div class="topbar-left col-2">
                         <div class="">
                             <a href="index.html" class="logo">
-                                <img src="{{ asset('/images/logo.png')}}" alt="logo" class="logo-lg img-fluid" />
+                                <img src="{{ asset('/assets/logo.png')}}" alt="logo" class="logo-lg img-fluid w-50" />
                                 <img src="{{ asset('/images/logo_sm.png')}}" alt="logo" class="logo-sm d-none" />
                             </a>
                         </div>
@@ -66,26 +72,32 @@
                                 </li>
 
                                 <li class="nav-item ml-3">
-                                    <a href="{{ route('RegisterDevice') }}" class="nav-link text-dark fw-bold">
+                                    <a href="{{ route('registerDevice.create') }}" class="nav-link text-dark fw-bold">
                                         <span class="ml-1"><i class="fas fa-laptop-medical"></i></span><span> {{ __('Register Device') }} </span> 
                                     </a>
                                 </li>
 
                                 <li class="nav-item ml-3">
-                                    <a href="{{ route('DeviceList') }}" class="nav-link text-dark fw-bold">
+                                    <a href="{{ route('deviceList.index') }}" class="nav-link text-dark fw-bold">
                                         <span class="ml-1"><i class="fas fa-tablet-alt"></i></span><span> {{ __('List Device') }} </span> 
                                     </a>
                                 </li>
 
                                 <li class="nav-item ml-3">
-                                    <a href="{{ route('UserList') }}" class="nav-link text-dark fw-bold"> 
+                                    <a href="{{ route('userList.index') }}" class="nav-link text-dark fw-bold"> 
                                         <span class="ml-1"><i class="fas fa-users"></i></span><span> {{ __('Users') }} </span> 
                                     </a>
                                 </li>
 
                                 <li class="nav-item ml-3">
-                                    <a href="{{ route('Devices') }}" class="nav-link text-dark fw-bold">
+                                    <a href="{{ route('reports.index') }}" class="nav-link text-dark fw-bold">
                                         <span class="ml-1"><i class="fas fa-file-alt"></i></span><span> {{ __('Reports') }} </span> 
+                                    </a>
+
+                                </li>
+                                <li class="nav-item ml-3">
+                                    <a href="{{ route('invoice.index') }}" class="nav-link text-dark fw-bold">
+                                        <span class="ml-1"><i class="fas fa-file-invoice"></i></span><span> {{ __('Invoices') }} </span> 
                                     </a>
 
                                 </li>
@@ -239,13 +251,19 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-item"><a href="javascript:void(0)">
-                                        <i class="fas fa-id-badge"></i> Profile</a>
+                                        {{ __('Profile')}} <i class="fas fa-id-badge"></i></a>
+                                    </li>
+                                    <li class="dropdown-item"><a href="{{ route('devices') }}">
+                                        {{ __('Device Types') }} <i class="fas fa-laptop"></i></a>
                                     </li>
                                     <li class="dropdown-item"><a href="javascript:void(0)">
-                                        <i class="fas fa-cog"></i> Settings</a>
+                                        {{ __('Departments') }} <i class="fas fa-building"></i></a>
                                     </li>
                                     <li class="dropdown-item"><a href="javascript:void(0)">
-                                        <i class="fas fa-lock"></i> Lock screen</a>
+                                        {{ __('Settings') }} <i class="fas fa-cog"></i></a>
+                                    </li>
+                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                        {{ __('Lock screen') }} <i class="fas fa-lock"></i></a>
                                     </li>
                                     <li class="divider"></li>
                                     <li class="dropdown-item"><a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -270,8 +288,14 @@
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="{{ asset('js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.slimscroll.min.js') }}"></script>
+
+    <!-- Persian DatePicker -->
+    <script src="../../../node_modules/persian-date/dist/persian-date.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
+    <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
 
     <!--Morris Chart-->
     
@@ -281,6 +305,12 @@
 
     <!-- App Js -->
     <script src="{{ asset('js/jquery.app.js') }}"></script>
-    
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $(".datePickerPlace").persianDatepicker();
+        });
+
+    </script>
 </body>
 </html>

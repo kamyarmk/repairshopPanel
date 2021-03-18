@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\RegisteredDevices;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
+use App\Models\Devices;
 
 class RegisterDeviceController extends Controller
 {
@@ -24,9 +25,9 @@ class RegisterDeviceController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function create()
     {
-        $Device = DB::table('Devices')->select('id','DeviceName','DeviceType')->get();
+        $Device = Devices::all();
         return view('RegisterDevice')->with('Devices', $Device);
     }
 
@@ -36,7 +37,7 @@ class RegisterDeviceController extends Controller
      * @param  Request  $data
      * @return Response
      */
-    protected function create(Request $data)
+    protected function store(Request $data)
     {
         $validator = Validator::make($data->all(), [
             'user' => ['required', 'string', 'max:255'],

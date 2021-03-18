@@ -19,7 +19,7 @@
                 <div class="dropdown-divider mb-5 text-white bg-white"></div>
                 <div class="row mb-3">
                     <div class="col-sm-3">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Open" class="card d-flex justify-content-center align-items-center border border-orangeSection btn btn-outline-orangeSection shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Open" class="card d-flex justify-content-center align-items-center border border-orangeSection btn btn-outline-orangeSection shadow-sm rounded">
                             <div class="card-body">
                                 <h2 class="mb-20"><span><?php echo e($openCondition); ?></span></h2>
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Device In Queue')); ?></h6>
@@ -27,7 +27,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Repairing" class="card d-flex justify-content-center align-items-center border border-purpleSection btn btn-outline-purpleSection shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Repairing" class="card d-flex justify-content-center align-items-center border border-purpleSection btn btn-outline-purpleSection shadow-sm rounded">
                             <div class="card-body">
                                 <h2 class="mb-20"><?php echo e($repairingCondition); ?></h2>
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Under Repair')); ?></h6>
@@ -35,7 +35,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Testing" class=" card d-flex justify-content-center align-items-center border border-warning btn btn-outline-warning shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Testing" class=" card d-flex justify-content-center align-items-center border border-warning btn btn-outline-warning shadow-sm rounded">
                             <div class="card-body text-dark">
                                 <h2 class="mb-20"><?php echo e($testingCondition); ?></h2>
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Under Test')); ?></h6>
@@ -43,7 +43,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Repaired" class=" card d-flex justify-content-center align-items-center border border-success btn btn-outline-success shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Repaired" class=" card d-flex justify-content-center align-items-center border border-success btn btn-outline-success shadow-sm rounded">
                             <div class="card-body">
                                 <h2 class="mb-20"><?php echo e($repairedCondition); ?></h2>
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Repaired')); ?></h6>
@@ -55,7 +55,7 @@
 
                 <div class="row mb-5">
                     <div class="col-sm-3">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Delivered" class=" card d-flex bg-success justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Delivered" class=" card d-flex bg-success justify-content-center align-items-center border border-success btn btn-success shadow-sm rounded">
                             <div class="card-body">
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Delivered')); ?></h6>
                                 <h2 class="m-b-20"><span><?php echo e($deliveredCondition); ?></span></h2>
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="col-sm-3">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Delayed" class=" card d-flex bg-orangeSection justify-content-center align-items-center border border-orangeSection btn btn-orangeSection shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Delayed" class=" card d-flex bg-orangeSection justify-content-center align-items-center border border-orangeSection btn btn-orangeSection shadow-sm rounded">
                             <div class="card-body">
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Late Delivery')); ?></h6>
                                 <h2 class="m-b-20"><?php echo e($delayedCondition); ?></h2>
@@ -72,7 +72,7 @@
                         </a>
                     </div>
                     <div class="col-sm-3">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Unsuccessful" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Unsuccessful" class=" card bg-danger d-flex bg-warning justify-content-center align-items-center border border-danger btn btn-danger shadow-sm rounded">
                             <div class="card-body">
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Delivery Problem')); ?></h6>
                                 <h2 class="m-b-20"><span><?php echo e($unsuccesfulCondition); ?></span></h2>
@@ -81,7 +81,7 @@
                     </div>
 
                     <div class="col-sm-3 ">
-                        <a href="<?php echo e(route('DeviceList')); ?>/?Condition=Refund" class=" card bg-section d-flex bg-warning justify-content-center align-items-center border border-section btn btn-section shadow-sm rounded">
+                        <a href="<?php echo e(route('deviceList.index')); ?>/?Condition=Refund" class=" card bg-section d-flex bg-warning justify-content-center align-items-center border border-section btn btn-section shadow-sm rounded">
                             <div class="card-body">
                                 <h6 class="m-t-0 text-uppercase"><?php echo e(__('Refund')); ?></h6>
                                 <h2 class="m-b-20"><span><?php echo e($refundCondition); ?></span></h2>
@@ -208,47 +208,10 @@
         <div class="row p-5">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="m-t-0 text-right header-title"><i class="fas fa-search ml-3"></i><?php echo e(__('Search Invoice')); ?></h4>
-                    <div class="row mb-5 mt-5">
-                        <div class="col-md-12">
-                            <form action="">
-                            <?php echo csrf_field(); ?>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-8 input-group input-group-lg btn btn-outline-transparent p-0">
-                                        <input type="text" class="form-controll rounded" placeholder="<?php echo e(__('Search...')); ?>" />
-                                        <button type="submit" class="btn" >
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                    
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-6">
-
-                                </div>
-                                <div class="col-md-6">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-
-                            </div>
-                            <div class="col-md-6">
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-
-                        </div>
-                    </div>
+                    <home-search
+                        search-term="<?php echo e(__('Search')); ?>"
+                    >
+                    </home-search>
                 </div>
             </div>
         </div>

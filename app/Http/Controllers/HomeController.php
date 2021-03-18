@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\invoices;
 
 class HomeController extends Controller
 {
@@ -22,8 +23,12 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
+    public function index(Request $request)
+    {   
+        $Invoice = null;
+        if($request['invoice_id'] != null){
+            $Invoice = invoices::with(['registered_devices', 'users'])->where('id', '=', $request['invoice_id'])->first();
+        }
         $users = DB::table('users')->select('id', 'name', 'email', 'created_at')->get();
 
         $openCondition = DB::table('registered_devices')->where('Condition', '=', 'Open')->count();
@@ -45,7 +50,8 @@ class HomeController extends Controller
             'deliveredCondition' => $deliveredCondition,
             'delayedCondition' => $delayedCondition,
             'unsuccesfulCondition' => $unsuccesfulCondition,
-            'refundCondition' => $refundCondition
+            'refundCondition' => $refundCondition,
+            'Invoice' => $Invoice,
             ]);
     }
 }

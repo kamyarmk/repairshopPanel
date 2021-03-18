@@ -5,7 +5,7 @@
     <div class="container card p-4">
 
         <div class="row justify-content-md-center mb-5">
-            <div class="col-sm-8">
+            <div class="col-sm-12">
                 <h4 class="header-title m-t-0 mb-4 text-right"><i class="fas fa-laptop-medical ml-2"></i>{{ __('Register Device')}}</h4>
                 <div class="dropdown-divider"></div>
             </div>
@@ -13,119 +13,156 @@
 
 
         <div class="row justify-content-md-center align-items-center">
-            <div class="col-md-8 card-box m-b-20">
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
+            <div class="col-md-12">
+                <!-- Error Area -->
+                <div class="row">
+                    <div class="col-md-12 text-right fw-bolder">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
-                @endif
+                </div>
+                <!-- Device Registration Area -->
                 <form class="form-horizontal" role="form" method="POST">
                     @csrf
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('User')}}</label>
-                        <div class="col-md-10 input-group m-t-10">
-                            <input name="user" type="text" class="form-control" value="{{ old('user') }}">
-                            <button type="button" class="btn btn-primary"  style="overflow: hidden; position: relative;">{{ __('Add')}} </button>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-sm-2 col-form-label">{{ __('Device')}}</label>
-                        <div class="col-sm-10">
-                            <select class="form-select" name="Device">
-                                @foreach ($Devices->all() as $device)
-                                <option value="{{ $device->DeviceName }}">{{$device->DeviceName}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-sm-2 col-form-label">{{ __('Device Model')}}</label>
-                        <div class="col-sm-10">
-                            <select class="form-select" name="DeviceType">
-                                <option value="1">1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-sm-2 col-form-label">{{ __('Device Color')}}</label>
-                        <div class="col-sm-10">
-                            <select class="form-select" name="DeviceColor">
-                                <option value="1">1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('IMEI')}}</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" value="{{ old('IMEI') }}" name="IMEI">
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('Device Problems')}}</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="Problems">{{ old('Problems') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('Device Decription')}}</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="DeviceDescription">{{ old('DeviceDescription') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('Password') }}</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" value="{{ old('password') }}" name="password">
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                <label class="custom-control-label" for="customSwitch1">{{ __('Device Been Accepted Without Code') }}</label>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('Device Accessories')}}</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="DeviceAccessories">{{ old('Device Accessories') }}</textarea>
-                        </div>
-                    </div>            
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('Device Tips')}}</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" rows="5" name="Tips">{{ old('Device Tips') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <label class="col-md-2 col-form-label">{{ __('Budget') }}</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" value="{{ old('Budget') }}" name="MaxBudget">
-                        </div>
-                    </div>
-                    <div class="row mb-4 d-flex justify-content-center">
-                        <div class="col-md-6">
-                            <input type="submit" class="form-control btn btn-primary" value="{{ __('Submit') }}">
+                    <div class="row text-right fw-bold text-decoration-underline">   
+                        <div class="col-md-6 m-b-20">
+                            <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('User')}}</label>
+                                    <div class=" input-group m-t-10 d-flex">
+                                        <user-autocomplete></user-autocomplete>
+                                        <!-- <input name="user" type="text" class="form-control" value="{{ old('user') }}"> -->
+                                        <button type="button" class="btn btn-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal"  style="overflow: hidden; position: relative;">{{ __('Add')}} </button>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <label class="col-form-label">{{ __('Device')}}</label>
+                                    <div class="">
+                                        <select class="form-select" name="Device">
+                                            @foreach ($Devices->all() as $device)
+                                            <option value="{{ $device->DeviceName }}">{{$device->device_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <label class="col-form-label">{{ __('Device Model')}}</label>
+                                    <div class="">
+                                        <select class="form-select" name="DeviceType">
+                                            <option value="1">1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <label class="col-form-label">{{ __('Device Color')}}</label>
+                                    <div class="">
+                                        <select class="form-select" name="DeviceColor">
+                                            <option value="1">1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('IMEI')}}</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" value="{{ old('IMEI') }}" name="IMEI">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('Device Problems')}}</label>
+                                    <div class="">
+                                        <textarea class="form-control" rows="5" name="Problems">{{ old('Problems') }}</textarea>
+                                    </div>
+                                </div>
+                        </div>    
+                        <div class="col-md-6 m-b-20">
+                                
+                                <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('Device Decription')}}</label>
+                                    <div class="">
+                                        <textarea class="form-control" rows="5" name="DeviceDescription">{{ old('DeviceDescription') }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('Password') }}</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" value="{{ old('password') }}" name="password">
+                                        <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                            <label class="custom-control-label" for="customSwitch1">{{ __('Device Been Accepted Without Code') }}</label>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('Device Accessories')}}</label>
+                                    <div class="">
+                                        <textarea class="form-control" rows="1" name="DeviceAccessories">{{ old('Device Accessories') }}</textarea>
+                                    </div>
+                                </div>            
+                                <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('Device Tips')}}</label>
+                                    <div class="">
+                                        <textarea class="form-control" rows="5" name="Tips">{{ old('Device Tips') }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <label class=" col-form-label">{{ __('Budget') }}</label>
+                                    <div class="">
+                                        <input type="text" class="form-control" value="{{ old('Budget') }}" name="MaxBudget">
+                                    </div>
+                                </div>
+                                <div class="row mb-4 d-flex justify-content-center">
+                                    <div class="col-md-6">
+                                        <input type="submit" class="form-control btn btn-primary" value="{{ __('Submit') }}">
+                                    </div>
+                                </div>
+                            
                         </div>
                     </div>
                 </form>
             </div>
+            
 
         </div>
         <!-- end row -->
 
     </div> <!-- end container -->
 
+</div>
+
+<!-- User Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref="exampleModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ __('Register New User')}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <user-create 
+        user-title="{{ __('User')}}"
+        phone-title="{{ __('Phone Number')}}"
+        email-title="{{ __('Email')}}"
+        send-title="{{ __('Submit') }}"
+        close-title="{{ __('Close') }}"
+      >
+        @csrf
+      </user-create>
+    </div>
+  </div>
 </div>
 @endsection
