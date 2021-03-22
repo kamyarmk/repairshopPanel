@@ -39,8 +39,8 @@
                         <div class="card-box">
                             
                             <div class="table-responsive" v-if="results != null">
-                                <table class="table table-hover mails m-0 table table-actions-bar text-right">
-                                    <thead>
+                                <table class="table table-hover mails m-0 table table-actions-bar text-right table-striped rounded">
+                                    <thead class="text-light">
                                         <tr>
                                             <th>{{ prop4Name }}</th>
                                             <th>{{ prop1Name }}</th>

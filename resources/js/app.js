@@ -5,6 +5,8 @@
  */
 
 require('./bootstrap');
+import PDatePicker from 'vue2-persian-datepicker';
+
 
 window.Vue = require('vue').default;
 
@@ -18,7 +20,7 @@ window.Vue = require('vue').default;
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
+Vue.component('pdatepicker', PDatePicker);
 Vue.component('user-autocomplete', require('./components/user-autocomplete.vue').default);
 Vue.component('user-create', require('./components/user-create.vue').default);
 Vue.component('search-regdev', require('./components/tables/search-regDev.vue').default);

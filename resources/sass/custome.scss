@@ -125,3 +125,14 @@ a{
     opacity: 0;
     transform: translateY(30px);
 }
+
+
+.table-responsive{
+    border-radius: 9px;
+    table{
+        thead{
+            background-color: $theadColors !important;
+        }
+    }
+    
+}

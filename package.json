@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "chart.js": "^2.9.4",
-        "persian-datepicker": "^1.2.0"
+        "persian-datepicker": "^1.2.0",
+        "vue2-persian-datepicker": "^2.1.1"
     }
 }

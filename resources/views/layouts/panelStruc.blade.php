@@ -32,6 +32,12 @@
     <!-- persian DatePicker -->
     <link rel="stylesheet" href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css">
 
+    <script src="{{ asset('js/jquery-2.1.4.min.js')}}"></script>
+    <!-- Persian DatePicker -->
+    <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
+    <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/persian-datepicker@latest/dist/css/persian-datepicker.min.css">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.rtl.min.css" integrity="sha384-4dNpRvNX0c/TdYEbYup8qbjvjaMrgUPh+g4I03CnNtANuv+VAvPL6LqdwzZKV38G" crossorigin="anonymous">
@@ -287,15 +293,12 @@
 
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="{{ asset('js/jquery-2.1.4.min.js')}}"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script src="{{ asset('js/jquery.slimscroll.min.js') }}"></script>
 
-    <!-- Persian DatePicker -->
-    <script src="../../../node_modules/persian-date/dist/persian-date.js" type="text/javascript"></script>
-    <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
-    <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
+    
 
     <!--Morris Chart-->
     
@@ -305,12 +308,5 @@
 
     <!-- App Js -->
     <script src="{{ asset('js/jquery.app.js') }}"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function() {
-            $(".datePickerPlace").persianDatepicker();
-        });
-
-    </script>
 </body>
 </html>

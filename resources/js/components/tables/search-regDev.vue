@@ -13,11 +13,21 @@
                     </div>
                     <div v-if="prop3" class="col-md-2">
                         <label for="">{{ prop3Name }}</label>
-                        <input type="text" class="form-control datePickerPlace" :name="prop3" v-model="keyword3">
+                        <pdatepicker 
+                            v-model="keyword3"
+                            :name="prop3"
+                            input-class="form-control w-100 text-right"
+                            wrapper-class=""
+                        ></pdatepicker>
                     </div>
                     <div v-if="prop4" class="col-md-2">
                         <label for="">{{ prop4Name }}</label>
-                        <input type="text" class="form-control" :name="prop4" v-model="keyword4">
+                        <pdatepicker 
+                            v-model="keyword4"
+                            :name="prop4"
+                            input-class="form-control w-100 text-right"
+                            wrapper-class=""
+                        ></pdatepicker>
                     </div>
                     <div v-if="prop5" class="col-md-2">
                         <label for="">{{ prop5Name }}</label>
@@ -39,8 +49,8 @@
                         <div class="card-box">
                             
                             <div class="table-responsive" v-if="results != null">
-                                <table class="table table-hover mails m-0 table table-actions-bar text-right">
-                                    <thead>
+                                <table class="table table-hover mails m-0 table table-actions-bar text-right table-striped rounded">
+                                    <thead class="text-light">
                                         <tr>
                                             <th>{{ idCounter }}</th>
                                             <th>{{ prop1Name }}</th>
@@ -99,17 +109,16 @@
 </template>
 
 <script>
-// data-bs-toggle="dropdown" 
+// data-bs-toggle="dropdown"
 export default {
     data() {
         return {
             keyword1: null,
             keyword2: null,
-            keyword3: null,
-            keyword4: null,
+            keyword3: '1400/1/1',
+            keyword4: '1400/1/1',
             keyword5: null,
             results: [],
-            
         };
     },
     created(){
@@ -117,8 +126,7 @@ export default {
                 params: { 
                     keyword1: this.keyword1 ,
                     keyword2: this.keyword2 ,
-                    keyword3: this.keyword3 ,
-                    keyword4: this.keyword4 ,
+
                     keyword5: this.keyword5 
                     } 
                 })
@@ -150,12 +158,12 @@ export default {
         keyword2(after, before) {
             this.getResults();
         },
-        keyword3(after, before) {
-            this.getResults();
-        },
-        keyword4(after, before) {
-            this.getResults();
-        },
+        // keyword3(after, before) {
+        //     this.getResults();
+        // },
+        // keyword4(after, before) {
+        //     this.getResults();
+        // },
         keyword5(after, before) {
             this.getResults();
         }
@@ -166,8 +174,7 @@ export default {
                 params: { 
                     keyword1: this.keyword1 ,
                     keyword2: this.keyword2 ,
-                    keyword3: this.keyword3 ,
-                    keyword4: this.keyword4 ,
+                    
                     keyword5: this.keyword5 
                     } 
                 })
@@ -184,7 +191,7 @@ export default {
                 .catch(error => {});
         },
         mounted(){
-
+            
         }
     }
 }
