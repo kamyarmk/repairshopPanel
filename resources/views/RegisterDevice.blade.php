@@ -11,6 +11,13 @@
             </div>
         </div>
 
+        <div class="row mb-5">
+            <div class="col-md-12 d-flex justify-content-md-center">
+                <button type="button" class="btn btn-primary text-decoration-none w-25 ml-2" data-bs-toggle="modal" data-bs-target="#exampleModal"  style="overflow: hidden; position: relative;">{{ __('Add New User')}} </button>
+                <button type="button" class="btn btn-primary text-decoration-none w-25 mr-2" data-bs-toggle="modal" data-bs-target="#deviceModal"  style="overflow: hidden; position: relative;">{{ __('Add New Device Type')}} </button>
+            </div>
+        </div>
+
 
         <div class="row justify-content-md-center align-items-center">
             <div class="col-md-12">
@@ -38,7 +45,6 @@
                                     <div class=" input-group m-t-10 d-flex">
                                         <user-autocomplete></user-autocomplete>
                                         <!-- <input name="user" type="text" class="form-control" value="{{ old('user') }}"> -->
-                                        <button type="button" class="btn btn-primary text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal"  style="overflow: hidden; position: relative;">{{ __('Add')}} </button>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -162,6 +168,28 @@
       >
         @csrf
       </user-create>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deviceModal" tabindex="-1" aria-labelledby="deviceModalLabel" aria-hidden="true" ref="deviceModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deviceModalLabel">{{ __('Register New Device')}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <quick-devicereg
+        device-name="{{ __('Device Name') }}"
+        device-type="{{ __('Device Type') }}"
+        device-config="{{ __('Device Config') }}"
+        name="{{ __('Name') }}"
+        destroy="{{ __('Destroy') }}"
+        send-title="{{ __('Submit') }}"
+        close-title="{{ __('Close') }}"
+      >
+        @csrf
+      </quick-devicereg>
     </div>
   </div>
 </div>

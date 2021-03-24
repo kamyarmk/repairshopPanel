@@ -78,24 +78,25 @@ class DevicesController extends Controller
      * @param  Request  $data
      * @return Response
      */
-    protected function create(Request $data)
+    protected function store(Request $data)
     {
         $validator = Validator::make($data->all(), [
-            'DeviceName' => ['required', 'string', 'max:255'],
-            'DeviceType' => ['required', 'string', 'max:255', 'unique:users'],
+            'device_name' => ['required', 'string', 'max:255', 'unique:devices'],
+            'device_type' => ['required', 'string', 'max:255'],
         ]);
 
         if ($validator->fails()) {
-            return redirect('Devices')
-                        ->withErrors($validator)
-                        ->withInput();
+            return response()->json(['errors'=>$validator->errors()],422);
         }
 
         $devicemaking = Devices::create([
-            'DeviceName' => $data['DeviceName'],
-            'DeviceType' => $data['DeviceType'],
+            'DeviceName' => $data['device_name'],
+            'DeviceType' => $data['device_type'],
         ]);
-        return redirect('Devices');
+        return response()->json([
+            'device' => $devicemaking,
+            'message' => 'Success'
+          ], 200);
     }
 
     public function data(Request $request){

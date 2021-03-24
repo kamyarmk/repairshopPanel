@@ -65,7 +65,7 @@
                                                 {{ datas.device_type }}
                                             </td>
                                             <td>
-                                                <a v-bind:href="'/DeviceList/' + datas.id" class="w-100 btn btn-success">
+                                                <a v-bind:href="'/Devices/' + datas.id" class="w-100 btn btn-success">
                                                     {{ editText }}
                                                 </a>
                                             </td>

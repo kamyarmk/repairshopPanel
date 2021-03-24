@@ -117,7 +117,7 @@ class UserListController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return  response()->json(['errors'=>$validator->errors()],422);;  
+            return  response()->json(['errors'=>$validator->errors()],422);
         }
 
         $user = User::create([
@@ -130,7 +130,7 @@ class UserListController extends Controller
         return response()->json([
             'user' => $user,
             'message' => 'Success'
-          ], 200);;
+          ], 200);
     }
 
 }

@@ -56,6 +56,7 @@ Route::get('/Devices', [App\Http\Controllers\DevicesController::class, 'index'])
 Route::put('/Devices/{Devices}', [App\Http\Controllers\DevicesController::class, 'update'])->name('devices.update');
 Route::delete('/Devices/{Devices}', [App\Http\Controllers\DevicesController::class, 'destory'])->name('devices.destory');
 
+
 //Device Detailed Page
 Route::get('/Devices/{Devices}', [App\Http\Controllers\DevicesController::class, 'show'])->name('devices.show');
 
@@ -75,4 +76,4 @@ Route::get('/regdevicevue', [App\Http\Controllers\DeviceListController::class, '
 Route::get('/invoicesvue', [App\Http\Controllers\InvoiceController::class, 'data'])->name('invoice.data');
 Route::post('/UserCreateVue', [App\Http\Controllers\UserListController::class, 'vueCreate'])->name('userList.create');
 Route::get('/devicevuew', [App\Http\Controllers\DevicesController::class, 'data'])->name('devices.data');
-
+Route::post('/Devices', [App\Http\Controllers\DevicesController::class, 'store'])->name('devices.store');
