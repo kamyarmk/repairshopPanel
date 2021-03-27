@@ -9,6 +9,11 @@ class Devices extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'device_name',
+        'device_type',
+    ];
+
     public function registered_devices(){
         return $this->hasMany(registered_devices::class);
     }

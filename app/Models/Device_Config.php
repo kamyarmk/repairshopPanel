@@ -9,6 +9,12 @@ class Device_Config extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'devices_id',
+        'name',
+        'type',
+    ];
+
     protected $table = 'device__configs';
 
     public function Devices(){

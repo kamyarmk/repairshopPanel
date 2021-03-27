@@ -24,7 +24,7 @@
             
             <div class="row mb-4">
                 <label class="col-form-label">{{ deviceConfig }}</label>
-                <ul class="list-group" v-for="config in configlist" :key="config.id" >
+                <ul class="list-group" v-for="config in configlist" :key="config[0]" >
                     <li class="list-group-item">
                         <form class="row">
                             <div class="col-6">
@@ -37,7 +37,7 @@
                                     <input 
                                         type="text" 
                                         :placeholder="name" 
-                                        :value="$config.name"
+                                        :value="config"
                                         class="form-control col-md-9"
                                     />
                                 </div>
@@ -51,7 +51,7 @@
                                         {{sendTitle}}
                                     </button>
                                     <button 
-                                        href="#"
+                                        @click.prevent="deleteItem(config)"
                                         class="btn btn-danger col-5"
                                     >
                                         {{destroy}}
@@ -63,7 +63,7 @@
                 </ul>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <form class="row">
+                        <form @submit.prevent="configAdd" class="row">
                             <div class="col-6">
                                 <div class="row">
                                     <label
@@ -83,7 +83,7 @@
                                 <div class="row justify-content-evenly">
                                     <button 
                                         type="submit"
-                                        class="btn btn-success w-25"
+                                        class="btn btn-success w-50"
                                     >
                                         {{sendTitle}}
                                     </button>
@@ -109,6 +109,7 @@ export default {
             device_name: null,
             device_type: null,
             deviceConfig: null,
+            config: [],
             configName: '',
             configlist: [],
             result: null,
@@ -126,15 +127,30 @@ export default {
     },
     methods:{
         formSubmit: function(){
-            axios.post('/UserCreateVue', 
+            axios.post('/Devices', 
                 { 
-                    device_name: this.userName ,
-                    device_type: this.emailAddress
+                    device_name: this.device_name ,
+                    device_type: this.device_type,
+                    configs: this.configlist
                 } 
                 )
                 .then(res => this.result =  res.data)
                 .catch(error => {});
                 $('#deviceModal').modal('hide');
+        },
+        configAdd: function(){
+            if(this.configName != null){
+                this.configlist.push(
+                    this.configName
+                );
+                this.configName = null;
+            }
+        },
+        deleteItem: function(config){
+
+            this.configlist = this.configlist.filter(function(value, index, arr){
+                return value != config;
+            });
         },
         mounted(){
 

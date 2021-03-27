@@ -70,6 +70,85 @@
   url(/fonts/font_218487_3a0py6w451k.svg?4cba485fd86edb9b4f8547f0a801d881#iconfont) format('svg');
 }
 
+/**
+*
+*	Name:			IRAN Sans-Serif Font
+*	Version:		5.0
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Dec 25, 2012
+*	Updated on:		Sep 01, 2017
+*	Website:		             http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونت های ایران سن سریف یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRAN Sans-serif fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com 
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+--------------------------------------------------------------------------------------
+*	
+**/
+@font-face {
+	font-family: IRANSansEN;
+	font-style: normal;
+	font-weight: 900;
+	src: url(/fonts/EnIRANSansWeb_Black.eot?fee322c97e60404927e30c2bba1f52c1);
+	src: url(/fonts/EnIRANSansWeb_Black.eot?fee322c97e60404927e30c2bba1f52c1?#iefix) format('embedded-opentype'),  
+		 url(/fonts/EnIRANSansWeb_Black.woff2?2d5331d8a603c7338c28ae5be2fe2529) format('woff2'),  
+		 url(/fonts/EnIRANSansWeb_Black.woff?e94a490e4b555bd60e4c7a8612c7c7fe) format('woff'),  
+		 url(/fonts/EnIRANSansWeb_Black.ttf?b856e951d6045d5d33a03ceacd48275b) format('truetype');
+}
+@font-face {
+	font-family: IRANSansEN;
+	font-style: normal;
+	font-weight: bold;
+	src: url(/fonts/EnIRANSansWeb_Bold.eot?f18db7b4f37eed9b994774079e6c38f8);
+	src: url(/fonts/EnIRANSansWeb_Bold.eot?f18db7b4f37eed9b994774079e6c38f8?#iefix) format('embedded-opentype'),  
+		 url(/fonts/EnIRANSansWeb_Bold.woff2?94bdf556f91548a6f1a415e10dcb81a8) format('woff2'),  
+		 url(/fonts/EnIRANSansWeb_Bold.woff?dd12fb6add9534790d36b39ffbfbd5db) format('woff'),  
+		 url(/fonts/EnIRANSansWeb_Bold.ttf?e65c9d525ca3a18949ebece112f381ce) format('truetype');
+}
+@font-face {
+	font-family: IRANSansEN;
+	font-style: normal;
+	font-weight: 500;
+	src: url(/fonts/EnIRANSansWeb_Medium.eot?d1f537d1a9a596eb5339108366ddbe5a);
+	src: url(/fonts/EnIRANSansWeb_Medium.eot?d1f537d1a9a596eb5339108366ddbe5a?#iefix) format('embedded-opentype'),  
+		 url(/fonts/EnIRANSansWeb_Medium.woff2?9f338149d9f52fe4faab7a0e9120f639) format('woff2'),  
+		 url(/fonts/EnIRANSansWeb_Medium.woff?2d28b58d14c6602dc6664d17784111af) format('woff'),  
+		 url(/fonts/EnIRANSansWeb_Medium.ttf?dde1bbb65f9abe693cab043a199a7175) format('truetype');
+}
+@font-face {
+	font-family: IRANSansEN;
+	font-style: normal;
+	font-weight: 300;
+	src: url(/fonts/EnIRANSansWeb_Light.eot?b9db61ce89b7ca7fd3e73cab1bde4c45);
+	src: url(/fonts/EnIRANSansWeb_Light.eot?b9db61ce89b7ca7fd3e73cab1bde4c45?#iefix) format('embedded-opentype'),  
+		 url(/fonts/EnIRANSansWeb_Light.woff2?b5815f24cdb58ca5af8471026ca5a581) format('woff2'),  
+		 url(/fonts/EnIRANSansWeb_Light.woff?b35266cba8a813875e6dd5b16ec165f6) format('woff'),  
+		 url(/fonts/EnIRANSansWeb_Light.ttf?f1c0e72c287ef95dd77720c2241123f6) format('truetype');
+}
+@font-face {
+	font-family: IRANSansEN;
+	font-style: normal;
+	font-weight: 200;
+	src: url(/fonts/EnIRANSansWeb_UltraLight.eot?aea412769ad8390c96ea18551b9c3c8b);
+	src: url(/fonts/EnIRANSansWeb_UltraLight.eot?aea412769ad8390c96ea18551b9c3c8b?#iefix) format('embedded-opentype'),  
+		 url(/fonts/EnIRANSansWeb_UltraLight.woff2?801b490e56a0f7e84052540571d50101) format('woff2'),  
+		 url(/fonts/EnIRANSansWeb_UltraLight.woff?6f6cd6631c5a4ff7eb79c2902af6659e) format('woff'),  
+		 url(/fonts/EnIRANSansWeb_UltraLight.ttf?69e4612c3d672b0a982da22750f0cad3) format('truetype');
+}
+@font-face {
+	font-family: IRANSansEN;
+	font-style: normal;
+	font-weight: normal;
+	src: url(/fonts/EnIRANSansWeb.eot?432a2b2da04e215189122208ea7794d7);
+	src: url(/fonts/EnIRANSansWeb.eot?432a2b2da04e215189122208ea7794d7?#iefix) format('embedded-opentype'),  
+		 url(/fonts/EnIRANSansWeb.woff2?cdb118d6a351d596a2d78c7fe986de6b) format('woff2'),  
+		 url(/fonts/EnIRANSansWeb.woff?9ffdcda01ffd6d404d6f159bb5691444) format('woff'),  
+		 url(/fonts/EnIRANSansWeb.ttf?ae01de6907048fbaba8b352fe81eb56f) format('truetype');
+}
+
 @charset "UTF-8";
 
 /*!
@@ -11894,6 +11973,10 @@ a:focus {
 
 .table-responsive table thead {
   background-color: #36304a !important;
+}
+
+.english-text {
+  font-family: "IRANSansEN", sans-serif;
 }
 
 

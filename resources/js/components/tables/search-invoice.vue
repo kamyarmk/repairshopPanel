@@ -13,7 +13,7 @@
                     </div>
                     <div v-if="prop2" class="col-md-2">
                         <label for="">{{ prop2Name }}</label>
-                        <input type="text" class="form-control" :name="prop2" v-model="keyword2">
+                        <input type="text" class="form-control english-text" :name="prop2" v-model="keyword2">
                     </div>
                     <div v-if="prop3" class="col-md-2">
                         <label for="">{{ prop3Name }}</label>
@@ -60,7 +60,7 @@
                                             <td>
                                                 {{datas.id}}
                                             </td>
-                                            <td>
+                                            <td class="english-text">
                                                 {{datas.users.name}}
                                             </td>
                                             <td>

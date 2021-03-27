@@ -90,11 +90,19 @@ class DevicesController extends Controller
         }
 
         $devicemaking = Devices::create([
-            'DeviceName' => $data['device_name'],
-            'DeviceType' => $data['device_type'],
+            'device_name' => $data['device_name'],
+            'device_type' => $data['device_type'],
         ]);
+        foreach ($data['configs'] as  $config){
+            $deviceConfig = Device_Config::create([
+                'devices_id' => $devicemaking->id,
+                'name' => $config,
+                'type' => 'checkbox'
+            ]);
+        }
         return response()->json([
             'device' => $devicemaking,
+            'device_config' => $deviceConfig,
             'message' => 'Success'
           ], 200);
     }

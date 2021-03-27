@@ -273,7 +273,7 @@
                                     </li>
                                     <li class="divider"></li>
                                     <li class="dropdown-item"><a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> <?php echo e(__('Logout')); ?></a></li>
                                     <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
                                         <?php echo csrf_field(); ?>
                                     </form>

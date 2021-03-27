@@ -2074,6 +2074,7 @@ __webpack_require__.r(__webpack_exports__);
       device_name: null,
       device_type: null,
       deviceConfig: null,
+      config: [],
       configName: '',
       configlist: [],
       result: null,
@@ -2093,13 +2094,25 @@ __webpack_require__.r(__webpack_exports__);
     formSubmit: function formSubmit() {
       var _this = this;
 
-      axios.post('/UserCreateVue', {
-        device_name: this.userName,
-        device_type: this.emailAddress
+      axios.post('/Devices', {
+        device_name: this.device_name,
+        device_type: this.device_type,
+        configs: this.configlist
       }).then(function (res) {
         return _this.result = res.data;
       })["catch"](function (error) {});
       $('#deviceModal').modal('hide');
+    },
+    configAdd: function configAdd() {
+      if (this.configName != null) {
+        this.configlist.push(this.configName);
+        this.configName = null;
+      }
+    },
+    deleteItem: function deleteItem(config) {
+      this.configlist = this.configlist.filter(function (value, index, arr) {
+        return value != config;
+      });
     },
     mounted: function mounted() {}
   }
@@ -40994,7 +41007,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _vm._l(_vm.configlist, function(config) {
-                return _c("ul", { key: config.id, staticClass: "list-group" }, [
+                return _c("ul", { key: config[0], staticClass: "list-group" }, [
                   _c("li", { staticClass: "list-group-item" }, [
                     _c("form", { staticClass: "row" }, [
                       _c("div", { staticClass: "col-6" }, [
@@ -41010,7 +41023,7 @@ var render = function() {
                           _c("input", {
                             staticClass: "form-control col-md-9",
                             attrs: { type: "text", placeholder: _vm.name },
-                            domProps: { value: _vm.$config.name }
+                            domProps: { value: config }
                           })
                         ])
                       ]),
@@ -41039,7 +41052,12 @@ var render = function() {
                               "button",
                               {
                                 staticClass: "btn btn-danger col-5",
-                                attrs: { href: "#" }
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.deleteItem(config)
+                                  }
+                                }
                               },
                               [
                                 _vm._v(
@@ -41059,60 +41077,76 @@ var render = function() {
               _vm._v(" "),
               _c("ul", { staticClass: "list-group" }, [
                 _c("li", { staticClass: "list-group-item" }, [
-                  _c("form", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-6" }, [
-                      _c("div", { staticClass: "row" }, [
-                        _c("label", { staticClass: "col-md-3" }, [
-                          _vm._v(
-                            "\n                                    " +
-                              _vm._s(_vm.name) +
-                              "\n                                "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.configName,
-                              expression: "configName"
-                            }
-                          ],
-                          staticClass: "form-control col-md-9",
-                          attrs: { type: "text", placeholder: _vm.name },
-                          domProps: { value: _vm.configName },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.configName = $event.target.value
-                            }
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-6" }, [
-                      _c("div", { staticClass: "row justify-content-evenly" }, [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "btn btn-success w-25",
-                            attrs: { type: "submit" }
-                          },
-                          [
+                  _c(
+                    "form",
+                    {
+                      staticClass: "row",
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.configAdd($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "col-6" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c("label", { staticClass: "col-md-3" }, [
                             _vm._v(
                               "\n                                    " +
-                                _vm._s(_vm.sendTitle) +
+                                _vm._s(_vm.name) +
                                 "\n                                "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.configName,
+                                expression: "configName"
+                              }
+                            ],
+                            staticClass: "form-control col-md-9",
+                            attrs: { type: "text", placeholder: _vm.name },
+                            domProps: { value: _vm.configName },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.configName = $event.target.value
+                              }
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-6" }, [
+                        _c(
+                          "div",
+                          { staticClass: "row justify-content-evenly" },
+                          [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-success w-50",
+                                attrs: { type: "submit" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                    " +
+                                    _vm._s(_vm.sendTitle) +
+                                    "\n                                "
+                                )
+                              ]
                             )
                           ]
                         )
                       ])
-                    ])
-                  ])
+                    ]
+                  )
                 ])
               ])
             ],
@@ -41346,7 +41380,7 @@ var render = function() {
                         expression: "keyword1"
                       }
                     ],
-                    staticClass: "form-control",
+                    staticClass: "form-control english-text",
                     attrs: { type: "text", name: _vm.prop1 },
                     domProps: { value: _vm.keyword1 },
                     on: {
@@ -41376,7 +41410,7 @@ var render = function() {
                         expression: "keyword2"
                       }
                     ],
-                    staticClass: "form-control",
+                    staticClass: "form-control english-text",
                     attrs: { type: "text", name: _vm.prop2 },
                     domProps: { value: _vm.keyword2 },
                     on: {
@@ -41542,7 +41576,7 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("td", [
+                              _c("td", { staticClass: "english-text" }, [
                                 _vm._v(
                                   "\n                                            " +
                                     _vm._s(datas.device_name) +
@@ -41721,7 +41755,7 @@ var render = function() {
                         expression: "keyword2"
                       }
                     ],
-                    staticClass: "form-control",
+                    staticClass: "form-control english-text",
                     attrs: { type: "text", name: _vm.prop2 },
                     domProps: { value: _vm.keyword2 },
                     on: {
@@ -41861,7 +41895,7 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("td", [
+                              _c("td", { staticClass: "english-text" }, [
                                 _vm._v(
                                   "\n                                            " +
                                     _vm._s(datas.users.name) +
@@ -42009,7 +42043,7 @@ var render = function() {
                         expression: "keyword1"
                       }
                     ],
-                    staticClass: "form-control",
+                    staticClass: "form-control english-text",
                     attrs: { type: "text", name: _vm.prop1 },
                     domProps: { value: _vm.keyword1 },
                     on: {
@@ -42039,7 +42073,7 @@ var render = function() {
                         expression: "keyword2"
                       }
                     ],
-                    staticClass: "form-control",
+                    staticClass: "form-control english-text",
                     attrs: { type: "text", name: _vm.prop2 },
                     domProps: { value: _vm.keyword2 },
                     on: {
@@ -42205,7 +42239,7 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("td", [
+                              _c("td", { staticClass: "english-text" }, [
                                 _vm._v(
                                   "\n                                            " +
                                     _vm._s(datas.IMEI) +
@@ -42213,7 +42247,7 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("td", [
+                              _c("td", { staticClass: "english-text" }, [
                                 _c(
                                   "a",
                                   {
@@ -42358,7 +42392,7 @@ var render = function() {
                         expression: "keyword1"
                       }
                     ],
-                    staticClass: "form-control",
+                    staticClass: "form-control english-text",
                     attrs: { type: "text", name: _vm.prop1 },
                     domProps: { value: _vm.keyword1 },
                     on: {
@@ -42388,7 +42422,7 @@ var render = function() {
                         expression: "keyword2"
                       }
                     ],
-                    staticClass: "form-control",
+                    staticClass: "form-control english-text",
                     attrs: { type: "text", name: _vm.prop2 },
                     domProps: { value: _vm.keyword2 },
                     on: {
@@ -42562,7 +42596,7 @@ var render = function() {
                                 )
                               ]),
                               _vm._v(" "),
-                              _c("td", [
+                              _c("td", { staticClass: "english-text" }, [
                                 _vm._v(
                                   "\n                                            " +
                                     _vm._s(datas.name) +

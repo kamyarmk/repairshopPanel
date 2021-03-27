@@ -231,7 +231,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div>
-                        <strong>Simple Admin</strong> - Copyright &copy; 2017
+                        <strong>Dartweb Panel</strong> - Copyright &copy; 2021
                     </div>
                 </div>
             </div>

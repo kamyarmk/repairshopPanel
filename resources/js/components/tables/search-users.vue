@@ -5,11 +5,11 @@
                 <form action="" class="row d-flex align-items-center justify-content-center text-right">
                     <div v-if="prop1" class="col-md-2">
                         <label for="">{{ prop1Name }}</label>
-                        <input type="text" class="form-control" :name="prop1" v-model="keyword1">
+                        <input type="text" class="form-control english-text" :name="prop1" v-model="keyword1">
                     </div>
                     <div v-if="prop2" class="col-md-2">
                         <label for="">{{ prop2Name }}</label>
-                        <input type="text" class="form-control" :name="prop2" v-model="keyword2">
+                        <input type="text" class="form-control english-text" :name="prop2" v-model="keyword2">
                     </div>
                     <div v-if="prop3" class="col-md-2">
                         <label for="">{{ prop3Name }}</label>
@@ -61,7 +61,7 @@
                                             <td>
                                                 {{datas.id}}
                                             </td>
-                                            <td>
+                                            <td class="english-text">
                                                 {{datas.name}}
                                             </td>
                                             <td>
