@@ -44,7 +44,6 @@
                                     <label class=" col-form-label">{{ __('User')}}</label>
                                     <div class=" input-group m-t-10 d-flex">
                                         <user-autocomplete></user-autocomplete>
-                                        <!-- <input name="user" type="text" class="form-control" value="{{ old('user') }}"> -->
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -52,7 +51,7 @@
                                     <div class="">
                                         <select class="form-select" name="Device">
                                             @foreach ($Devices->all() as $device)
-                                            <option value="{{ $device->DeviceName }}">{{$device->device_name}}</option>
+                                            <option value="{{ $device->id }}">{{$device->device_name}}</option>
                                             @endforeach
                                         </select>
                                     </div>

@@ -6,9 +6,16 @@
 
 require('./bootstrap');
 import PDatePicker from 'vue2-persian-datepicker';
+import moment from 'moment';
 
 
 window.Vue = require('vue').default;
+
+Vue.filter('formatDate', function(value) {
+    if (value) {
+        return moment(String(value)).format('YYYY/MM/DD')
+    }
+});
 
 /**
  * The following block of code may be used to automatically register your

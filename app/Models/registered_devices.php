@@ -26,6 +26,8 @@ class registered_devices extends Model
         'SeccondQC',
         'MaxBudget',
         'Condition',
+        'created_at',
+        'updated_at'
     ];
 
     public function users(){

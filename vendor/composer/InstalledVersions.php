@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'eb551d4a66f259ecc22db3ebb201c32672f61302',
+    'reference' => '2b74deb827258a7f4f664acab9b0b9159f482721',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -42,6 +42,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'beberlei/assert' => 
+    array (
+      'pretty_version' => 'v3.3.0',
+      'version' => '3.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5367e3895976b49704ae671f75bc5f0ba1b986ab',
     ),
     'brick/math' => 
     array (
@@ -477,7 +486,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'eb551d4a66f259ecc22db3ebb201c32672f61302',
+      'reference' => '2b74deb827258a7f4f664acab9b0b9159f482721',
     ),
     'laravel/sail' => 
     array (
@@ -550,6 +559,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
+    ),
+    'morilog/jalali' => 
+    array (
+      'pretty_version' => 'v3.2.0',
+      'version' => '3.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '7ea78b84ce3b5546b01217febb2fba4915dac5e5',
     ),
     'mtdowling/cron-expression' => 
     array (

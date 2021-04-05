@@ -105,7 +105,8 @@ class DeviceListController extends Controller
                     ->select('registered_devices.*', 'devices.*');
         }
         if($request['keyword3'] != null){
-            $Devices->where('created_at', '=', $request['keyword3']);
+            // $dateRequest = str_replace('-', '/', $request['keyword3']);
+            $Devices->where('created_at', 'LIKE', '%' . $request['keyword3'] . '%');
         }
         if($request['keyword4'] != null){
             $Devices->where('finished_at', '=', $request['keyword4']);

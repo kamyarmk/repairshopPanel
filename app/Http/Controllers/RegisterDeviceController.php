@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\RegisteredDevices;
+use App\Models\registered_devices;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Devices;
+use \Morilog\Jalali\Jalalian;
 
 class RegisterDeviceController extends Controller
 {
@@ -41,7 +42,7 @@ class RegisterDeviceController extends Controller
     {
         $validator = Validator::make($data->all(), [
             'user' => ['required', 'string', 'max:255'],
-            'Device' => ['required', 'string', 'max:255', 'unique:users'],
+            'Device' => ['required', 'string', 'max:255'],
             'DeviceType' => ['required', 'string'],
             'DeviceColor' => ['required', 'string'],
             'IMEI' => ['required', 'string'],
@@ -52,6 +53,7 @@ class RegisterDeviceController extends Controller
             'Tips' => ['required', 'string'],
             'MaxBudget' => ['required', 'string'],
         ]);
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
 
         if ($validator->fails()) {
             return redirect('RegisterDevice')
@@ -59,9 +61,9 @@ class RegisterDeviceController extends Controller
                         ->withInput();
         }
 
-        RegisteredDevices::create([
-            'userId' => $data['user'],
-            'Device' => $data['Device'],
+        registered_devices::create([
+            'user_id' => $data['userID'],
+            'devices_id' => $data['Device'],
             'DeviceType' => $data['DeviceType'],
             'DeviceColor' => $data['DeviceColor'],
             'IMEI' => $data['IMEI'],
@@ -72,6 +74,8 @@ class RegisterDeviceController extends Controller
             'Tips' => $data['Tips'],
             'MaxBudget' => $data['MaxBudget'],
             'Condition' => 'Open',
+            'updated_at' => $dateForCreating,
+            'created_at' => $dateForCreating
         ]);
 
         return redirect('DeviceList');
