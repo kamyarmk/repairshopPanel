@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="row mb-4 justify-content-evenly">
                                         <div class="col-md-4">
-                                            <button class="btn btn-orangeSection col-md-12">{{ __('Print') }}</button>
+                                            <a href="{{route('invoice.print', $Invoice->id)}}" target="_Blank" class="btn btn-orangeSection col-md-12">{{ __('Print') }}</a>
                                         </div>
                                         <div class="col-md-4">
                                             <button class="btn btn-purpleSection col-md-12">{{ __('Send Invoice') }}</button>

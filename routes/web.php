@@ -77,3 +77,6 @@ Route::get('/invoicesvue', [App\Http\Controllers\InvoiceController::class, 'data
 Route::post('/UserCreateVue', [App\Http\Controllers\UserListController::class, 'vueCreate'])->name('userList.create');
 Route::get('/devicevuew', [App\Http\Controllers\DevicesController::class, 'data'])->name('devices.data');
 Route::post('/Devices', [App\Http\Controllers\DevicesController::class, 'store'])->name('devices.store');
+
+// Print Function
+Route::get('/invoice/print/{id}', [App\Http\Controllers\InvoiceController::class, 'print'])->name('invoice.print');

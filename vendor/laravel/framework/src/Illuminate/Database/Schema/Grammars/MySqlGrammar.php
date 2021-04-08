@@ -191,7 +191,7 @@ class MySqlGrammar extends Grammar
     }
 
     /**
-     * Compile the auto incrementing column starting values.
+     * Compile the auto-incrementing column starting values.
      *
      * @param  \Illuminate\Database\Schema\Blueprint  $blueprint
      * @return array
@@ -691,7 +691,11 @@ class MySqlGrammar extends Grammar
     {
         $columnType = $column->precision ? "datetime($column->precision)" : 'datetime';
 
-        return $column->useCurrent ? "$columnType default CURRENT_TIMESTAMP" : $columnType;
+        $current = $column->precision ? "CURRENT_TIMESTAMP($column->precision)" : 'CURRENT_TIMESTAMP';
+
+        $columnType = $column->useCurrent ? "$columnType default $current" : $columnType;
+
+        return $column->useCurrentOnUpdate ? "$columnType on update $current" : $columnType;
     }
 
     /**

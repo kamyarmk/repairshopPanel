@@ -9,6 +9,7 @@ use App\Models\invoices;
 use App\Models\registered_devices;
 use App\Models\User;
 use App\Models\Devices;
+use PDF;
 
 
 class InvoiceController extends Controller
@@ -116,5 +117,27 @@ class InvoiceController extends Controller
 
     public function create(){
 
+    }
+
+    public function print($id){
+        $data = invoices::with(['registered_devices', 'users'])->find($id);
+        $pdf = PDF::loadView('pdf.invoice', $data, ['font_path' => base_path('resources/sass/iransans/fonts/ttf'),
+        'font_data' => [
+            'IRANSans' => [
+                'R'  => 'IRANSansWeb.ttf',    // regular font
+                'B'  => 'IRANSansWeb-Bold.ttf',       // optional: bold font
+                'useOTL' => 0xFF,    // required for complicated langs like Persian, Arabic and Chinese
+                'useKashida' => 75,  // required for complicated langs like Persian, Arabic and Chinese
+            ]
+            // ...add as many as you want.
+            ],
+            'format'           => 'A4',
+        ],
+    );
+        return $pdf->stream('document.pdf');
+
+        // $pdf = App::make('dompdf.wrapper');
+        // $pdf->loadHTML('<h1>Test</h1>');
+        // return $pdf->stream();
     }
 }
