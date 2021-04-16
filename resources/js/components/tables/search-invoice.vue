@@ -73,9 +73,9 @@
                                                 </b>
                                             </td>
                                             <td>
-                                                <b><a href="">
-                                                        <b>{{datas.created_at}}</b>
-                                                    </a> 
+                                                <b>
+                                                        <b>{{datas.created_at | formatDate}}</b>
+                                                    
                                                 </b>
                                             </td>
                                             <td>
@@ -154,7 +154,7 @@ export default {
             this.getResults();
         },
         keyword3(after, before) {
-            this.getResults();
+            this.getResultsDate();
         },
         keyword4(after, before) {
             this.getResults();
@@ -169,9 +169,17 @@ export default {
                 params: { 
                     keyword1: this.keyword1 ,
                     keyword2: this.keyword2 ,
-                    keyword3: this.keyword3 ,
                     keyword4: this.keyword4 ,
                     keyword5: this.keyword5 
+                    } 
+                })
+                .then(res => this.results = res.data)
+                .catch(error => {});
+        },
+        getResultsDate() {
+            axios.get('/' + this.searchItem , { 
+                params: { 
+                    keyword3: this.keyword3.replace(RegExp('\/', 'g'), "-") ,
                     } 
                 })
                 .then(res => this.results = res.data)

@@ -36,6 +36,7 @@ Vue.component('search-users', require('./components/tables/search-users.vue').de
 Vue.component('search-devices', require('./components/tables/search-devices.vue').default);
 Vue.component('search-invoice', require('./components/tables/search-invoice.vue').default);
 Vue.component('home-search', require('./components/home-search.vue').default);
+Vue.component('seartch-departments', require('./components/tables/seartch-departments.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

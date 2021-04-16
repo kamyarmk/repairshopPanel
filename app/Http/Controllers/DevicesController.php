@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\registered_devices;
 use App\Models\Device_Config;
+use \Morilog\Jalali\Jalalian;
 
 class DevicesController extends Controller
 {
@@ -51,16 +52,17 @@ class DevicesController extends Controller
             'device_name' => ['required'],
             'device_type' => ['required'],
         ]);
-
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
         if ($validator->fails()) {
             return redirect('Devices/' . $userID)
                         ->withErrors($validator)
                         ->withInput();
         }
 
-        invoice::find($InvoiceID)->update([
+        Devices::find($InvoiceID)->update([
             'device_name' => $request['device_name'],
             'device_type' => $request['device_type'],
+            'updated_at' => $dateForCreating,
         ]);
 
         return redirect('Devices');
@@ -88,10 +90,13 @@ class DevicesController extends Controller
         if ($validator->fails()) {
             return response()->json(['errors'=>$validator->errors()],422);
         }
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
 
         $devicemaking = Devices::create([
             'device_name' => $data['device_name'],
             'device_type' => $data['device_type'],
+            'updated_at' => $dateForCreating,
+            'created_at' => $dateForCreating
         ]);
         foreach ($data['configs'] as  $config){
             $deviceConfig = Device_Config::create([

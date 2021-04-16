@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\registered_devices;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use \Morilog\Jalali\Jalalian;
 
 class UserListController extends Controller
 {
@@ -59,7 +60,7 @@ class UserListController extends Controller
             'email' => ['required'],
             'phone_number' => ['required']
         ]);
-
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
         if ($validator->fails()) {
             return redirect('UserList/' . $userID)
                         ->withErrors($validator)
@@ -70,6 +71,7 @@ class UserListController extends Controller
             'name' => $request['name'],
             'email' => $request['email'],
             'phone_number' => $request['phone_number'],
+            'updated_at' => $dateForCreating,
         ]);
 
         return redirect('UserList');
@@ -119,13 +121,17 @@ class UserListController extends Controller
         if ($validator->fails()) {
             return  response()->json(['errors'=>$validator->errors()],422);
         }
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
 
         $user = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'phone_number' => $request['phonenumber'],
             'password'=> Hash::make(Str::random(8)),
+            'updated_at' => $dateForCreating,
+            'created_at' => $dateForCreating
         ]);
+
 
         return response()->json([
             'user' => $user,

@@ -27,6 +27,8 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_number',
+        'updated_at',
+        'created_at'
     ];
 
     /**
@@ -54,5 +56,9 @@ class User extends Authenticatable
     
     public function invoices(){
         return $this->hasMany(invoices::class);
+    }
+
+    public function Department(){
+        return $this->belongsToMany(Department::class);
     }
 }

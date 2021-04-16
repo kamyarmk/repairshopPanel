@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\registered_devices;
 use App\Models\User;
 use App\Models\Devices;
+use \Morilog\Jalali\Jalalian;
 
 class DeviceListController extends Controller
 {
@@ -58,6 +59,8 @@ class DeviceListController extends Controller
             'SqCTesting' => ['required']
         ]);
 
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
+
         if ($validator->fails()) {
             return redirect('DeviceList/' . $DeviceID)
                         ->withErrors($validator)
@@ -68,6 +71,7 @@ class DeviceListController extends Controller
             'Condition' => $request['Condition'],
             'FirstQC' => $request['FqCTesting'],
             'SeccondQC' => $request['SqCTesting'],
+            'updated_at' => $dateForCreating,
         ]);
 
         return redirect('DeviceList');

@@ -69,6 +69,13 @@ Route::delete('/Reports/{report}', [App\Http\Controllers\ReportsController::clas
 //Reports Detailed Page
 Route::get('/Reports/{report}', [App\Http\Controllers\ReportsController::class, 'show'])->name('reports.show');
 
+//Department Section
+Route::get('/Department', [App\Http\Controllers\DepartmentController::class, 'index'])->name('department.index');
+Route::get('/Department/create', [App\Http\Controllers\DepartmentController::class, 'create'])->name('department.create');
+Route::get('/Department/{department}', [App\Http\Controllers\DepartmentController::class, 'show'])->name('department.show');
+Route::put('/Department/{department}', [App\Http\Controllers\DepartmentController::class, 'update'])->name('department.update');
+Route::delete('/Department/{department}', [App\Http\Controllers\DepartmentController::class, 'destory'])->name('department.destroy');
+Route::get('/DepartmentVue', [App\Http\Controllers\DepartmentController::class, 'vue'])->name('department.data');
 
 // Vue Routes
 Route::get('/UsersVue', [App\Http\Controllers\UserListController::class, 'vue'])->name('userList.data');
@@ -80,3 +87,5 @@ Route::post('/Devices', [App\Http\Controllers\DevicesController::class, 'store']
 
 // Print Function
 Route::get('/invoice/print/{id}', [App\Http\Controllers\InvoiceController::class, 'print'])->name('invoice.print');
+
+

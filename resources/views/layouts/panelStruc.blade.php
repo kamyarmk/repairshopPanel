@@ -262,7 +262,7 @@
                                     <li class="dropdown-item"><a href="{{ route('devices') }}">
                                         {{ __('Device Types') }} <i class="fas fa-laptop"></i></a>
                                     </li>
-                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                    <li class="dropdown-item"><a href="{{ route('department.index') }}">
                                         {{ __('Departments') }} <i class="fas fa-building"></i></a>
                                     </li>
                                     <li class="dropdown-item"><a href="javascript:void(0)">

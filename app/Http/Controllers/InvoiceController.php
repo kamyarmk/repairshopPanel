@@ -10,6 +10,7 @@ use App\Models\registered_devices;
 use App\Models\User;
 use App\Models\Devices;
 use PDF;
+use \Morilog\Jalali\Jalalian;
 
 
 class InvoiceController extends Controller
@@ -62,7 +63,7 @@ class InvoiceController extends Controller
             'Condition' => ['required'],
             'Notes' => []
         ]);
-
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
         if ($validator->fails()) {
             return redirect('Invoice/' . $userID)
                         ->withErrors($validator)
@@ -73,6 +74,8 @@ class InvoiceController extends Controller
             'Price' => $request['Price'],
             'Condition' => $request['Condition'],
             'Notes' => $request['Notes'],
+            'updated_at' => $dateForCreating,
+            'created_at' => $dateForCreating
         ]);
 
         return redirect('Invoice');
@@ -115,8 +118,33 @@ class InvoiceController extends Controller
         return $invoiceList;
     }
 
-    public function create(){
+    public function create(Requests $request){
 
+        $validator = Validator::make($request->all(), [
+            'user_id' => ['required'],
+            'registered_devices_id' => ['required'],
+            'Price' => ['required'],
+            'Condition' => ['required'],
+            'Notes' => []
+        ]);
+        $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
+        if ($validator->fails()) {
+            return redirect('Invoice/')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        invoice::create([
+            'user_id' => $request['user_id'],
+            'registered_devices_id' => $request['registered_devices_id'],
+            'Price' => $request['Price'],
+            'Condition' => $request['Condition'],
+            'Notes' => $request['Notes'],
+            'updated_at' => $dateForCreating,
+            'created_at' => $dateForCreating
+        ]);
+
+        return redirect('Invoice');
     }
 
     public function print($id){

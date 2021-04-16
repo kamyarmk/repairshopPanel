@@ -262,7 +262,7 @@
                                     <li class="dropdown-item"><a href="<?php echo e(route('devices')); ?>">
                                         <?php echo e(__('Device Types')); ?> <i class="fas fa-laptop"></i></a>
                                     </li>
-                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                    <li class="dropdown-item"><a href="<?php echo e(route('department.index')); ?>">
                                         <?php echo e(__('Departments')); ?> <i class="fas fa-building"></i></a>
                                     </li>
                                     <li class="dropdown-item"><a href="javascript:void(0)">

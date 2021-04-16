@@ -12,6 +12,8 @@ class Devices extends Model
     protected $fillable = [
         'device_name',
         'device_type',
+        'updated_at',
+        'created_at'
     ];
 
     public function registered_devices(){

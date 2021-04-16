@@ -13,6 +13,16 @@ class invoices extends Model
 
     protected $table = 'invoices';
 
+    protected $fillable = [
+        'user_id',
+        'registered_devices_id',
+        'Price',
+        'Condition',
+        'Notes',
+        'updated_at',
+        'created_at'
+    ];
+
     public function users(){
         return $this->belongsTo(User::class);
     }
