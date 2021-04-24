@@ -10,7 +10,7 @@
     "Confirm Password": "تایید رمز عبور",
     "I accept Terms and Conditions": "قوانین رو مطالعه کرده و قبول دارم",
     "Already have an account?": "در حال حاضر حساب کاربری دارید ؟",
-    "Dashboard": "میز کار",
+    "Dashboard": "پیشخوان",
     "Register Device": "ثبت دستگاها",
     "List Device": "فهرست دستگاه ها",
     "Users": "فهرست کاربران",
@@ -45,7 +45,7 @@
     "Budget": "درست شود تا مبلغ",
     "Submit": "ثبت",
     "Search Invoice": "جستجو فاکتور",
-    "Total Work": "گزارش کلی",
+    "Total Work": "گزارش هفتگی",
     "Quick Access": "دسترسی سریع",
     "Search": "جستجو",
     "Invoice": "فاکتور",
@@ -87,5 +87,6 @@
     "Settings": "تنظیمات",
     "Lock screen": "فقل کردن حساب",
     "Logout": "خروچ",
-    "ID": "شماره"
+    "ID": "شماره",
+    "Monthly Report": "گزارش ماهیانه"
 }

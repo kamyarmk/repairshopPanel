@@ -12,6 +12,7 @@ use \Morilog\Jalali\Jalalian;
 
 class DeviceListController extends Controller
 {
+    
     /**
      * Create a new controller instance.
      *
@@ -21,7 +22,7 @@ class DeviceListController extends Controller
     {
         $this->middleware('auth');
     }
-
+    public $device_conditions = 'Open';
     /**
      * Show the application dashboard.
      *
@@ -46,6 +47,7 @@ class DeviceListController extends Controller
         }
         if($request['Condition'] != null){
             $Devices->where('condition', '=', $request['Condition']);
+            $this->device_conditions = $request['Condition'];
         }
         $deviceList = $Devices->get();
         return view('DeviceList')->with('Devices', $deviceList);
@@ -98,6 +100,7 @@ class DeviceListController extends Controller
     }
 
     public function data(Request $request){
+        $device_con = $this->device_conditions;
         $Devices = registered_devices::with(['devices']);
 
         if($request['keyword1'] != null){
@@ -108,6 +111,7 @@ class DeviceListController extends Controller
                     ->where('devices.device_name', 'LIKE', '%' . $request['keyword2'] . '%')
                     ->select('registered_devices.*', 'devices.*');
         }
+        
         if($request['keyword3'] != null){
             // $dateRequest = str_replace('-', '/', $request['keyword3']);
             $Devices->where('created_at', 'LIKE', '%' . $request['keyword3'] . '%');
@@ -116,12 +120,16 @@ class DeviceListController extends Controller
             $Devices->where('finished_at', '=', $request['keyword4']);
         }
         if($request['keyword5'] != null){
-            $Devices->where('condition', '=', $request['keyword5']);
+            $Devices->where('condition', '=', $request['Condition']);
         }
         if($request['homesearch'] != null){
             $Devices->where('IMEI', 'LIKE', '%' . $request['homesearch'] . '%');
         }
-
+        if($request['Condition'] != null){
+            $Devices->where('condition', '=', $request['Condition']);
+        }
+        $Devices->where('condition', '=', $device_con);
+        
         $deviceList = $Devices->get();
         return $deviceList;
     }

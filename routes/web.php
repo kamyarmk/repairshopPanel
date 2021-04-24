@@ -19,6 +19,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Locked Screen
+Route::group(['middleware' => ['auth.lock']], function () {
+    Route::get('/login/locked', [App\Http\Controllers\Auth\LoginController::class, 'locked'])->middleware('auth')->name('login.locked');
+    Route::post('/login/locked', 'Auth\LoginController@unlock')->name('login.unlock');
+});
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Registering the Device
@@ -87,5 +94,7 @@ Route::post('/Devices', [App\Http\Controllers\DevicesController::class, 'store']
 
 // Print Function
 Route::get('/invoice/print/{id}', [App\Http\Controllers\InvoiceController::class, 'print'])->name('invoice.print');
+
+
 
 

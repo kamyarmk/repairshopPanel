@@ -15,7 +15,7 @@
 
         <div class="row p-5">
             <div class="col-md-12">
-                <h4 class="m-t-0 text-right header-title"><i class="fas fa-chart-line ml-3"></i><?php echo e(__('Quick Access')); ?></h4>
+                <h4 class="m-t-0 text-right header-title"><i class="fas fa-chart-line ml-3"></i><?php echo e(__('Monthly Report')); ?></h4>
                 <div class="dropdown-divider mb-5 text-white bg-white"></div>
                 <div class="row mb-3">
                     <div class="col-sm-3">
@@ -229,7 +229,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div>
-                        <strong>Dartweb Panel</strong> - Copyright &copy; 2021
+                        <strong>طراحی و توسعه توسط دارت وب</strong> - پنل مدیریتی رسپیتو &copy; 2021
                     </div>
                 </div>
             </div>

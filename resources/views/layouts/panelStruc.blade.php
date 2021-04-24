@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>سیستم مدیریت رسپیتو</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.0/Chart.min.js"></script>
     <script src="{{ asset('js/utils.js') }}" defer></script>
@@ -114,7 +114,7 @@
                     </div>
 
                     <!-- Top nav Right menu -->
-                    <div class="collapse navbar-collapse navbar-left col-2">
+                    <div class="collapse navbar-collapse navbar-left col-2 icon-menus">
                         <ul class="navbar-nav mr-auto">
                             <li class="top-menu-item-xs">
                                 <!-- Mobile menu toggle-->
@@ -135,7 +135,7 @@
                             </li> -->
                             <li class="nav-item ml-3 dropdown justify-content-between d-flex align-items-center">
                                 <a href="#" data-target="#" class="text-dark fw-bold ml-3" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-bell mt-3" style="font-size: 1.5em;"></i> <span class="badge badge-danger" style="position: absolute; top:14px; left: 1.2em; color: #fff;">3</span>
+                                    <i class="fas fa-bell mt-3" style="font-size: 1.5em;"></i> <span class="badge badge-danger" style="position: absolute; top:10px; left: 0.4em; color: #fff;">3</span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 300px !important;">
                                     <li class="notifi-title dropdown-item">
@@ -255,21 +255,21 @@
                                 <a href="" class="dropdown-toggle menu-right-item profile text-dark fw-bold" data-toggle="dropdown" aria-expanded="true"> 
                                     <i class="fas fa-user mt-3" style="font-size: 1.5em"></i>
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu profile-menu">
                                     <li class="dropdown-item"><a href="javascript:void(0)">
-                                        {{ __('Profile')}} <i class="fas fa-id-badge"></i></a>
+                                        <i class="fas fa-id-badge"></i> {{ __('Profile')}}</a>
                                     </li>
                                     <li class="dropdown-item"><a href="{{ route('devices') }}">
-                                        {{ __('Device Types') }} <i class="fas fa-laptop"></i></a>
+                                        <i class="fas fa-laptop"></i> {{ __('Device Types') }}</a>
                                     </li>
                                     <li class="dropdown-item"><a href="{{ route('department.index') }}">
-                                        {{ __('Departments') }} <i class="fas fa-building"></i></a>
+                                        <i class="fas fa-building"></i> {{ __('Departments') }}</a>
                                     </li>
                                     <li class="dropdown-item"><a href="javascript:void(0)">
-                                        {{ __('Settings') }} <i class="fas fa-cog"></i></a>
+                                    <i class="fas fa-cog"></i> {{ __('Settings') }}</a>
                                     </li>
-                                    <li class="dropdown-item"><a href="javascript:void(0)">
-                                        {{ __('Lock screen') }} <i class="fas fa-lock"></i></a>
+                                    <li class="dropdown-item"><a href="{{ route('login.locked') }}">
+                                    <i class="fas fa-lock"></i> {{ __('Lock screen') }}</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li class="dropdown-item"><a href="{{ route('logout') }}" onclick="event.preventDefault();

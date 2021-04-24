@@ -11980,7 +11980,37 @@ a:focus {
 }
 
 .nav-item {
-  font-size: 75%;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.icon-menus li {
+  margin-top: -10px;
+}
+
+.dropdown-menu.profile-menu.show li {
+  direction: rtl !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.dropdown-menu.profile-menu.show li * {
+  color: #555 !important;
+  line-height: 20px;
+}
+
+.dropdown-menu.profile-menu.show li i {
+  width: 20px;
+  text-align: center;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: none !important;
+  border: 0 !important;
+  box-shadow: none;
 }
 
 
