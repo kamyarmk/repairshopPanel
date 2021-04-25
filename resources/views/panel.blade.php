@@ -96,6 +96,22 @@
         </div>
         <!-- end row -->
 
+        <div class="dropdown-divider mb-5"></div>
+
+        <div class="row p-5">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <home-search
+                        search-term="{{ __('Search') }}"
+                        invoice-search="{{ __('Invoice') }}"
+                        user-search="{{ __('Users') }}"
+                        device-search="{{ __('Device') }}"
+                    >
+                    </home-search>
+                </div>
+            </div>
+        </div>
+
         <!-- main Data  -->
 
         <div class="dropdown-divider mb-5"></div>
@@ -205,21 +221,7 @@
             </div> <!-- end col -->
         </div> <!-- end row -->
 
-        <div class="dropdown-divider mb-5"></div>
-
-        <div class="row p-5">
-            <div class="col-sm-12">
-                <div class="card-box">
-                    <home-search
-                        search-term="{{ __('Search') }}"
-                        invoice-search="{{ __('Invoice') }}"
-                        user-search="{{ __('Users') }}"
-                        device-search="{{ __('Device') }}"
-                    >
-                    </home-search>
-                </div>
-            </div>
-        </div>
+        
 
     </div>
     <!-- end container -->

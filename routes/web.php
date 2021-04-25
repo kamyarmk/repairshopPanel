@@ -92,6 +92,8 @@ Route::post('/UserCreateVue', [App\Http\Controllers\UserListController::class, '
 Route::get('/devicevuew', [App\Http\Controllers\DevicesController::class, 'data'])->name('devices.data');
 Route::post('/Devices', [App\Http\Controllers\DevicesController::class, 'store'])->name('devices.store');
 
+Route::get('/liveSearch', [App\Http\Controllers\LiveSearchController::class, 'search'])->name('live.search');
+
 // Print Function
 Route::get('/invoice/print/{id}', [App\Http\Controllers\InvoiceController::class, 'print'])->name('invoice.print');
 

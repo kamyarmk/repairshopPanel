@@ -94,6 +94,22 @@
         </div>
         <!-- end row -->
 
+        <div class="dropdown-divider mb-5"></div>
+
+        <div class="row p-5">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <home-search
+                        search-term="<?php echo e(__('Search')); ?>"
+                        invoice-search="<?php echo e(__('Invoice')); ?>"
+                        user-search="<?php echo e(__('Users')); ?>"
+                        device-search="<?php echo e(__('Device')); ?>"
+                    >
+                    </home-search>
+                </div>
+            </div>
+        </div>
+
         <!-- main Data  -->
 
         <div class="dropdown-divider mb-5"></div>
@@ -203,21 +219,7 @@
             </div> <!-- end col -->
         </div> <!-- end row -->
 
-        <div class="dropdown-divider mb-5"></div>
-
-        <div class="row p-5">
-            <div class="col-sm-12">
-                <div class="card-box">
-                    <home-search
-                        search-term="<?php echo e(__('Search')); ?>"
-                        invoice-search="<?php echo e(__('Invoice')); ?>"
-                        user-search="<?php echo e(__('Users')); ?>"
-                        device-search="<?php echo e(__('Device')); ?>"
-                    >
-                    </home-search>
-                </div>
-            </div>
-        </div>
+        
 
     </div>
     <!-- end container -->

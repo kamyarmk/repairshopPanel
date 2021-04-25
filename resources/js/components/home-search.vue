@@ -19,33 +19,72 @@
                         </div>   
                     </div>
                 </form>
-                <div v-if="results" class="row d-flex justify-content-center">
-                    <transition-group name="datalist" tag="span">
-                    <ul class="list-group" v-for="data in results" :key="data.id">
-                        <li class="list-group-item list-group-item-action">
+                <div v-if="results" class="row d-flex justify-content-center">    
+                    <transition-group name="datalist" class="list-group" tag="ul" v-if="results[0]">
+                        <li class="list-group-item list-group-item-action" :key="invoiceSearch" v-if="results[0].length > 0">
+                            <h3 class="text-right">{{ invoiceSearch }}</h3>
+                        </li>
+                        <li class="list-group-item list-group-item-action" v-for="data in results[0]" :key="data.id">
                             <div class="table-responsive">
                                 <table class="table table-hover mails m-0 table table-actions-bar text-center">
-                                    <tr @click="moreDetailes(data.id)">
+                                    <tr @click="moreDetailes(data.id, 'Invoice')">
                                         <td class="w-25">
-                                           <span v-if="searchCategory == 'invoicesvue'">{{ data.id }}</span> 
-                                           <span v-if="searchCategory == 'UsersVue'">{{ data.name }}</span> 
-                                           <span v-if="searchCategory == 'regdevicevue'">{{ data.IMEI }}</span> 
+                                            <span>{{ data.id }}</span> 
                                         </td>
                                         <td class="w-25">
-                                            <span v-if="searchCategory == 'invoicesvue'">{{ data.Condition }}</span> 
-                                            <span v-if="searchCategory == 'UsersVue'">{{ data.phone_number }}</span> 
-                                            <span v-if="searchCategory == 'regdevicevue'">{{ data.Condition }}</span> 
+                                            <span>{{ data.Condition }}</span> 
                                         </td>
                                         <td class="w-25">
-                                            <span v-if="searchCategory == 'invoicesvue'">{{ data.Price }}</span> 
-                                            <span v-if="searchCategory == 'UsersVue'">{{ data.email }}</span> 
-                                            <span v-if="searchCategory == 'regdevicevue'"></span> 
+                                            <span>{{ data.Price }}</span> 
                                         </td>
                                     </tr>
                                 </table>
                             </div>
                         </li>
-                    </ul>
+                    </transition-group>
+                    <transition-group name="datalist" class="list-group" tag="ul" v-if="results[1]">
+                        <li class="list-group-item list-group-item-action" :key="userSearch" v-if="results[1].length > 0">
+                            <h3 class="text-right">{{ userSearch }}</h3>
+                        </li>
+                        <li class="list-group-item list-group-item-action" v-for="data in results[1]" :key="data.id">
+                            <div class="table-responsive">
+                                <table class="table table-hover mails m-0 table table-actions-bar text-center">
+                                    <tr @click="moreDetailes(data.id, 'UserList')">
+                                        <td class="w-25">
+                                            <span>{{ data.name }}</span> 
+                                        </td>
+                                        <td class="w-25">
+                                            <span>{{ data.phone_number }}</span>  
+                                        </td>
+                                        <td class="w-25">
+                                            <span>{{ data.email }}</span> 
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </transition-group>
+                    <transition-group name="datalist" class="list-group" tag="ul" v-if="results[2]">
+                        <li class="list-group-item list-group-item-action" :key="deviceSearch" v-if="results[2].length > 0">
+                            <h3 class="text-right">{{ deviceSearch }}</h3>
+                        </li>
+                        <li class="list-group-item list-group-item-action" v-for="data in results[2]" :key="data.id">
+                            <div class="table-responsive">
+                                <table class="table table-hover mails m-0 table table-actions-bar text-center">
+                                    <tr @click="moreDetailes(data.id, 'DeviceList')">
+                                        <td class="w-25">
+                                            <span>{{ data.IMEI }}</span> 
+                                        </td>
+                                        <td class="w-25">
+                                            <span>{{ data.Condition }}</span> 
+                                        </td>
+                                        <td class="w-25">
+                                            <span>{{data.created_at | formatDate}}</span> 
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
                     </transition-group>
                 </div>
             </div>
@@ -78,7 +117,7 @@ export default {
     methods:{
         getResults() {
             this.results = [];
-            axios.get('/' + this.searchCategory , { 
+            axios.get('/liveSearch' , { 
                 params: { homesearch: this.keyword1} 
                 })
                 .then(res => this.results = res.data)
@@ -94,8 +133,8 @@ export default {
                 this.routeToGo = 'DeviceList';
             }
         },
-        moreDetailes(data){
-            window.location.href = '/' + this.routeToGo + '/' + data;
+        moreDetailes(data, theRoute){
+            window.location.href = '/' + theRoute + '/' + data;
         },
         mounted(){
 

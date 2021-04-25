@@ -1900,6 +1900,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -1925,7 +1964,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.results = [];
-      axios.get('/' + this.searchCategory, {
+      axios.get('/liveSearch', {
         params: {
           homesearch: this.keyword1
         }
@@ -1944,8 +1983,8 @@ __webpack_require__.r(__webpack_exports__);
         this.routeToGo = 'DeviceList';
       }
     },
-    moreDetailes: function moreDetailes(data) {
-      window.location.href = '/' + this.routeToGo + '/' + data;
+    moreDetailes: function moreDetailes(data, theRoute) {
+      window.location.href = '/' + theRoute + '/' + data;
     },
     mounted: function mounted() {}
   }
@@ -62480,108 +62519,261 @@ var render = function() {
               "div",
               { staticClass: "row d-flex justify-content-center" },
               [
-                _c(
-                  "transition-group",
-                  { attrs: { name: "datalist", tag: "span" } },
-                  _vm._l(_vm.results, function(data) {
-                    return _c(
-                      "ul",
-                      { key: data.id, staticClass: "list-group" },
+                _vm.results[0]
+                  ? _c(
+                      "transition-group",
+                      {
+                        staticClass: "list-group",
+                        attrs: { name: "datalist", tag: "ul" }
+                      },
                       [
-                        _c(
-                          "li",
-                          {
-                            staticClass:
-                              "list-group-item list-group-item-action"
-                          },
-                          [
-                            _c("div", { staticClass: "table-responsive" }, [
-                              _c(
-                                "table",
-                                {
-                                  staticClass:
-                                    "table table-hover mails m-0 table table-actions-bar text-center"
-                                },
-                                [
-                                  _c(
-                                    "tr",
-                                    {
-                                      on: {
-                                        click: function($event) {
-                                          return _vm.moreDetailes(data.id)
+                        _vm.results[0].length > 0
+                          ? _c(
+                              "li",
+                              {
+                                key: _vm.invoiceSearch,
+                                staticClass:
+                                  "list-group-item list-group-item-action"
+                              },
+                              [
+                                _c("h3", { staticClass: "text-right" }, [
+                                  _vm._v(_vm._s(_vm.invoiceSearch))
+                                ])
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm._l(_vm.results[0], function(data) {
+                          return _c(
+                            "li",
+                            {
+                              key: data.id,
+                              staticClass:
+                                "list-group-item list-group-item-action"
+                            },
+                            [
+                              _c("div", { staticClass: "table-responsive" }, [
+                                _c(
+                                  "table",
+                                  {
+                                    staticClass:
+                                      "table table-hover mails m-0 table table-actions-bar text-center"
+                                  },
+                                  [
+                                    _c(
+                                      "tr",
+                                      {
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.moreDetailes(
+                                              data.id,
+                                              "Invoice"
+                                            )
+                                          }
                                         }
-                                      }
-                                    },
-                                    [
-                                      _c("td", { staticClass: "w-25" }, [
-                                        _vm.searchCategory == "invoicesvue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.id))
-                                            ])
-                                          : _vm._e(),
+                                      },
+                                      [
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [_vm._v(_vm._s(data.id))])
+                                        ]),
                                         _vm._v(" "),
-                                        _vm.searchCategory == "UsersVue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.name))
-                                            ])
-                                          : _vm._e(),
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(_vm._s(data.Condition))
+                                          ])
+                                        ]),
                                         _vm._v(" "),
-                                        _vm.searchCategory == "regdevicevue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.IMEI))
-                                            ])
-                                          : _vm._e()
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", { staticClass: "w-25" }, [
-                                        _vm.searchCategory == "invoicesvue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.Condition))
-                                            ])
-                                          : _vm._e(),
-                                        _vm._v(" "),
-                                        _vm.searchCategory == "UsersVue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.phone_number))
-                                            ])
-                                          : _vm._e(),
-                                        _vm._v(" "),
-                                        _vm.searchCategory == "regdevicevue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.Condition))
-                                            ])
-                                          : _vm._e()
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("td", { staticClass: "w-25" }, [
-                                        _vm.searchCategory == "invoicesvue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.Price))
-                                            ])
-                                          : _vm._e(),
-                                        _vm._v(" "),
-                                        _vm.searchCategory == "UsersVue"
-                                          ? _c("span", [
-                                              _vm._v(_vm._s(data.email))
-                                            ])
-                                          : _vm._e(),
-                                        _vm._v(" "),
-                                        _vm.searchCategory == "regdevicevue"
-                                          ? _c("span")
-                                          : _vm._e()
-                                      ])
-                                    ]
-                                  )
-                                ]
-                              )
-                            ])
-                          ]
-                        )
-                      ]
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(_vm._s(data.Price))
+                                          ])
+                                        ])
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        })
+                      ],
+                      2
                     )
-                  }),
-                  0
-                )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.results[1]
+                  ? _c(
+                      "transition-group",
+                      {
+                        staticClass: "list-group",
+                        attrs: { name: "datalist", tag: "ul" }
+                      },
+                      [
+                        _vm.results[1].length > 0
+                          ? _c(
+                              "li",
+                              {
+                                key: _vm.userSearch,
+                                staticClass:
+                                  "list-group-item list-group-item-action"
+                              },
+                              [
+                                _c("h3", { staticClass: "text-right" }, [
+                                  _vm._v(_vm._s(_vm.userSearch))
+                                ])
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm._l(_vm.results[1], function(data) {
+                          return _c(
+                            "li",
+                            {
+                              key: data.id,
+                              staticClass:
+                                "list-group-item list-group-item-action"
+                            },
+                            [
+                              _c("div", { staticClass: "table-responsive" }, [
+                                _c(
+                                  "table",
+                                  {
+                                    staticClass:
+                                      "table table-hover mails m-0 table table-actions-bar text-center"
+                                  },
+                                  [
+                                    _c(
+                                      "tr",
+                                      {
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.moreDetailes(
+                                              data.id,
+                                              "UserList"
+                                            )
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(_vm._s(data.name))
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(_vm._s(data.phone_number))
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(_vm._s(data.email))
+                                          ])
+                                        ])
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.results[2]
+                  ? _c(
+                      "transition-group",
+                      {
+                        staticClass: "list-group",
+                        attrs: { name: "datalist", tag: "ul" }
+                      },
+                      [
+                        _vm.results[2].length > 0
+                          ? _c(
+                              "li",
+                              {
+                                key: _vm.deviceSearch,
+                                staticClass:
+                                  "list-group-item list-group-item-action"
+                              },
+                              [
+                                _c("h3", { staticClass: "text-right" }, [
+                                  _vm._v(_vm._s(_vm.deviceSearch))
+                                ])
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm._l(_vm.results[2], function(data) {
+                          return _c(
+                            "li",
+                            {
+                              key: data.id,
+                              staticClass:
+                                "list-group-item list-group-item-action"
+                            },
+                            [
+                              _c("div", { staticClass: "table-responsive" }, [
+                                _c(
+                                  "table",
+                                  {
+                                    staticClass:
+                                      "table table-hover mails m-0 table table-actions-bar text-center"
+                                  },
+                                  [
+                                    _c(
+                                      "tr",
+                                      {
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.moreDetailes(
+                                              data.id,
+                                              "DeviceList"
+                                            )
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(_vm._s(data.IMEI))
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(_vm._s(data.Condition))
+                                          ])
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", { staticClass: "w-25" }, [
+                                          _c("span", [
+                                            _vm._v(
+                                              _vm._s(
+                                                _vm._f("formatDate")(
+                                                  data.created_at
+                                                )
+                                              )
+                                            )
+                                          ])
+                                        ])
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  : _vm._e()
               ],
               1
             )
