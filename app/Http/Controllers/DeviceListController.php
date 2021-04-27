@@ -22,7 +22,6 @@ class DeviceListController extends Controller
     {
         $this->middleware('auth');
     }
-    public $device_conditions = 'Open';
     /**
      * Show the application dashboard.
      *
@@ -30,27 +29,7 @@ class DeviceListController extends Controller
      */
     public function index(Request $request)
     {  
-        $Devices = registered_devices::with(['devices']);
-        // $Devices = DB::table('registered_devices')->select('id','userId','Device', 'IMEI', 'created_at', 'Condition');
-
-        if($request['IMEI'] != null){
-            $Devices->where('IMEI', 'LIKE', '%' . $request['IMEI'] . '%'); 
-        }
-        if($request['device'] != null){
-            $Devices->where('device', '=', $request['Device']);
-        }
-        if($request['created_at'] != null){
-            $Devices->where('created_at', '=', $request['created_at']);
-        }
-        if($request['finished_at'] != null){
-            $Devices->where('finished_at', '=', $request['finished_at']);
-        }
-        if($request['Condition'] != null){
-            $Devices->where('condition', '=', $request['Condition']);
-            $this->device_conditions = $request['Condition'];
-        }
-        $deviceList = $Devices->get();
-        return view('DeviceList')->with('Devices', $deviceList);
+        return view('DeviceList')->with('Condition', $request['Condition']);
     }
 
 
@@ -90,7 +69,7 @@ class DeviceListController extends Controller
     public function show($DeviceID){
         $Device = registered_devices::with(['devices', 'users'])->find($DeviceID);
         $User = User::find($Device->user_id);
-        $DeviceType = Devices::find($Device->Device);
+        $DeviceType = Devices::all();
         
         return view('Edit/deviceEdit')->with([
             'Device' => $Device,
@@ -100,7 +79,6 @@ class DeviceListController extends Controller
     }
 
     public function data(Request $request){
-        $device_con = $this->device_conditions;
         $Devices = registered_devices::with(['devices']);
 
         if($request['keyword1'] != null){
@@ -120,7 +98,7 @@ class DeviceListController extends Controller
             $Devices->where('finished_at', '=', $request['keyword4']);
         }
         if($request['keyword5'] != null){
-            $Devices->where('condition', '=', $request['Condition']);
+            $Devices->where('condition', '=', $request['keyword5']);
         }
         if($request['homesearch'] != null){
             $Devices->where('IMEI', 'LIKE', '%' . $request['homesearch'] . '%');
@@ -128,7 +106,6 @@ class DeviceListController extends Controller
         if($request['Condition'] != null){
             $Devices->where('condition', '=', $request['Condition']);
         }
-        $Devices->where('condition', '=', $device_con);
         
         $deviceList = $Devices->get();
         return $deviceList;

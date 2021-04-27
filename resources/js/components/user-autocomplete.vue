@@ -5,6 +5,7 @@
             type="text"  
             class="form-control"
             v-model="keyword"
+            :placeholder="user"
         >
         <input 
         type="hidden" 
@@ -32,6 +33,16 @@ export default {
             userID: null,
             Users: [],
         };
+    },
+    props: {
+        user: '',
+        userId: ''
+    },
+    created(){
+        if(this.user != ''){
+            this.keyword = user;
+            this.userID = userId;
+        }
     },
     watch: {
         keyword(after, before) {

@@ -11,11 +11,7 @@
                             <button type="submit" class="btn" >
                                 <i class="fas fa-search"></i>
                             </button>
-                            <select class="form-select" name="searchCategory" v-model="searchCategory" @change="clearSearch()">
-                                <option value="invoicesvue" selected>{{ invoiceSearch }}</option>
-                                <option value="UsersVue">{{ userSearch }}</option>
-                                <option value="regdevicevue">{{ deviceSearch }}</option>
-                            </select>
+                            
                         </div>   
                     </div>
                 </form>

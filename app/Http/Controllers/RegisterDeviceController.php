@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Devices;
 use \Morilog\Jalali\Jalalian;
+use PDF;
 
 class RegisterDeviceController extends Controller
 {
@@ -61,7 +62,7 @@ class RegisterDeviceController extends Controller
                         ->withInput();
         }
 
-        registered_devices::create([
+        $registeredDevice = registered_devices::create([
             'user_id' => $data['userID'],
             'devices_id' => $data['Device'],
             'DeviceType' => $data['DeviceType'],
@@ -76,8 +77,34 @@ class RegisterDeviceController extends Controller
             'Condition' => 'Open',
             'updated_at' => $dateForCreating,
             'created_at' => $dateForCreating
-        ]);
+        ])->id;
+        LablePrint($registeredDevice);
 
         return redirect('DeviceList');
+    }
+
+    public function LablePrint($id){
+        $data = registered_devices::with(['devices', 'users'])->find($id);
+        $pdf = PDF::loadView('pdf.LablePrint', $data, ['font_path' => base_path('resources/sass/iransans/fonts/ttf'),
+            'font_data' => [
+                'IRANSans' => [
+                    'R'  => 'IRANSansWeb.ttf',    // regular font
+                    'B'  => 'IRANSansWeb-Bold.ttf',       // optional: bold font
+                    'useOTL' => 0xFF,    // required for complicated langs like Persian, Arabic and Chinese
+                    'useKashida' => 75,  // required for complicated langs like Persian, Arabic and Chinese
+                ]
+                // ...add as many as you want.
+                ],
+            ],
+            [
+                'format'           => [72.5, 45.5],
+            ]
+        );
+        
+        return $pdf->stream('labelprint.pdf');
+
+        // $pdf = App::make('dompdf.wrapper');
+        // $pdf->loadHTML('<h1>Test</h1>');
+        // return $pdf->stream();
     }
 }

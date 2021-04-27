@@ -168,4 +168,50 @@ class InvoiceController extends Controller
         // $pdf->loadHTML('<h1>Test</h1>');
         // return $pdf->stream();
     }
+    
+    public function sms($id){
+        $data = invoices::with(['registered_devices', 'users'])->find($id);
+        $message = "فاکتور شماره" . $data->id;
+        $message .= "مبلغ : " . $data->price;
+        $message .= "کاربر : " . $data->users->name;
+        try{
+            $result = $this->SendRequest('https://niksms.com/fa/publicapi/groupSms', array(
+                'username' => '09122346757',
+                'password' => 'Dartweb123@456',
+                'senderNumber' => 'blacklist',	
+                'numbers' => $data->users->phone_number,
+                'sendOn' => now(),
+                'sendType' => '1',
+                'messageIds' => uniqid(),
+                'message' => $message
+            ));
+            return redirect('Invoice');
+        } catch(Exception $e){
+            echo $e->getMessage();
+        }
+    }
+
+    public function SendRequest($url, $postVars = array()){
+
+        $postStr = http_build_query($postVars);
+    
+        $options = array(
+            'http' =>
+                array(
+                    'method'  => 'POST', //We are using the POST HTTP method.
+                    'header'  => 'Content-type: application/x-www-form-urlencoded',
+                    'content' => $postStr //Our URL-encoded query string.
+                )
+        );
+        
+        $streamContext  = stream_context_create($options);
+        $result = file_get_contents($url, false, $streamContext);
+        
+        if($result === false){
+           
+            $error = error_get_last();
+            throw new Exception('POST request failed: ' . $error['message']);
+        }
+        return $result;
+    }
 }

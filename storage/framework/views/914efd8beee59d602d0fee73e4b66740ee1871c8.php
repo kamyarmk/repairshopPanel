@@ -23,6 +23,8 @@
                 prop5-name="<?php echo e(__('Condition')); ?>"
                 edit-text="<?php echo e(__('Edit')); ?>"
                 submit-text="<?php echo e(__('Remove')); ?>"
+                send-sms="<?php echo e(__('Send SMS')); ?>"
+                print="<?php echo e(__('Print')); ?>"
             ></search-invoice>
     </div>
 </div>

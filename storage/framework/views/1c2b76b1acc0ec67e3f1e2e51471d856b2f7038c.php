@@ -14,15 +14,15 @@
                 prop1-name="<?php echo e(__('IMEI')); ?>"
                 prop2="Device"
                 prop2-name="<?php echo e(__('Device')); ?>"
-                prop3="created_at"
-                prop3-name="<?php echo e(__('Start Date')); ?>"
-                prop4="finished_at"
-                prop4-name="<?php echo e(__('End Date')); ?>"
-                prop5="Condition"
-                prop5-name="<?php echo e(__('Condition')); ?>"
+                prop4="created_at"
+                prop4-name="<?php echo e(__('Start Date')); ?>"
+                prop3="Condition"
+                prop3-name="<?php echo e(__('Condition')); ?>"
+                id-counter="<?php echo e(__('ID')); ?>"
                 
                 edit-text="<?php echo e(__('Edit')); ?>"
                 submit-text="<?php echo e(__('Remove')); ?>"
+                condition-type="<?php echo e($Condition); ?>"
             ></search-regdev>
     </div>
 </div>

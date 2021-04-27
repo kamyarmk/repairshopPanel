@@ -60,24 +60,17 @@
                                     <label class="col-form-label">{{ __('Device Model')}}</label>
                                     <div class="">
                                         <select class="form-select" name="DeviceType">
-                                            <option value="1">1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option value="Mobile">{{ __('Mobile') }}</option>
+                                            <option value="Tablet">{{ __('Tablet') }}</option>
+                                            <option value="Laptop">{{ __('Laptop') }}</option>
+                                            <option value="Other">{{ __('Other') }}</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <label class="col-form-label">{{ __('Device Color')}}</label>
                                     <div class="">
-                                        <select class="form-select" name="DeviceColor">
-                                            <option value="1">1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        <input type="text" class="form-control" value="{{ old('DeviceColor') }}" name="DeviceColor">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -164,6 +157,8 @@
         email-title="{{ __('Email')}}"
         send-title="{{ __('Submit') }}"
         close-title="{{ __('Close') }}"
+        company-name="{{ __('Company Name') }}"
+        address-name="{{ __('Address') }}"
       >
         @csrf
       </user-create>

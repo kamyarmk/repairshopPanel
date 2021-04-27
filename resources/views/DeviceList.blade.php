@@ -16,15 +16,15 @@
                 prop1-name="{{ __('IMEI') }}"
                 prop2="Device"
                 prop2-name="{{ __('Device') }}"
-                prop3="created_at"
-                prop3-name="{{ __('Start Date') }}"
-                prop4="finished_at"
-                prop4-name="{{ __('End Date') }}"
-                prop5="Condition"
-                prop5-name="{{ __('Condition') }}"
+                prop4="created_at"
+                prop4-name="{{ __('Start Date') }}"
+                prop3="Condition"
+                prop3-name="{{ __('Condition') }}"
+                id-counter="{{ __('ID') }}"
                 
                 edit-text="{{ __('Edit') }}"
                 submit-text="{{ __('Remove') }}"
+                condition-type="{{ $Condition }}"
             ></search-regdev>
     </div>
 </div>

@@ -25,17 +25,33 @@
                     <?php echo method_field('PUT'); ?>
                     <?php echo csrf_field(); ?>
                     <div class="row text-right">
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="name" class="form-label"><?php echo e(__('Name')); ?></label>
                             <input type="text" name="name" class="form-control" value="<?php echo e($User->name); ?>">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
+                            <label for="company_name" class="form-label"><?php echo e(__('Company Name')); ?></label>
+                            <input type="text" name="company_name" class="form-control" value="<?php echo e($User->usersDetails->company_name); ?>">
+                        </div>
+                        <div class="mb-3 col-6">
                             <label for="email" class="form-label"><?php echo e(__('Email')); ?></label>
                             <input type="email" name="email" class="form-control" value="<?php echo e($User->email); ?>">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 col-6">
                             <label for="phone_number" class="form-label"><?php echo e(__('Phone Number')); ?></label>
                             <input type="text" name="phone_number" class="form-control" value="<?php echo e($User->phone_number); ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="seccond_number" class="form-label"><?php echo e(__('Seccond Number')); ?></label>
+                            <input type="text" name="seccond_number" class="form-control" value="<?php echo e($User->usersDetails->seccond_number); ?>">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="first_address" class="form-label"><?php echo e(__('First Address')); ?></label>
+                            <textarea class="form-control" placeholder="<?php echo e($User->usersDetails->first_address); ?>" id="first_address" name="first_address" style="height: 100px"><?php echo e($User->usersDetails->first_address); ?></textarea>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="seccond_address" class="form-label"><?php echo e(__('Seccond Address')); ?></label>
+                            <textarea class="form-control" placeholder="<?php echo e($User->usersDetails->seccond_address); ?>" id="seccond_address" name="seccond_address" style="height: 100px"><?php echo e($User->usersDetails->seccond_address); ?></textarea>
                         </div>
                         <div>
                             <input type="submit" class="btn btn-primary" value="<?php echo e(__('Submit')); ?>">
@@ -59,24 +75,8 @@
                 <div class="card-box">
                     <div class="table-responsive">
                         <table class="table table-hover mails m-0 table table-actions-bar text-right">
-                            <thead>
+                            <thead class="text-light">
                                 <tr>
-                                    <th style="min-width: 100px;">
-                                        <div class="checkbox checkbox-primary checkbox-single m-r-15">
-                                            <input id="action-checkbox" type="checkbox">
-                                            <label for="action-checkbox"></label>
-                                        </div>
-                                        <div class="btn-group dropdown">
-                                            <button type="button" class="btn btn-default btn-xs dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false"><?php echo e(__('Action')); ?><i class="caret"></i></button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Separated link</a></li>
-                                            </ul>
-                                        </div>
-                                    </th>
                                     <th><?php echo e(__('IMEI')); ?></th>
                                     <th><?php echo e(__('Device')); ?></th>
                                     <th><?php echo e(__('Condition')); ?></th>
@@ -93,12 +93,6 @@
                             <tbody>
                                 <?php $__currentLoopData = $Devices->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $device): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td>
-                                        <div class="checkbox checkbox-primary m-r-15">
-                                            <input id="checkbox2" type="checkbox">
-                                            <label for="checkbox2"></label>
-                                        </div>
-                                    </td>
                                     <td>
                                         <?php echo e($device->IMEI); ?>
 

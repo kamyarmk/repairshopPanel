@@ -11888,7 +11888,7 @@ a.text-transparent:focus {
   border-radius: 10px;
   border: 0;
   padding-right: 16px;
-  padding-left: 160px;
+  padding-left: 0;
   width: 100%;
   height: 62px;
 }
@@ -11902,7 +11902,7 @@ a.text-transparent:focus {
 .btn-outline-transparent button[type=submit] {
   position: absolute;
   top: 0;
-  left: 200px;
+  left: 0;
   bottom: 0;
   margin: auto;
 }
@@ -12011,6 +12011,50 @@ a:focus {
   border-color: none !important;
   border: 0 !important;
   box-shadow: none;
+}
+
+.table-responsive .Open {
+  color: #fd9e4b;
+  background-color: #FFF;
+  border-color: #fd9e4b;
+}
+
+.table-responsive .Repairing {
+  color: #996cfb;
+  background-color: #FFF;
+  border-color: #996cfb;
+}
+
+.table-responsive .Testing {
+  color: #fd9e4b;
+  background-color: #FFF;
+  border-color: #fd9e4b;
+}
+
+.table-responsive .Repaired {
+  color: #51c0bf;
+  background-color: #FFF;
+  border-color: #51c0bf;
+}
+
+.table-responsive .Delivered {
+  color: #FFF;
+  background-color: #51c0bf;
+}
+
+.table-responsive .Delayed {
+  color: #FFF;
+  background-color: #fd9e4b;
+}
+
+.table-responsive .Unsuccessful {
+  color: #FFF;
+  background-color: #fd6585;
+}
+
+.table-responsive .Refund {
+  color: #FFF;
+  background-color: #555555;
 }
 
 

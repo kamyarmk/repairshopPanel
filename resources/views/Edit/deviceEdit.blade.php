@@ -46,27 +46,67 @@
                     <div class="card text-right">
                         <div class="card-header">{{ __('info') }}</div>
                         <div class="card-body">
-                            <div class="card-text mb-3"><strong>{{ __('User')}} : </strong>{{ $User->name }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('User')}} : </strong>
+                                
+                                <user-autocomplete
+                                user={{ $User->name }}
+                                user-id={{ $User->id }}
+                                ></user-autocomplete>
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Device')}} : </strong>{{ $Device->devices->device_name }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Device')}} : </strong>
+                                <select class="form-select" name="Device">
+                                    @foreach ($DeviceType->all() as $device)
+                                        @if($device->id == $Device->devices->id)
+                                            <option value="{{ $device->id }}" selected>{{$device->device_name}}</option>
+                                        @else
+                                            <option value="{{ $device->id }}">{{$device->device_name}}</option>
+                                        @endif
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Device Model')}} : </strong>{{ $Device->DeviceType }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Device Model')}} : </strong>
+                                <select class="form-select" name="DeviceType">
+                                    <option value="Mobile">{{ __('Mobile') }}</option>
+                                    <option value="Tablet">{{ __('Tablet') }}</option>
+                                    <option value="Laptop">{{ __('Laptop') }}</option>
+                                    <option value="Other">{{ __('Other') }}</option>
+                                    <option value="{{ $Device->DeviceType }}" selected>{{ $Device->DeviceType }}</option>
+                                </select>
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Device Color')}} : </strong>{{ $Device->DeviceColor }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Device Color')}} : </strong>
+                                <input type="text" class="form-control" value="{{ $Device->DeviceColor }}" name="DeviceColor">
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('IMEI')}} : </strong>{{ $Device->IMEI }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('IMEI')}} : </strong>
+                                <input type="text" class="form-control" value="{{ $Device->IMEI }}" name="IMEI">
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Device Problems')}} : </strong>{{ $Device->Problems }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Device Problems')}} : </strong>
+                                <textarea class="form-control" rows="5" name="Problems">{{ $Device->Problems }}</textarea>
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Decription')}} : </strong>{{ $Device->DeviceDescription }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Decription')}} : </strong>
+                                <textarea class="form-control" rows="5" name="DeviceDescription">{{ $Device->DeviceDescription }}</textarea>
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Password')}} : </strong>{{ $Device->password }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Password')}} : </strong>
+                                <input type="text" class="form-control" value="{{ $Device->password }}" name="password">
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Device Accessories')}} : </strong>{{ $Device->DeviceAccessories }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Device Accessories')}} : </strong>
+                                <textarea class="form-control" rows="1" name="DeviceAccessories">{{ $Device->DeviceAccessories }}</textarea>
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Device Tips')}} : </strong>{{ $Device->Tips }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Device Tips')}} : </strong>
+                                <textarea class="form-control" rows="5" name="Tips">{{ $Device->Tips }}</textarea>
+                            </div>
                             <div class="dropdown-divider"></div>
-                            <div class="card-text mb-3"><strong>{{ __('Budget')}} : </strong>{{ $Device->MaxBudget }}</div>
+                            <div class="card-text mb-3"><strong>{{ __('Budget')}} : </strong>
+                                <input type="text" class="form-control" value="{{ $Device->MaxBudget }}" name="MaxBudget">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,6 +148,9 @@
                         <div class="row mb-4 d-flex justify-content-center">
                             <div class="col-md-6">
                                 <input type="submit" class="form-control btn btn-primary" value="{{ __('Submit') }}">
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{ route('registerDevice.print', $Device->id) }}" class="btn btn-orangeSection w-100">{{ __('Lable Print') }}</a>
                             </div>
                         </div>
                     

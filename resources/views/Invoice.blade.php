@@ -25,6 +25,8 @@
                 prop5-name="{{ __('Condition') }}"
                 edit-text="{{ __('Edit') }}"
                 submit-text="{{ __('Remove') }}"
+                send-sms="{{ __('Send SMS') }}"
+                print="{{ __('Print') }}"
             ></search-invoice>
     </div>
 </div>

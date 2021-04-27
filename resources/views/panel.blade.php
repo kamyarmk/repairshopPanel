@@ -134,26 +134,26 @@
                             borderWidth: 2,
                             fill: false,
                             data: [
-                                20,
-                                10,
-                                30,
-                                40,
-                                50,
-                                25,
-                                45
+                                {{ $chartInfo['sat']['paid'] }},
+                                {{ $chartInfo['sun']['paid'] }},
+                                {{ $chartInfo['mon']['paid'] }},
+                                {{ $chartInfo['tue']['paid'] }},
+                                {{ $chartInfo['wed']['paid'] }},
+                                {{ $chartInfo['thu']['paid'] }},
+                                {{ $chartInfo['fri']['paid'] }}
                             ]
                         }, {
                             type: 'bar',
                             label: 'مرجوعی',
                             backgroundColor: window.chartColors.red,
                             data: [
-                                10,
-                                5,
-                                25,
-                                45,
-                                32,
-                                60,
-                                12
+                                {{ $chartInfo['sat']['refund'] }},
+                                {{ $chartInfo['sun']['refund'] }},
+                                {{ $chartInfo['mon']['refund'] }},
+                                {{ $chartInfo['tue']['refund'] }},
+                                {{ $chartInfo['wed']['refund'] }},
+                                {{ $chartInfo['thu']['refund'] }},
+                                {{ $chartInfo['fri']['refund'] }}
                             ],
                             borderColor: 'white',
                             borderWidth: 2
@@ -163,13 +163,13 @@
                             label: 'تحویل گرفته شده',
                             backgroundColor: window.chartColors.yellow,
                             data: [
-                                15,
-                                30,
-                                60,
-                                70,
-                                75,
-                                62,
-                                35
+                                {{ $chartInfo['sat']['open'] }},
+                                {{ $chartInfo['sun']['open'] }},
+                                {{ $chartInfo['mon']['open'] }},
+                                {{ $chartInfo['tue']['open'] }},
+                                {{ $chartInfo['wed']['open'] }},
+                                {{ $chartInfo['thu']['open'] }},
+                                {{ $chartInfo['fri']['open'] }}
                             ]
                         }
                         , {
@@ -177,13 +177,13 @@
                             label: 'تحویل داده شده',
                             backgroundColor: window.chartColors.green,
                             data: [
-                                30,
-                                40,
-                                55,
-                                42,
-                                56,
-                                72,
-                                28
+                                {{ $chartInfo['sat']['delivered'] }},
+                                {{ $chartInfo['sun']['delivered'] }},
+                                {{ $chartInfo['mon']['delivered'] }},
+                                {{ $chartInfo['tue']['delivered'] }},
+                                {{ $chartInfo['wed']['delivered'] }},
+                                {{ $chartInfo['thu']['delivered'] }},
+                                {{ $chartInfo['fri']['delivered'] }}
                             ]
                         }]
 

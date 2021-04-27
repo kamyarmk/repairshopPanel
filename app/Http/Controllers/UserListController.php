@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Models\registered_devices;
+use App\Models\usersDetails;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use \Morilog\Jalali\Jalalian;
@@ -46,7 +47,7 @@ class UserListController extends Controller
     }
 
     public function show($userID){
-        $User = User::find($userID);
+        $User = User::with('usersDetails')->find($userID);
         $Devices = registered_devices::all()->where('user_id', '=', $userID);
         return view('Edit/userEdit')->with([
             'User' => $User,
@@ -60,6 +61,7 @@ class UserListController extends Controller
             'email' => ['required'],
             'phone_number' => ['required']
         ]);
+
         $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
         if ($validator->fails()) {
             return redirect('UserList/' . $userID)
@@ -73,6 +75,25 @@ class UserListController extends Controller
             'phone_number' => $request['phone_number'],
             'updated_at' => $dateForCreating,
         ]);
+        $usersDetailes = usersDetails::where('user_id', '=', $userID)->first();
+        if($usersDetailes){
+            usersDetails::find($usersDetailes->id)->update([
+                'first_address' => $request['first_address'],
+                'seccond_address' => $request['seccond_address'],
+                'seccond_number' => $request['seccond_number'],
+                'company_name' => $request['company_name'],
+                'updated_at' => $dateForCreating,
+            ]);
+        }else{
+            usersDetails::create([
+                'user_id' => $userID,
+                'first_address' => $request['first_address'],
+                'seccond_address' => $request['seccond_address'],
+                'seccond_number' => $request['seccond_number'],
+                'company_name' => $request['company_name'],
+                'updated_at' => $dateForCreating,
+            ]);
+        }
 
         return redirect('UserList');
     }
@@ -115,7 +136,8 @@ class UserListController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => ('required'),
             'email' => ('required'),
-            'phonenumber' => ('required')
+            'phonenumber' => ('required'),
+            'first_address' => ('required'),
         ]);
 
         if ($validator->fails()) {
@@ -130,6 +152,14 @@ class UserListController extends Controller
             'password'=> Hash::make(Str::random(8)),
             'updated_at' => $dateForCreating,
             'created_at' => $dateForCreating
+        ]);
+
+        usersDetails::create([
+            'user_id' => $userID,
+            'first_address' => $request['first_address'],
+            'seccond_address' => $request['seccond_address'],
+            'seccond_number' => $request['seccond_number'],
+            'company_name' => $request['company_name']
         ]);
 
 

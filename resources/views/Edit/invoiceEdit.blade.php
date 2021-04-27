@@ -146,7 +146,7 @@
                                             <button class="btn btn-purpleSection col-md-12">{{ __('Send Invoice') }}</button>
                                         </div>
                                         <div class="col-md-4">
-                                            <button class="btn btn-section col-md-12">{{ __('Send SMS') }}</button>
+                                            <a href="{{route('invoice.print', $Invoice->id)}}" target="_Blank" class="btn btn-section col-md-12">{{ __('Send SMS') }}</a>
                                         </div>
                                     </div>        
                                     <div class="row mb-4">

@@ -17,10 +17,10 @@ class Registered_Devices extends Seeder
      */
     public function run()
     {
-        $conditions = array("Open", "Repairing", "Testing", "Repaired", "Delivered", "Delayed", "Unsuccessful", "Refund");
-        for($i =0; $i < 36; $i++){
-            $currentDate = rand(1615491111, 1618180285);
-            $dateForCreating = Jalalian::forge($currentDate)->format('Y-m-d H:i:s');
+        $conditions = array("Open", "Delivered", "Refund");
+        for($i =0; $i < 5; $i++){
+            $currentDate = rand(1619292276, 1619551476);
+            $dateForCreating = Jalalian::forge(1619292276)->format('Y-m-d H:i:s');
             DB::table('registered_devices')->insert([
                 'user_id' => rand(2, 5),
                 'devices_id' => rand(1,20),

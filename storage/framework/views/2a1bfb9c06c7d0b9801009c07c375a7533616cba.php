@@ -132,26 +132,28 @@
                             borderWidth: 2,
                             fill: false,
                             data: [
-                                20,
-                                10,
-                                30,
-                                40,
-                                50,
-                                25,
-                                45
+                                <?php echo e($chartInfo['sat']['paid']); ?>,
+                                <?php echo e($chartInfo['sun']['paid']); ?>,
+                                <?php echo e($chartInfo['mon']['paid']); ?>,
+                                <?php echo e($chartInfo['tue']['paid']); ?>,
+                                <?php echo e($chartInfo['wed']['paid']); ?>,
+                                <?php echo e($chartInfo['thu']['paid']); ?>,
+                                <?php echo e($chartInfo['fri']['paid']); ?>
+
                             ]
                         }, {
                             type: 'bar',
                             label: 'مرجوعی',
                             backgroundColor: window.chartColors.red,
                             data: [
-                                10,
-                                5,
-                                25,
-                                45,
-                                32,
-                                60,
-                                12
+                                <?php echo e($chartInfo['sat']['refund']); ?>,
+                                <?php echo e($chartInfo['sun']['refund']); ?>,
+                                <?php echo e($chartInfo['mon']['refund']); ?>,
+                                <?php echo e($chartInfo['tue']['refund']); ?>,
+                                <?php echo e($chartInfo['wed']['refund']); ?>,
+                                <?php echo e($chartInfo['thu']['refund']); ?>,
+                                <?php echo e($chartInfo['fri']['refund']); ?>
+
                             ],
                             borderColor: 'white',
                             borderWidth: 2
@@ -161,13 +163,14 @@
                             label: 'تحویل گرفته شده',
                             backgroundColor: window.chartColors.yellow,
                             data: [
-                                15,
-                                30,
-                                60,
-                                70,
-                                75,
-                                62,
-                                35
+                                <?php echo e($chartInfo['sat']['open']); ?>,
+                                <?php echo e($chartInfo['sun']['open']); ?>,
+                                <?php echo e($chartInfo['mon']['open']); ?>,
+                                <?php echo e($chartInfo['tue']['open']); ?>,
+                                <?php echo e($chartInfo['wed']['open']); ?>,
+                                <?php echo e($chartInfo['thu']['open']); ?>,
+                                <?php echo e($chartInfo['fri']['open']); ?>
+
                             ]
                         }
                         , {
@@ -175,13 +178,14 @@
                             label: 'تحویل داده شده',
                             backgroundColor: window.chartColors.green,
                             data: [
-                                30,
-                                40,
-                                55,
-                                42,
-                                56,
-                                72,
-                                28
+                                <?php echo e($chartInfo['sat']['delivered']); ?>,
+                                <?php echo e($chartInfo['sun']['delivered']); ?>,
+                                <?php echo e($chartInfo['mon']['delivered']); ?>,
+                                <?php echo e($chartInfo['tue']['delivered']); ?>,
+                                <?php echo e($chartInfo['wed']['delivered']); ?>,
+                                <?php echo e($chartInfo['thu']['delivered']); ?>,
+                                <?php echo e($chartInfo['fri']['delivered']); ?>
+
                             ]
                         }]
 

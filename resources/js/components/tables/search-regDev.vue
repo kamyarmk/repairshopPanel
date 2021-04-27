@@ -32,7 +32,15 @@
                     <div v-if="prop5" class="col-md-2">
                         <label for="">{{ prop5Name }}</label>
                         <select class="form-select" name="Condition" id="form_condition" v-model="keyword5">
-                            
+                            <option value="" selected="selected" >All</option>
+                            <option value="Open">Open</option>
+                            <option value="Repairing">Repairing</option>
+                            <option value="Testing">Testing</option>
+                            <option value="Repaired">Repaired</option>
+                            <option value="Delivered">Delivered</option>
+                            <option value="Delayed">Delayed</option>
+                            <option value="Unsuccessful">Unsuccessful</option>
+                            <option value="Refund">Refund</option>
                         </select>
                     </div>
                     <div class="col-md-2">
@@ -49,7 +57,7 @@
                         <div class="card-box">
                             
                             <div class="table-responsive" v-if="results != null">
-                                <table class="table table-hover mails m-0 table table-actions-bar text-right table-striped rounded">
+                                <table class="table table-hover mails m-0 table table-actions-bar text-center table-striped rounded">
                                     <thead class="text-light">
                                         <tr>
                                             <th>{{ idCounter }}</th>
@@ -127,7 +135,7 @@ export default {
                     keyword1: this.keyword1,
                     keyword2: this.keyword2,
                     // keyword3: this.keyword3,
-                    keyword5: this.keyword5 
+                    keyword5: this.conditionType 
                     } 
                 })
                 .then(res => this.results = res.data)
@@ -149,7 +157,7 @@ export default {
         idCounter: '',
         editText: '',
         submitText: '',
-
+        conditionType: '',
     },
     watch: {
         keyword1(after, before) {

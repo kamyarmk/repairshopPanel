@@ -53,6 +53,12 @@
                                             <th>
                                                 
                                             </th>
+                                            <th>
+                                                
+                                            </th>
+                                            <th>
+                                                
+                                            </th>
                                         </tr>
                                     </thead>
                                     <transition-group name="datalist" tag="tbody">
@@ -77,6 +83,16 @@
                                                         <b>{{datas.created_at | formatDate}}</b>
                                                     
                                                 </b>
+                                            </td>
+                                            <td>
+                                                <a v-bind:href="'/invoice/sms/' + datas.id" class="w-100 btn btn-section">
+                                                    {{ sendSms }}
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a v-bind:href="'/invoice/print/' + datas.id" class="w-100 btn btn-orangeSection">
+                                                    {{ print }}
+                                                </a>
                                             </td>
                                             <td>
                                                 <a v-bind:href="'/Invoice/' + datas.id" class="w-100 btn btn-success">
@@ -142,6 +158,8 @@ export default {
         prop5Name: '',
         searchItem: '',
         
+        sendSms: '',
+        print: '',
         editText: '',
         submitText: '',
 

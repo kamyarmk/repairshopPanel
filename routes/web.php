@@ -96,6 +96,10 @@ Route::get('/liveSearch', [App\Http\Controllers\LiveSearchController::class, 'se
 
 // Print Function
 Route::get('/invoice/print/{id}', [App\Http\Controllers\InvoiceController::class, 'print'])->name('invoice.print');
+Route::get('/invoice/print/{id}', [App\Http\Controllers\RegisterDeviceController::class, 'LablePrint'])->name('registerDevice.print');
+
+// SMS Function
+Route::get('/invoice/sms/{id}', [App\Http\Controllers\InvoiceController::class, 'sms'])->name('invoice.sms');
 
 
 

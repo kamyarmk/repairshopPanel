@@ -58,24 +58,17 @@
                                     <label class="col-form-label"><?php echo e(__('Device Model')); ?></label>
                                     <div class="">
                                         <select class="form-select" name="DeviceType">
-                                            <option value="1">1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option value="Mobile"><?php echo e(__('Mobile')); ?></option>
+                                            <option value="Tablet"><?php echo e(__('Tablet')); ?></option>
+                                            <option value="Laptop"><?php echo e(__('Laptop')); ?></option>
+                                            <option value="Other"><?php echo e(__('Other')); ?></option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <label class="col-form-label"><?php echo e(__('Device Color')); ?></label>
                                     <div class="">
-                                        <select class="form-select" name="DeviceColor">
-                                            <option value="1">1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                        </select>
+                                        <input type="text" class="form-control" value="<?php echo e(old('DeviceColor')); ?>" name="DeviceColor">
                                     </div>
                                 </div>
                                 <div class="row mb-4">
@@ -162,6 +155,8 @@
         email-title="<?php echo e(__('Email')); ?>"
         send-title="<?php echo e(__('Submit')); ?>"
         close-title="<?php echo e(__('Close')); ?>"
+        company-name="<?php echo e(__('Company Name')); ?>"
+        address-name="<?php echo e(__('Address')); ?>"
       >
         <?php echo csrf_field(); ?>
       </user-create>
