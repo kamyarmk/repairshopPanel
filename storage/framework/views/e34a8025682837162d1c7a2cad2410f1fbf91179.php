@@ -265,7 +265,7 @@
                                     <li class="dropdown-item"><a href="<?php echo e(route('department.index')); ?>">
                                         <i class="fas fa-building"></i> <?php echo e(__('Departments')); ?></a>
                                     </li>
-                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                    <li class="dropdown-item"><a href="<?php echo e(route('settings.show')); ?>">
                                     <i class="fas fa-cog"></i> <?php echo e(__('Settings')); ?></a>
                                     </li>
                                     <li class="dropdown-item"><a href="<?php echo e(route('login.locked')); ?>">

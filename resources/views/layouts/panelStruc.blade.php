@@ -265,7 +265,7 @@
                                     <li class="dropdown-item"><a href="{{ route('department.index') }}">
                                         <i class="fas fa-building"></i> {{ __('Departments') }}</a>
                                     </li>
-                                    <li class="dropdown-item"><a href="javascript:void(0)">
+                                    <li class="dropdown-item"><a href="{{ route('settings.show') }}">
                                     <i class="fas fa-cog"></i> {{ __('Settings') }}</a>
                                     </li>
                                     <li class="dropdown-item"><a href="{{ route('login.locked') }}">

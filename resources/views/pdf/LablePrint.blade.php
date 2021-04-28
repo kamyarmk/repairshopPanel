@@ -25,11 +25,11 @@
 <body>
     <main>
         <p>
-            Name : {{ $users['name'] }} <br/>
-            Model : {{ $devices['device_name'] }} <br/>
-            IMEI : {{ $IMEI }} <br/>
-            PASCODE : {{ $password }} <br/>
-            PROBLEM : {{ $Problems }} <br/>
+            Name : {{ $User['name'] }} <br/>
+            Model : {{ $Device['devices']['device_name'] }} <br/>
+            IMEI : {{ $Device['IMEI'] }} <br/>
+            PASCODE : {{ $Device['password'] }} <br/>
+            PROBLEM : {{ $Device['Problems'] }} <br/>
         </p>
     </main>
 </body>

@@ -7,6 +7,7 @@ use App\Models\registered_devices;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Devices;
+use App\Models\User;
 use \Morilog\Jalali\Jalalian;
 use PDF;
 
@@ -84,7 +85,14 @@ class RegisterDeviceController extends Controller
     }
 
     public function LablePrint($id){
-        $data = registered_devices::with(['devices', 'users'])->find($id);
+        $Device = registered_devices::with(['devices', 'users'])->find($id);
+        $User = User::find($Device->user_id);
+
+        $data=[
+            'Device' => $Device,
+            'User' => $User
+        ];
+
         $pdf = PDF::loadView('pdf.LablePrint', $data, ['font_path' => base_path('resources/sass/iransans/fonts/ttf'),
             'font_data' => [
                 'IRANSans' => [

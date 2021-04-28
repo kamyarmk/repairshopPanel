@@ -227,18 +227,18 @@
 </head>
 <body>
     <div class="condition">
-        <?php echo e($Condition); ?>
+        <?php echo e($Invoices['Condition']); ?>
 
     </div>
     <header class="clearfix">
       <div id="logo">
-        <!-- <img src="logo.png"> -->
+        <!-- <img src="<?php echo e(asset('images/' . $Configs['logo_address'])); ?>"> -->
       </div>
       <div id="company">
-        <h2 class="name">فیکس ایت دو</h2>
-        <div>455 Foggy Heights, AZ 85004, US</div>
-        <div>(602) 519-0450</div>
-        <div><a href="mailto:company@example.com">company@example.com</a></div>
+        <h2 class="name"><?php echo e($Configs['company_name']); ?></h2>
+        <div><?php echo e($Configs['compny_address']); ?></div>
+        <div><?php echo e($Configs['admin_mobilenumber']); ?></div>
+        <div><a href="mailto:<?php echo e($Configs['admin_email']); ?>"><?php echo e($Configs['admin_email']); ?></a></div>
       </div>
       
     </header>
@@ -246,13 +246,13 @@
       <div id="details" class="clearfix">
         <div id="client">
           <div class="to">فاکتور برای :</div>
-          <h2 class="name"><?php echo e($users['name']); ?></h2>
-          <div class="address"><?php echo e($users['phone_number']); ?></div>
-          <div class="email"><a href="mailto:<?php echo e($users['email']); ?>"><?php echo e($users['email']); ?></a></div>
+          <h2 class="name"><?php echo e($Invoices['users']['name']); ?></h2>
+          <div class="address"><?php echo e($Invoices['users']['phone_number']); ?></div>
+          <div class="email"><a href="mailto:<?php echo e($Invoices['users']['email']); ?>"><?php echo e($Invoices['users']['email']); ?></a></div>
         </div>
         <div id="invoice">
-          <h1>فاکتور #<?php echo e($id); ?></h1>
-          <div class="date">تاریخ فاکتور : <?php echo e($created_at); ?></div>
+          <h1>فاکتور #<?php echo e($Invoices['id']); ?></h1>
+          <div class="date">تاریخ فاکتور : <?php echo e($Invoices['created_at']); ?></div>
           <!-- <div class="date">Due Date: 30/06/2014</div> -->
         </div>
       </div>
@@ -269,17 +269,17 @@
         <tbody>
           <tr>
             <td class="no">01</td>
-            <td class="desc"><?php echo e($Notes); ?></td>
-            <td class="unit"><?php echo e($Price); ?> تومان</td>
+            <td class="desc"><?php echo e($Invoices['Notes']); ?></td>
+            <td class="unit"><?php echo e($Invoices['Price']); ?> تومان</td>
             <td class="qty">1</td>
-            <td class="total"><?php echo e($Price); ?> تومان</td>
+            <td class="total"><?php echo e($Invoices['Price']); ?> تومان</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="2"></td>
             <td colspan="2">مجموع</td>
-            <td><?php echo e($Price); ?> تومان</td>
+            <td><?php echo e($Invoices['Price']); ?> تومان</td>
           </tr>
           <!-- <tr>
             <td colspan="2"></td>

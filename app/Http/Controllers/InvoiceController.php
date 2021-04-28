@@ -9,6 +9,7 @@ use App\Models\invoices;
 use App\Models\registered_devices;
 use App\Models\User;
 use App\Models\Devices;
+use App\Models\settings;
 use PDF;
 use \Morilog\Jalali\Jalalian;
 
@@ -148,7 +149,12 @@ class InvoiceController extends Controller
     }
 
     public function print($id){
-        $data = invoices::with(['registered_devices', 'users'])->find($id);
+        $invoices = invoices::with(['registered_devices', 'users'])->find($id);
+        $configs = settings::find(1);
+        $data = [
+            'Invoices' => $invoices, 
+            'Configs' => $configs
+        ];
         $pdf = PDF::loadView('pdf.invoice', $data, ['font_path' => base_path('resources/sass/iransans/fonts/ttf'),
         'font_data' => [
             'IRANSans' => [
@@ -171,14 +177,16 @@ class InvoiceController extends Controller
     
     public function sms($id){
         $data = invoices::with(['registered_devices', 'users'])->find($id);
-        $message = "فاکتور شماره" . $data->id;
-        $message .= "مبلغ : " . $data->price;
-        $message .= "کاربر : " . $data->users->name;
+        $configs = settings::find(1);
+        $message = $config->invoice_sms; 
+        $message  = str_replace( '{InvoiceNumber}', $user_info->user_login, $email_content );
+        $message  = str_replace( '{Price}', $user_info->user_login, $email_content );
+        $message  = str_replace( '{User}', $user_info->user_login, $email_content );
         try{
             $result = $this->SendRequest('https://niksms.com/fa/publicapi/groupSms', array(
-                'username' => '09122346757',
-                'password' => 'Dartweb123@456',
-                'senderNumber' => 'blacklist',	
+                'username' => $config->mobile_username,
+                'password' => $config->mobile_password,
+                'senderNumber' => $config->mobile_senderNumber,	
                 'numbers' => $data->users->phone_number,
                 'sendOn' => now(),
                 'sendType' => '1',

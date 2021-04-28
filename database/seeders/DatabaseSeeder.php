@@ -17,9 +17,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(Department::class);
         // $this->call(UserSeeder::class);
         // $this->call(DeviceType::class);
-        $this->call(Registered_Devices::class);
+        // $this->call(Registered_Devices::class);
         // $this->call(Invoices::class);
         // $this->call(Devcvice_Config::class);
         // $this->call(usersDetails::class);
+        $this->call(settings::class);
     }
 }

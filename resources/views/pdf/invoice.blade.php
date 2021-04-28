@@ -227,17 +227,17 @@
 </head>
 <body>
     <div class="condition">
-        {{ $Condition }}
+        {{ $Invoices['Condition'] }}
     </div>
     <header class="clearfix">
       <div id="logo">
-        <!-- <img src="logo.png"> -->
+        <img src="{{ asset('images/' . $Configs['logo_address']) }}" width="250px">
       </div>
       <div id="company">
-        <h2 class="name">فیکس ایت دو</h2>
-        <div>455 Foggy Heights, AZ 85004, US</div>
-        <div>(602) 519-0450</div>
-        <div><a href="mailto:company@example.com">company@example.com</a></div>
+        <h2 class="name">{{$Configs['company_name']}}</h2>
+        <div>{{$Configs['compny_address']}}</div>
+        <div>{{$Configs['admin_mobilenumber']}}</div>
+        <div><a href="mailto:{{$Configs['admin_email']}}">{{$Configs['admin_email']}}</a></div>
       </div>
       
     </header>
@@ -245,13 +245,13 @@
       <div id="details" class="clearfix">
         <div id="client">
           <div class="to">فاکتور برای :</div>
-          <h2 class="name">{{ $users['name'] }}</h2>
-          <div class="address">{{ $users['phone_number']}}</div>
-          <div class="email"><a href="mailto:{{ $users['email'] }}">{{ $users['email'] }}</a></div>
+          <h2 class="name">{{ $Invoices['users']['name'] }}</h2>
+          <div class="address">{{ $Invoices['users']['phone_number']}}</div>
+          <div class="email"><a href="mailto:{{ $Invoices['users']['email'] }}">{{ $Invoices['users']['email'] }}</a></div>
         </div>
         <div id="invoice">
-          <h1>فاکتور #{{ $id }}</h1>
-          <div class="date">تاریخ فاکتور : {{ $created_at }}</div>
+          <h1>فاکتور #{{ $Invoices['id'] }}</h1>
+          <div class="date">تاریخ فاکتور : {{ $Invoices['created_at'] }}</div>
           <!-- <div class="date">Due Date: 30/06/2014</div> -->
         </div>
       </div>
@@ -268,17 +268,17 @@
         <tbody>
           <tr>
             <td class="no">01</td>
-            <td class="desc">{{ $Notes }}</td>
-            <td class="unit">{{ $Price }} تومان</td>
+            <td class="desc">{{ $Invoices['Notes'] }}</td>
+            <td class="unit">{{ $Invoices['Price'] }} تومان</td>
             <td class="qty">1</td>
-            <td class="total">{{ $Price }} تومان</td>
+            <td class="total">{{ $Invoices['Price'] }} تومان</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="2"></td>
             <td colspan="2">مجموع</td>
-            <td>{{ $Price }} تومان</td>
+            <td>{{ $Invoices['Price'] }} تومان</td>
           </tr>
           <!-- <tr>
             <td colspan="2"></td>
