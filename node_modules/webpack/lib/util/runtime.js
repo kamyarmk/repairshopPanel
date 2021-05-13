@@ -270,9 +270,7 @@ const mergeRuntimeOwned = (a, b) => {
 		return a;
 	} else if (a === undefined) {
 		if (typeof b === "string") {
-			const set = new SortableSet();
-			set.add(b);
-			return set;
+			return b;
 		} else {
 			return new SortableSet(b);
 		}
@@ -349,7 +347,7 @@ const subtractRuntime = (a, b) => {
 		return undefined;
 	} else if (typeof a === "string") {
 		if (typeof b === "string") {
-			return undefined;
+			return a;
 		} else if (b.has(a)) {
 			return undefined;
 		} else {
