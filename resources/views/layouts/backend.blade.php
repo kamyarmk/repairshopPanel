@@ -555,6 +555,16 @@
         <!-- Laravel Scaffolding JS -->
         <!-- <script src="{{ mix('/js/laravel.app.js') }}"></script> -->
 
+        <!-- Page JS Plugins -->
+        <script src="{{ asset('js/plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+        <script src="{{ asset('js/plugins/chart.js/Chart.bundle.min.js') }}"></script>
+
+        <!-- Page JS Code -->
+        <script src="{{ asset('js/pages/be_pages_dashboard_v1.min.js') }}"></script>
+
+        <!-- Page JS Helpers (jQuery Sparkline plugin) -->
+        <script>jQuery(function(){Dashmix.helpers('sparkline');});</script>
+
         @yield('js_after')
     </body>
 </html>
