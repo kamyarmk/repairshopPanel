@@ -560,7 +560,7 @@
         <script src="<?php echo e(asset('js/plugins/chart.js/Chart.bundle.min.js')); ?>"></script>
 
         <!-- Page JS Code -->
-        <script src="<?php echo e(asset('js/pages/be_pages_dashboard_v1.min.js')); ?>"></script>
+        <!-- <script src="<?php echo e(asset('js/pages/be_pages_dashboard_v1.min.js')); ?>"></script> -->
         <!-- Page JS Code -->
         <script src="<?php echo e(asset('js/pages/be_pages_dashboard.min.js')); ?>"></script>
 

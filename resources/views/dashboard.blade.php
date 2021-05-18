@@ -42,9 +42,9 @@
                 <div class="block block-rounded text-center d-flex flex-column">
                     <div class="block-content block-content-full flex-grow-1">
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-users text-muted"></i>
+                            <i class="fa fa-wallet text-success"></i>
                         </div>
-                        <div class="text-black font-size-h1 font-w700">2,388</div>
+                        <div class="text-black font-size-h1 font-w700">$2,388</div>
                         <div class="text-muted mb-3">{{ __('Income') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
                             <i class="fa fa-caret-up mr-1"></i>
@@ -63,9 +63,9 @@
                 <div class="block block-rounded text-center d-flex flex-column">
                     <div class="block-content block-content-full flex-grow-1">
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-level-up-alt text-muted"></i>
+                            <i class="fa fa-hand-holding-medical text-warning"></i>
                         </div>
-                        <div class="text-black font-size-h1 font-w700">14.6%</div>
+                        <div class="text-black font-size-h1 font-w700">14.6</div>
                         <div class="text-muted mb-3">{{ __('Accepted Devices') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
                             <i class="fa fa-caret-down mr-1"></i>
@@ -84,7 +84,7 @@
                 <div class="block block-rounded text-center d-flex flex-column">
                     <div class="block-content block-content-full flex-grow-1">
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-chart-line text-muted"></i>
+                            <i class="fa fa-thumbs-up text-primary"></i>
                         </div>
                         <div class="text-black font-size-h1 font-w700">386</div>
                         <div class="text-muted mb-3">{{ __('Delivered') }}</div>
@@ -105,9 +105,9 @@
                 <div class="block block-rounded text-center d-flex flex-column">
                     <div class="block-content block-content-full">
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-wallet text-muted"></i>
+                            <i class="fa fa-clock text-danger"></i>
                         </div>
-                        <div class="text-black font-size-h1 font-w700">$4,920</div>
+                        <div class="text-black font-size-h1 font-w700">4,920</div>
                         <div class="text-muted mb-3">{{ __('Not Delivered')}}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
                             <i class="fa fa-caret-down mr-1"></i>
@@ -145,7 +145,7 @@
                     <div class="col-md-5 col-xl-4 d-md-flex align-items-md-center">
                         <div class="p-md-2 p-lg-3">
                             <div class="py-3">
-                                <div class="text-black font-size-h1 font-w700">1,430</div>
+                                <div class="text-black font-size-h1 font-w700">$1,430</div>
                                 <div class="font-w600">Your Income Over Week</div>
                                 <div class="py-3 d-flex align-items-center">
                                     <div class="bg-success-lighter p-2 rounded mr-3">
@@ -399,7 +399,7 @@
                 <div class="block block-rounded">
                     <div class="block-content block-content-full d-flex justify-content-between align-items-center flex-grow-1">
                         <div class="mr-3">
-                            <p class="font-size-h3 font-w700 mb-0">
+                            <p class="font-size-h3 font-w700 mb-0 text-success">
                                 35,698
                             </p>
                             <p class="text-muted mb-0">
@@ -407,7 +407,7 @@
                             </p>
                         </div>
                         <div class="item rounded-lg bg-body-dark">
-                            <i class="fa fa-check text-muted"></i>
+                            <i class="fa fa-check text-success"></i>
                         </div>
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
@@ -421,10 +421,10 @@
                     <div class="block-content block-content-full d-flex align-items-center flex-grow-1">
                         <div class="w-100">
                             <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                                <i class="fa fa-archive text-muted"></i>
+                                <i class="fa fa-archive text-danger"></i>
                             </div>
                             <div class="text-black font-size-h1 font-w700">75</div>
-                            <div class="text-muted mb-3">Delayed Requests</div>
+                            <div class="text-danger mb-3">Delayed Requests</div>
                             <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-warning bg-warning-lighter">
                                 5% of portfolio
                             </div>
