@@ -45,7 +45,7 @@
                             <i class="fa fa-users text-muted"></i>
                         </div>
                         <div class="text-black font-size-h1 font-w700">2,388</div>
-                        <div class="text-muted mb-3">Registered Users</div>
+                        <div class="text-muted mb-3">{{ __('Income') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
                             <i class="fa fa-caret-up mr-1"></i>
                             19.2%
@@ -53,7 +53,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="javascript:void(0)">
-                            View all users
+                            {{ __('See the Reports') }}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -66,7 +66,7 @@
                             <i class="fa fa-level-up-alt text-muted"></i>
                         </div>
                         <div class="text-black font-size-h1 font-w700">14.6%</div>
-                        <div class="text-muted mb-3">Bounce Rate</div>
+                        <div class="text-muted mb-3">{{ __('Accepted Devices') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
                             <i class="fa fa-caret-down mr-1"></i>
                             2.3%
@@ -74,7 +74,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="javascript:void(0)">
-                            Explore analytics
+                            {{ __('Check it out') }}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -87,7 +87,7 @@
                             <i class="fa fa-chart-line text-muted"></i>
                         </div>
                         <div class="text-black font-size-h1 font-w700">386</div>
-                        <div class="text-muted mb-3">Confirmed Sales</div>
+                        <div class="text-muted mb-3">{{ __('Delivered') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
                             <i class="fa fa-caret-up mr-1"></i>
                             7.9%
@@ -95,7 +95,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="javascript:void(0)">
-                            View all sales
+                            {{ __('View all')}}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -108,7 +108,7 @@
                             <i class="fa fa-wallet text-muted"></i>
                         </div>
                         <div class="text-black font-size-h1 font-w700">$4,920</div>
-                        <div class="text-muted mb-3">Total Earnings</div>
+                        <div class="text-muted mb-3">{{ __('Not Delivered')}}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
                             <i class="fa fa-caret-down mr-1"></i>
                             0.3%
@@ -116,7 +116,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="javascript:void(0)">
-                            Withdrawal options
+                            {{ __('View All')}}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -146,7 +146,7 @@
                         <div class="p-md-2 p-lg-3">
                             <div class="py-3">
                                 <div class="text-black font-size-h1 font-w700">1,430</div>
-                                <div class="font-w600">Your new website Customers</div>
+                                <div class="font-w600">Your Income Over Week</div>
                                 <div class="py-3 d-flex align-items-center">
                                     <div class="bg-success-lighter p-2 rounded mr-3">
                                         <i class="fa fa-fw fa-arrow-up text-success"></i>
@@ -158,7 +158,7 @@
                             </div>
                             <div class="py-3">
                                 <div class="text-black font-size-h1 font-w700">65</div>
-                                <div class="font-w600">New products added</div>
+                                <div class="font-w600">Requests Per Week</div>
                                 <div class="py-3 d-flex align-items-center">
                                     <div class="bg-success-lighter p-2 rounded mr-3">
                                         <i class="fa fa-fw fa-arrow-up text-success"></i>
@@ -190,7 +190,7 @@
                 <div class="block block-rounded block-mode-loading-refresh">
                     <div class="block-header block-header-default">
                         <h3 class="block-title">
-                            Latest Orders
+                            {{ __('Latest Orders') }}
                         </h3>
                         <div class="block-options">
                             <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
@@ -424,7 +424,7 @@
                                 <i class="fa fa-archive text-muted"></i>
                             </div>
                             <div class="text-black font-size-h1 font-w700">75</div>
-                            <div class="text-muted mb-3">Products out of stock</div>
+                            <div class="text-muted mb-3">Delayed Requests</div>
                             <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-warning bg-warning-lighter">
                                 5% of portfolio
                             </div>
@@ -432,7 +432,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="javascript:void(0)">
-                            Order supplies
+                            Get On to It
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>

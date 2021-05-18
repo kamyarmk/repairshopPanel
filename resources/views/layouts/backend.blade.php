@@ -561,6 +561,8 @@
 
         <!-- Page JS Code -->
         <script src="{{ asset('js/pages/be_pages_dashboard_v1.min.js') }}"></script>
+        <!-- Page JS Code -->
+        <script src="{{ asset('js/pages/be_pages_dashboard.min.js') }}"></script>
 
         <!-- Page JS Helpers (jQuery Sparkline plugin) -->
         <script>jQuery(function(){Dashmix.helpers('sparkline');});</script>
