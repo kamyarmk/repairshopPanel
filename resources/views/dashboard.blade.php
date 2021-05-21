@@ -44,7 +44,7 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-wallet text-muted"></i>
                         </div>
-                        <div class="text-success font-size-h1 font-w700 ">$2,388</div>
+                        <div class="text-primary font-size-h1 font-w700 ">$2,388</div>
                         <div class="text-muted mb-3">{{ __('Income') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
                             <i class="fa fa-caret-up mr-1"></i>
@@ -65,7 +65,7 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-hand-holding-medical text-muted"></i>
                         </div>
-                        <div class="text-warning font-size-h1 font-w700">14.6</div>
+                        <div class="text-warning font-size-h1 font-w700">146</div>
                         <div class="text-muted mb-3">{{ __('Accepted Devices') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
                             <i class="fa fa-caret-down mr-1"></i>
@@ -86,7 +86,7 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-thumbs-up text-muted"></i>
                         </div>
-                        <div class="text-primary font-size-h1 font-w700">386</div>
+                        <div class="text-success font-size-h1 font-w700">386</div>
                         <div class="text-muted mb-3">{{ __('Delivered') }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
                             <i class="fa fa-caret-up mr-1"></i>
@@ -225,7 +225,7 @@
                                     <th>Product</th>
                                     <th class="d-none d-xl-table-cell">Date</th>
                                     <th>Status</th>
-                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;">Price</th>
+                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;">Name</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -241,7 +241,7 @@
                                         <span class="font-w600 text-warning">Pending..</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $1199,99
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -260,7 +260,7 @@
                                         <span class="font-w600 text-warning">Pending..</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $2.299,00
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -279,7 +279,7 @@
                                         <span class="font-w600 text-warning">Pending..</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $1200,00
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -298,7 +298,7 @@
                                         <span class="font-w600 text-danger">Canceled</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $399,00
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -317,7 +317,7 @@
                                         <span class="font-w600 text-success">Completed</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $349,00
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -336,7 +336,7 @@
                                         <span class="font-w600 text-success">Completed</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $999,00
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -355,7 +355,7 @@
                                         <span class="font-w600 text-success">Completed</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $39,99
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -374,7 +374,7 @@
                                         <span class="font-w600 text-success">Completed</span>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-right font-w500">
-                                        $499,00
+                                        John
                                     </td>
                                     <td class="text-center text-nowrap font-w500">
                                         <a href="javascript:void(0)">
@@ -396,7 +396,7 @@
             </div>
             <div class="col-md-4 d-flex flex-column">
                 <!-- Stats -->
-                <div class="block block-rounded">
+                <div class="block block-rounded text-center d-flex flex-column flex-grow-1">
                     <div class="block-content block-content-full d-flex justify-content-between align-items-center flex-grow-1">
                         <div class="mr-3">
                             <p class="font-size-h3 font-w700 mb-0 text-success">
@@ -418,21 +418,22 @@
                     </div>
                 </div>
                 <div class="block block-rounded text-center d-flex flex-column flex-grow-1">
-                    <div class="block-content block-content-full d-flex align-items-center flex-grow-1">
-                        <div class="w-100">
-                            <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                                <i class="fa fa-archive text-muted"></i>
-                            </div>
-                            <div class="text-danger font-size-h1 font-w700">75</div>
-                            <div class="text-black mb-3">Delayed Requests</div>
-                            <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-warning bg-warning-lighter">
-                                5% of portfolio
-                            </div>
+                    <div class="block-content block-content-full d-flex justify-content-between align-items-center flex-grow-1">
+                        <div class="mr-3">
+                            <p class="font-size-h3 font-w700 mb-0 text-danger">
+                                35,698
+                            </p>
+                            <p class="text-muted mb-0">
+                                Delayed Orders
+                            </p>
+                        </div>
+                        <div class="item rounded-lg bg-body-dark">
+                            <i class="fa fa-exclamation-triangle text-muted"></i>
                         </div>
                     </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
+                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
                         <a class="font-w500" href="javascript:void(0)">
-                            Get On to It
+                            View Archive
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
