@@ -299,53 +299,42 @@
                         <ul class="nav-main">
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
+                                    <i class="nav-main-link-icon fa fa-tachometer-alt"></i>
                                     <span class="nav-main-link-name">Dashboard</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">5</span>
                                 </a>
                             </li>
+                            
+
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
+                                    <i class="nav-main-link-icon fa fa-comments"></i>
+                                    <span class="nav-main-link-name">Message</span>
+                                    <span class="nav-main-link-badge badge badge-pill badge-success">25</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-heading">Management</li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
+                                    <i class="nav-main-link-icon fa fa-users"></i>
                                     <span class="nav-main-link-name">Customers</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">35</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
+                                    <i class="nav-main-link-icon fa fa-mobile"></i>
                                     <span class="nav-main-link-name">Device List</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">55</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
-                                    <span class="nav-main-link-name">Reports</span>
-                                    
+                                <a class="nav-main-link" href="/">
+                                    <i class="nav-main-link-icon fa fa-chart-pie"></i>
+                                    <span class="nav-main-link-name">Report</span>
                                 </a>
                             </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
-                                    <span class="nav-main-link-name">Accounting</span>
-                                    
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
-                                    <span class="nav-main-link-name">Chat</span>
-                                    <span class="nav-main-link-badge badge badge-pill badge-success">25</span>
-                                </a>
-                            </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-location-arrow"></i>
-                                    <span class="nav-main-link-name">Settings</span>
-                                    
-                                </a>
-                            </li>
+
                             <li class="nav-main-heading">Various</li>
                             <li class="nav-main-item<?php echo e(request()->is('pages/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
@@ -375,6 +364,18 @@
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-globe"></i>
                                     <span class="nav-main-link-name">Landing</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/">
+                                    <i class="nav-main-link-icon fa fa-wallet"></i>
+                                    <span class="nav-main-link-name">Accounting</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/">
+                                    <i class="nav-main-link-icon fa fa-cog"></i>
+                                    <span class="nav-main-link-name">Settings</span>
                                 </a>
                             </li>
                         </ul>
