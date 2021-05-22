@@ -305,33 +305,121 @@
                                 </a>
                             </li>
                             
-
-                            <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
-                                    <i class="nav-main-link-icon fa fa-comments"></i>
-                                    <span class="nav-main-link-name">Message</span>
-                                    <span class="nav-main-link-badge badge badge-pill badge-success">25</span>
-                                </a>
-                            </li>
+                            
                             <li class="nav-main-heading">Management</li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
+                            <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+                                    <i class="nav-main-link-icon fa fa-user"></i>
+                                    <span class="nav-main-link-name">Admins</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="/pages/datatables">
+                                            <span class="nav-main-link-name">Admins</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}" href="/pages/slick">
+                                            <span class="nav-main-link-name">Departments</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/blank') ? ' active' : '' }}" href="/pages/blank">
+                                            <span class="nav-main-link-name">Reports</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-users"></i>
                                     <span class="nav-main-link-name">Customers</span>
-                                    <span class="nav-main-link-badge badge badge-pill badge-success">35</span>
                                 </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="/pages/datatables">
+                                            <span class="nav-main-link-name">New Users</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}" href="/pages/slick">
+                                            <span class="nav-main-link-name">User List</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/blank') ? ' active' : '' }}" href="/pages/blank">
+                                            <span class="nav-main-link-name">Reports</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
+                            <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-mobile"></i>
-                                    <span class="nav-main-link-name">Device List</span>
-                                    <span class="nav-main-link-badge badge badge-pill badge-success">55</span>
+                                    <span class="nav-main-link-name">Devices</span>
                                 </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="/pages/datatables">
+                                            <span class="nav-main-link-name">New Device</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}" href="/pages/slick">
+                                            <span class="nav-main-link-name">Device List</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/blank') ? ' active' : '' }}" href="/pages/blank">
+                                            <span class="nav-main-link-name">Reports</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+                                    <i class="nav-main-link-icon fa fa-laptop"></i>
+                                    <span class="nav-main-link-name">Devices Types</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="/pages/datatables">
+                                            <span class="nav-main-link-name">Categories</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}" href="/pages/slick">
+                                            <span class="nav-main-link-name">Variables</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-chart-pie"></i>
                                     <span class="nav-main-link-name">Report</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-main-heading">Support</li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/dashboard">
+                                    <i class="nav-main-link-icon fa fa-comments"></i>
+                                    <span class="nav-main-link-name">Message</span>
+                                    <span class="nav-main-link-badge badge badge-pill badge-success">25</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/dashboard">
+                                    <i class="nav-main-link-icon fa fa-bell"></i>
+                                    <span class="nav-main-link-name">Notifications</span>
+                                    <span class="nav-main-link-badge badge badge-pill badge-success">45</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/dashboard">
+                                    <i class="nav-main-link-icon fa fa-bell"></i>
+                                    <span class="nav-main-link-name">Bulk Messaging</span>
                                 </a>
                             </li>
 
@@ -343,7 +431,7 @@
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('pages/datatables') ? ' active' : '' }}" href="/pages/datatables">
+                                        <a class="nav-main-link" href="/pages/datatables">
                                             <span class="nav-main-link-name">DataTables</span>
                                         </a>
                                     </li>
@@ -359,23 +447,59 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-main-heading">More</li>
+                            <li class="nav-main-heading">System</li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-globe"></i>
                                     <span class="nav-main-link-name">Landing</span>
                                 </a>
                             </li>
-                            <li class="nav-main-item">
-                                <a class="nav-main-link" href="/">
+                            <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-wallet"></i>
                                     <span class="nav-main-link-name">Accounting</span>
                                 </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/datatables') ? ' active' : '' }}" href="/pages/datatables">
+                                            <span class="nav-main-link-name">New Invoice</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}" href="/pages/slick">
+                                            <span class="nav-main-link-name">Ivoice List</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('pages/blank') ? ' active' : '' }}" href="/pages/blank">
+                                            <span class="nav-main-link-name">Reports</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-cog"></i>
                                     <span class="nav-main-link-name">Settings</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-heading">Contact Us</li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/">
+                                    <i class="nav-main-link-icon fa fa-cog"></i>
+                                    <span class="nav-main-link-name">Send An Email</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/">
+                                    <i class="nav-main-link-icon fa fa-cog"></i>
+                                    <span class="nav-main-link-name">Send a Ticket</span>
+                                </a>
+                            </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link" href="/">
+                                    <i class="nav-main-link-icon fa fa-cog"></i>
+                                    <span class="nav-main-link-name">Call Us</span>
                                 </a>
                             </li>
                         </ul>

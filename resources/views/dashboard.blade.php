@@ -185,7 +185,7 @@
 
         <!-- Latest Orders + Stats -->
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <!--  Latest Orders -->
                 <div class="block block-rounded block-mode-loading-refresh">
                     <div class="block-header block-header-default">
@@ -394,46 +394,40 @@
                 </div>
                 <!-- END Latest Orders -->
             </div>
-            <div class="col-md-4 d-flex flex-column">
+            <div class="col-md-3 d-flex flex-column">
                 <!-- Stats -->
                 <div class="block block-rounded text-center d-flex flex-column flex-grow-1">
-                    <div class="block-content block-content-full d-flex justify-content-between align-items-center flex-grow-1">
-                        <div class="mr-3">
-                            <p class="font-size-h3 font-w700 mb-0 text-success">
-                                35,698
-                            </p>
-                            <p class="text-muted mb-0">
-                                Completed orders
-                            </p>
-                        </div>
-                        <div class="item rounded-lg bg-body-dark">
-                            <i class="fa fa-check text-muted"></i>
+                    <div class="block-content block-content-full d-flex align-items-center flex-grow-1">
+                        <div class="w-100">
+                            <div class="item rounded-lg bg-body-dark mx-auto my-2">
+                                <i class="fa fa-check text-muted"></i>
+                            </div>
+                            <div class="text-success font-size-h1 font-w700">3,500</div>
+                            <div class="text-black mb-3">Completed Orders</div>
+                            
                         </div>
                     </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
+                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="javascript:void(0)">
-                            View Archive
+                            See Full Report
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
                 </div>
                 <div class="block block-rounded text-center d-flex flex-column flex-grow-1">
-                    <div class="block-content block-content-full d-flex justify-content-between align-items-center flex-grow-1">
-                        <div class="mr-3">
-                            <p class="font-size-h3 font-w700 mb-0 text-danger">
-                                35,698
-                            </p>
-                            <p class="text-muted mb-0">
-                                Delayed Orders
-                            </p>
-                        </div>
-                        <div class="item rounded-lg bg-body-dark">
-                            <i class="fa fa-exclamation-triangle text-muted"></i>
+                    <div class="block-content block-content-full d-flex align-items-center flex-grow-1">
+                        <div class="w-100">
+                            <div class="item rounded-lg bg-body-dark mx-auto my-2">
+                                <i class="fa fa-exclamation-triangle text-muted"></i>
+                            </div>
+                            <div class="text-danger font-size-h1 font-w700">75</div>
+                            <div class="text-black mb-3">Delayed Requests</div>
+                            
                         </div>
                     </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
+                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="javascript:void(0)">
-                            View Archive
+                            Get On to It
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
