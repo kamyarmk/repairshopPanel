@@ -179,7 +179,34 @@
                             <!-- Bars Chart Container -->
                             <!-- Chart.js Chart is initialized in js/pages/be_pages_dashboard.min.js which was auto compiled from _js/pages/be_pages_dashboard.js -->
                             <!-- For more info and examples you can check out http://www.chartjs.org/docs/ -->
-                            <canvas class="js-chartjs-analytics-bars"></canvas>
+                            <canvas class="js-chartjs-analytics-bars"
+                                data-mon="Mon"
+                                data-tue="Tue"
+                                data-wed="Wed"
+                                data-thu="Thu"
+                                data-fri="Fri"
+                                data-sat="Sat"
+                                data-sun="sun"
+
+                                data-device="Devices"
+                                data-income="Incomes"
+
+                                data-fd="73"
+                                data-sd="68"
+                                data-td="69"
+                                data-fod="53"
+                                data-fid="60"
+                                data-sid="72"
+                                data-sev="82"
+
+                                data-ffd="62"
+                                data-ssd="32"
+                                data-ttd="59"
+                                data-ffod="55"
+                                data-ffid="52"
+                                data-ssid="56"
+                                data-ssev="73"
+                            ></canvas>
                         </div>
                     </div>
                 </div>

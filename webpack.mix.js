@@ -26,6 +26,7 @@ mix
     /* JS */
     .js('resources/js/app.js', 'public/js/laravel.app.js').vue()
     .js('resources/js/dashmix/app.js', 'public/js/dashmix.app.js').vue()
+    .js('resources/js/dashmix/chart.js', 'public/js/chart.app.js').vue()
 
     /* Page JS */
     .js('resources/js/pages/tables_datatables.js', 'public/js/pages/tables_datatables.js').vue()
