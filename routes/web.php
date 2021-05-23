@@ -26,3 +26,29 @@ Route::view('/pages/blank', 'pages.blank')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//DashBoard Routes
+Route::match(['get', 'post'], '/admins/list', function(){
+
+    return view('admin.list');
+})->middleware('auth');
+Route::match(['get', 'post'], '/admins/add', function(){
+
+    return view('admin.add');
+})->middleware('auth');
+Route::match(['get', 'post'], '/customer/list', function(){
+
+    return view('customer.list');
+})->middleware('auth');
+Route::match(['get', 'post'], '/customer/add', function(){
+
+    return view('customer.add');
+})->middleware('auth');
+Route::match(['get', 'post'], '/project/list', function(){
+
+    return view('project.list');
+})->middleware('auth');
+Route::match(['get', 'post'], '/project/add', function(){
+
+    return view('project.add');
+})->middleware('auth');

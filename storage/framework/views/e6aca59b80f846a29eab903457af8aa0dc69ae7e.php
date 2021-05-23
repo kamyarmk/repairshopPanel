@@ -305,17 +305,23 @@
                                 </a>
                             </li>
                             
-                            
+                            <!-- Management Area -->
                             <li class="nav-main-heading">Management</li>
-                            <li class="nav-main-item<?php echo e(request()->is('pages/*') ? ' open' : ''); ?>">
+                            <li class="nav-main-item<?php echo e(request()->is('admins/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-user"></i>
                                     <span class="nav-main-link-name">Admins</span>
                                 </a>
+                                <!-- Admins Area -->
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link" href="/pages/datatables">
-                                            <span class="nav-main-link-name">Admins</span>
+                                        <a class="nav-main-link<?php echo e(request()->is('admins/list') ? ' active' : ''); ?>" href="/admins/list">
+                                            <span class="nav-main-link-name">List</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link<?php echo e(request()->is('admins/add') ? ' active' : ''); ?>" href="/admins/add">
+                                            <span class="nav-main-link-name">Add</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -330,19 +336,19 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-main-item<?php echo e(request()->is('pages/*') ? ' open' : ''); ?>">
+                            <li class="nav-main-item<?php echo e(request()->is('customer/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-users"></i>
                                     <span class="nav-main-link-name">Customers</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link" href="/pages/datatables">
+                                        <a class="nav-main-link<?php echo e(request()->is('customer/add') ? ' active' : ''); ?>" href="/customer/add">
                                             <span class="nav-main-link-name">New Users</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/slick') ? ' active' : ''); ?>" href="/pages/slick">
+                                        <a class="nav-main-link<?php echo e(request()->is('customer/list') ? ' active' : ''); ?>" href="/customer/list">
                                             <span class="nav-main-link-name">User List</span>
                                         </a>
                                     </li>
@@ -353,19 +359,19 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-main-item<?php echo e(request()->is('pages/*') ? ' open' : ''); ?>">
+                            <li class="nav-main-item<?php echo e(request()->is('project/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-mobile"></i>
                                     <span class="nav-main-link-name">Devices</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link" href="/pages/datatables">
+                                        <a class="nav-main-link<?php echo e(request()->is('project/add') ? ' active' : ''); ?>" href="/project/add">
                                             <span class="nav-main-link-name">New Device</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/slick') ? ' active' : ''); ?>" href="/pages/slick">
+                                        <a class="nav-main-link<?php echo e(request()->is('project/list') ? ' active' : ''); ?>" href="/project/list">
                                             <span class="nav-main-link-name">Device List</span>
                                         </a>
                                     </li>
@@ -728,7 +734,9 @@
         <!-- END Page Container -->
 
         <!-- Dashmix Core JS -->
+        
         <script src="<?php echo e(mix('js/dashmix.app.js')); ?>"></script>
+        
 
         <!-- Laravel Scaffolding JS -->
         <!-- <script src="<?php echo e(mix('/js/laravel.app.js')); ?>"></script> -->
@@ -741,11 +749,27 @@
         <!-- <script src="<?php echo e(asset('js/pages/be_pages_dashboard_v1.min.js')); ?>"></script> -->
         <!-- Page JS Code -->
         <!-- public/ -->
-        <!-- <script src="<?php echo e(asset('js/pages/be_pages_dashboard.min.js')); ?>"></script> -->
         <script src="<?php echo e(asset('js/chart.app.js')); ?>"></script>
+
+
+        <!-- Page JS Plugins -->
+        <script src="<?php echo e(asset('js/plugins/datatables/jquery.dataTables.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins/datatables/dataTables.bootstrap4.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins/datatables/buttons/dataTables.buttons.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins/datatables/buttons/buttons.print.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins/datatables/buttons/buttons.html5.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins/datatables/buttons/buttons.flash.min.js')); ?>"></script>
+        <script src="<?php echo e(asset('js/plugins/datatables/buttons/buttons.colVis.min.js')); ?>"></script>
+        
+        
+        
+        <script src="<?php echo e(asset('js/dataTables.app.js')); ?>"></script>
+        
 
         <!-- Page JS Helpers (jQuery Sparkline plugin) -->
         <script>jQuery(function(){Dashmix.helpers('sparkline');});</script>
+        
+        
 
         <?php echo $__env->yieldContent('js_after'); ?>
     </body>
