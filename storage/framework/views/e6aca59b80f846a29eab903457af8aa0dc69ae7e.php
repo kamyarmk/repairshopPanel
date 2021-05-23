@@ -25,6 +25,10 @@
 
         <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="<?php echo e(mix('css/themes/xwork.css')); ?>"> -->
+
+        <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="<?php echo e(asset('js/plugins/bootstrap-tourist/bootstrap-tourist.css')); ?>">
+
         <?php echo $__env->yieldContent('css_after'); ?>
 
         <!-- Scripts -->
@@ -400,24 +404,24 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-main-item<?php echo e(request()->is('pages/*') ? ' open' : ''); ?>">
+                            <li class="nav-main-item<?php echo e(request()->is('invoice/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-wallet"></i>
                                     <span class="nav-main-link-name">Accounting</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/datatables') ? ' active' : ''); ?>" href="/pages/datatables">
+                                        <a class="nav-main-link<?php echo e(request()->is('invoice/list') ? ' open' : ''); ?>" href="/invoice/list">
                                             <span class="nav-main-link-name">New Invoice</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/slick') ? ' active' : ''); ?>" href="/pages/slick">
+                                        <a class="nav-main-link<?php echo e(request()->is('invoice/add') ? ' active' : ''); ?>" href="/invoice/add">
                                             <span class="nav-main-link-name">Invoice List</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/blank') ? ' active' : ''); ?>" href="/pages/blank">
+                                        <a class="nav-main-link<?php echo e(request()->is('invoice/details') ? ' active' : ''); ?>" href="/invoice/details">
                                             <span class="nav-main-link-name">Reports</span>
                                         </a>
                                     </li>
@@ -432,7 +436,7 @@
 
                             <li class="nav-main-heading">Support</li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/dashboard">
+                                <a class="nav-main-link<?php echo e(request()->is('message') ? ' active' : ''); ?>" href="/message">
                                     <i class="nav-main-link-icon fa fa-comments"></i>
                                     <span class="nav-main-link-name">Message</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">25</span>
@@ -514,6 +518,12 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="nav-main-item">
+                                <a class="nav-main-link<?php echo e(request()->is('planchange') ? ' active' : ''); ?>" href="/planchange">
+                                    <i class="nav-main-link-icon fa fa-layer-group"></i>
+                                    <span class="nav-main-link-name">planchange</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <!-- END Side Navigation -->
@@ -546,6 +556,18 @@
                             <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">Register Device</span>
                         </button>
                         <!-- Quick Device Add Button -->
+
+                        <!-- Update Button -->
+                        <button type="button" class="btn btn-dual bg-warning text-white" data-toggle="layout" data-action="updatepanel">
+                            <i class="fa fa-sync fa-spin text-xsmooth-dark"></i> <span class="ml-1 d-none d-sm-inline-block">Update New Version</span>
+                        </button>
+                        <!-- Update Button -->
+
+                        <!-- Update Button -->
+                        <button type="button" class="btn btn-dual bg-success text-white" onclick="startTour()">
+                            <i class="fa fa-hands-helping"></i> <span class="ml-1 d-none d-sm-inline-block">Tour</span>
+                        </button>
+                        <!-- Update Button -->
                     </div>
                     <!-- END Left Section -->
 
@@ -764,10 +786,75 @@
         
         
         <script src="<?php echo e(asset('js/dataTables.app.js')); ?>"></script>
+
+        <!-- Page JS Plugins -->
+        <script src="<?php echo e(asset('js/plugins/bootstrap-tourist/bootstrap-tourist.min.js')); ?>"></script>
+
+        <!-- Page JS Code -->
+        <script src="<?php echo e(asset('js/pages/be_comp_tour.min.js')); ?>"></script>
         
 
         <!-- Page JS Helpers (jQuery Sparkline plugin) -->
         <script>jQuery(function(){Dashmix.helpers('sparkline');});</script>
+
+        <script>
+            let tour = new Tour({
+            framework: 'bootstrap4',
+            storage: false, // set storage to true to show the tour once
+            showProgressBar: false,
+            template: `<div class="popover" role="tooltip">
+                <div class="arrow"></div>
+                <h3 class="popover-header"></h3>
+                <div class="popover-body"></div>
+                <div class="popover-navigation">
+                    <div class="btn-group mr-1">
+                        <button class="btn btn-sm btn-primary" data-role="prev">
+                            <i class="fa fa-arrow-left mr-1"></i> Previous
+                        </button>
+                        <button class="btn btn-sm btn-primary" data-role="next">
+                            Next <i class="fa fa-arrow-right ml-1"></i>
+                        </button>
+                        <button class="btn btn-sm btn-primary" data-role="pause-resume" data-pause-text="Pause" data-resume-text="Resume">
+                            Pause
+                        </button>
+                    </div>
+                    <button class="btn btn-sm btn-alt-danger" data-role="end">
+                        Skip
+                    </button>
+                </div>
+            </div>`,
+            steps: [{
+                    placement: 'bottom',
+                    element: '#page-header',
+                    title: 'Page Header',
+                    content: 'This is your page header. All your vital account and UI settings can be managed from here.'
+                },
+                {
+                    placement: 'right',
+                    element: '#sidebar',
+                    title: 'Sidebar',
+                    content: 'Your main navigation can be found here. You can use it to navigate through all available pages.'
+                },
+                {
+                    placement: 'bottom',
+                    element: '#example-page-heading',
+                    title: 'Page Heading',
+                    content: 'This is your main heading with vital info regarding your existing page.'
+                },
+                {
+                    placement: 'top',
+                    element: '#page-footer',
+                    title: 'Page Footer',
+                    content: 'This is where your page footer exists. All non vital information can be put in here.'
+                }
+            ]
+        });
+        
+
+        function startTour(){
+            tour.start();
+        }
+        </script>
         
         
 

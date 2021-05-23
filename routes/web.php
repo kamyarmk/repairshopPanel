@@ -28,6 +28,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //DashBoard Routes
+
+//Admin Route
 Route::match(['get', 'post'], '/admins/list', function(){
 
     return view('admin.list');
@@ -36,6 +38,8 @@ Route::match(['get', 'post'], '/admins/add', function(){
 
     return view('admin.add');
 })->middleware('auth');
+
+//Customer Route
 Route::match(['get', 'post'], '/customer/list', function(){
 
     return view('customer.list');
@@ -44,6 +48,8 @@ Route::match(['get', 'post'], '/customer/add', function(){
 
     return view('customer.add');
 })->middleware('auth');
+
+//Projects Route
 Route::match(['get', 'post'], '/project/list', function(){
 
     return view('project.list');
@@ -51,4 +57,34 @@ Route::match(['get', 'post'], '/project/list', function(){
 Route::match(['get', 'post'], '/project/add', function(){
 
     return view('project.add');
+})->middleware('auth');
+Route::match(['get', 'post'], '/project/details', function(){
+
+    return view('project.details');
+})->middleware('auth');
+
+//Invoice Route
+Route::match(['get', 'post'], '/invoice/list', function(){
+
+    return view('invoice.list');
+})->middleware('auth');
+Route::match(['get', 'post'], '/invoice/add', function(){
+
+    return view('invoice.add');
+})->middleware('auth');
+Route::match(['get', 'post'], '/invoice/details', function(){
+
+    return view('invoice.details');
+})->middleware('auth');
+
+//Messaging Route
+Route::match(['get', 'post'], '/message', function(){
+
+    return view('message.chat');
+})->middleware('auth');
+
+//Plan Upgrade Route
+Route::match(['get', 'post'], '/planchange', function(){
+
+    return view('settings.planchange');
 })->middleware('auth');
