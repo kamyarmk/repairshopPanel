@@ -334,7 +334,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/blank') ? ' active' : ''); ?>" href="/pages/blank">
+                                        <a class="nav-main-link<?php echo e(request()->is('report/any') ? ' active' : ''); ?>" href="/report/any">
                                             <span class="nav-main-link-name">Reports</span>
                                         </a>
                                     </li>
@@ -357,7 +357,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/blank') ? ' active' : ''); ?>" href="/pages/blank">
+                                        <a class="nav-main-link<?php echo e(request()->is('report/any') ? ' active' : ''); ?>" href="/report/any">
                                             <span class="nav-main-link-name">Reports</span>
                                         </a>
                                     </li>
@@ -380,26 +380,18 @@
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/blank') ? ' active' : ''); ?>" href="/pages/blank">
-                                            <span class="nav-main-link-name">Reports</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-main-item<?php echo e(request()->is('pages/*') ? ' open' : ''); ?>">
-                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
-                                    <i class="nav-main-link-icon fa fa-laptop"></i>
-                                    <span class="nav-main-link-name">Devices Types</span>
-                                </a>
-                                <ul class="nav-main-submenu">
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link" href="/pages/datatables">
+                                        <a class="nav-main-link<?php echo e(request()->is('project/category') ? ' active' : ''); ?>" href="/project/category">
                                             <span class="nav-main-link-name">Categories</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('pages/slick') ? ' active' : ''); ?>" href="/pages/slick">
+                                        <a class="nav-main-link<?php echo e(request()->is('project/variable') ? ' active' : ''); ?>" href="/project/variable">
                                             <span class="nav-main-link-name">Variables</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link<?php echo e(request()->is('report/any') ? ' active' : ''); ?>" href="/report/any">
+                                            <span class="nav-main-link-name">Reports</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -428,7 +420,7 @@
                                 </ul>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/">
+                                <a class="nav-main-link<?php echo e(request()->is('report/general') ? ' active' : ''); ?>" href="/report/general">
                                     <i class="nav-main-link-icon fa fa-chart-pie"></i>
                                     <span class="nav-main-link-name">Report</span>
                                 </a>
@@ -443,14 +435,14 @@
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/dashboard">
+                                <a class="nav-main-link<?php echo e(request()->is('notifications') ? ' active' : ''); ?>" href="/notifications">
                                     <i class="nav-main-link-icon fa fa-bell"></i>
                                     <span class="nav-main-link-name">Notifications</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">45</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/dashboard">
+                                <a class="nav-main-link<?php echo e(request()->is('bulkmessage') ? ' active' : ''); ?>" href="/bulkmessage">
                                     <i class="nav-main-link-icon fa fa-bullhorn"></i>
                                     <span class="nav-main-link-name">Bulk Messaging</span>
                                 </a>
@@ -791,7 +783,7 @@
         <script src="<?php echo e(asset('js/plugins/bootstrap-tourist/bootstrap-tourist.min.js')); ?>"></script>
 
         <!-- Page JS Code -->
-        <script src="<?php echo e(asset('js/pages/be_comp_tour.min.js')); ?>"></script>
+        <!-- <script src="<?php echo e(asset('js/pages/be_comp_tour.min.js')); ?>"></script> -->
         
 
         <!-- Page JS Helpers (jQuery Sparkline plugin) -->

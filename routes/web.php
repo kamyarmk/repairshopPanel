@@ -63,6 +63,16 @@ Route::match(['get', 'post'], '/project/details', function(){
     return view('project.details');
 })->middleware('auth');
 
+Route::match(['get', 'post'], '/project/category', function(){
+
+    return view('project.category.list');
+})->middleware('auth');
+Route::match(['get', 'post'], '/project/variable', function(){
+
+    return view('project.variable.list');
+})->middleware('auth');
+
+
 //Invoice Route
 Route::match(['get', 'post'], '/invoice/list', function(){
 
@@ -82,9 +92,27 @@ Route::match(['get', 'post'], '/message', function(){
 
     return view('message.chat');
 })->middleware('auth');
+Route::match(['get', 'post'], '/notifications', function(){
+
+    return view('message.notifications');
+})->middleware('auth');
+Route::match(['get', 'post'], '/bulkmessage', function(){
+
+    return view('message.bulkmessage');
+})->middleware('auth');
 
 //Plan Upgrade Route
 Route::match(['get', 'post'], '/planchange', function(){
 
     return view('settings.planchange');
+})->middleware('auth');
+
+//Report
+Route::match(['get', 'post'], '/report/any', function(){
+
+    return view('reports.any');
+})->middleware('auth');
+Route::match(['get', 'post'], '/report/general', function(){
+
+    return view('reports.general');
 })->middleware('auth');
