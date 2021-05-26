@@ -18,7 +18,7 @@
     <!-- END Hero -->
 
     <!-- Page Content -->
-    <div class="content content-full content-boxed">
+    <div class="content">
         <div class="block block-rounded">
             <div class="block-content">
                 <form action="be_pages_projects_edit.html" method="POST" enctype="multipart/form-data" onsubmit="return false;">

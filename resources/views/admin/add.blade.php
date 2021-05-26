@@ -18,7 +18,7 @@
     <!-- END Hero -->
 
     <!-- Page Content -->
-    <div class="content content-full content-boxed">
+    <div class="content">
         <div class="block block-rounded">
             <div class="block-content">
                 <form action="be_pages_projects_edit.html" method="POST" enctype="multipart/form-data" onsubmit="return false;">
@@ -50,8 +50,20 @@
                                 <input type="text" class="form-control" id="dm-profile-edit-job-title" name="dm-profile-edit-job-title" placeholder="Add your job title.." value="Product Manager">
                             </div>
                             <div class="form-group">
-                                <label for="dm-profile-edit-company">Company</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-company" name="dm-profile-edit-company" value="@ProXdesign" readonly>
+                                <label for="dm-profile-edit-company">Department</label>
+                                <select class="custom-select" id="example-select-custom" name="example-select-custom">
+                                                <option value="0">Please select</option>
+                                                <option value="1">Option #1</option>
+                                                <option value="2">Option #2</option>
+                                                <option value="3">Option #3</option>
+                                                <option value="4">Option #4</option>
+                                                <option value="5">Option #5</option>
+                                                <option value="6">Option #6</option>
+                                                <option value="7">Option #7</option>
+                                                <option value="8">Option #8</option>
+                                                <option value="9">Option #9</option>
+                                                <option value="10">Option #10</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label>Your Avatar</label>
@@ -99,68 +111,9 @@
                     </div>
                     <!-- END Change Password -->
 
-                    <!-- Connections -->
-                    <h2 class="content-heading pt-0">
-                        <i class="fa fa-fw fa-share-alt text-muted mr-1"></i> Connections
-                    </h2>
-                    <div class="row push">
-                        <div class="col-lg-4">
-                            <p class="text-muted">
-                                You can connect your account to third party networks to get extra features.
-                            </p>
-                        </div>
-                        <div class="col-lg-8 col-xl-7">
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-md-8 col-xl-6">
-                                    <a class="btn btn-block btn-alt-danger text-left" href="javascript:void(0)">
-                                        <i class="fab fa-fw fa-google opacity-50 mr-1"></i> Connect to Google
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-md-8 col-xl-6">
-                                    <a class="btn btn-block btn-alt-info text-left" href="javascript:void(0)">
-                                        <i class="fab fa-fw fa-twitter opacity-50 mr-1"></i> Connect to Twitter
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-md-8 col-xl-6">
-                                    <a class="btn btn-block btn-alt-primary bg-transparent d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span>
-                                            <i class="fab fa-fw fa-facebook mr-1"></i> John Doe
-                                        </span>
-                                        <i class="fa fa-fw fa-check mr-1"></i>
-                                    </a>
-                                </div>
-                                <div class="col-sm-12 col-md-4 col-xl-6 mt-1 d-md-flex align-items-md-center font-size-sm">
-                                    <a class="btn btn-sm btn-light btn-rounded" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-pencil-alt mr-1"></i> Edit Facebook Connection
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-10 col-md-8 col-xl-6">
-                                    <a class="btn btn-block btn-alt-warning bg-transparent d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span>
-                                            <i class="fab fa-fw fa-instagram mr-1"></i> @john_doe
-                                        </span>
-                                        <i class="fa fa-fw fa-check mr-1"></i>
-                                    </a>
-                                </div>
-                                <div class="col-sm-12 col-md-4 col-xl-6 mt-1 d-md-flex align-items-md-center font-size-sm">
-                                    <a class="btn btn-sm btn-light btn-rounded" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-pencil-alt mr-1"></i> Edit Instagram Connection
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END Connections -->
-
                     <!-- Billing Information -->
                     <h2 class="content-heading pt-0">
-                        <i class="fab fa-fw fa-paypal text-muted mr-1"></i> Billing Information
+                        <i class="fab fa-fw fa-paypal text-muted mr-1"></i> Personal Information
                     </h2>
                     <div class="row push">
                         <div class="col-lg-4">
@@ -169,10 +122,6 @@
                             </p>
                         </div>
                         <div class="col-lg-8 col-xl-5">
-                            <div class="form-group">
-                                <label for="dm-profile-edit-company-name">Company Name (Optional)</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-company-name" name="dm-profile-edit-company-name">
-                            </div>
                             <div class="form-group row">
                                 <div class="col-6">
                                     <label for="dm-profile-edit-firstname">Firstname</label>
@@ -200,8 +149,22 @@
                                 <input type="text" class="form-control" id="dm-profile-edit-postal" name="dm-profile-edit-postal">
                             </div>
                             <div class="form-group">
-                                <label for="dm-profile-edit-vat">VAT Number</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-vat" name="dm-profile-edit-vat" value="EA00000000" disabled>
+                                <label for="dm-profile-edit-company-name">Mobile Number</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control form-control-alt" id="example-group3-input2-alt" name="example-group3-input2-alt">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="dm-profile-edit-company-name">ID Number</label>
+                                <input type="text" class="form-control" id="dm-profile-edit-company-name" name="dm-profile-edit-company-name">
+                            </div>
+                            <div class="custom-file">
+                                <!-- Populating custom file input label with the selected filename (data-toggle="custom-file-input" is initialized in Helpers.coreBootstrapCustomFileInput()) -->
+                                <input type="file" class="custom-file-input" data-toggle="custom-file-input" id="dm-profile-edit-avatar" name="dm-profile-edit-avatar">
+                                <label class="custom-file-label" for="dm-profile-edit-avatar">Upload Document</label>
                             </div>
                         </div>
                     </div>

@@ -39,6 +39,11 @@ Route::match(['get', 'post'], '/admins/add', function(){
     return view('admin.add');
 })->middleware('auth');
 
+Route::match(['get', 'post'], '/admins/department', function(){
+
+    return view('admin.department');
+})->middleware('auth');
+
 //Customer Route
 Route::match(['get', 'post'], '/customer/list', function(){
 

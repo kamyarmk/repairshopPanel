@@ -82,12 +82,12 @@ var pageDashboard = /*#__PURE__*/function () {
         datasets: [{
           label: chartBarsCon.data('device'),
           fill: true,
-          backgroundColor: 'rgba(224, 79, 26, .6)',
+          backgroundColor: 'rgba(6, 101, 208, .6)',
           borderColor: 'transparent',
-          pointBackgroundColor: 'rgba(224, 79, 26, 1)',
+          pointBackgroundColor: 'rgba(6, 101, 208, 1)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(224, 79, 26, 1)',
+          pointHoverBorderColor: 'rgba(6, 101, 208, 1)',
           data: [chartBarsCon.data('fd'), chartBarsCon.data('sd'), chartBarsCon.data('td'), chartBarsCon.data('fod'), chartBarsCon.data('fid'), chartBarsCon.data('sid'), chartBarsCon.data('sev')]
         }, {
           label: chartBarsCon.data('income'),
