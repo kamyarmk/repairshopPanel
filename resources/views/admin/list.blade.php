@@ -8,9 +8,11 @@
             <div class="col-6 col-lg-3">
                 <a class="block block-rounded block-link-shadow text-center" href="be_pages_ecom_orders.html">
                     <div class="block-content py-5">
-                        <div class="font-size-h3 font-w600 text-primary mb-1">78</div>
-                        <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            Pending
+                        <div class="font-size-h3 font-w600 text-success mb-1">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <p class="font-w600 font-size-sm text-success text-uppercase mb-0">
+                            Add New
                         </p>
                     </div>
                 </a>
@@ -20,7 +22,7 @@
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 mb-1">126</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            Today
+                            Total
                         </p>
                     </div>
                 </a>
@@ -30,7 +32,7 @@
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 mb-1">350</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            Yesterday
+                            Department
                         </p>
                     </div>
                 </a>
@@ -40,7 +42,7 @@
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 mb-1">89.752</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            This Month
+                            Online
                         </p>
                     </div>
                 </a>
@@ -51,11 +53,15 @@
         <!-- All Orders -->
         <div class="block block-rounded">
             <div class="block-header block-header-default">
-                <h3 class="block-title">All Orders</h3>
+                <h3 class="block-title">All Staffs</h3>
+                <div class="custom-control custom-switch mt-1">
+                    <input type="checkbox" class="custom-control-input" id="example-sw-custom1" name="example-sw-custom1" checked="">
+                    <label class="custom-control-label" for="example-sw-custom1">Online</label>
+                </div>
                 <div class="block-options">
                     <div class="dropdown">
                         <button type="button" class="btn btn-light" id="dropdown-ecom-filters" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Filters
+                            Department
                             <i class="fa fa-angle-down ml-1"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-ecom-filters">
@@ -104,10 +110,9 @@
                             <tr>
                                 <th class="text-center" style="width: 100px;">ID</th>
                                 <th class="d-none d-sm-table-cell text-center">Submitted</th>
-                                <th>Status</th>
-                                <th class="d-none d-xl-table-cell">Customer</th>
-                                <th class="d-none d-xl-table-cell text-center">Products</th>
-                                <th class="d-none d-sm-table-cell text-right">Value</th>
+                                <th>Department</th>
+                                <th class="d-none d-xl-table-cell">Name</th>
+                                <th class="d-none d-xl-table-cell text-center">Mobile</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -127,9 +132,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">5</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1334,50</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -156,9 +158,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">5</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1546,91</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -183,9 +182,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">8</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1376,71</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -212,9 +208,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">2</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1486,21</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -239,9 +232,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">4</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$241,93</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -268,9 +258,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">8</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1475,55</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -295,9 +282,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">4</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1853,95</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -324,9 +308,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">6</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1683,24</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -351,9 +332,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">3</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$786,45</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -380,9 +358,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">4</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$856,98</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -407,9 +382,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">3</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$777,68</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -436,9 +408,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">8</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1463,86</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -463,9 +432,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">1</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1581,37</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -492,9 +458,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">5</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$521,90</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -519,9 +482,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">1</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$2332,52</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -548,9 +508,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">5</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$730,67</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -575,9 +532,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">1</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$1341,39</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
@@ -604,9 +558,6 @@
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">2</a>
                                 </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$964,73</strong>
-                                </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
                                         <i class="fa fa-fw fa-eye"></i>
@@ -631,9 +582,6 @@
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
                                     <a class="font-w600" href="be_pages_ecom_order.html">2</a>
-                                </td>
-                                <td class="d-none d-sm-table-cell text-right">
-                                    <strong>$727,18</strong>
                                 </td>
                                 <td class="text-center font-size-base">
                                     <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">

@@ -320,12 +320,12 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('admins/list') ? ' active' : ''); ?>" href="/admins/list">
-                                            <span class="nav-main-link-name">Staff List</span>
+                                            <span class="nav-main-link-name">List Staff</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('admins/add') ? ' active' : ''); ?>" href="/admins/add">
-                                            <span class="nav-main-link-name">Staff Add</span>
+                                            <span class="nav-main-link-name">Add Staff</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
