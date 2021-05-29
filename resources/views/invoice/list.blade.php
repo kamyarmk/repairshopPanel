@@ -8,9 +8,11 @@
             <div class="col-6 col-lg-3">
                 <a class="block block-rounded block-link-shadow text-center" href="be_pages_ecom_orders.html">
                     <div class="block-content py-5">
-                        <div class="font-size-h3 font-w600 text-primary mb-1">78</div>
-                        <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            Pending
+                        <div class="font-size-h3 font-w600 text-success mb-1">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <p class="font-w600 font-size-sm text-success text-uppercase mb-0">
+                            Add New
                         </p>
                     </div>
                 </a>
@@ -20,7 +22,7 @@
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 mb-1">126</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            Today
+                            Total
                         </p>
                     </div>
                 </a>
@@ -30,7 +32,7 @@
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 mb-1">350</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            Yesterday
+                            Paid
                         </p>
                     </div>
                 </a>
@@ -40,7 +42,7 @@
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 mb-1">89.752</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            This Month
+                            Unpaid
                         </p>
                     </div>
                 </a>
@@ -51,7 +53,7 @@
         <!-- All Orders -->
         <div class="block block-rounded">
             <div class="block-header block-header-default">
-                <h3 class="block-title">All Orders</h3>
+                <h3 class="block-title">All Invoice</h3>
                 <div class="block-options">
                     <div class="dropdown">
                         <button type="button" class="btn btn-light" id="dropdown-ecom-filters" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,24 +62,12 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-ecom-filters">
                             <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                Pending..
+                                Paid
                                 <span class="badge badge-primary badge-pill">78</span>
                             </a>
                             <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                Processing
+                                Unpaid
                                 <span class="badge badge-secondary badge-pill">12</span>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                For Delivery
-                                <span class="badge badge-secondary badge-pill">20</span>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                Canceled
-                                <span class="badge badge-secondary badge-pill">5</span>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                Delivered
-                                <span class="badge badge-secondary badge-pill">280</span>
                             </a>
                             <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                                 All
@@ -106,7 +96,7 @@
                                 <th class="d-none d-sm-table-cell text-center">Submitted</th>
                                 <th>Status</th>
                                 <th class="d-none d-xl-table-cell">Customer</th>
-                                <th class="d-none d-xl-table-cell text-center">Products</th>
+                                <th class="d-none d-xl-table-cell text-center">Device</th>
                                 <th class="d-none d-sm-table-cell text-right">Value</th>
                                 <th class="text-center">Actions</th>
                             </tr>

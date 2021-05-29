@@ -320,12 +320,12 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('admins/list') ? ' active' : ''); ?>" href="/admins/list">
-                                            <span class="nav-main-link-name">List Staff</span>
+                                            <span class="nav-main-link-name">Staff List</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('admins/add') ? ' active' : ''); ?>" href="/admins/add">
-                                            <span class="nav-main-link-name">Add Staff</span>
+                                            <span class="nav-main-link-name">New Staff</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -403,12 +403,12 @@
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('invoice/list') ? ' open' : ''); ?>" href="/invoice/list">
+                                        <a class="nav-main-link<?php echo e(request()->is('invoice/add') ? ' active' : ''); ?>" href="/invoice/add">
                                             <span class="nav-main-link-name">New Invoice</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('invoice/add') ? ' active' : ''); ?>" href="/invoice/add">
+                                        <a class="nav-main-link<?php echo e(request()->is('invoice/list') ? ' active' : ''); ?>" href="/invoice/list">
                                             <span class="nav-main-link-name">Invoice List</span>
                                         </a>
                                     </li>
@@ -481,7 +481,7 @@
                             </li>
                             
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/">
+                                <a class="nav-main-link<?php echo e(request()->is('settings') ? ' active' : ''); ?>" href="/settings">
                                     <i class="nav-main-link-icon fa fa-cog"></i>
                                     <span class="nav-main-link-name">Settings</span>
                                 </a>

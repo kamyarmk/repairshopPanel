@@ -15,10 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // Example Routes
 Route::view('/', 'landing');
-Route::match(['get', 'post'], '/dashboard', function(){
 
-    return view('dashboard');
-})->middleware('auth');
 Route::view('/pages/slick', 'pages.slick')->middleware('auth');
 Route::view('/pages/datatables', 'pages.datatables')->middleware('auth');
 Route::view('/pages/blank', 'pages.blank')->middleware('auth');
@@ -29,82 +26,34 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //DashBoard Routes
 
+Route::get('/dashboard', [App\Http\Controllers\Dashboard\DashboardController::class, 'index'])->name('dashboard');
+
 //Admin Route
-Route::match(['get', 'post'], '/admins/list', function(){
 
-    return view('admin.list');
-})->middleware('auth');
-Route::match(['get', 'post'], '/admins/add', function(){
-
-    return view('admin.add');
-})->middleware('auth');
-
-Route::match(['get', 'post'], '/admins/department', function(){
-
-    return view('admin.department');
-})->middleware('auth');
+Route::get('/admins/list', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'index'])->name('admin.list');
+Route::get('/admins/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'add'])->name('admin.add');
+Route::get('/admins/department', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'department'])->name('admin.department');
 
 //Customer Route
-Route::match(['get', 'post'], '/customer/list', function(){
-
-    return view('customer.list');
-})->middleware('auth');
-Route::match(['get', 'post'], '/customer/add', function(){
-
-    return view('customer.add');
-})->middleware('auth');
+Route::get('/customer/list', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'index'])->name('customer.list');
+Route::get('/customer/add', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'add'])->name('customer.add');
 
 //Projects Route
-Route::match(['get', 'post'], '/project/list', function(){
-
-    return view('project.list');
-})->middleware('auth');
-Route::match(['get', 'post'], '/project/add', function(){
-
-    return view('project.add');
-})->middleware('auth');
-Route::match(['get', 'post'], '/project/details', function(){
-
-    return view('project.details');
-})->middleware('auth');
-
-Route::match(['get', 'post'], '/project/category', function(){
-
-    return view('project.category.list');
-})->middleware('auth');
-Route::match(['get', 'post'], '/project/variable', function(){
-
-    return view('project.variable.list');
-})->middleware('auth');
-
+Route::get('/project/list', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'index'])->name('Project.list');
+Route::get('/project/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'add'])->name('Project.add');
+Route::get('/project/details', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'details'])->name('Project.details');
+Route::get('/project/category', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'category'])->name('Project.category');
+Route::get('/project/variable', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variable'])->name('Project.variable');
 
 //Invoice Route
-Route::match(['get', 'post'], '/invoice/list', function(){
-
-    return view('invoice.list');
-})->middleware('auth');
-Route::match(['get', 'post'], '/invoice/add', function(){
-
-    return view('invoice.add');
-})->middleware('auth');
-Route::match(['get', 'post'], '/invoice/details', function(){
-
-    return view('invoice.details');
-})->middleware('auth');
+Route::get('/invoice/list', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'index'])->name('Invoice.list');
+Route::get('/invoice/add', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'add'])->name('Invoice.add');
+Route::get('/invoice/details', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'details'])->name('Invoice.details');
 
 //Messaging Route
-Route::match(['get', 'post'], '/message', function(){
-
-    return view('message.chat');
-})->middleware('auth');
-Route::match(['get', 'post'], '/notifications', function(){
-
-    return view('message.notifications');
-})->middleware('auth');
-Route::match(['get', 'post'], '/bulkmessage', function(){
-
-    return view('message.bulkmessage');
-})->middleware('auth');
+Route::get('/message', [App\Http\Controllers\Dashboard\Messaging\MessagingController::class, 'message'])->name('message');
+Route::get('/notifications', [App\Http\Controllers\Dashboard\Messaging\MessagingController::class, 'notifications'])->name('notifications');
+Route::get('/bulkmessage', [App\Http\Controllers\Dashboard\Messaging\MessagingController::class, 'bulkmessage'])->name('bulkmessage');
 
 //Plan Upgrade Route
 Route::match(['get', 'post'], '/planchange', function(){
@@ -113,11 +62,8 @@ Route::match(['get', 'post'], '/planchange', function(){
 })->middleware('auth');
 
 //Report
-Route::match(['get', 'post'], '/report/any', function(){
+Route::get('/report/any', [App\Http\Controllers\Dashboard\Reports\ReportsController::class, 'any'])->name('Report.any');
+Route::get('/report/general', [App\Http\Controllers\Dashboard\Reports\ReportsController::class, 'general'])->name('Report.general');
 
-    return view('reports.any');
-})->middleware('auth');
-Route::match(['get', 'post'], '/report/general', function(){
-
-    return view('reports.general');
-})->middleware('auth');
+//Settings
+Route::get('/settings', [App\Http\Controllers\Dashboard\Settings\SettingsController::class, 'index'])->name('Setting.general');
