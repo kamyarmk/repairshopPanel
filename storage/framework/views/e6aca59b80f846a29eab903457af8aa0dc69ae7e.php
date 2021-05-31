@@ -304,7 +304,7 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('dashboard') ? ' active' : ''); ?>" href="/dashboard">
                                     <i class="nav-main-link-icon fa fa-tachometer-alt"></i>
-                                    <span class="nav-main-link-name">Dashboard</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Dashboard')); ?></span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">5</span>
                                 </a>
                             </li>
@@ -535,42 +535,63 @@
                 <!-- Header Content -->
                 <div class="content-header">
                     <!-- Left Section -->
-                    <div>
+                    <div class="row">
                         <!-- Toggle Sidebar -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                        <button type="button" class="btn btn-dual" data-toggle="layout" data-action="sidebar_toggle">
-                            <i class="fa fa-fw fa-bars"></i>
-                        </button>
+                        <div class="co-1">
+                            <button type="button" class="btn btn-dual" data-toggle="layout" data-action="sidebar_toggle">
+                                <i class="fa fa-fw fa-bars"></i>
+                            </button>
+                        </div>
                         <!-- END Toggle Sidebar -->
 
                         <!-- Open Search Section -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
-                            <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block">Search</span>
-                        </button>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
+                                <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block">Search</span>
+                            </button>
+                        </div>
+                        
                         <!-- END Open Search Section -->
                         <!-- Quick Device Add Button -->
-                        <button type="button" class="btn btn-dual bg-primary text-white" data-toggle="layout" data-action="Register Device">
-                            <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">Register Device</span>
-                        </button>
+                        <div class="col-5">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-hero-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">Register Device</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-default-hero-primary" style="">
+                                    <a class="dropdown-item" href="javascript:void(0)">New Device</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)">New Customer</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)">New Invoice</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)">New Staff</a>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Quick Device Add Button -->
 
-                        <!-- Update Button -->
-                        <button type="button" class="btn btn-dual bg-warning text-white" data-toggle="layout" data-action="updatepanel">
-                            <i class="fa fa-sync fa-spin text-xsmooth-dark"></i> <span class="ml-1 d-none d-sm-inline-block">Update New Version</span>
-                        </button>
-                        <!-- Update Button -->
+                        
 
-                        <!-- Update Button -->
-                        <button type="button" class="btn btn-dual bg-success text-white" onclick="startTour()">
-                            <i class="fa fa-hands-helping"></i> <span class="ml-1 d-none d-sm-inline-block">Tour</span>
-                        </button>
-                        <!-- Update Button -->
+                        
                     </div>
                     <!-- END Left Section -->
 
                     <!-- Right Section -->
                     <div>
+                        <!-- Update Button -->
+                        <button type="button" class="btn btn-dual bg-warning text-white" data-toggle="layout" data-action="updatepanel">
+                            <i class="fa fa-sync fa-spin text-xsmooth-dark"></i>
+                        </button>
+                        <!-- Update Button -->
+                        <!-- Tour Button -->
+                            <button type="button" class="btn btn-dual bg-success text-white" onclick="startTour()">
+                                <i class="fa fa-hands-helping"></i> <span class="ml-1 d-none d-sm-inline-block">Tour</span>
+                            </button>
+                        <!-- Tour Button -->
                         <!-- User Dropdown -->
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

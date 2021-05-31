@@ -304,38 +304,38 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}" href="/dashboard">
                                     <i class="nav-main-link-icon fa fa-tachometer-alt"></i>
-                                    <span class="nav-main-link-name">Dashboard</span>
+                                    <span class="nav-main-link-name">{{ __('Dashboard') }}</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">5</span>
                                 </a>
                             </li>
                             
                             <!-- Management Area -->
-                            <li class="nav-main-heading">Management</li>
+                            <li class="nav-main-heading">{{ __('Management') }}</li>
                             <li class="nav-main-item{{ request()->is('admins/*') ? ' open' : '' }}">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-user"></i>
-                                    <span class="nav-main-link-name">Staffs</span>
+                                    <span class="nav-main-link-name">{{ __('Staffs') }}</span>
                                 </a>
                                 <!-- Admins Area -->
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/list') ? ' active' : '' }}" href="/admins/list">
-                                            <span class="nav-main-link-name">Staff List</span>
+                                            <span class="nav-main-link-name">{{ __('Staff List') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/add') ? ' active' : '' }}" href="/admins/add">
-                                            <span class="nav-main-link-name">New Staff</span>
+                                            <span class="nav-main-link-name">{{ __('New Staff') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/department') ? ' active' : '' }}" href="/admins/department">
-                                            <span class="nav-main-link-name">Staff Departments</span>
+                                            <span class="nav-main-link-name">{{ __('Staff Departments') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -343,22 +343,22 @@
                             <li class="nav-main-item{{ request()->is('customer/*') ? ' open' : '' }}">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-users"></i>
-                                    <span class="nav-main-link-name">Customers</span>
+                                    <span class="nav-main-link-name">{{ __('Customers') }}</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('customer/add') ? ' active' : '' }}" href="/customer/add">
-                                            <span class="nav-main-link-name">New Users</span>
+                                            <span class="nav-main-link-name">{{ __('New Users') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('customer/list') ? ' active' : '' }}" href="/customer/list">
-                                            <span class="nav-main-link-name">User List</span>
+                                            <span class="nav-main-link-name">{{ __('User List') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -366,32 +366,32 @@
                             <li class="nav-main-item{{ request()->is('project/*') ? ' open' : '' }}">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-mobile"></i>
-                                    <span class="nav-main-link-name">Devices</span>
+                                    <span class="nav-main-link-name">{{ __('Devices') }}</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/add') ? ' active' : '' }}" href="/project/add">
-                                            <span class="nav-main-link-name">New Device</span>
+                                            <span class="nav-main-link-name">{{ __('New Device') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/list') ? ' active' : '' }}" href="/project/list">
-                                            <span class="nav-main-link-name">Device List</span>
+                                            <span class="nav-main-link-name">{{ __('Device List') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/category') ? ' active' : '' }}" href="/project/category">
-                                            <span class="nav-main-link-name">Categories</span>
+                                            <span class="nav-main-link-name">{{ __('Categories') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/variable') ? ' active' : '' }}" href="/project/variable">
-                                            <span class="nav-main-link-name">Variables</span>
+                                            <span class="nav-main-link-name">{{ __('Variables') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -399,22 +399,22 @@
                             <li class="nav-main-item{{ request()->is('invoice/*') ? ' open' : '' }}">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-wallet"></i>
-                                    <span class="nav-main-link-name">Accounting</span>
+                                    <span class="nav-main-link-name">{{ __('Accounting') }}</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('invoice/add') ? ' active' : '' }}" href="/invoice/add">
-                                            <span class="nav-main-link-name">New Invoice</span>
+                                            <span class="nav-main-link-name">{{ __('New Invoice') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('invoice/list') ? ' active' : '' }}" href="/invoice/list">
-                                            <span class="nav-main-link-name">Invoice List</span>
+                                            <span class="nav-main-link-name">{{ __('Invoice List') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('invoice/details') ? ' active' : '' }}" href="/invoice/details">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -422,29 +422,29 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('report/general') ? ' active' : '' }}" href="/report/general">
                                     <i class="nav-main-link-icon fa fa-chart-pie"></i>
-                                    <span class="nav-main-link-name">Report</span>
+                                    <span class="nav-main-link-name">{{ __('Reports') }}</span>
                                 </a>
                             </li>
 
-                            <li class="nav-main-heading">Support</li>
+                            <li class="nav-main-heading">{{ __('Support') }}</li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('message') ? ' active' : '' }}" href="/message">
                                     <i class="nav-main-link-icon fa fa-comments"></i>
-                                    <span class="nav-main-link-name">Message</span>
+                                    <span class="nav-main-link-name">{{ __('Message') }}</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">25</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('notifications') ? ' active' : '' }}" href="/notifications">
                                     <i class="nav-main-link-icon fa fa-bell"></i>
-                                    <span class="nav-main-link-name">Notifications</span>
+                                    <span class="nav-main-link-name">{{ __('Notifications') }}</span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">45</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('bulkmessage') ? ' active' : '' }}" href="/bulkmessage">
                                     <i class="nav-main-link-icon fa fa-bullhorn"></i>
-                                    <span class="nav-main-link-name">Bulk Messaging</span>
+                                    <span class="nav-main-link-name">{{ __('Bulk Messaging') }}</span>
                                 </a>
                             </li>
 
@@ -472,7 +472,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-main-heading">System</li>
+                            <li class="nav-main-heading">{{ __('System') }}</li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-globe"></i>
@@ -483,35 +483,35 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('settings') ? ' active' : '' }}" href="/settings">
                                     <i class="nav-main-link-icon fa fa-cog"></i>
-                                    <span class="nav-main-link-name">Settings</span>
+                                    <span class="nav-main-link-name">{{ __('Settings') }}</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-clipboard-check"></i>
-                                    <span class="nav-main-link-name">Logs</span>
+                                    <span class="nav-main-link-name">{{ __('Logs') }}</span>
                                 </a>
                             </li>
-                            <li class="nav-main-heading">Resepto Support</li>
+                            <li class="nav-main-heading">{{ __('Resepto Support') }}</li>
                             <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-ticket-alt"></i>
-                                    <span class="nav-main-link-name">Support</span>
+                                    <span class="nav-main-link-name">{{ __('Support') }}</span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('pages/datatables') ? ' active' : '' }}" href="/pages/datatables">
-                                            <span class="nav-main-link-name">Send An Email</span>
+                                            <span class="nav-main-link-name">{{ __('Send An Email') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}" href="/pages/slick">
-                                            <span class="nav-main-link-name">Send a Ticket</span>
+                                            <span class="nav-main-link-name">{{ __('Send a Ticket') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('pages/blank') ? ' active' : '' }}" href="/pages/blank">
-                                            <span class="nav-main-link-name">Call Us</span>
+                                            <span class="nav-main-link-name">{{ __('Call Us') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -519,7 +519,7 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('planchange') ? ' active' : '' }}" href="/planchange">
                                     <i class="nav-main-link-icon fa fa-layer-group"></i>
-                                    <span class="nav-main-link-name">planchange</span>
+                                    <span class="nav-main-link-name">{{ __('planchange') }}</span>
                                 </a>
                             </li>
                         </ul>
@@ -535,42 +535,63 @@
                 <!-- Header Content -->
                 <div class="content-header">
                     <!-- Left Section -->
-                    <div>
+                    <div class="row">
                         <!-- Toggle Sidebar -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                        <button type="button" class="btn btn-dual" data-toggle="layout" data-action="sidebar_toggle">
-                            <i class="fa fa-fw fa-bars"></i>
-                        </button>
+                        <div class="co-1">
+                            <button type="button" class="btn btn-dual" data-toggle="layout" data-action="sidebar_toggle">
+                                <i class="fa fa-fw fa-bars"></i>
+                            </button>
+                        </div>
                         <!-- END Toggle Sidebar -->
 
                         <!-- Open Search Section -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
-                            <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block">Search</span>
-                        </button>
+                        <div class="col-4">
+                            <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
+                                <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block">Search</span>
+                            </button>
+                        </div>
+                        
                         <!-- END Open Search Section -->
                         <!-- Quick Device Add Button -->
-                        <button type="button" class="btn btn-dual bg-primary text-white" data-toggle="layout" data-action="Register Device">
-                            <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">Register Device</span>
-                        </button>
+                        <div class="col-5">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-hero-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">Register Device</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-default-hero-primary" style="">
+                                    <a class="dropdown-item" href="javascript:void(0)">New Device</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)">New Customer</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)">New Invoice</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="javascript:void(0)">New Staff</a>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Quick Device Add Button -->
 
-                        <!-- Update Button -->
-                        <button type="button" class="btn btn-dual bg-warning text-white" data-toggle="layout" data-action="updatepanel">
-                            <i class="fa fa-sync fa-spin text-xsmooth-dark"></i> <span class="ml-1 d-none d-sm-inline-block">Update New Version</span>
-                        </button>
-                        <!-- Update Button -->
+                        
 
-                        <!-- Update Button -->
-                        <button type="button" class="btn btn-dual bg-success text-white" onclick="startTour()">
-                            <i class="fa fa-hands-helping"></i> <span class="ml-1 d-none d-sm-inline-block">Tour</span>
-                        </button>
-                        <!-- Update Button -->
+                        
                     </div>
                     <!-- END Left Section -->
 
                     <!-- Right Section -->
                     <div>
+                        <!-- Update Button -->
+                        <button type="button" class="btn btn-dual bg-warning text-white" data-toggle="layout" data-action="updatepanel">
+                            <i class="fa fa-sync fa-spin text-xsmooth-dark"></i>
+                        </button>
+                        <!-- Update Button -->
+                        <!-- Tour Button -->
+                            <button type="button" class="btn btn-dual bg-success text-white" onclick="startTour()">
+                                <i class="fa fa-hands-helping"></i> <span class="ml-1 d-none d-sm-inline-block">Tour</span>
+                            </button>
+                        <!-- Tour Button -->
                         <!-- User Dropdown -->
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
