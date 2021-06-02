@@ -29,6 +29,12 @@ class ProjectsConstroller extends Controller
         return view('project.add');
     }
 
+    public function edit(Request $request)
+    {
+
+        return view('project.add');
+    }
+
     public function details(Request $request)
     {
 
@@ -40,10 +46,32 @@ class ProjectsConstroller extends Controller
 
         return view('project.category.list');
     }
+    //Categories Add and Edit
+        public function categoryAdd(Request $request)
+        {
+
+            return view('project.category.add');
+        }
+        public function categoryEdit(Request $request)
+        {
+
+            return view('project.category.add');
+        }
 
     public function variable(Request $request)
     {
 
         return view('project.variable.list');
     }
+    //Categories Add and Edit
+        public function variableAdd(Request $request)
+        {
+
+            return view('project.variable.add');
+        }
+        public function variableEdit(Request $request)
+        {
+
+            return view('project.variable.add');
+        }
 }

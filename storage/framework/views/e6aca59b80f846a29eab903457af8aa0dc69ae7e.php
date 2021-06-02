@@ -310,32 +310,32 @@
                             </li>
                             
                             <!-- Management Area -->
-                            <li class="nav-main-heading">Management</li>
+                            <li class="nav-main-heading"><?php echo e(__('Management')); ?></li>
                             <li class="nav-main-item<?php echo e(request()->is('admins/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-user"></i>
-                                    <span class="nav-main-link-name">Staffs</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Staffs')); ?></span>
                                 </a>
                                 <!-- Admins Area -->
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('admins/list') ? ' active' : ''); ?>" href="/admins/list">
-                                            <span class="nav-main-link-name">Staff List</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('List Staff')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('admins/add') ? ' active' : ''); ?>" href="/admins/add">
-                                            <span class="nav-main-link-name">New Staff</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('New Staff')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('admins/department') ? ' active' : ''); ?>" href="/admins/department">
-                                            <span class="nav-main-link-name">Staff Departments</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Staff Departments')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('report/any') ? ' active' : ''); ?>" href="/report/any">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Reports')); ?></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -343,22 +343,22 @@
                             <li class="nav-main-item<?php echo e(request()->is('customer/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-users"></i>
-                                    <span class="nav-main-link-name">Customers</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Customers')); ?></span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('customer/add') ? ' active' : ''); ?>" href="/customer/add">
-                                            <span class="nav-main-link-name">New Users</span>
+                                        <a class="nav-main-link<?php echo e(request()->is('customer/list') ? ' active' : ''); ?>" href="/customer/list">
+                                            <span class="nav-main-link-name"><?php echo e(__('List User')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('customer/list') ? ' active' : ''); ?>" href="/customer/list">
-                                            <span class="nav-main-link-name">User List</span>
+                                        <a class="nav-main-link<?php echo e(request()->is('customer/add') ? ' active' : ''); ?>" href="/customer/add">
+                                            <span class="nav-main-link-name"><?php echo e(__('New Users')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('report/any') ? ' active' : ''); ?>" href="/report/any">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Reports')); ?></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -366,32 +366,32 @@
                             <li class="nav-main-item<?php echo e(request()->is('project/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-mobile"></i>
-                                    <span class="nav-main-link-name">Devices</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Devices')); ?></span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('project/add') ? ' active' : ''); ?>" href="/project/add">
-                                            <span class="nav-main-link-name">New Device</span>
+                                        <a class="nav-main-link<?php echo e(request()->is('project/list') ? ' active' : ''); ?>" href="/project/list">
+                                            <span class="nav-main-link-name"><?php echo e(__('List Device')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('project/list') ? ' active' : ''); ?>" href="/project/list">
-                                            <span class="nav-main-link-name">Device List</span>
+                                        <a class="nav-main-link<?php echo e(request()->is('project/add') ? ' active' : ''); ?>" href="/project/add">
+                                            <span class="nav-main-link-name"><?php echo e(__('New Device')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('project/category') ? ' active' : ''); ?>" href="/project/category">
-                                            <span class="nav-main-link-name">Categories</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Categories')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('project/variable') ? ' active' : ''); ?>" href="/project/variable">
-                                            <span class="nav-main-link-name">Variables</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Variables')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('report/any') ? ' active' : ''); ?>" href="/report/any">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Reports')); ?></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -399,22 +399,22 @@
                             <li class="nav-main-item<?php echo e(request()->is('invoice/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-wallet"></i>
-                                    <span class="nav-main-link-name">Accounting</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Accounting')); ?></span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('invoice/add') ? ' active' : ''); ?>" href="/invoice/add">
-                                            <span class="nav-main-link-name">New Invoice</span>
+                                        <a class="nav-main-link<?php echo e(request()->is('invoice/list') ? ' active' : ''); ?>" href="/invoice/list">
+                                            <span class="nav-main-link-name"><?php echo e(__('List Invoice')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link<?php echo e(request()->is('invoice/list') ? ' active' : ''); ?>" href="/invoice/list">
-                                            <span class="nav-main-link-name">Invoice List</span>
+                                        <a class="nav-main-link<?php echo e(request()->is('invoice/add') ? ' active' : ''); ?>" href="/invoice/add">
+                                            <span class="nav-main-link-name"><?php echo e(__('New Invoice')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('invoice/details') ? ' active' : ''); ?>" href="/invoice/details">
-                                            <span class="nav-main-link-name">Reports</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Reports')); ?></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -422,29 +422,29 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('report/general') ? ' active' : ''); ?>" href="/report/general">
                                     <i class="nav-main-link-icon fa fa-chart-pie"></i>
-                                    <span class="nav-main-link-name">Report</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Reports')); ?></span>
                                 </a>
                             </li>
 
-                            <li class="nav-main-heading">Support</li>
+                            <li class="nav-main-heading"><?php echo e(__('Support')); ?></li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('message') ? ' active' : ''); ?>" href="/message">
                                     <i class="nav-main-link-icon fa fa-comments"></i>
-                                    <span class="nav-main-link-name">Message</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Message')); ?></span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">25</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('notifications') ? ' active' : ''); ?>" href="/notifications">
                                     <i class="nav-main-link-icon fa fa-bell"></i>
-                                    <span class="nav-main-link-name">Notifications</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Notifications')); ?></span>
                                     <span class="nav-main-link-badge badge badge-pill badge-success">45</span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('bulkmessage') ? ' active' : ''); ?>" href="/bulkmessage">
                                     <i class="nav-main-link-icon fa fa-bullhorn"></i>
-                                    <span class="nav-main-link-name">Bulk Messaging</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Bulk Messaging')); ?></span>
                                 </a>
                             </li>
 
@@ -472,7 +472,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="nav-main-heading">System</li>
+                            <li class="nav-main-heading"><?php echo e(__('System')); ?></li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-globe"></i>
@@ -483,35 +483,35 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('settings') ? ' active' : ''); ?>" href="/settings">
                                     <i class="nav-main-link-icon fa fa-cog"></i>
-                                    <span class="nav-main-link-name">Settings</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Settings')); ?></span>
                                 </a>
                             </li>
                             <li class="nav-main-item">
                                 <a class="nav-main-link" href="/">
                                     <i class="nav-main-link-icon fa fa-clipboard-check"></i>
-                                    <span class="nav-main-link-name">Logs</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Logs')); ?></span>
                                 </a>
                             </li>
-                            <li class="nav-main-heading">Resepto Support</li>
+                            <li class="nav-main-heading"><?php echo e(__('Resepto Support')); ?></li>
                             <li class="nav-main-item<?php echo e(request()->is('pages/*') ? ' open' : ''); ?>">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-ticket-alt"></i>
-                                    <span class="nav-main-link-name">Support</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Support')); ?></span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('pages/datatables') ? ' active' : ''); ?>" href="/pages/datatables">
-                                            <span class="nav-main-link-name">Send An Email</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Send An Email')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('pages/slick') ? ' active' : ''); ?>" href="/pages/slick">
-                                            <span class="nav-main-link-name">Send a Ticket</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Send a Ticket')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('pages/blank') ? ' active' : ''); ?>" href="/pages/blank">
-                                            <span class="nav-main-link-name">Call Us</span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Call Us')); ?></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -519,7 +519,7 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link<?php echo e(request()->is('planchange') ? ' active' : ''); ?>" href="/planchange">
                                     <i class="nav-main-link-icon fa fa-layer-group"></i>
-                                    <span class="nav-main-link-name">planchange</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('planchange')); ?></span>
                                 </a>
                             </li>
                         </ul>
@@ -547,9 +547,9 @@
 
                         <!-- Open Search Section -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        <div class="col-4">
+                        <div class="col-5">
                             <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
-                                <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block">Search</span>
+                                <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('Search')); ?></span>
                             </button>
                         </div>
                         
@@ -558,17 +558,13 @@
                         <div class="col-5">
                             <div class="dropdown">
                                 <button type="button" class="btn btn-hero-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">Register Device</span>
+                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('New')); ?></span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-default-hero-primary" style="">
-                                    <a class="dropdown-item" href="javascript:void(0)">New Device</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">New Customer</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">New Invoice</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">New Staff</a>
-                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/project/add"><?php echo e(__('Device')); ?></a>
+                                    <a class="dropdown-item" href="/customer/add"><?php echo e(__('Customer')); ?></a>
+                                    <a class="dropdown-item" href="/invoice/add"><?php echo e(__('Invoice')); ?></a>
+                                    <a class="dropdown-item" href="/admins/add"><?php echo e(__('Staff')); ?></a>
                                 </div>
                             </div>
                         </div>
@@ -612,7 +608,10 @@
                                         <span class="badge badge-primary">3</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-file-alt mr-1"></i> Invoices
+                                        <i class="far fa-fw fa-file-alt mr-1"></i> Billing
+                                    </a>
+                                    <a class="dropdown-item" href="javascript:void(0)">
+                                        <i class="far fa-fw fa-shield-alt mr-1"></i> Security
                                     </a>
                                     <div role="separator" class="dropdown-divider"></div>
 

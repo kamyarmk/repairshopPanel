@@ -320,7 +320,7 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/list') ? ' active' : '' }}" href="/admins/list">
-                                            <span class="nav-main-link-name">{{ __('Staff List') }}</span>
+                                            <span class="nav-main-link-name">{{ __('List Staff') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -347,13 +347,13 @@
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('customer/add') ? ' active' : '' }}" href="/customer/add">
-                                            <span class="nav-main-link-name">{{ __('New Users') }}</span>
+                                        <a class="nav-main-link{{ request()->is('customer/list') ? ' active' : '' }}" href="/customer/list">
+                                            <span class="nav-main-link-name">{{ __('List User') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('customer/list') ? ' active' : '' }}" href="/customer/list">
-                                            <span class="nav-main-link-name">{{ __('User List') }}</span>
+                                        <a class="nav-main-link{{ request()->is('customer/add') ? ' active' : '' }}" href="/customer/add">
+                                            <span class="nav-main-link-name">{{ __('New Users') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -370,13 +370,13 @@
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('project/add') ? ' active' : '' }}" href="/project/add">
-                                            <span class="nav-main-link-name">{{ __('New Device') }}</span>
+                                        <a class="nav-main-link{{ request()->is('project/list') ? ' active' : '' }}" href="/project/list">
+                                            <span class="nav-main-link-name">{{ __('List Device') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('project/list') ? ' active' : '' }}" href="/project/list">
-                                            <span class="nav-main-link-name">{{ __('Device List') }}</span>
+                                        <a class="nav-main-link{{ request()->is('project/add') ? ' active' : '' }}" href="/project/add">
+                                            <span class="nav-main-link-name">{{ __('New Device') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -403,13 +403,13 @@
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('invoice/add') ? ' active' : '' }}" href="/invoice/add">
-                                            <span class="nav-main-link-name">{{ __('New Invoice') }}</span>
+                                        <a class="nav-main-link{{ request()->is('invoice/list') ? ' active' : '' }}" href="/invoice/list">
+                                            <span class="nav-main-link-name">{{ __('List Invoice') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('invoice/list') ? ' active' : '' }}" href="/invoice/list">
-                                            <span class="nav-main-link-name">{{ __('Invoice List') }}</span>
+                                        <a class="nav-main-link{{ request()->is('invoice/add') ? ' active' : '' }}" href="/invoice/add">
+                                            <span class="nav-main-link-name">{{ __('New Invoice') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -547,9 +547,9 @@
 
                         <!-- Open Search Section -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        <div class="col-4">
+                        <div class="col-5">
                             <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
-                                <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block">Search</span>
+                                <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block">{{ __('Search') }}</span>
                             </button>
                         </div>
                         
@@ -558,17 +558,13 @@
                         <div class="col-5">
                             <div class="dropdown">
                                 <button type="button" class="btn btn-hero-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">Register Device</span>
+                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">{{ __('New') }}</span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-default-hero-primary" style="">
-                                    <a class="dropdown-item" href="javascript:void(0)">New Device</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">New Customer</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">New Invoice</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">New Staff</a>
-                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/project/add">{{ __('Device') }}</a>
+                                    <a class="dropdown-item" href="/customer/add">{{ __('Customer') }}</a>
+                                    <a class="dropdown-item" href="/invoice/add">{{ __('Invoice') }}</a>
+                                    <a class="dropdown-item" href="/admins/add">{{ __('Staff') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -612,7 +608,10 @@
                                         <span class="badge badge-primary">3</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-file-alt mr-1"></i> Invoices
+                                        <i class="far fa-fw fa-file-alt mr-1"></i> Billing
+                                    </a>
+                                    <a class="dropdown-item" href="javascript:void(0)">
+                                        <i class="far fa-fw fa-shield-alt mr-1"></i> Security
                                     </a>
                                     <div role="separator" class="dropdown-divider"></div>
 

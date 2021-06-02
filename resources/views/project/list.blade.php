@@ -6,7 +6,19 @@
         <!-- Quick Overview -->
         <div class="row row-deck">
             <div class="col-6 col-lg-3">
-                <a class="block block-rounded block-link-shadow text-center" href="be_pages_ecom_orders.html">
+                <a class="block block-rounded block-link-shadow text-center" href="/project/add">
+                    <div class="block-content py-5">
+                        <div class="font-size-h3 font-w600 text-success mb-1">
+                            <i class="fa fa-plus"></i>
+                        </div>
+                        <p class="font-w600 font-size-sm text-success text-uppercase mb-0">
+                            Add New
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-6 col-lg-3">
+                <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 text-primary mb-1">78</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
@@ -21,16 +33,6 @@
                         <div class="font-size-h3 font-w600 mb-1">126</div>
                         <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
                             Today
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-lg-3">
-                <a class="block block-rounded block-link-shadow text-center" href="javascript:void(0)">
-                    <div class="block-content py-5">
-                        <div class="font-size-h3 font-w600 mb-1">350</div>
-                        <p class="font-w600 font-size-sm text-muted text-uppercase mb-0">
-                            Yesterday
                         </p>
                     </div>
                 </a>

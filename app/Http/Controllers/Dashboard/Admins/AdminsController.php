@@ -29,6 +29,12 @@ class AdminsController extends Controller
         return view('admin.add');
     }
 
+    public function edit(Request $request)
+    {
+
+        return view('admin.add');
+    }
+
     public function department(Request $request)
     {
 

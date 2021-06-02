@@ -28,4 +28,10 @@ class CustomersController extends Controller
 
         return view('customer.add');
     }
+
+    public function edit(Request $request)
+    {
+
+        return view('customer.add');
+    }
 }

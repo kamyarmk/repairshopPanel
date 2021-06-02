@@ -120,7 +120,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="example-text-input">IMEI</label>
-                                <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Text Input">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Scan</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,6 +159,14 @@
                             <div class="form-group">
                                 <label for="dm-project-new-description">Other Problems</label>
                                 <textarea class="form-control" id="dm-project-new-description" name="dm-project-new-description" rows="6" placeholder="What is this project about?"></textarea>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <!-- Bootstrap Datepicker (.js-datepicker class are initialized in Helpers.datepicker()) -->
+                                    <!-- For more info and examples you can check out https://github.com/eternicode/bootstrap-datepicker -->
+                                    <label for="dm-project-new-deadline">Accepted Date</label>
+                                    <input type="text" class="js-datepicker form-control" id="dm-project-new-deadline" name="dm-project-new-deadline" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-6">

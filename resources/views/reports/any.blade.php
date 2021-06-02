@@ -209,69 +209,53 @@
             </div>
         </div>
         <!-- END Simple -->
-
-        <div class="col-xl-12">
-            <!-- Radar Chart -->
-            <div class="block block-rounded">
-                <div class="block-header block-header-default">
-                    <h3 class="block-title">Radar</h3>
-                    <div class="block-options">
-                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                            <i class="si si-refresh"></i>
-                        </button>
+        
+        <!-- Carts -->
+        <div class="row">
+            <div class="col-6">
+                <!-- Bars Chart -->
+                <div class="block block-rounded">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Bars</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full text-center">
+                        <div class="py-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <!-- Bars Chart Container -->
+                            <canvas class="js-chartjs-bars chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
+                        </div>
                     </div>
                 </div>
-                <div class="block-content block-content-full text-center">
-                    <div class="py-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                        <!-- Radar Chart Container -->
-                        <canvas class="js-chartjs-radar chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
-                    </div>
-                </div>
+                <!-- END Bars Chart -->
             </div>
-            <!-- END Radar Chart -->
-        </div>
 
-        <div class="col-xl-12">
-            <!-- Bars Chart -->
-            <div class="block block-rounded">
-                <div class="block-header block-header-default">
-                    <h3 class="block-title">Bars</h3>
-                    <div class="block-options">
-                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                            <i class="si si-refresh"></i>
-                        </button>
+            <div class="col-6">
+                <!-- Pie Chart -->
+                <div class="block block-rounded">
+                    <div class="block-header block-header-default">
+                        <h3 class="block-title">Pie</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full text-center">
+                        <div class="py-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <!-- Pie Chart Container -->
+                            <canvas class="js-chartjs-pie chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
+                        </div>
                     </div>
                 </div>
-                <div class="block-content block-content-full text-center">
-                    <div class="py-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                        <!-- Bars Chart Container -->
-                        <canvas class="js-chartjs-bars chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
-                    </div>
-                </div>
+                <!-- END Pie Chart -->
             </div>
-            <!-- END Bars Chart -->
         </div>
-
-        <div class="col-xl-12">
-            <!-- Pie Chart -->
-            <div class="block block-rounded">
-                <div class="block-header block-header-default">
-                    <h3 class="block-title">Pie</h3>
-                    <div class="block-options">
-                        <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                            <i class="si si-refresh"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="block-content block-content-full text-center">
-                    <div class="py-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                        <!-- Pie Chart Container -->
-                        <canvas class="js-chartjs-pie chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
-                    </div>
-                </div>
-            </div>
-            <!-- END Pie Chart -->
-        </div>
+        <!-- END Carts -->
+        
         
     </div>
     <!-- END Page Content -->

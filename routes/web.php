@@ -32,18 +32,27 @@ Route::get('/dashboard', [App\Http\Controllers\Dashboard\DashboardController::cl
 
 Route::get('/admins/list', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'index'])->name('admin.list');
 Route::get('/admins/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'add'])->name('admin.add');
+Route::get('/admins/edit', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'edit'])->name('admin.edit');
 Route::get('/admins/department', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'department'])->name('admin.department');
 
 //Customer Route
 Route::get('/customer/list', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'index'])->name('customer.list');
 Route::get('/customer/add', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'add'])->name('customer.add');
+Route::get('/customer/edit', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'edit'])->name('customer.edit');
 
 //Projects Route
 Route::get('/project/list', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'index'])->name('Project.list');
 Route::get('/project/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'add'])->name('Project.add');
+Route::get('/project/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'edit'])->name('Project.edit');
 Route::get('/project/details', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'details'])->name('Project.details');
 Route::get('/project/category', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'category'])->name('Project.category');
+    //Categories Add and Edit
+    Route::get('/project/category/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'categoryEdit'])->name('Project.category.add');
+    Route::get('/project/category/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'categoryAdd'])->name('Project.category.edit');
 Route::get('/project/variable', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variable'])->name('Project.variable');
+    //Variables Add and Edit
+    Route::get('/project/variable/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variableAdd'])->name('Project.variable.add');
+    Route::get('/project/variable/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variableEdit'])->name('Project.variable.edit');
 
 //Invoice Route
 Route::get('/invoice/list', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'index'])->name('Invoice.list');
