@@ -320,17 +320,17 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/list') ? ' active' : '' }}" href="/admins/list">
-                                            <span class="nav-main-link-name">{{ __('List Staff') }}</span>
+                                            <span class="nav-main-link-name">{{ __('View List') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/add') ? ' active' : '' }}" href="/admins/add">
-                                            <span class="nav-main-link-name">{{ __('New Staff') }}</span>
+                                            <span class="nav-main-link-name">{{ __('Add New') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/department') ? ' active' : '' }}" href="/admins/department">
-                                            <span class="nav-main-link-name">{{ __('Staff Departments') }}</span>
+                                            <span class="nav-main-link-name">{{ __('Departments') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -348,12 +348,12 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('customer/list') ? ' active' : '' }}" href="/customer/list">
-                                            <span class="nav-main-link-name">{{ __('List User') }}</span>
+                                            <span class="nav-main-link-name">{{ __('View List') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('customer/add') ? ' active' : '' }}" href="/customer/add">
-                                            <span class="nav-main-link-name">{{ __('New Users') }}</span>
+                                            <span class="nav-main-link-name">{{ __('Add New') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -371,12 +371,12 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/list') ? ' active' : '' }}" href="/project/list">
-                                            <span class="nav-main-link-name">{{ __('List Device') }}</span>
+                                            <span class="nav-main-link-name">{{ __('View List') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/add') ? ' active' : '' }}" href="/project/add">
-                                            <span class="nav-main-link-name">{{ __('New Device') }}</span>
+                                            <span class="nav-main-link-name">{{ __('Add New') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -387,6 +387,16 @@
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/variable') ? ' active' : '' }}" href="/project/variable">
                                             <span class="nav-main-link-name">{{ __('Variables') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('project/problems') ? ' active' : '' }}" href="/project/problems">
+                                            <span class="nav-main-link-name">{{ __('Problems') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('project/qc') ? ' active' : '' }}" href="/project/qc">
+                                            <span class="nav-main-link-name">{{ __('QC') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -558,7 +568,7 @@
                         <div class="col-5">
                             <div class="dropdown">
                                 <button type="button" class="btn btn-hero-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">{{ __('New') }}</span>
+                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">{{ __('Add New') }}</span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-default-hero-primary" style="">
                                     <a class="dropdown-item" href="/project/add">{{ __('Device') }}</a>

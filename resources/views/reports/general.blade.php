@@ -212,13 +212,32 @@
         </div>
         <!-- END Visitors Growth -->
 
+        <!-- Lines Chart -->
+        <div class="block block-rounded">
+            <div class="block-header block-header-default">
+                <h3 class="block-title">Lines</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
+                        <i class="si si-refresh"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="block-content block-content-full text-center">
+                <div class="py-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                    <!-- Lines Chart Container -->
+                    <canvas class="js-chartjs-lines chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- END Lines Chart -->
+
         <!-- Carts -->
         <div class="row">
             <div class="col-6">
-                <!-- Lines Chart -->
+                <!-- Pie Chart -->
                 <div class="block block-rounded">
                     <div class="block-header block-header-default">
-                        <h3 class="block-title">Lines</h3>
+                        <h3 class="block-title">Pie</h3>
                         <div class="block-options">
                             <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
                                 <i class="si si-refresh"></i>
@@ -227,12 +246,12 @@
                     </div>
                     <div class="block-content block-content-full text-center">
                         <div class="py-3"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                            <!-- Lines Chart Container -->
-                            <canvas class="js-chartjs-lines chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
+                            <!-- Pie Chart Container -->
+                            <canvas class="js-chartjs-pie chartjs-render-monitor" width="930" height="464" style="display: block; height: 232px; width: 465px;"></canvas>
                         </div>
                     </div>
                 </div>
-                <!-- END Lines Chart -->
+                <!-- END Pie Chart -->
             </div>
 
             <div class="col-6">

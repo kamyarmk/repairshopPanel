@@ -74,4 +74,27 @@ class ProjectsConstroller extends Controller
 
             return view('project.variable.add');
         }
+    
+    //QC Reports
+        public function qc(Request $request)
+        {
+
+            return view('project.qc.list');
+        }
+        public function qcAdd(Request $request)
+        {
+
+            return view('project.qc.add');
+        }
+        public function qcEdit(Request $request)
+        {
+
+            return view('project.qc.add');
+        }
+    //Problems Reports
+        public function problems(Request $request)
+        {
+
+            return view('project.problems.list');
+        }
 }

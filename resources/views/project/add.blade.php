@@ -40,83 +40,53 @@
                         <div class="col-lg-8 col-xl-5">
                             <div class="form-group">
                                 <label>Device Type</label>
-                                <select class="custom-select" id="example-select-custom" name="example-select-custom">
-                                    <option value="0">Please select</option>
-                                    <option value="1">Option #1</option>
-                                    <option value="2">Option #2</option>
-                                    <option value="3">Option #3</option>
-                                    <option value="4">Option #4</option>
-                                    <option value="5">Option #5</option>
-                                    <option value="6">Option #6</option>
-                                    <option value="7">Option #7</option>
-                                    <option value="8">Option #8</option>
-                                    <option value="9">Option #9</option>
-                                    <option value="10">Option #10</option>
-                                </select>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Add New</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Device Brand</label>
-                                <select class="custom-select" id="example-select-custom" name="example-select-custom">
-                                    <option value="0">Please select</option>
-                                    <option value="1">Option #1</option>
-                                    <option value="2">Option #2</option>
-                                    <option value="3">Option #3</option>
-                                    <option value="4">Option #4</option>
-                                    <option value="5">Option #5</option>
-                                    <option value="6">Option #6</option>
-                                    <option value="7">Option #7</option>
-                                    <option value="8">Option #8</option>
-                                    <option value="9">Option #9</option>
-                                    <option value="10">Option #10</option>
-                                </select>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Add New</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Device Model</label>
-                                <select class="custom-select" id="example-select-custom" name="example-select-custom">
-                                    <option value="0">Please select</option>
-                                    <option value="1">Option #1</option>
-                                    <option value="2">Option #2</option>
-                                    <option value="3">Option #3</option>
-                                    <option value="4">Option #4</option>
-                                    <option value="5">Option #5</option>
-                                    <option value="6">Option #6</option>
-                                    <option value="7">Option #7</option>
-                                    <option value="8">Option #8</option>
-                                    <option value="9">Option #9</option>
-                                    <option value="10">Option #10</option>
-                                </select>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Add New</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <button type="button" class="btn btn-primary">Add Variables</button>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Device Color</label>
-                                <select class="custom-select" id="example-select-custom" name="example-select-custom">
-                                    <option value="0">Please select</option>
-                                    <option value="1">Option #1</option>
-                                    <option value="2">Option #2</option>
-                                    <option value="3">Option #3</option>
-                                    <option value="4">Option #4</option>
-                                    <option value="5">Option #5</option>
-                                    <option value="6">Option #6</option>
-                                    <option value="7">Option #7</option>
-                                    <option value="8">Option #8</option>
-                                    <option value="9">Option #9</option>
-                                    <option value="10">Option #10</option>
-                                </select>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Add New</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Device Storage</label>
-                                <select class="custom-select" id="example-select-custom" name="example-select-custom">
-                                    <option value="0">Please select</option>
-                                    <option value="1">Option #1</option>
-                                    <option value="2">Option #2</option>
-                                    <option value="3">Option #3</option>
-                                    <option value="4">Option #4</option>
-                                    <option value="5">Option #5</option>
-                                    <option value="6">Option #6</option>
-                                    <option value="7">Option #7</option>
-                                    <option value="8">Option #8</option>
-                                    <option value="9">Option #9</option>
-                                    <option value="10">Option #10</option>
-                                </select>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Add New</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="example-text-input">IMEI</label>
@@ -142,22 +112,15 @@
                         <div class="col-lg-8 col-xl-5">
                             <div class="form-group">
                                 <label>Probelms That Have To be Fixed</label>
-                                <select class="custom-select" id="example-select-custom" name="example-select-custom">
-                                    <option value="0">Please select</option>
-                                    <option value="1">Option #1</option>
-                                    <option value="2">Option #2</option>
-                                    <option value="3">Option #3</option>
-                                    <option value="4">Option #4</option>
-                                    <option value="5">Option #5</option>
-                                    <option value="6">Option #6</option>
-                                    <option value="7">Option #7</option>
-                                    <option value="8">Option #8</option>
-                                    <option value="9">Option #9</option>
-                                    <option value="10">Option #10</option>
-                                </select>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <div class="input-group-append">
+                                        <button type="button" class="btn btn-dark">Add New</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="dm-project-new-description">Other Problems</label>
+                                <label for="dm-project-new-description">Detailed Decsriptions</label>
                                 <textarea class="form-control" id="dm-project-new-description" name="dm-project-new-description" rows="6" placeholder="What is this project about?"></textarea>
                             </div>
                             <div class="form-group row">
@@ -167,8 +130,6 @@
                                     <label for="dm-project-new-deadline">Accepted Date</label>
                                     <input type="text" class="js-datepicker form-control" id="dm-project-new-deadline" name="dm-project-new-deadline" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
                                 </div>
-                            </div>
-                            <div class="form-group row">
                                 <div class="col-md-6">
                                     <!-- Bootstrap Datepicker (.js-datepicker class are initialized in Helpers.datepicker()) -->
                                     <!-- For more info and examples you can check out https://github.com/eternicode/bootstrap-datepicker -->

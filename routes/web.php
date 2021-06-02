@@ -53,6 +53,12 @@ Route::get('/project/variable', [App\Http\Controllers\Dashboard\Project\Projects
     //Variables Add and Edit
     Route::get('/project/variable/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variableAdd'])->name('Project.variable.add');
     Route::get('/project/variable/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variableEdit'])->name('Project.variable.edit');
+//Projects Other Data
+Route::get('/project/qc', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'qc'])->name('Project.qc.list');
+    //QC Datas
+    Route::get('/project/qc/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'qcAdd'])->name('Project.qc.add');
+    Route::get('/project/qc/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'qcEdit'])->name('Project.qc.edit');
+Route::get('/project/problems', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'problems'])->name('Project.problems');
 
 //Invoice Route
 Route::get('/invoice/list', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'index'])->name('Invoice.list');
