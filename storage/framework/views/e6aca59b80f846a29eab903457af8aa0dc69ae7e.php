@@ -607,24 +607,27 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
                                 <div class="p-2">
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="/settings">
                                         <i class="far fa-fw fa-user mr-1"></i> Profile
                                     </a>
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                                         <span><i class="far fa-fw fa-envelope mr-1"></i> Inbox</span>
                                         <span class="badge badge-primary">3</span>
                                     </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="/settings">
                                         <i class="far fa-fw fa-file-alt mr-1"></i> Billing
                                     </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
+                                    <a class="dropdown-item" href="/settings">
                                         <i class="far fa-fw fa-shield-alt mr-1"></i> Security
                                     </a>
 
                                     <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Sign Out
-                                    </a>
+                                    <form action="/logout" method="POST">
+                                        <?php echo csrf_field(); ?>
+                                        <button class="dropdown-item">
+                                            <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Sign Out    
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -698,7 +701,7 @@
                                     </li>
                                 </ul>
                                 <div class="p-2 border-top">
-                                    <a class="btn btn-light btn-block text-center" href="javascript:void(0)">
+                                    <a class="btn btn-light btn-block text-center" href="/notifications">
                                         <i class="fa fa-fw fa-eye mr-1"></i> View All
                                     </a>
                                 </div>

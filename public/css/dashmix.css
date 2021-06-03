@@ -27389,3 +27389,6 @@ body {
 body .form-control {
   font-family: "IRANSansEN";
 }
+body h1, body h2, body h3, body h4, body h5, body h6, body .block-title, body .title {
+  font-weight: bold;
+}
