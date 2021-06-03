@@ -116,7 +116,7 @@
                         <tbody>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019265</strong>
                                     </a>
                                 </td>
@@ -128,13 +128,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Ryan Flores</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">5</a>
+                                    <a class="font-w600" href="/project/edit">5</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1334,50</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -144,7 +144,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019264</strong>
                                     </a>
                                 </td>
@@ -156,13 +156,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Judy Ford</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">5</a>
+                                    <a class="font-w600" href="/project/edit">5</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1546,91</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -172,7 +172,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019263</strong>
                                     </a>
                                 </td>
@@ -184,13 +184,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Brian Cruz</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">8</a>
+                                    <a class="font-w600" href="/project/edit">8</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1376,71</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -200,7 +200,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019262</strong>
                                     </a>
                                 </td>
@@ -212,13 +212,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Jack Greene</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">2</a>
+                                    <a class="font-w600" href="/project/edit">2</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1486,21</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -228,7 +228,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019261</strong>
                                     </a>
                                 </td>
@@ -240,13 +240,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Jose Mills</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">4</a>
+                                    <a class="font-w600" href="/project/edit">4</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$241,93</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -256,7 +256,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019260</strong>
                                     </a>
                                 </td>
@@ -268,13 +268,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Alice Moore</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">8</a>
+                                    <a class="font-w600" href="/project/edit">8</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1475,55</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -284,7 +284,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019259</strong>
                                     </a>
                                 </td>
@@ -296,13 +296,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Lisa Jenkins</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">4</a>
+                                    <a class="font-w600" href="/project/edit">4</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1853,95</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -312,7 +312,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019258</strong>
                                     </a>
                                 </td>
@@ -324,13 +324,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Sara Fields</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">6</a>
+                                    <a class="font-w600" href="/project/edit">6</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1683,24</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -340,7 +340,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019257</strong>
                                     </a>
                                 </td>
@@ -352,13 +352,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Thomas Riley</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">3</a>
+                                    <a class="font-w600" href="/project/edit">3</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$786,45</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -368,7 +368,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019256</strong>
                                     </a>
                                 </td>
@@ -380,13 +380,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">David Fuller</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">4</a>
+                                    <a class="font-w600" href="/project/edit">4</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$856,98</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -396,7 +396,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019255</strong>
                                     </a>
                                 </td>
@@ -408,13 +408,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Carl Wells</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">3</a>
+                                    <a class="font-w600" href="/project/edit">3</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$777,68</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -424,7 +424,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019254</strong>
                                     </a>
                                 </td>
@@ -436,13 +436,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Amber Harvey</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">8</a>
+                                    <a class="font-w600" href="/project/edit">8</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1463,86</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -452,7 +452,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019253</strong>
                                     </a>
                                 </td>
@@ -464,13 +464,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Melissa Rice</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">1</a>
+                                    <a class="font-w600" href="/project/edit">1</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1581,37</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -480,7 +480,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019252</strong>
                                     </a>
                                 </td>
@@ -492,13 +492,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Ralph Murray</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">5</a>
+                                    <a class="font-w600" href="/project/edit">5</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$521,90</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -508,7 +508,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019251</strong>
                                     </a>
                                 </td>
@@ -520,13 +520,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Megan Fuller</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">1</a>
+                                    <a class="font-w600" href="/project/edit">1</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$2332,52</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -536,7 +536,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019250</strong>
                                     </a>
                                 </td>
@@ -548,13 +548,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Alice Moore</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">5</a>
+                                    <a class="font-w600" href="/project/edit">5</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$730,67</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -564,7 +564,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019249</strong>
                                     </a>
                                 </td>
@@ -576,13 +576,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Scott Young</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">1</a>
+                                    <a class="font-w600" href="/project/edit">1</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$1341,39</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -592,7 +592,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019248</strong>
                                     </a>
                                 </td>
@@ -604,13 +604,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Barbara Scott</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">2</a>
+                                    <a class="font-w600" href="/project/edit">2</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$964,73</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">
@@ -620,7 +620,7 @@
                             </tr>
                             <tr>
                                 <td class="text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">
+                                    <a class="font-w600" href="/project/edit">
                                         <strong>ORD.019247</strong>
                                     </a>
                                 </td>
@@ -632,13 +632,13 @@
                                     <a class="font-w600" href="be_pages_ecom_customer.html">Marie Duncan</a>
                                 </td>
                                 <td class="d-none d-xl-table-cell text-center">
-                                    <a class="font-w600" href="be_pages_ecom_order.html">2</a>
+                                    <a class="font-w600" href="/project/edit">2</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell text-right">
                                     <strong>$727,18</strong>
                                 </td>
                                 <td class="text-center font-size-base">
-                                    <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                    <a class="btn btn-sm btn-alt-secondary" href="/project/edit">
                                         <i class="fa fa-fw fa-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">

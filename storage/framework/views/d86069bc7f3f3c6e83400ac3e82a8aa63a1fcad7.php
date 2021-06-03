@@ -127,6 +127,78 @@
                 </div>
             </div>
         </div>
+
+        <div class="row row-deck">
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-rounded block-link-shadow bg-primary" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="fa fa-2x fa-arrow-alt-circle-up text-primary-lighter"></i>
+                        </div>
+                        <div class="ml-3 text-right">
+                            <p class="text-white font-size-h3 font-w300 mb-0">
+                                + 45%
+                            </p>
+                            <p class="text-white-75 mb-0">
+                                Earnings
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="far fa-2x fa-user text-success-light"></i>
+                        </div>
+                        <div class="ml-3 text-right">
+                            <p class="text-white font-size-h3 font-w300 mb-0">
+                                +98%
+                            </p>
+                            <p class="text-white-75 mb-0">
+                                Users
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-rounded block-link-shadow bg-danger" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div class="mr-3">
+                            <p class="text-white font-size-h3 font-w300 mb-0">
+                                450
+                            </p>
+                            <p class="text-white-75 mb-0">
+                                Sales
+                            </p>
+                        </div>
+                        <div>
+                            <i class="fa fa-2x fa-chart-line text-black-50"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-rounded block-link-shadow bg-warning" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div class="mr-3">
+                            <p class="text-white font-size-h3 font-w300 mb-0">
+                                63
+                            </p>
+                            <p class="text-white-75 mb-0">
+                                Projects
+                            </p>
+                        </div>
+                        <div>
+                            <i class="fa fa-2x fa-boxes text-black-50"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <!-- END Overview -->
 
         <!-- Store Growth -->

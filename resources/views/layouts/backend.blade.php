@@ -320,7 +320,7 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/list') ? ' active' : '' }}" href="/admins/list">
-                                            <span class="nav-main-link-name">{{ __('View List') }}</span>
+                                            <span class="nav-main-link-name">{{ __('All Staffs') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -348,7 +348,7 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('customer/list') ? ' active' : '' }}" href="/customer/list">
-                                            <span class="nav-main-link-name">{{ __('View List') }}</span>
+                                            <span class="nav-main-link-name">{{ __('All Customers') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -371,7 +371,7 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/list') ? ' active' : '' }}" href="/project/list">
-                                            <span class="nav-main-link-name">{{ __('View List') }}</span>
+                                            <span class="nav-main-link-name">{{ __('All Devices') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -414,7 +414,7 @@
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('invoice/list') ? ' active' : '' }}" href="/invoice/list">
-                                            <span class="nav-main-link-name">{{ __('List Invoice') }}</span>
+                                            <span class="nav-main-link-name">{{ __('All Invoices') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -606,9 +606,6 @@
                                 <i class="fa fa-fw fa-angle-down ml-1 d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
-                                <div class="bg-primary-darker rounded-top font-w600 text-white text-center p-3">
-                                   User Options
-                                </div>
                                 <div class="p-2">
                                     <a class="dropdown-item" href="javascript:void(0)">
                                         <i class="far fa-fw fa-user mr-1"></i> Profile
@@ -623,14 +620,6 @@
                                     <a class="dropdown-item" href="javascript:void(0)">
                                         <i class="far fa-fw fa-shield-alt mr-1"></i> Security
                                     </a>
-                                    <div role="separator" class="dropdown-divider"></div>
-
-                                    <!-- Toggle Side Overlay -->
-                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                    <a class="dropdown-item" href="javascript:void(0)" data-toggle="layout" data-action="side_overlay_toggle">
-                                        <i class="far fa-fw fa-building mr-1"></i> Settings
-                                    </a>
-                                    <!-- END Side Overlay -->
 
                                     <div role="separator" class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript:void(0)">

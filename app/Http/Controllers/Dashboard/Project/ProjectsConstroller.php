@@ -32,7 +32,7 @@ class ProjectsConstroller extends Controller
     public function edit(Request $request)
     {
 
-        return view('project.add');
+        return view('project.edit');
     }
 
     public function details(Request $request)
@@ -96,5 +96,16 @@ class ProjectsConstroller extends Controller
         {
 
             return view('project.problems.list');
+        }
+
+        public function problemsAdd(Request $request)
+        {
+
+            return view('project.problems.add');
+        }
+        public function problemsEdit(Request $request)
+        {
+
+            return view('project.problems.add');
         }
 }

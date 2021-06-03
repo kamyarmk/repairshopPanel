@@ -47,8 +47,8 @@ Route::get('/project/edit', [App\Http\Controllers\Dashboard\Project\ProjectsCons
 Route::get('/project/details', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'details'])->name('Project.details');
 Route::get('/project/category', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'category'])->name('Project.category');
     //Categories Add and Edit
-    Route::get('/project/category/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'categoryEdit'])->name('Project.category.add');
-    Route::get('/project/category/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'categoryAdd'])->name('Project.category.edit');
+    Route::get('/project/category/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'categoryAdd'])->name('Project.category.add');
+    Route::get('/project/category/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'categoryEdit'])->name('Project.category.edit');
 Route::get('/project/variable', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variable'])->name('Project.variable');
     //Variables Add and Edit
     Route::get('/project/variable/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'variableAdd'])->name('Project.variable.add');
@@ -59,6 +59,9 @@ Route::get('/project/qc', [App\Http\Controllers\Dashboard\Project\ProjectsConstr
     Route::get('/project/qc/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'qcAdd'])->name('Project.qc.add');
     Route::get('/project/qc/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'qcEdit'])->name('Project.qc.edit');
 Route::get('/project/problems', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'problems'])->name('Project.problems');
+    //Problems Datas
+    Route::get('/project/problems/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'problemsAdd'])->name('Project.problems.add');
+    Route::get('/project/problems/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'problemsEdit'])->name('Project.problems.edit');
 
 //Invoice Route
 Route::get('/invoice/list', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'index'])->name('Invoice.list');
