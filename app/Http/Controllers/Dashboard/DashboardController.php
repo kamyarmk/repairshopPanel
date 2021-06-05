@@ -31,9 +31,7 @@ class DashboardController extends Controller
         $process->setWorkingDirectory(base_path());
         $process->run(function ($type, $buffer)
         {
-            return redirect('/dashboard');
+            echo $buffer . '</br />';
         });
-
-        return redirect('/dashboard');
     }
 }
