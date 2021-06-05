@@ -23,4 +23,12 @@ body{
     h1,h2,h3,h4,h5,h6, .block-title, .title{
         font-weight: bold;
     }
+    .nav-main-link-name{
+        font-weight: 700;
+    }
+    #dropdown-default-hero-primary {
+        min-width: 10rem;
+        padding-left: 17px;
+        padding-right: 17px;
+    }    
 }

@@ -133,31 +133,14 @@
                 <a class="block block-rounded block-link-shadow bg-primary" href="javascript:void(0)">
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div>
-                            <i class="fa fa-2x fa-arrow-right text-primary-lighter"></i>
+                            <i class="fa fa-2x fa-clock text-white"></i>
                         </div>
                         <div class="ml-3 text-right">
                             <p class="text-white font-size-h3 font-w300 mb-0">
                                 + 45%
                             </p>
                             <p class="text-white-75 mb-0">
-                                Ready to Pay
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div>
-                            <i class="far fa-2x fa-thumbs-up text-success-light"></i>
-                        </div>
-                        <div class="ml-3 text-right">
-                            <p class="text-white font-size-h3 font-w300 mb-0">
-                                +98%
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                Paid
+                                Waiting
                             </p>
                         </div>
                     </div>
@@ -171,11 +154,28 @@
                                 63
                             </p>
                             <p class="text-white-75 mb-0">
-                            Unpaid
+                                Ready To pay
                             </p>
                         </div>
                         <div>
-                            <i class="fa fa-2x fa-exclamation-triangle text-black-50"></i>
+                            <i class="fa fa-2x fa-exclamation-triangle text-white"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
+                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                        <div>
+                            <i class="far fa-2x fa-thumbs-up text-white"></i>
+                        </div>
+                        <div class="ml-3 text-right">
+                            <p class="text-white font-size-h3 font-w300 mb-0">
+                                +98%
+                            </p>
+                            <p class="text-white-75 mb-0">
+                                Paid
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -188,11 +188,11 @@
                                 450
                             </p>
                             <p class="text-white-75 mb-0">
-                                Canceled
+                                Over Due
                             </p>
                         </div>
                         <div>
-                            <i class="fa fa-2x fa-thumbs-down text-black-50"></i>
+                            <i class="fa fa-2x fa-thumbs-down text-white"></i>
                         </div>
                     </div>
                 </a>

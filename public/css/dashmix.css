@@ -27392,3 +27392,11 @@ body .form-control {
 body h1, body h2, body h3, body h4, body h5, body h6, body .block-title, body .title {
   font-weight: bold;
 }
+body .nav-main-link-name {
+  font-weight: 700;
+}
+body #dropdown-default-hero-primary {
+  min-width: 10rem;
+  padding-left: 17px;
+  padding-right: 17px;
+}

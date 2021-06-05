@@ -567,8 +567,8 @@
                         <!-- Quick Device Add Button -->
                         <div class="col-5">
                             <div class="dropdown">
-                                <button type="button" class="btn btn-hero-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-fw fa-cash-register"></i> <span class="ml-1 d-none d-sm-inline-block">{{ __('Add New') }}</span>
+                                <button type="button" class="btn btn-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="ml-1 d-none d-sm-inline-block">{{ __('Add New') }}</span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdown-default-hero-primary" style="">
                                     <a class="dropdown-item" href="/project/add">{{ __('Device') }}</a>

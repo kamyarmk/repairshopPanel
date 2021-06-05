@@ -85,3 +85,6 @@ Route::get('/report/general', [App\Http\Controllers\Dashboard\Reports\ReportsCon
 
 //Settings
 Route::get('/settings', [App\Http\Controllers\Dashboard\Settings\SettingsController::class, 'index'])->name('Setting.general');
+
+
+Route::get('/update', [App\Http\Controllers\Dashboard\DashboardController::class, 'updater'])->name('updater');
