@@ -589,9 +589,9 @@
                     <!-- Right Section -->
                     <div>
                         <!-- Update Button -->
-                        <button type="button" class="btn btn-dual bg-warning text-white" data-toggle="layout" data-action="updatepanel">
+                        <a href="/update" class="btn btn-dual bg-warning text-white" data-toggle="layout" data-action="updatepanel">
                             <i class="fa fa-sync fa-spin text-xsmooth-dark"></i>
-                        </button>
+                        </a>
                         <!-- Update Button -->
                         <!-- Tour Button -->
                             <button type="button" class="btn btn-dual bg-success text-white" onclick="startTour()">
