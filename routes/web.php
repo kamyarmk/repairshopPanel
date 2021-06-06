@@ -63,6 +63,26 @@ Route::get('/project/problems', [App\Http\Controllers\Dashboard\Project\Projects
     Route::get('/project/problems/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'problemsAdd'])->name('Project.problems.add');
     Route::get('/project/problems/edit', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'problemsEdit'])->name('Project.problems.edit');
 
+
+//Products Route
+Route::get('/product/list', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'index'])->name('product.list');
+Route::get('/product/add', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'add'])->name('product.add');
+Route::get('/product/edit', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'edit'])->name('product.edit');
+Route::get('/product/details', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'details'])->name('product.details');
+Route::get('/product/category', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'category'])->name('product.category');
+    //Categories Add and Edit
+    Route::get('/product/category/add', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'categoryAdd'])->name('product.category.add');
+    Route::get('/product/category/edit', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'categoryEdit'])->name('product.category.edit');
+Route::get('/product/tags', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'tags'])->name('product.tags');
+    //Tags Add and Edit
+    Route::get('/product/tags/add', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'tagsAdd'])->name('product.tags.add');
+    Route::get('/product/tags/edit', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'tagsEdit'])->name('product.tags.edit');
+//Products Other Data
+Route::get('/product/attributes', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'attributes'])->name('product.attributes');
+    //attributes Datas
+    Route::get('/product/attributes/add', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'attributesAdd'])->name('product.attributes.add');
+    Route::get('/product/attributes/edit', [App\Http\Controllers\Dashboard\product\ProductsConstroller::class, 'attributesEdit'])->name('product.attributes.edit');
+
 //Invoice Route
 Route::get('/invoice/list', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'index'])->name('Invoice.list');
 Route::get('/invoice/add', [App\Http\Controllers\Dashboard\Invoice\InvoicesController::class, 'add'])->name('Invoice.add');

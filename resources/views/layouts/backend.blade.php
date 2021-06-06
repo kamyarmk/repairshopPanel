@@ -314,13 +314,13 @@
                             <li class="nav-main-item{{ request()->is('admins/*') ? ' open' : '' }}">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-user"></i>
-                                    <span class="nav-main-link-name">{{ __('Staffs') }}</span>
+                                    <span class="nav-main-link-name">{{ __('Users') }}</span>
                                 </a>
                                 <!-- Admins Area -->
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('admins/list') ? ' active' : '' }}" href="/admins/list">
-                                            <span class="nav-main-link-name">{{ __('All Staffs') }}</span>
+                                            <span class="nav-main-link-name">{{ __('All Users') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -397,6 +397,44 @@
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/qc') ? ' active' : '' }}" href="/project/qc">
                                             <span class="nav-main-link-name">{{ __('QC') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
+                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-main-item{{ request()->is('product/*') ? ' open' : '' }}">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
+                                    <i class="nav-main-link-icon fa fa-boxes"></i>
+                                    <span class="nav-main-link-name">{{ __('Products') }}</span>
+                                </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('product/list') ? ' active' : '' }}" href="/product/list">
+                                            <span class="nav-main-link-name">{{ __('All Products') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('product/add') ? ' active' : '' }}" href="/product/add">
+                                            <span class="nav-main-link-name">{{ __('Add Product') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('product/category') ? ' active' : '' }}" href="/product/category">
+                                            <span class="nav-main-link-name">{{ __('Categories') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('product/tags') ? ' active' : '' }}" href="/product/tags">
+                                            <span class="nav-main-link-name">{{ __('Tags') }}</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link{{ request()->is('product/attributes') ? ' active' : '' }}" href="/product/attributes">
+                                            <span class="nav-main-link-name">{{ __('Attributes') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
