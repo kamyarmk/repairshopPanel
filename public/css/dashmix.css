@@ -27380,14 +27380,14 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 }
 
 * {
-  font-family: "IRANSansEN";
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  font-family: "IRANSansEN";
+  font-family: "Inter", sans-serif;
 }
 body .form-control {
-  font-family: "IRANSansEN";
+  font-family: "Inter", sans-serif;
 }
 body h1, body h2, body h3, body h4, body h5, body h6, body .block-title, body .title {
   font-weight: bold;
