@@ -61,7 +61,7 @@ class User extends Authenticatable
     }
 
     public function Department(){
-        return $this->belongsToMany(Department::class);
+        return $this->belongsTo(Department::class);
     }
 
     public function usersDetails(){
