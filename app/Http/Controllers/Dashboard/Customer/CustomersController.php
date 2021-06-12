@@ -36,9 +36,19 @@ class CustomersController extends Controller
         return view('customer.add');
     }
 
-    public function edit(Request $request)
+    public function edit(Request $request, $id)
     {
+        $customer = User::with('registered_devices')->find($id);
+        return view('customer.add')->with([
+            'customer' => $customer
+        ]);
+    }
 
-        return view('customer.add');
+    public function update(Request $request, $id)
+    {
+        $customer = User::with('registered_devices')->find($id);
+        return view('customer.add')->with([
+            'customer' => $customer
+        ]);
     }
 }

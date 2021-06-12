@@ -19,12 +19,14 @@ class Department extends Seeder
         $dateForCreating = Jalalian::forge('now')->format('Y-m-d H:i:s');
         DB::table('departments')->insert([
             'department_name' => 'administrator',
+            'department_symbol' => 'ADM',
             'department_level' => '1',
             'created_at' => $dateForCreating,
             'updated_at' => $dateForCreating
         ]);
         DB::table('departments')->insert([
             'department_name' => 'customers',
+            'department_symbol' => 'CTM',
             'department_level' => '2',
             'created_at' => $dateForCreating,
             'updated_at' => $dateForCreating

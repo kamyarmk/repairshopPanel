@@ -3,7 +3,14 @@
     <div class="bg-body-light">
         <div class="content content-full">
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Edit User</h1>
+                <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">
+                    <?php if(isset($customer)): ?>
+                       Edit / <?php echo e($customer->first_name); ?> <?php echo e($customer->last_name); ?>
+
+                    <?php else: ?>
+                        Add New
+                    <?php endif; ?>
+                </h1>
                 <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">Dashboard</li>
@@ -34,21 +41,37 @@
                             <div class="form-group row">
                                 <div class="col-6">
                                     <label for="dm-profile-edit-firstname">Firstname</label>
-                                    <input type="text" class="form-control" id="dm-profile-edit-firstname" name="dm-profile-edit-firstname">
+                                    <input type="text" class="form-control" id="dm-profile-edit-firstname" name="dm-profile-edit-firstname" 
+                                        <?php if(isset($customer)): ?>
+                                             value="<?php echo e($customer->first_name); ?>"    
+                                        <?php endif; ?>
+                                    >
                                 </div>
                                 <div class="col-6">
                                     <label for="dm-profile-edit-lastname">Lastname</label>
-                                    <input type="text" class="form-control" id="dm-profile-edit-lastname" name="dm-profile-edit-lastname">
+                                    <input type="text" class="form-control" id="dm-profile-edit-lastname" name="dm-profile-edit-lastname"
+                                        <?php if(isset($customer)): ?>
+                                             value="<?php echo e($customer->last_name); ?>"    
+                                        <?php endif; ?>
+                                    >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-email">Email Address</label>
-                                <input type="email" class="form-control" id="dm-profile-edit-email" name="dm-profile-edit-email" placeholder="Enter your email.." value="john.doe@example.com">
+                                <input type="email" class="form-control" id="dm-profile-edit-email" name="dm-profile-edit-email" 
+                                    <?php if(isset($customer)): ?>
+                                        value="<?php echo e($customer->email); ?>"    
+                                    <?php endif; ?>
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-company-name">Mobile Number</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control-alt" id="example-group3-input2-alt" name="example-group3-input2-alt">
+                                    <input type="text" class="form-control form-control-alt" id="example-group3-input2-alt" name="example-group3-input2-alt"
+                                        <?php if(isset($customer)): ?>
+                                             value="<?php echo e($customer->phone_number); ?>"    
+                                        <?php endif; ?>
+                                    >
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Submit</button>
                                     </div>
@@ -56,23 +79,43 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-company-name">Company Name (Optional)</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-company-name" name="dm-profile-edit-company-name">
+                                <input type="text" class="form-control" id="dm-profile-edit-company-name" name="dm-profile-edit-company-name"
+                                    <?php if(isset($customer)): ?>
+                                         value="<?php echo e($customer->job_title); ?>"    
+                                    <?php endif; ?>
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-street-1">Street Address 1</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-street-1" name="dm-profile-edit-street-1">
+                                <input type="text" class="form-control" id="dm-profile-edit-street-1" name="dm-profile-edit-street-1"
+                                    <?php if(isset($customer)): ?>
+                                         value="<?php echo e($customer->address_one); ?>"    
+                                    <?php endif; ?>
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-street-2">Street Address 2</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-street-2" name="dm-profile-edit-street-2">
+                                <input type="text" class="form-control" id="dm-profile-edit-street-2" name="dm-profile-edit-street-2" 
+                                    <?php if(isset($customer)): ?>
+                                         value="<?php echo e($customer->address_two); ?>"    
+                                    <?php endif; ?>
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-city">City</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-city" name="dm-profile-edit-city">
+                                <input type="text" class="form-control" id="dm-profile-edit-city" name="dm-profile-edit-city"
+                                    <?php if(isset($customer)): ?>
+                                         value="<?php echo e($customer->city); ?>"    
+                                    <?php endif; ?>
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-postal">Postal code</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-postal" name="dm-profile-edit-postal">
+                                <input type="text" class="form-control" id="dm-profile-edit-postal" name="dm-profile-edit-postal"
+                                    <?php if(isset($customer)): ?>
+                                         value="<?php echo e($customer->postal_code); ?>"    
+                                    <?php endif; ?>
+                                >
                             </div>
                         </div>
                     </div>

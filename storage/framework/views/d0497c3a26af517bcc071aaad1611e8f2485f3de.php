@@ -2,7 +2,7 @@
     <nav aria-label="Photos Search Navigation">                    
         <ul class="pagination justify-content-end mt-2">
             <li>
-                <p class="text-sm text-gray-700 leading-5">
+                <p class="text-sm text-gray-700 leading-5 mt-2 mr-3">
                     <?php echo __('Showing'); ?>
 
                     <span class="font-medium"><?php echo e($paginator->firstItem()); ?></span>

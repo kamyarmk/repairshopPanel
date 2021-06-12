@@ -5,7 +5,13 @@
     <div class="bg-body-light">
         <div class="content content-full">
             <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">Edit User</h1>
+                <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">
+                    @if(isset($customer))
+                       Edit / {{ $customer->first_name }} {{ $customer->last_name }}
+                    @else
+                        Add New
+                    @endif
+                </h1>
                 <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">Dashboard</li>
@@ -36,21 +42,37 @@
                             <div class="form-group row">
                                 <div class="col-6">
                                     <label for="dm-profile-edit-firstname">Firstname</label>
-                                    <input type="text" class="form-control" id="dm-profile-edit-firstname" name="dm-profile-edit-firstname">
+                                    <input type="text" class="form-control" id="dm-profile-edit-firstname" name="dm-profile-edit-firstname" 
+                                        @if(isset($customer))
+                                             value="{{ $customer->first_name }}"    
+                                        @endif
+                                    >
                                 </div>
                                 <div class="col-6">
                                     <label for="dm-profile-edit-lastname">Lastname</label>
-                                    <input type="text" class="form-control" id="dm-profile-edit-lastname" name="dm-profile-edit-lastname">
+                                    <input type="text" class="form-control" id="dm-profile-edit-lastname" name="dm-profile-edit-lastname"
+                                        @if(isset($customer))
+                                             value="{{ $customer->last_name }}"    
+                                        @endif
+                                    >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-email">Email Address</label>
-                                <input type="email" class="form-control" id="dm-profile-edit-email" name="dm-profile-edit-email" placeholder="Enter your email.." value="john.doe@example.com">
+                                <input type="email" class="form-control" id="dm-profile-edit-email" name="dm-profile-edit-email" 
+                                    @if(isset($customer))
+                                        value="{{ $customer->email }}"    
+                                    @endif
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-company-name">Mobile Number</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control-alt" id="example-group3-input2-alt" name="example-group3-input2-alt">
+                                    <input type="text" class="form-control form-control-alt" id="example-group3-input2-alt" name="example-group3-input2-alt"
+                                        @if(isset($customer))
+                                             value="{{ $customer->phone_number }}"    
+                                        @endif
+                                    >
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Submit</button>
                                     </div>
@@ -58,23 +80,43 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-company-name">Company Name (Optional)</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-company-name" name="dm-profile-edit-company-name">
+                                <input type="text" class="form-control" id="dm-profile-edit-company-name" name="dm-profile-edit-company-name"
+                                    @if(isset($customer))
+                                         value="{{ $customer->job_title }}"    
+                                    @endif
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-street-1">Street Address 1</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-street-1" name="dm-profile-edit-street-1">
+                                <input type="text" class="form-control" id="dm-profile-edit-street-1" name="dm-profile-edit-street-1"
+                                    @if(isset($customer))
+                                         value="{{ $customer->address_one }}"    
+                                    @endif
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-street-2">Street Address 2</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-street-2" name="dm-profile-edit-street-2">
+                                <input type="text" class="form-control" id="dm-profile-edit-street-2" name="dm-profile-edit-street-2" 
+                                    @if(isset($customer))
+                                         value="{{ $customer->address_two }}"    
+                                    @endif
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-city">City</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-city" name="dm-profile-edit-city">
+                                <input type="text" class="form-control" id="dm-profile-edit-city" name="dm-profile-edit-city"
+                                    @if(isset($customer))
+                                         value="{{ $customer->city }}"    
+                                    @endif
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-postal">Postal code</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-postal" name="dm-profile-edit-postal">
+                                <input type="text" class="form-control" id="dm-profile-edit-postal" name="dm-profile-edit-postal"
+                                    @if(isset($customer))
+                                         value="{{ $customer->postal_code }}"    
+                                    @endif
+                                >
                             </div>
                         </div>
                     </div>

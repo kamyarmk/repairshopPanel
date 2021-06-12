@@ -85,7 +85,7 @@
                         <div class="text-muted mt-1">Visitors</div>
                         <div class="py-3 font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            15.7%
+                            15.7 
                         </div>
                     </div>
                 </a>
@@ -100,7 +100,7 @@
                         <div class="text-muted mt-1">Page views</div>
                         <div class="py-3 font-size-h4 font-w700 text-danger">
                             <i class="fa fa-caret-down mr-1"></i>
-                            2.4%
+                            2.4 
                         </div>
                     </div>
                 </a>
@@ -115,7 +115,7 @@
                         <div class="text-muted mt-1">Pages per visit</div>
                         <div class="py-3 font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            52.5%
+                            52.5 
                         </div>
                     </div>
                 </a>
@@ -126,11 +126,11 @@
                         <div class="item item-circle bg-xplay-lighter mx-auto my-3">
                             <i class="fa fa-level-up-alt text-xplay"></i>
                         </div>
-                        <div class="text-black display-4 font-w700">12.5%</div>
+                        <div class="text-black display-4 font-w700">12.5 </div>
                         <div class="text-muted mt-1">Bounce Rate</div>
                         <div class="py-3 font-size-h4 font-w700 text-danger">
                             <i class="fa fa-caret-down mr-1"></i>
-                            5.7%
+                            5.7 
                         </div>
                     </div>
                 </a>
@@ -167,7 +167,7 @@
                                     <i class="fa fa-fw fa-caret-up text-success"></i>
                                 </div>
                                 <p class="mb-0">
-                                    You have a <span class="font-w600 text-success">25% Growth</span> in the last 30 days. Keep it up!
+                                    You have a <span class="font-w600 text-success">25  Growth</span> in the last 30 days. Keep it up!
                                 </p>
                             </div>
                         </div>
@@ -301,7 +301,7 @@
                         <div class="text-black font-size-h1 font-w700">1,500</div>
                         <div class="font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            25.6%
+                            25.6 
                         </div>
                     </div>
                 </a>
@@ -313,7 +313,7 @@
                         <div class="text-black font-size-h1 font-w700">910</div>
                         <div class="font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            18.6%
+                            18.6 
                         </div>
                     </div>
                 </a>
@@ -325,7 +325,7 @@
                         <div class="text-black font-size-h1 font-w700">57.5k</div>
                         <div class="font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            14.9%
+                            14.9 
                         </div>
                     </div>
                 </a>
@@ -337,7 +337,7 @@
                         <div class="text-black font-size-h1 font-w700">75</div>
                         <div class="font-size-h4 font-w700 text-danger">
                             <i class="fa fa-caret-down mr-1"></i>
-                            1.7%
+                            1.7 
                         </div>
                     </div>
                 </a>
@@ -349,7 +349,7 @@
                         <div class="text-black font-size-h1 font-w700">39.6k</div>
                         <div class="font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            39.8%
+                            39.8 
                         </div>
                     </div>
                 </a>
@@ -361,7 +361,7 @@
                         <div class="text-black font-size-h1 font-w700">3</div>
                         <div class="font-size-h4 font-w700 text-danger">
                             <i class="fa fa-caret-down mr-1"></i>
-                            25%
+                            25 
                         </div>
                     </div>
                 </a>
@@ -373,7 +373,7 @@
                         <div class="text-black font-size-h1 font-w700">290</div>
                         <div class="font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            1.2%
+                            1.2 
                         </div>
                     </div>
                 </a>
@@ -385,7 +385,7 @@
                         <div class="text-black font-size-h1 font-w700">6,300</div>
                         <div class="font-size-h4 font-w700 text-success">
                             <i class="fa fa-caret-up mr-1"></i>
-                            3.7%
+                            3.7 
                         </div>
                     </div>
                 </a>

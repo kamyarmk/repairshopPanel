@@ -4,7 +4,7 @@
         <!-- Quick Overview -->
         <div class="row row-deck">
             <div class="col-6 col-lg-3">
-                <a class="block block-rounded block-link-shadow text-center" href="/admins/add">
+                <a class="block block-rounded block-link-shadow text-center" href="/customer/add">
                     <div class="block-content py-5">
                         <div class="font-size-h3 font-w600 text-success mb-1">
                             <i class="fa fa-plus"></i>
@@ -119,7 +119,7 @@
                                 <tr>
                                     <td class="text-center">
                                         <a class="font-w600" href="be_pages_ecom_order.html">
-                                            <strong><?php echo e($customer->id); ?></strong>
+                                            <strong><?php echo e($customer->department->department_symbol); ?>.<?php echo e($customer->id); ?></strong>
                                         </a>
                                     </td>
                                     <td class="d-none d-sm-table-cell text-center"><?php echo e($customer->created_at); ?></td>
@@ -140,7 +140,7 @@
                                         <a class="font-w600" href="be_pages_ecom_order.html"><?php echo e($customer->phone_number); ?></a>
                                     </td>
                                     <td class="text-center font-size-base">
-                                        <a class="btn btn-sm btn-alt-secondary" href="be_pages_ecom_order.html">
+                                        <a class="btn btn-sm btn-alt-secondary" href="/customer/edit/<?php echo e($customer->id); ?>">
                                             <i class="fa fa-fw fa-eye"></i>
                                         </a>
                                         <a class="btn btn-sm btn-alt-secondary" href="javascript:void(0)">

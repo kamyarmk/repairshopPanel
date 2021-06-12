@@ -335,11 +335,6 @@
                                             <span class="nav-main-link-name">{{ __('Departments') }}</span>
                                         </a>
                                     </li>
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
-                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-main-item{{ request()->is('customer/*') ? ' open' : '' }}">
@@ -356,11 +351,6 @@
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('customer/add') ? ' active' : '' }}" href="/customer/add">
                                             <span class="nav-main-link-name">{{ __('Add New') }}</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
-                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -398,12 +388,7 @@
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('project/qc') ? ' active' : '' }}" href="/project/qc">
-                                            <span class="nav-main-link-name">{{ __('QC') }}</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
-                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
+                                            <span class="nav-main-link-name">{{ __('Quality Check') }}</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -421,7 +406,7 @@
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('product/add') ? ' active' : '' }}" href="/product/add">
-                                            <span class="nav-main-link-name">{{ __('Add Product') }}</span>
+                                            <span class="nav-main-link-name">{{ __('Add New') }}</span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -437,11 +422,6 @@
                                     <li class="nav-main-item">
                                         <a class="nav-main-link{{ request()->is('product/attributes') ? ' active' : '' }}" href="/product/attributes">
                                             <span class="nav-main-link-name">{{ __('Attributes') }}</span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-main-item">
-                                        <a class="nav-main-link{{ request()->is('report/any') ? ' active' : '' }}" href="/report/any">
-                                            <span class="nav-main-link-name">{{ __('Reports') }}</span>
                                         </a>
                                     </li>
                                 </ul>

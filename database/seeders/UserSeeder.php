@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'email'        => 'admin@gmail.com',
             'job_title'    => 'Manager',
 
-            'password'     => Hash::make('123456'),    
+            'password'     => Hash::make('yqypay83'),    
 
             'first_name'   => 'admin',
             'last_name'    => 'administrator',
@@ -96,6 +96,7 @@ class UserSeeder extends Seeder
         );
         for($i =0; $i < 11; $i++){
             $name = explode(' ', $names[$i]);
+            $currentDate = rand(1619292276, 1619551476);
             DB::table('users')->insert([
                 'user_name'    => $name[0] . '_' . $names[1],
                 'email'        => $name[0] . '@gmail.com',
@@ -110,7 +111,7 @@ class UserSeeder extends Seeder
                 'city'         => 'USA',
                 'postal_code'  => '123456789',
                 'phone_number' => rand('09121111111', '09129999999'),
-                
+                'created_at' => $currentDate,
                 'department_id'   => '2',
             ]);
         }
