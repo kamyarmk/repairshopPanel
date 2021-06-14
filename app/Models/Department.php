@@ -14,7 +14,7 @@ class Department extends Model
         'department_level',
     ];
 
-    public function User(){
+    public function Users(){
         return $this->hasMany(User::class);
     }
 }

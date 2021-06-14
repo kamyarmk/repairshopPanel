@@ -34,6 +34,7 @@ Route::get('/admins/list', [App\Http\Controllers\Dashboard\Admins\AdminsControll
 Route::get('/admins/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'add'])->name('admin.add');
 Route::get('/admins/edit', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'edit'])->name('admin.edit');
 Route::get('/admins/department', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'department'])->name('admin.department');
+Route::get('/admins/department/edit/{id}', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'departmentEdit'])->name('admin.edit');
 
 //Customer Route
 Route::get('/customer/list', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'index'])->name('customer.list');

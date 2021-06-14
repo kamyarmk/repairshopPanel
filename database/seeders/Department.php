@@ -31,5 +31,19 @@ class Department extends Seeder
             'created_at' => $dateForCreating,
             'updated_at' => $dateForCreating
         ]);
+
+        $jobs = array(
+            "Acounting|AC",
+            "Repair Man|RM",
+            "Receptionist|RC"
+        );
+        for($i =0; $i < 3; $i++){
+            $job = explode('|', $jobs[$i]);
+            DB::table('departments')->insert([
+                'department_name' => $job[0],
+                'department_symbol' => $job[1],
+                'department_level' => $i + 2,
+            ]);
+        }
     }
 }

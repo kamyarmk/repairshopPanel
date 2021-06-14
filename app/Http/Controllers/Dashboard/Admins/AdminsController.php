@@ -43,7 +43,27 @@ class AdminsController extends Controller
 
     public function department(Request $request)
     {
+        $departments = Department::with('Users')->where('id', '!=', '2')->paginate(20);
+        $users_list = User::with('Department')->where('department_id', '!=', '2')->paginate(20);
 
-        return view('admin.department');
+        return view('admin.department')->with(
+            [
+                'departments' => $departments,
+                'admins' => $users_list,
+            ]
+        );
+    }
+
+    public function departmentEdit(Request $request)
+    {
+        $departments = Department::with('Users')->where('id', '!=', '2')->paginate(20);
+        $users_list = User::with('Department')->where('department_id', '!=', '2')->paginate(20);
+
+        return view('admin.departmentEdit')->with(
+            [
+                'departments' => $departments,
+                'admins' => $users_list,
+            ]
+        );
     }
 }
