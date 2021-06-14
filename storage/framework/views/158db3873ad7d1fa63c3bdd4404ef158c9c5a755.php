@@ -8,13 +8,13 @@
                        Edit / <?php echo e($customer->first_name); ?> <?php echo e($customer->last_name); ?>
 
                     <?php else: ?>
-                        Add New
+                        Add New Customer
                     <?php endif; ?>
                 </h1>
                 <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">Dashboard</li>
-                        <li class="breadcrumb-item active" aria-current="page">Edit User</li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Customer</li>
                     </ol>
                 </nav>
             </div>
@@ -26,7 +26,17 @@
     <div class="content">
         <div class="block block-rounded">
             <div class="block-content">
-                <form action="be_pages_projects_edit.html" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+                <form  method="POST" 
+                    <?php if(isset($customer)): ?>
+                       action="/customer/edit/<?php echo e($customer->id); ?>"
+                    <?php else: ?>
+                        action="/customer/add"
+                    <?php endif; ?>
+                >
+                    <?php echo csrf_field(); ?>
+                    <?php if(isset($customer)): ?>
+                        <?php echo method_field('PUT'); ?>
+                    <?php endif; ?>
                     <!-- User Profile -->
                     <h2 class="content-heading pt-0">
                         <i class="fa fa-fw fa-user-circle text-muted mr-1"></i> User Profile
@@ -41,7 +51,7 @@
                             <div class="form-group row">
                                 <div class="col-6">
                                     <label for="dm-profile-edit-firstname">Firstname</label>
-                                    <input type="text" class="form-control" id="dm-profile-edit-firstname" name="dm-profile-edit-firstname" 
+                                    <input type="text" class="form-control" id="first_name" name="first_name" 
                                         <?php if(isset($customer)): ?>
                                              value="<?php echo e($customer->first_name); ?>"    
                                         <?php endif; ?>
@@ -49,7 +59,7 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="dm-profile-edit-lastname">Lastname</label>
-                                    <input type="text" class="form-control" id="dm-profile-edit-lastname" name="dm-profile-edit-lastname"
+                                    <input type="text" class="form-control" id="last_name" name="last_name"
                                         <?php if(isset($customer)): ?>
                                              value="<?php echo e($customer->last_name); ?>"    
                                         <?php endif; ?>
@@ -58,7 +68,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-email">Email Address</label>
-                                <input type="email" class="form-control" id="dm-profile-edit-email" name="dm-profile-edit-email" 
+                                <input type="email" class="form-control" id="email" name="email" 
                                     <?php if(isset($customer)): ?>
                                         value="<?php echo e($customer->email); ?>"    
                                     <?php endif; ?>
@@ -67,7 +77,7 @@
                             <div class="form-group">
                                 <label for="dm-profile-edit-company-name">Mobile Number</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control form-control-alt" id="example-group3-input2-alt" name="example-group3-input2-alt"
+                                    <input type="text" class="form-control form-control-alt" id="phone_number" name="phone_number"
                                         <?php if(isset($customer)): ?>
                                              value="<?php echo e($customer->phone_number); ?>"    
                                         <?php endif; ?>
@@ -79,7 +89,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-company-name">Company Name (Optional)</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-company-name" name="dm-profile-edit-company-name"
+                                <input type="text" class="form-control" id="job_title" name="job_title"
                                     <?php if(isset($customer)): ?>
                                          value="<?php echo e($customer->job_title); ?>"    
                                     <?php endif; ?>
@@ -87,7 +97,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-street-1">Street Address 1</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-street-1" name="dm-profile-edit-street-1"
+                                <input type="text" class="form-control" id="address_one" name="address_one"
                                     <?php if(isset($customer)): ?>
                                          value="<?php echo e($customer->address_one); ?>"    
                                     <?php endif; ?>
@@ -95,7 +105,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-street-2">Street Address 2</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-street-2" name="dm-profile-edit-street-2" 
+                                <input type="text" class="form-control" id="address_two" name="address_two" 
                                     <?php if(isset($customer)): ?>
                                          value="<?php echo e($customer->address_two); ?>"    
                                     <?php endif; ?>
@@ -103,7 +113,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-city">City</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-city" name="dm-profile-edit-city"
+                                <input type="text" class="form-control" id="city" name="city"
                                     <?php if(isset($customer)): ?>
                                          value="<?php echo e($customer->city); ?>"    
                                     <?php endif; ?>
@@ -111,7 +121,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-postal">Postal code</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-postal" name="dm-profile-edit-postal"
+                                <input type="text" class="form-control" id="postal_code" name="postal_code"
                                     <?php if(isset($customer)): ?>
                                          value="<?php echo e($customer->postal_code); ?>"    
                                     <?php endif; ?>
@@ -134,7 +144,7 @@
                         <div class="col-lg-8 col-xl-5">
                             <div class="form-group">
                                 <label for="dm-profile-edit-password">Current Password</label>
-                                <input type="password" class="form-control" id="dm-profile-edit-password" name="dm-profile-edit-password">
+                                <input type="password" class="form-control" id="password" name="password">
                             </div>
                             <div class="form-group row">
                                 <div class="col-12">

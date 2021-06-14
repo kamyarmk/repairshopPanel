@@ -39,7 +39,8 @@ Route::get('/admins/department', [App\Http\Controllers\Dashboard\Admins\AdminsCo
 Route::get('/customer/list', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'index'])->name('customer.list');
 Route::get('/customer/add', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'add'])->name('customer.add');
 Route::get('/customer/edit/{id}', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'edit'])->name('customer.edit');
-Route::post('/customer/edit/{id}', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'update'])->name('customer.update');
+Route::put('/customer/edit/{id}', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'update'])->name('customer.update');
+Route::post('/customer/add', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'create'])->name('customer.create');
 
 //Projects Route
 Route::get('/project/list', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'index'])->name('Project.list');
