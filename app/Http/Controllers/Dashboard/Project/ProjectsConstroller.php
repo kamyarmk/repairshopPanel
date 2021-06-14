@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Dashboard\Project;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\registered_devices;
+use App\Models\Devices;
+use App\Models\User;
 
 class ProjectsConstroller extends Controller
 {
@@ -19,8 +25,10 @@ class ProjectsConstroller extends Controller
 
     public function index(Request $request)
     {
-
-        return view('project.list');
+        $Devices = registered_devices::with('Devices', 'Users')->paginate(5);
+        return view('project.list')->with([
+            'Devices' => $Devices
+        ]);
     }
 
     public function add(Request $request)

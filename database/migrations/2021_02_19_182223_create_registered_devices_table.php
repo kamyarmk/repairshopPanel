@@ -15,20 +15,19 @@ class CreateRegisteredDevicesTable extends Migration
     {
         Schema::create('registered_devices', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id')->index();
+            $table->string('users_id')->index();
             $table->string('devices_id')->index();
-            $table->string('DeviceType');
-            $table->string('DeviceColor');
+            $table->string('color_id')->index();
+            $table->string('storage_id')->index();
             $table->string('IMEI');
-            $table->string('Problems');
-            $table->string('DeviceDescription');
-            $table->string('password')->nullable();
-            $table->string('DeviceAccessories');
-            $table->string('Tips');
+            $table->string('problems');
+            $table->string('device_desc');
+            $table->string('device_otherinfo');
+            $table->string('condition')->default('open');
+            $table->string('device_password')->nullable();
             $table->string('FirstQC')->nullable();
             $table->string('SeccondQC')->nullable();
-            $table->string('MaxBudget');
-            $table->string('Condition');
+            $table->date('deadline')->nullable();
             $table->timestamps();
         });
     }

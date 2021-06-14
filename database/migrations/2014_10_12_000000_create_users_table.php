@@ -37,7 +37,7 @@ class CreateUsersTable extends Migration
             $table->string('documents')->nullable();
 
             //Other Info
-            $table->string('department_id');
+            $table->string('department_id')->index();
             $table->rememberToken();
             $table->timestamps();
         });

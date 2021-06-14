@@ -14,20 +14,18 @@ class registered_devices extends Model
     protected $fillable = [
         'user_id',
         'devices_id',
-        'DeviceType',
-        'DeviceColor',
+        'color_id',
+        'storage_id',
         'IMEI',
-        'Problems',
-        'DeviceDescription',
-        'password',
-        'DeviceAccessories',
-        'Tips',
+        'problems',
+        'device_desc',
+        'device_otherinfo',
+        'condition',
+        'device_password',
         'FirstQC',
         'SeccondQC',
-        'MaxBudget',
-        'Condition',
+        'deadline',
         'created_at',
-        'updated_at'
     ];
 
     public function users(){
@@ -36,6 +34,18 @@ class registered_devices extends Model
 
     public function devices(){
         return $this->belongsTo(Devices::class);
+    }
+
+    public function color(){
+        return $this->belongsTo(Colors::class);
+    }
+
+    public function storage(){
+        return $this->belongsTo(Storages::class);
+    }
+
+    public function tasks(){
+        return $this->hasMany(Tasks::class);
     }
 
     public function invoices(){

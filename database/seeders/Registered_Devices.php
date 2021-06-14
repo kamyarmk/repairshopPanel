@@ -18,26 +18,30 @@ class Registered_Devices extends Seeder
     public function run()
     {
         $conditions = array("Open", "Delivered", "Refund");
+        $problems = array(
+            'Broken Glass',
+            'WIFI Problem',
+            'Broken Cover',
+            'Battery Problem',
+            'Software Problem'
+        );
+
         for($i =0; $i < 5; $i++){
             $currentDate = rand(1619292276, 1619551476);
-            $dateForCreating = Jalalian::forge(1619292276)->format('Y-m-d H:i:s');
             DB::table('registered_devices')->insert([
-                'user_id' => rand(2, 5),
-                'devices_id' => rand(1,20),
-                'DeviceType' => Str::random(5),
-                'DeviceColor' => Str::random(3),
-                'IMEI' => Str::random(15),
-                'Problems' => Str::random(25),
-                'DeviceDescription' => Str::random(25),
-                'password' => Str::random(3),
-                'DeviceAccessories' => Str::random(25),
-                'Tips' => Str::random(25),
-                'FirstQC' => Str::random(10),
-                'SeccondQC' => Str::random(10),
-                'MaxBudget' => rand(1000, 50000),
-                'Condition' => $conditions[array_rand($conditions, 1)],
-                'created_at' => $dateForCreating,
-                'updated_at' => $dateForCreating
+                'users_id' => rand(2, 5),
+                'devices_id' => rand(1,5),
+                'color_id' => rand(1,17),
+                'storage_id' => rand(1,6),
+                'IMEI' => Str::random(25),
+                'problems' => $problems[rand(0,4)],
+                'device_desc' => Str::random(3),
+                'device_otherinfo' => Str::random(25),
+                'condition' => $conditions[array_rand($conditions, 1)],
+                'device_password' => Str::random(10),
+                'deadline' => $currentDate,
+                'created_at' => $currentDate,
+                'updated_at' => $currentDate
             ]);
         }
     }
