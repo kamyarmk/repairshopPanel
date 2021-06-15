@@ -26,7 +26,8 @@
     <div class="content">
         <div class="block block-rounded block-bordered">
             <div class="block-content">
-                <form action="be_pages_projects_create.html" method="POST">
+                <form method="POST">
+                    <?php echo csrf_field(); ?>
                     <!-- Device Main Info -->
                     <h2 class="content-heading pt-0">Device Main Info</h2>
                     <div class="row push">

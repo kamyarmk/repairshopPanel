@@ -51,7 +51,7 @@ class ProjectsConstroller extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($data->all(), [
+        $validator = Validator::make($request->all(), [
             'user_id' => ['required'],
             'devices_id' => ['required'],
             'color_id' => ['required'],
@@ -72,17 +72,17 @@ class ProjectsConstroller extends Controller
         }
 
         $registeredDevice = registered_devices::create([
-            'user_id' => $data['user_id'],
-            'devices_id' => $data['devices_id'],
-            'color_id' => $data['color_id'],
-            'color_id' => $data['color_id'],
-            'IMEI' => $data['IMEI'],
-            'problems' => $data['problems'],
-            'device_desc' => $data['device_desc'],
-            'device_otherinfo' => $data['device_otherinfo'],
-            'device_password' => $data['device_password'],
-            'deadline' => $data['deadline'],
-            'created_at' => $data['created_at'],
+            'users_id' => $request['user_id'],
+            'devices_id' => $request['devices_id'],
+            'color_id' => $request['color_id'],
+            'storage_id' => $request['storage_id'],
+            'IMEI' => $request['IMEI'],
+            'problems' => $request['problems'],
+            'device_desc' => $request['device_desc'],
+            'device_otherinfo' => $request['device_otherinfo'],
+            'device_password' => $request['device_password'],
+            'deadline' => $request['deadline'],
+            'created_at' => $request['created_at'],
             'Condition' => 'Open',
         ])->id;
         // LablePrint($registeredDevice);

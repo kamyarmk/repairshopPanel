@@ -12,7 +12,7 @@ class registered_devices extends Model
     protected $table = 'registered_devices';
 
     protected $fillable = [
-        'user_id',
+        'users_id',
         'devices_id',
         'color_id',
         'storage_id',
