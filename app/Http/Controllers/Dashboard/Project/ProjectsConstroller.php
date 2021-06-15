@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\DB;
 use App\Models\registered_devices;
 use App\Models\Devices;
 use App\Models\User;
+use App\Models\Colors;
+use App\Models\Storages;
+use App\Models\Variables;
 
 class ProjectsConstroller extends Controller
 {
@@ -33,8 +36,58 @@ class ProjectsConstroller extends Controller
 
     public function add(Request $request)
     {
+        $users = User::all();
+        $colors = Colors::all();
+        $storages = Storages::all();
+        $devices = Devices::all();
 
-        return view('project.add');
+        return view('project.add')->with([
+            'Users' => $users,
+            'Colors' => $colors,
+            'Storages' => $storages,
+            'Devices' => $devices
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make($data->all(), [
+            'user_id' => ['required'],
+            'devices_id' => ['required'],
+            'color_id' => ['required'],
+            'storage_id' => ['required'],
+            'IMEI' => ['required'],
+            'problems' => ['required'],
+            'device_desc' => ['required'],
+            'device_otherinfo' => ['required'],
+            'device_password' => ['required'],
+            'deadline' => ['required'],
+            'created_at' => ['required'],
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/project/add')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        $registeredDevice = registered_devices::create([
+            'user_id' => $data['user_id'],
+            'devices_id' => $data['devices_id'],
+            'color_id' => $data['color_id'],
+            'color_id' => $data['color_id'],
+            'IMEI' => $data['IMEI'],
+            'problems' => $data['problems'],
+            'device_desc' => $data['device_desc'],
+            'device_otherinfo' => $data['device_otherinfo'],
+            'device_password' => $data['device_password'],
+            'deadline' => $data['deadline'],
+            'created_at' => $data['created_at'],
+            'Condition' => 'Open',
+        ])->id;
+        // LablePrint($registeredDevice);
+
+        return redirect('/project/list');
     }
 
     public function edit(Request $request)

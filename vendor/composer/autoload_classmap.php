@@ -56,6 +56,7 @@ return array(
     'App\\Models\\Storages' => $baseDir . '/app/Models/Storages.php',
     'App\\Models\\Tasks' => $baseDir . '/app/Models/Tasks.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\Variables' => $baseDir . '/app/Models/Variables.php',
     'App\\Models\\invoices' => $baseDir . '/app/Models/invoices.php',
     'App\\Models\\registered_devices' => $baseDir . '/app/Models/registered_devices.php',
     'App\\Models\\settings' => $baseDir . '/app/Models/settings.php',

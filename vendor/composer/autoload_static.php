@@ -668,6 +668,7 @@ class ComposerStaticInite58b8c869506e011928ccb508c403a76
         'App\\Models\\Storages' => __DIR__ . '/../..' . '/app/Models/Storages.php',
         'App\\Models\\Tasks' => __DIR__ . '/../..' . '/app/Models/Tasks.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Variables' => __DIR__ . '/../..' . '/app/Models/Variables.php',
         'App\\Models\\invoices' => __DIR__ . '/../..' . '/app/Models/invoices.php',
         'App\\Models\\registered_devices' => __DIR__ . '/../..' . '/app/Models/registered_devices.php',
         'App\\Models\\settings' => __DIR__ . '/../..' . '/app/Models/settings.php',

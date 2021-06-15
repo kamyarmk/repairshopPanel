@@ -39,7 +39,12 @@
                             <div class="form-group">
                                 <label>Device Type</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <!-- <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2"> -->
+                                    <select class="custom-select" id="devices_id" name="devices_id">
+                                        <?php $__currentLoopData = $Devices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Device): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($Device->id); ?>"><?php echo e($Device->device_name); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Add New</button>
                                     </div>
@@ -48,7 +53,7 @@
                             <div class="form-group">
                                 <label>Device Brand</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <!-- <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2"> -->
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Add New</button>
                                     </div>
@@ -57,7 +62,7 @@
                             <div class="form-group">
                                 <label>Device Model</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <!-- <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2"> -->
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Add New</button>
                                     </div>
@@ -71,7 +76,12 @@
                             <div class="form-group">
                                 <label>Device Color</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <!-- <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2"> -->
+                                    <select class="custom-select" id="color_id" name="color_id">
+                                        <?php $__currentLoopData = $Colors; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Color): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($Color->id); ?>"><?php echo e($Color->name); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Add New</button>
                                     </div>
@@ -80,7 +90,12 @@
                             <div class="form-group">
                                 <label>Device Storage</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <!-- <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2"> -->
+                                    <select class="custom-select" id="storage_id" name="storage_id">
+                                        <?php $__currentLoopData = $Storages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Storage): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <option value="<?php echo e($Storage->id); ?>"><?php echo e($Storage->name); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Add New</button>
                                     </div>
@@ -89,7 +104,7 @@
                             <div class="form-group">
                                 <label for="example-text-input">IMEI</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <input type="text" class="form-control" id="IMEI" name="IMEI">
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Scan</button>
                                     </div>
@@ -111,7 +126,7 @@
                             <div class="form-group">
                                 <label>Probelms That Have To be Fixed</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="example-group3-input2" name="example-group3-input2">
+                                    <input type="text" class="form-control" id="problems" name="problems">
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-dark">Add New</button>
                                     </div>
@@ -119,20 +134,20 @@
                             </div>
                             <div class="form-group">
                                 <label for="dm-project-new-description">Detailed Decsriptions</label>
-                                <textarea class="form-control" id="dm-project-new-description" name="dm-project-new-description" rows="6" placeholder="What is this project about?"></textarea>
+                                <textarea class="form-control" id="device_desc" name="device_desc" rows="6" placeholder="What is this project about?"></textarea>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-6">
                                     <!-- Bootstrap Datepicker (.js-datepicker class are initialized in Helpers.datepicker()) -->
                                     <!-- For more info and examples you can check out https://github.com/eternicode/bootstrap-datepicker -->
                                     <label for="dm-project-new-deadline">Accepted Date</label>
-                                    <input type="text" class="js-datepicker form-control" id="dm-project-new-deadline" name="dm-project-new-deadline" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
+                                    <input type="text" class="js-datepicker form-control" id="created_at" name="created_at" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="mm/dd/yy" placeholder="mm/dd/yy" value="<?php echo e(date('m/d/Y')); ?>">
                                 </div>
                                 <div class="col-md-6">
                                     <!-- Bootstrap Datepicker (.js-datepicker class are initialized in Helpers.datepicker()) -->
                                     <!-- For more info and examples you can check out https://github.com/eternicode/bootstrap-datepicker -->
                                     <label for="dm-project-new-deadline">Deadline</label>
-                                    <input type="text" class="js-datepicker form-control" id="dm-project-new-deadline" name="dm-project-new-deadline" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
+                                    <input type="text" class="js-datepicker form-control" id="deadline" name="deadline" data-week-start="1" data-autoclose="true" data-today-highlight="true" data-date-format="mm/dd/yy" placeholder="mm/dd/yy">
                                 </div>
                             </div>
                         </div>
@@ -150,11 +165,11 @@
                         <div class="col-lg-8 col-xl-5">
                             <div class="form-group">
                                 <label for="example-text-input">Password</label>
-                                <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Text Input">
+                                <input type="text" class="form-control" id="device_password" name="device_password" placeholder="Text Input">
                             </div>
                             <div class="form-group">
                                 <label for="dm-project-new-description">Other Infos</label>
-                                <textarea class="form-control" id="dm-project-new-description" name="dm-project-new-description" rows="6" placeholder="What is this project about?"></textarea>
+                                <textarea class="form-control" id="device_otherinfo" name="device_otherinfo" rows="6" placeholder="What is this project about?"></textarea>
                             </div>
                         </div>
                     </div>
@@ -173,7 +188,12 @@
                                 <label for="example-text-input">Customer</label>
                                 <div class="row">
                                     <div class="col-6">
-                                        <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Search">
+                                        <!-- <input type="text" class="form-control" id="example-text-input" name="example-text-input" placeholder="Search"> -->
+                                        <select class="custom-select" id="user_id" name="user_id">
+                                            <?php $__currentLoopData = $Users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $User): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <option value="<?php echo e($User->id); ?>"><?php echo e($User->first_name); ?> <?php echo e($User->last_name); ?></option>
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        </select>
                                     </div>
                                     <div class="col-6">
                                         <button type="button" class="js-swal-info btn btn-light push">
