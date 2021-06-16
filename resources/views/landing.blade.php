@@ -9,7 +9,7 @@
                     Dash<span class="text-primary">mix</span> + Laravel <span class="text-danger">8</span>
                 </h1>
                 <h2 class="h4 font-w400 text-muted mb-4 invisible" data-toggle="appear" data-timeout="150">
-                    Welcome to the starter kit! Build something amazing!
+                    {{ __('Welcome') }} to the starter kit! Build something amazing!
                 </h2>
                 <span class="m-2 d-inline-block invisible" data-toggle="appear" data-timeout="300">
                     <a class="btn btn-alt-primary px-4 py-3" href="/dashboard">

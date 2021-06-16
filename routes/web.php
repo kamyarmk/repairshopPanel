@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // Example Routes
 Route::view('/', 'landing');
+Route::get('/language/{locale}', [App\Http\Controllers\LocalizationController::class, 'index'])->name('home');
 
 Route::view('/pages/slick', 'pages.slick')->middleware('auth');
 Route::view('/pages/datatables', 'pages.datatables')->middleware('auth');
@@ -46,7 +47,6 @@ Route::post('/customer/add', [App\Http\Controllers\Dashboard\Customer\CustomersC
 //Projects Route
 Route::get('/project/list', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'index'])->name('Project.list');
 Route::get('/project/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'add'])->name('Project.add');
-Route::post('/project/add', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'store'])->name('Project.store');
 Route::get('/project/edit/{id}', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'edit'])->name('Project.edit');
 Route::get('/project/details', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'details'])->name('Project.details');
 Route::get('/project/category', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'category'])->name('Project.category');

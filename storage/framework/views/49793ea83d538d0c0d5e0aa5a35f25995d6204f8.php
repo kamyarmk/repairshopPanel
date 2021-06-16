@@ -51,7 +51,7 @@
         <!-- All Orders -->
         <div class="block block-rounded">
             <div class="block-header block-header-default">
-                <h3 class="block-title">All Staffs</h3>
+                <h3 class="block-title">All Admin</h3>
                 <div class="custom-control custom-switch mt-1">
                     <input type="checkbox" class="custom-control-input" id="example-sw-custom1" name="example-sw-custom1" checked="">
                     <label class="custom-control-label" for="example-sw-custom1">Online</label>

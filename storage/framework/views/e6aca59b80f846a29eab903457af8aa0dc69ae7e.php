@@ -85,7 +85,11 @@
             'main-content-boxed'                        Full width Main Content with a specific maximum width (screen width > 1200px)
             'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
         -->
-        <div id="page-container" class="sidebar-o enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
+        <div id="page-container" class="sidebar-o enable-page-overlay sidebar-dark side-scroll 
+            <?php if(session()->get('locale') == 'fa'): ?>
+                sidebar-r
+            <?php endif; ?>
+         page-header-fixed main-content-narrow">
             <!-- Side Overlay-->
             <aside id="side-overlay">
                 <!-- Side Header -->
@@ -504,10 +508,22 @@
                             </li>
                             <li class="nav-main-heading"><?php echo e(__('System')); ?></li>
                             <li class="nav-main-item">
-                                <a class="nav-main-link" href="/">
+                                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-globe"></i>
-                                    <span class="nav-main-link-name">Landing</span>
+                                    <span class="nav-main-link-name">Language</span>
                                 </a>
+                                <ul class="nav-main-submenu">
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="/language/en">
+                                            <span class="nav-main-link-name">English</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-main-item">
+                                        <a class="nav-main-link" href="/language/fa">
+                                            <span class="nav-main-link-name">Persian</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             
                             <li class="nav-main-item">
