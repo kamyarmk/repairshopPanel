@@ -10,9 +10,9 @@
 // If you have many custom styles, you can create and import additional files
 // For example you can create _component1.scss and include it as follows:
 // @import 'component1';
-
-*{
-    font-family: $font-family-main;
+* {
+    margin: 0;
+    padding: 0;
 }
 body{
     font-family: $font-family-main;
@@ -39,5 +39,28 @@ body{
     }
     table th, table td{
         text-align: center;
+    }
+}
+
+body.fa{
+    font-family: $font-family-persian;
+    direction: rtl;
+    text-align: right;
+
+    .btn{
+        font-family: $font-family-persian;
+    }
+
+    .text-md-left{
+        text-align: right !important;
+    }
+    .text-left{
+        text-align: right !important;
+    }
+    .text-md-right{
+        text-align: left !important;
+    }
+    .text-right{
+        text-align: left !important;
     }
 }

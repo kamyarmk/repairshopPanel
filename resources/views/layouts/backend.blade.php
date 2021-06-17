@@ -36,7 +36,11 @@
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
     </head>
-    <body>
+    <body 
+        @if(session()->get('locale') == 'fa')
+            class="fa"
+        @endif
+    >
         <!-- Page Container -->
         <!--
             Available classes for #page-container:
