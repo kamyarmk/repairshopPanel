@@ -27418,6 +27418,9 @@ body.fa .text-md-right {
 body.fa .text-right {
   text-align: left !important;
 }
+body.fa .dropdown-item {
+  text-align: right;
+}
 
 .content-header .btn {
   font-size: 14px;

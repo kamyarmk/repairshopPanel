@@ -687,7 +687,8 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-notifications-dropdown">
                                 <div class="bg-primary-darker rounded-top font-w600 text-white text-center p-3">
-                                   Notifications
+                                   <?php echo e(__('Notifications')); ?>
+
                                 </div>
                                 <ul class="nav-items my-2">
                                     <li>
@@ -748,7 +749,8 @@
                                 </ul>
                                 <div class="p-2 border-top">
                                     <a class="btn btn-light btn-block text-center" href="/notifications">
-                                        <i class="fa fa-fw fa-eye mr-1"></i> View All
+                                        <i class="fa fa-fw fa-eye mr-1"></i> <?php echo e(__('View All')); ?>
+
                                     </a>
                                 </div>
                             </div>

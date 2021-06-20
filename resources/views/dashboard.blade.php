@@ -10,7 +10,7 @@
                     {{ __('Dashboard') }}
                 </h1>
                 <p class="mb-0">
-                    Welcome, admin! You have <a class="font-w500" href="javascript:void(0)">5 new notifications</a>.
+                    {{ __('Welcome') }}, {{ Auth::user()->user_name }}!.
                 </p>
             </div>
             <div class="mt-4 mt-md-0">
@@ -19,14 +19,14 @@
                 </a>
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn btn-sm btn-alt-primary px-3" id="dropdown-analytics-overview" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Last 30 days <i class="fa fa-fw fa-angle-down"></i>
+                        {{ __('Last') }} 30 {{ __('days') }} <i class="fa fa-fw fa-angle-down"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right font-size-sm" aria-labelledby="dropdown-analytics-overview">
-                        <a class="dropdown-item" href="javascript:void(0)">This Week</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Previous Week</a>
+                        <a class="dropdown-item" href="javascript:void(0)">{{ __('This Week') }}</a>
+                        <a class="dropdown-item" href="javascript:void(0)">{{ __('Previous Week') }}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0)">This Month</a>
-                        <a class="dropdown-item" href="javascript:void(0)">Previous Month</a>
+                        <a class="dropdown-item" href="javascript:void(0)">{{ __('This Month') }}</a>
+                        <a class="dropdown-item" href="javascript:void(0)">{{ __('Previous Month') }}</a>
                     </div>
                 </div>
             </div>
@@ -315,7 +315,7 @@
                                     </a>
                                     <div role="separator" class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-eye opacity-50 mr-1"></i> View All
+                                        <i class="fa fa-fw fa-eye opacity-50 mr-1"></i> {{ __('View All') }}
                                     </a>
                                 </div>
                             </div>
@@ -490,7 +490,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
                         <a class="font-w500" href="javascript:void(0)">
-                            View all orders
+                            {{ __('View All') }} {{ __('Orders') }}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -506,7 +506,7 @@
                                 <i class="fa fa-check text-muted"></i>
                             </div>
                             <div class="text-success font-size-h1 font-w700">3,500</div>
-                            <div class="text-black mb-3">Completed Orders</div>
+                            <div class="text-black mb-3">{{ __('Completed Orders') }}</div>
                             
                         </div>
                     </div>
@@ -524,7 +524,7 @@
                                 <i class="fa fa-exclamation-triangle text-muted"></i>
                             </div>
                             <div class="text-danger font-size-h1 font-w700">75</div>
-                            <div class="text-black mb-3">Delayed Requests</div>
+                            <div class="text-black mb-3">{{ __('Delayed Requests') }}</div>
                             
                         </div>
                     </div>
