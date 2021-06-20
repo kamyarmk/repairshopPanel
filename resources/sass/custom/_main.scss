@@ -42,15 +42,39 @@ body{
     }
 }
 
+// RTL Graphics
+
 body.fa{
     font-family: $font-family-persian;
     direction: rtl;
     text-align: right;
+    width: 100%;
+    .nav-main-link.nav-main-link-submenu{
+        padding-left: 2rem;
+        padding-right: unset;
+    }
+    .nav-main-link .nav-main-link-icon{
+        margin-left: 0.625rem;
+        margin-right: unset;
+    }
+
+    .nav-main-link.nav-main-link-submenu::before, .nav-main-link.nav-main-link-submenu::after{
+        left: 0.625rem;
+        right: unset;
+    }
 
     .btn{
         font-family: $font-family-persian;
     }
-
+    .dropdown-menu.dropdown-menu-lg.dropdown-menu-right.p-0.show{
+        .nav-items{
+            text-align: right;
+            direction: rtl;
+        }
+    }
+    .input-group{
+        flex-direction: row-reverse;
+    }
     .text-md-left{
         text-align: right !important;
     }
@@ -62,5 +86,12 @@ body.fa{
     }
     .text-right{
         text-align: left !important;
+    }
+}
+
+// Top Header
+.content-header{
+    .btn{
+        font-size: 14px;
     }
 }

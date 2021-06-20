@@ -108,8 +108,8 @@
 
                             <!-- User Info -->
                             <div class="ml-2">
-                                <a class="text-white font-w600" href="javascript:void(0)">George Taylor</a>
-                                <div class="text-white-75 font-size-sm">Full Stack Developer</div>
+                                <a class="text-white font-w600" href="javascript:void(0)"><?php echo e(Auth::user()->user_name); ?></a>
+                                <div class="text-white-75 font-size-sm"><?php echo e(Auth::user()->job_title); ?></div>
                             </div>
                             <!-- END User Info -->
 
@@ -275,12 +275,18 @@
                     <div class="content-header bg-white-10">
                         <!-- Logo -->
                         <a class="font-w600 text-white tracking-wide" href="/">
-                            <span class="smini-visible">
+                            <!-- <span class="smini-visible">
                                 D<span class="opacity-75">x</span>
                             </span>
                             <span class="smini-hidden">
                                 Dash<span class="opacity-75">mix</span>
-                            </span>
+                            </span> -->
+                            <?php if(session()->get('locale') == 'fa'): ?>
+                                <img src="<?php echo e(asset('/media/Logo-fa.png')); ?>" alt="" style="width: 150px">
+                            <?php else: ?>
+                                <img src="<?php echo e(asset('/media/English-Logo.png')); ?>" alt="" style="width: 150px">
+                            <?php endif; ?>
+                            
                         </a>
                         <!-- END Logo -->
 
@@ -447,7 +453,7 @@
                                     </li>
                                     <li class="nav-main-item">
                                         <a class="nav-main-link<?php echo e(request()->is('invoice/add') ? ' active' : ''); ?>" href="/invoice/add">
-                                            <span class="nav-main-link-name"><?php echo e(__('New Invoice')); ?></span>
+                                            <span class="nav-main-link-name"><?php echo e(__('Add New')); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-main-item">
@@ -514,7 +520,7 @@
                             <li class="nav-main-item">
                                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="true" href="#">
                                     <i class="nav-main-link-icon fa fa-globe"></i>
-                                    <span class="nav-main-link-name">Language</span>
+                                    <span class="nav-main-link-name"><?php echo e(__('Language')); ?></span>
                                 </a>
                                 <ul class="nav-main-submenu">
                                     <li class="nav-main-item">
@@ -597,7 +603,7 @@
 
                         <!-- Open Search Section -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        <div class="col-5">
+                        <div class="col-6">
                             <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
                                 <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('Search')); ?></span>
                             </button>
@@ -605,7 +611,7 @@
                         
                         <!-- END Open Search Section -->
                         <!-- Quick Device Add Button -->
-                        <div class="col-5">
+                        <div class="col-4">
                             <div class="dropdown">
                                 <button type="button" class="btn btn-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('Add New')); ?></span>
@@ -635,14 +641,14 @@
                         <!-- Update Button -->
                         <!-- Tour Button -->
                             <button type="button" class="btn btn-dual bg-success text-white" onclick="startTour()">
-                                <i class="fa fa-hands-helping"></i> <span class="ml-1 d-none d-sm-inline-block">Tour</span>
+                                <i class="fa fa-hands-helping"></i> <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('Tour')); ?></span>
                             </button>
                         <!-- Tour Button -->
                         <!-- User Dropdown -->
                         <div class="dropdown d-inline-block">
                             <button type="button" class="btn btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-fw fa-user d-sm-none"></i>
-                                <span class="d-none d-sm-inline-block">Admin</span>
+                                <span class="d-none d-sm-inline-block"><?php echo e(Auth::user()->user_name); ?></span>
                                 <i class="fa fa-fw fa-angle-down ml-1 d-none d-sm-inline-block"></i>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
@@ -803,10 +809,10 @@
                 <div class="content py-0">
                     <div class="row font-size-sm">
                         <div class="col-sm-6 order-sm-2 mb-1 mb-sm-0 text-center text-sm-right">
-                            Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
+                            <?php echo e(__('Crafted with')); ?> <i class="fa fa-heart text-danger"></i> <?php echo e(__('by')); ?> <a class="font-w600" href="https://dartweb.net" target="_blank"><?php echo e(__('Dartweb')); ?></a>
                         </div>
                         <div class="col-sm-6 order-sm-1 text-center text-sm-left">
-                            <a class="font-w600" href="https://1.envato.market/r6y" target="_blank">Dashmix</a> &copy; <span data-toggle="year-copy"></span>
+                            <a class="font-w600" href="#" target="_blank"><?php echo e(__('Resepto')); ?></a> &copy; <span data-toggle="year-copy"></span>
                         </div>
                     </div>
                 </div>

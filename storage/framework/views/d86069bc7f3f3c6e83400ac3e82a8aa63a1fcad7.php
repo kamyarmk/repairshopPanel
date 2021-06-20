@@ -130,7 +130,8 @@
         </div>
 
         <h2 class="h2 mb-3">
-            Invoice Reports
+            <?php echo e(__('Invoice Reports')); ?>
+
         </h2>
 
         <div class="row row-deck">
@@ -257,13 +258,13 @@
                             <!-- Chart.js Chart is initialized in js/pages/be_pages_dashboard.min.js which was auto compiled from _js/pages/be_pages_dashboard.js -->
                             <!-- For more info and examples you can check out http://www.chartjs.org/docs/ -->
                             <canvas class="js-chartjs-analytics-bars"
-                                data-mon="Mon"
-                                data-tue="Tue"
-                                data-wed="Wed"
-                                data-thu="Thu"
-                                data-fri="Fri"
-                                data-sat="Sat"
-                                data-sun="sun"
+                                data-mon="<?php echo e(__('Mon')); ?>"
+                                data-tue="<?php echo e(__('Tue')); ?>"
+                                data-wed="<?php echo e(__('Wed')); ?>"
+                                data-thu="<?php echo e(__('Thu')); ?>"
+                                data-fri="<?php echo e(__('Fri')); ?>"
+                                data-sat="<?php echo e(__('Sat')); ?>"
+                                data-sun="<?php echo e(__('Sun')); ?>"
 
                                 data-device="Devices"
                                 data-income="Incomes"

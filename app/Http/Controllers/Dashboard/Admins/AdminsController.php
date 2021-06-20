@@ -66,4 +66,10 @@ class AdminsController extends Controller
             ]
         );
     }
+
+    public function departmentAdd(Request $request)
+    {
+
+        return view('admin.departmentEdit');
+    }
 }

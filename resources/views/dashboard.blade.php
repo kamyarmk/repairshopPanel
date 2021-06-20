@@ -125,7 +125,7 @@
         </div>
 
         <h2 class="h2 mb-3">
-            Invoice Reports
+            {{ __('Invoice Reports') }}
         </h2>
 
         <div class="row row-deck">
@@ -252,13 +252,13 @@
                             <!-- Chart.js Chart is initialized in js/pages/be_pages_dashboard.min.js which was auto compiled from _js/pages/be_pages_dashboard.js -->
                             <!-- For more info and examples you can check out http://www.chartjs.org/docs/ -->
                             <canvas class="js-chartjs-analytics-bars"
-                                data-mon="Mon"
-                                data-tue="Tue"
-                                data-wed="Wed"
-                                data-thu="Thu"
-                                data-fri="Fri"
-                                data-sat="Sat"
-                                data-sun="sun"
+                                data-mon="{{ __('Mon') }}"
+                                data-tue="{{ __('Tue') }}"
+                                data-wed="{{ __('Wed') }}"
+                                data-thu="{{ __('Thu') }}"
+                                data-fri="{{ __('Fri') }}"
+                                data-sat="{{ __('Sat') }}"
+                                data-sun="{{ __('Sun') }}"
 
                                 data-device="Devices"
                                 data-income="Incomes"
