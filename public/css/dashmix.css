@@ -27384,7 +27384,10 @@ body.fa {
   text-align: right;
   width: 100%;
 }
-body.fa .nav-main-link.nav-main-link-submenu {
+body.fa * {
+  letter-spacing: 0 !important;
+}
+body.fa .nav-main-link {
   padding-left: 2rem;
   padding-right: unset;
 }

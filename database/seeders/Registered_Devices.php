@@ -29,7 +29,7 @@ class Registered_Devices extends Seeder
         for($i =0; $i < 5; $i++){
             $currentDate = rand(1619292276, 1619551476);
             DB::table('registered_devices')->insert([
-                'users_id' => rand(2, 5),
+                'user_id' => rand(2, 5),
                 'devices_id' => rand(1,5),
                 'color_id' => rand(1,17),
                 'storage_id' => rand(1,6),

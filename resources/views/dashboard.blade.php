@@ -19,7 +19,7 @@
                 </a>
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn btn-sm btn-alt-primary px-3" id="dropdown-analytics-overview" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ __('Last') }} 30 {{ __('days') }} <i class="fa fa-fw fa-angle-down"></i>
+                        {{ __('Last 30 days') }} <i class="fa fa-fw fa-angle-down"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right font-size-sm" aria-labelledby="dropdown-analytics-overview">
                         <a class="dropdown-item" href="javascript:void(0)">{{ __('This Week') }}</a>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/invoice/list">
-                            {{ __('See the Reports') }}
+                            {{ __('See the') }} {{ __(' Reports') }}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/project/list">
-                            {{ __('View all')}}
+                            {{ __('View All')}}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -140,7 +140,7 @@
                                 + 45%
                             </p>
                             <p class="text-white-75 mb-0">
-                                Waiting
+                                {{ __('Waiting') }}
                             </p>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                                 63
                             </p>
                             <p class="text-white-75 mb-0">
-                                Ready To pay
+                                {{ __('Ready To pay') }}
                             </p>
                         </div>
                         <div>
@@ -174,7 +174,7 @@
                                 +98%
                             </p>
                             <p class="text-white-75 mb-0">
-                                Paid
+                                {{ __('Paid') }}
                             </p>
                         </div>
                     </div>
@@ -188,7 +188,7 @@
                                 450
                             </p>
                             <p class="text-white-75 mb-0">
-                                Over Due
+                                {{ __('Over Due') }}
                             </p>
                         </div>
                         <div>
@@ -205,7 +205,7 @@
         <div class="block block-rounded">
             <div class="block-header block-header-default">
                 <h3 class="block-title">
-                    Store Growth
+                    {{ __('Store Growth') }}
                 </h3>
                 <div class="block-options">
                     <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
@@ -222,7 +222,7 @@
                         <div class="p-md-2 p-lg-3">
                             <div class="py-3">
                                 <div class="text-black font-size-h1 font-w700">$1,430</div>
-                                <div class="font-w600">Your Income Over Week</div>
+                                <div class="font-w600">{{ __('Your Income Over Week') }}</div>
                                 <div class="py-3 d-flex align-items-center">
                                     <div class="bg-success-lighter p-2 rounded mr-3">
                                         <i class="fa fa-fw fa-arrow-up text-success"></i>
@@ -234,7 +234,7 @@
                             </div>
                             <div class="py-3">
                                 <div class="text-black font-size-h1 font-w700">65</div>
-                                <div class="font-w600">Requests Per Week</div>
+                                <div class="font-w600">{{ __('Requests Per Week') }}</div>
                                 <div class="py-3 d-flex align-items-center">
                                     <div class="bg-success-lighter p-2 rounded mr-3">
                                         <i class="fa fa-fw fa-arrow-up text-success"></i>
@@ -260,8 +260,8 @@
                                 data-sat="{{ __('Sat') }}"
                                 data-sun="{{ __('Sun') }}"
 
-                                data-device="Devices"
-                                data-income="Incomes"
+                                data-device="{{ __('Devices') }}"
+                                data-income="{{ __('Incomes') }}"
 
                                 data-fd="73"
                                 data-sd="68"
@@ -305,13 +305,13 @@
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-dot-circle opacity-50 mr-1"></i> Pending
+                                        <i class="far fa-fw fa-dot-circle opacity-50 mr-1"></i> {{ __('Pending') }}
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-times-circle opacity-50 mr-1"></i> Canceled
+                                        <i class="far fa-fw fa-times-circle opacity-50 mr-1"></i> {{ __('Canceled') }}
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-check-circle opacity-50 mr-1"></i> Completed
+                                        <i class="far fa-fw fa-check-circle opacity-50 mr-1"></i> {{ __('Completed') }}
                                     </a>
                                     <div role="separator" class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript:void(0)">
@@ -325,10 +325,10 @@
                         <table class="table table-striped table-hover table-borderless table-vcenter font-size-sm">
                             <thead>
                                 <tr class="text-uppercase">
-                                    <th>Product</th>
-                                    <th class="d-none d-xl-table-cell">Date</th>
-                                    <th>Status</th>
-                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;">Name</th>
+                                    <th>{{ __('Device') }}</th>
+                                    <th class="d-none d-xl-table-cell">{{ __('Date') }}</th>
+                                    <th>{{ __('Status') }}</th>
+                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;">{{ __('User') }}</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -512,7 +512,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/report/general">
-                            See Full Report
+                            {{ __('See Full Report') }}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -530,7 +530,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/project/list">
-                            Get On to It
+                            {{ __('Get On to It') }}
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>

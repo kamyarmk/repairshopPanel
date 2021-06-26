@@ -20,7 +20,7 @@
                 </a>
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn btn-sm btn-alt-primary px-3" id="dropdown-analytics-overview" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo e(__('Last')); ?> 30 <?php echo e(__('days')); ?> <i class="fa fa-fw fa-angle-down"></i>
+                        <?php echo e(__('Last 30 days')); ?> <i class="fa fa-fw fa-angle-down"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right font-size-sm" aria-labelledby="dropdown-analytics-overview">
                         <a class="dropdown-item" href="javascript:void(0)"><?php echo e(__('This Week')); ?></a>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/invoice/list">
-                            <?php echo e(__('See the Reports')); ?>
+                            <?php echo e(__('See the')); ?> <?php echo e(__(' Reports')); ?>
 
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/project/list">
-                            <?php echo e(__('View all')); ?>
+                            <?php echo e(__('View All')); ?>
 
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
@@ -146,7 +146,8 @@
                                 + 45%
                             </p>
                             <p class="text-white-75 mb-0">
-                                Waiting
+                                <?php echo e(__('Waiting')); ?>
+
                             </p>
                         </div>
                     </div>
@@ -160,7 +161,8 @@
                                 63
                             </p>
                             <p class="text-white-75 mb-0">
-                                Ready To pay
+                                <?php echo e(__('Ready To pay')); ?>
+
                             </p>
                         </div>
                         <div>
@@ -180,7 +182,8 @@
                                 +98%
                             </p>
                             <p class="text-white-75 mb-0">
-                                Paid
+                                <?php echo e(__('Paid')); ?>
+
                             </p>
                         </div>
                     </div>
@@ -194,7 +197,8 @@
                                 450
                             </p>
                             <p class="text-white-75 mb-0">
-                                Over Due
+                                <?php echo e(__('Over Due')); ?>
+
                             </p>
                         </div>
                         <div>
@@ -211,7 +215,8 @@
         <div class="block block-rounded">
             <div class="block-header block-header-default">
                 <h3 class="block-title">
-                    Store Growth
+                    <?php echo e(__('Store Growth')); ?>
+
                 </h3>
                 <div class="block-options">
                     <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
@@ -228,7 +233,7 @@
                         <div class="p-md-2 p-lg-3">
                             <div class="py-3">
                                 <div class="text-black font-size-h1 font-w700">$1,430</div>
-                                <div class="font-w600">Your Income Over Week</div>
+                                <div class="font-w600"><?php echo e(__('Your Income Over Week')); ?></div>
                                 <div class="py-3 d-flex align-items-center">
                                     <div class="bg-success-lighter p-2 rounded mr-3">
                                         <i class="fa fa-fw fa-arrow-up text-success"></i>
@@ -240,7 +245,7 @@
                             </div>
                             <div class="py-3">
                                 <div class="text-black font-size-h1 font-w700">65</div>
-                                <div class="font-w600">Requests Per Week</div>
+                                <div class="font-w600"><?php echo e(__('Requests Per Week')); ?></div>
                                 <div class="py-3 d-flex align-items-center">
                                     <div class="bg-success-lighter p-2 rounded mr-3">
                                         <i class="fa fa-fw fa-arrow-up text-success"></i>
@@ -266,8 +271,8 @@
                                 data-sat="<?php echo e(__('Sat')); ?>"
                                 data-sun="<?php echo e(__('Sun')); ?>"
 
-                                data-device="Devices"
-                                data-income="Incomes"
+                                data-device="<?php echo e(__('Devices')); ?>"
+                                data-income="<?php echo e(__('Incomes')); ?>"
 
                                 data-fd="73"
                                 data-sd="68"
@@ -312,13 +317,16 @@
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-dot-circle opacity-50 mr-1"></i> Pending
+                                        <i class="far fa-fw fa-dot-circle opacity-50 mr-1"></i> <?php echo e(__('Pending')); ?>
+
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-times-circle opacity-50 mr-1"></i> Canceled
+                                        <i class="far fa-fw fa-times-circle opacity-50 mr-1"></i> <?php echo e(__('Canceled')); ?>
+
                                     </a>
                                     <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-check-circle opacity-50 mr-1"></i> Completed
+                                        <i class="far fa-fw fa-check-circle opacity-50 mr-1"></i> <?php echo e(__('Completed')); ?>
+
                                     </a>
                                     <div role="separator" class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="javascript:void(0)">
@@ -333,10 +341,10 @@
                         <table class="table table-striped table-hover table-borderless table-vcenter font-size-sm">
                             <thead>
                                 <tr class="text-uppercase">
-                                    <th>Product</th>
-                                    <th class="d-none d-xl-table-cell">Date</th>
-                                    <th>Status</th>
-                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;">Name</th>
+                                    <th><?php echo e(__('Device')); ?></th>
+                                    <th class="d-none d-xl-table-cell"><?php echo e(__('Date')); ?></th>
+                                    <th><?php echo e(__('Status')); ?></th>
+                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;"><?php echo e(__('User')); ?></th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -521,7 +529,8 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/report/general">
-                            See Full Report
+                            <?php echo e(__('See Full Report')); ?>
+
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>
@@ -539,7 +548,8 @@
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
                         <a class="font-w500" href="/project/list">
-                            Get On to It
+                            <?php echo e(__('Get On to It')); ?>
+
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
                         </a>
                     </div>

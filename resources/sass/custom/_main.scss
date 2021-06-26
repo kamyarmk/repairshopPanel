@@ -49,7 +49,10 @@ body.fa{
     direction: rtl;
     text-align: right;
     width: 100%;
-    .nav-main-link.nav-main-link-submenu{
+    *{
+        letter-spacing: 0 !important;
+    }
+    .nav-main-link{
         padding-left: 2rem;
         padding-right: unset;
     }

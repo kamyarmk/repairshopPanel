@@ -15,7 +15,7 @@ class CreateRegisteredDevicesTable extends Migration
     {
         Schema::create('registered_devices', function (Blueprint $table) {
             $table->id();
-            $table->string('users_id')->index();
+            $table->string('user_id')->index();
             $table->string('devices_id')->index();
             $table->string('color_id')->index();
             $table->string('storage_id')->index();
