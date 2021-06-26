@@ -27377,6 +27377,9 @@ body .custom-control * {
 body table th, body table td {
   text-align: center;
 }
+body .font-size-h1 {
+  font-size: 2.4rem !important;
+}
 
 body.fa {
   font-family: "IRANSans";
@@ -27398,6 +27401,10 @@ body.fa .nav-main-link .nav-main-link-icon {
 body.fa .nav-main-link.nav-main-link-submenu::before, body.fa .nav-main-link.nav-main-link-submenu::after {
   left: 0.625rem;
   right: unset;
+}
+body.fa .nav-main-submenu .nav-main-link {
+  padding-right: 2rem;
+  padding-left: 0;
 }
 body.fa .btn {
   font-family: "IRANSans";
@@ -27423,6 +27430,10 @@ body.fa .text-right {
 }
 body.fa .dropdown-item {
   text-align: right;
+}
+body.fa .dropdown-menu.show {
+  right: -24px;
+  left: unset !important;
 }
 
 .content-header .btn {

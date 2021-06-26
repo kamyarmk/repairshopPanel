@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use \Morilog\Jalali\Jalalian;
+use Carbon\Carbon;
 
 class Registered_Devices extends Seeder
 {
@@ -25,9 +26,8 @@ class Registered_Devices extends Seeder
             'Battery Problem',
             'Software Problem'
         );
-
-        for($i =0; $i < 5; $i++){
-            $currentDate = rand(1619292276, 1619551476);
+        for($i =0; $i < 60; $i++){
+            $currentDate = rand(Carbon::now()->getTimestamp(), Carbon::now()->subWeek(4)->getTimestamp());
             DB::table('registered_devices')->insert([
                 'user_id' => rand(2, 5),
                 'devices_id' => rand(1,5),

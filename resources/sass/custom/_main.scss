@@ -40,6 +40,9 @@ body{
     table th, table td{
         text-align: center;
     }
+    .font-size-h1{
+        font-size: 2.4rem !important;
+    }
 }
 
 // RTL Graphics
@@ -65,7 +68,12 @@ body.fa{
         left: 0.625rem;
         right: unset;
     }
-
+    .nav-main-submenu{
+        .nav-main-link{
+            padding-right: 2rem;
+            padding-left: 0;
+        }
+    }
     .btn{
         font-family: $font-family-persian;
     }
@@ -92,6 +100,10 @@ body.fa{
     }
     .dropdown-item{
         text-align: right;
+    }
+    .dropdown-menu.show{
+        right: -24px;
+        left: unset !important;
     }
 }
 

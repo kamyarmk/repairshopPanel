@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use \Morilog\Jalali\Jalalian;
+use Carbon\Carbon;
 
 class Invoices extends Seeder
 {
@@ -17,18 +18,23 @@ class Invoices extends Seeder
      */
     public function run()
     {
-        $conditions = array("Paid", "Under Process", "Unpaid");
-        for($i =1; $i < 5; $i++){
-            $currentDate = rand(1619292276, 1619551476);
-            $dateForCreating = Jalalian::forge(1619205876)->format('Y-m-d H:i:s');
+        $invoiceCon = array(
+           'Waiting',
+           'Ready',
+           'Paid',
+           'Over'
+        );
+        for($i =1; $i < 60; $i++){
+            $currentDate = rand(Carbon::now()->getTimestamp(), Carbon::now()->subWeek(4)->getTimestamp());
             DB::table('invoices')->insert([
+                //TODO: Remove the User_id
                 'users_id' => rand(2, 5),
                 'registered_devices_id' => $i,
                 'Price' => rand(1000, 500000),
-                'Condition' => 'Paid',
+                'Condition' => $invoiceCon[rand(0,3)],
                 'Notes' => Str::random(25),
-                'created_at' => $dateForCreating,
-                'updated_at' => $dateForCreating
+                'created_at' => $currentDate,
+                'updated_at' => $currentDate
             ]);
         }
     }

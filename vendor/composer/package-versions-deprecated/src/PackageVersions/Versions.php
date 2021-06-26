@@ -65,7 +65,7 @@ final class Versions
   'morilog/jalali' => 'v3.2.0@7ea78b84ce3b5546b01217febb2fba4915dac5e5',
   'mpdf/mpdf' => 'v8.0.10@1333a962cd2f7ae1a127b7534b7734b58179186f',
   'myclabs/deep-copy' => '1.10.2@776f831124e9c62e1a2c601ecc52e776d8bb7220',
-  'nesbot/carbon' => '2.46.0@2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4',
+  'nesbot/carbon' => '2.49.0@93d9db91c0235c486875d22f1e08b50bdf3e6eee',
   'nikic/php-parser' => 'v4.10.4@c6d052fc58cb876152f89f532b95a8d7907e7f0e',
   'niklasravnsborg/laravel-pdf' => 'v4.0.0@80cce12a3d9048759ec0d2ca87c57a56b4b4950f',
   'opis/closure' => '3.6.1@943b5d70cc5ae7483f6aff6ff43d7e34592ca0f5',
@@ -158,7 +158,7 @@ final class Versions
   'sebastian/type' => '2.3.1@81cd61ab7bbf2de744aba0ea61fae32f721df3d2',
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
-  'laravel/laravel' => 'dev-main@178c9e1b8615c08e7dc9394f266694167b054e29',
+  'laravel/laravel' => 'dev-main@ccd96e8294ac8c409d37048dfe4af5c244bb6bd6',
 );
 
     private function __construct()

@@ -45,11 +45,12 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-wallet text-muted"></i>
                         </div>
-                        <div class="text-primary font-size-h1 font-w700 ">$2,388</div>
+                        
+                        <div class="text-primary font-size-h1 font-w700 ">$<?php echo e($TotalIncome); ?></div>
                         <div class="text-muted mb-3"><?php echo e(__('Income')); ?></div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
                             <i class="fa fa-caret-up mr-1"></i>
-                            19.2%
+                            <?php echo e($Grow); ?>%
                         </div>
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
@@ -67,10 +68,11 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-hand-holding-medical text-muted"></i>
                         </div>
-                        <div class="text-warning font-size-h1 font-w700">146</div>
+                        <div class="text-warning font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Open')->count()); ?></div>
                         <div class="text-muted mb-3"><?php echo e(__('Accepted Devices')); ?></div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
                             <i class="fa fa-caret-down mr-1"></i>
+                            <!-- TODO: Accepted -->
                             2.3%
                         </div>
                     </div>
@@ -89,10 +91,12 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-thumbs-up text-muted"></i>
                         </div>
-                        <div class="text-success font-size-h1 font-w700">386</div>
+                        
+                        <div class="text-success font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Delivered')->count()); ?></div>
                         <div class="text-muted mb-3"><?php echo e(__('Delivered')); ?></div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
                             <i class="fa fa-caret-up mr-1"></i>
+                            <!-- TODO: Delivered -->
                             7.9%
                         </div>
                     </div>
@@ -111,10 +115,11 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-clock text-muted"></i>
                         </div>
-                        <div class="text-danger font-size-h1 font-w700">4,920</div>
+                        <div class="text-danger font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Refund')->count()); ?></div>
                         <div class="text-muted mb-3"><?php echo e(__('Not Delivered')); ?></div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
                             <i class="fa fa-caret-down mr-1"></i>
+                            <!-- TODO: Not Delivered -->
                             0.3%
                         </div>
                     </div>
@@ -143,7 +148,8 @@
                         </div>
                         <div class="ml-3 text-right">
                             <p class="text-white font-size-h3 font-w300 mb-0">
-                                + 45%
+                                <?php echo e($Invoices->where('Condition', '=', 'Waiting')->count()); ?>
+
                             </p>
                             <p class="text-white-75 mb-0">
                                 <?php echo e(__('Waiting')); ?>
@@ -158,7 +164,8 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="mr-3">
                             <p class="text-white font-size-h3 font-w300 mb-0">
-                                63
+                                <?php echo e($Invoices->where('Condition', '=', 'Ready')->count()); ?>
+
                             </p>
                             <p class="text-white-75 mb-0">
                                 <?php echo e(__('Ready To pay')); ?>
@@ -179,7 +186,8 @@
                         </div>
                         <div class="ml-3 text-right">
                             <p class="text-white font-size-h3 font-w300 mb-0">
-                                +98%
+                                <?php echo e($Invoices->where('Condition', '=', 'Paid')->count()); ?>
+
                             </p>
                             <p class="text-white-75 mb-0">
                                 <?php echo e(__('Paid')); ?>
@@ -194,7 +202,8 @@
                     <div class="block-content block-content-full d-flex align-items-center justify-content-between">
                         <div class="mr-3">
                             <p class="text-white font-size-h3 font-w300 mb-0">
-                                450
+                                <?php echo e($Invoices->where('Condition', '=', 'Over')->count()); ?>
+
                             </p>
                             <p class="text-white-75 mb-0">
                                 <?php echo e(__('Over Due')); ?>
@@ -307,6 +316,7 @@
                             <?php echo e(__('Latest Orders')); ?>
 
                         </h3>
+                        <!-- TODO: Lates Devices -->
                         <div class="block-options">
                             <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
                                 <i class="si si-refresh"></i>
@@ -349,163 +359,33 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">iPhone 11 Pro</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">today</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-warning">Pending..</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">MacBook Pro 15"</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">today</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-warning">Pending..</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">Nvidia GTX 2080 Ti</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">today</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-warning">Pending..</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">Playstation 4 Pro</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">today</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-danger">Canceled</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">Nintendo Switch</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">yesterday</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-success">Completed</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">iPhone 11</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">yesterday</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-success">Completed</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">Airpods Pro</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">yesterday</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-success">Completed</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="font-w600">Xbox One X</span>
-                                    </td>
-                                    <td class="d-none d-xl-table-cell">
-                                        <span class="font-size-sm text-muted">yesterday</span>
-                                    </td>
-                                    <td>
-                                        <span class="font-w600 text-success">Completed</span>
-                                    </td>
-                                    <td class="d-none d-sm-table-cell text-right font-w500">
-                                        John
-                                    </td>
-                                    <td class="text-center text-nowrap font-w500">
-                                        <a href="javascript:void(0)">
-                                            View
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php $__currentLoopData = $DevicesList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Device): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr>
+                                        <td>
+                                            <span class="font-w600"><?php echo e($Device->devices->device_name); ?></span>
+                                        </td>
+                                        <td class="d-none d-xl-table-cell">
+                                            <span class="font-size-sm text-muted"><?php echo e(date('m/d/Y', strtotime($Device->created_at))); ?></span>
+                                        </td>
+                                        <td>
+                                            <span class="font-w600 text-warning"><?php echo e($Device->condition); ?></span>
+                                        </td>
+                                        <td class="d-none d-sm-table-cell text-right font-w500">
+                                            <?php echo e($Device->user->first_name); ?> <?php echo e($Device->user->last_name); ?>
+
+                                        </td>
+                                        <td class="text-center text-nowrap font-w500">
+                                            <a href="/project/edit/<?php echo e($Device->id); ?>">
+                                                View
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>
                     <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
-                        <a class="font-w500" href="javascript:void(0)">
+                        <a class="font-w500" href="/project/list">
                             <?php echo e(__('View All')); ?> <?php echo e(__('Orders')); ?>
 
                             <i class="fa fa-arrow-right ml-1 opacity-25"></i>
@@ -522,7 +402,7 @@
                             <div class="item rounded-lg bg-body-dark mx-auto my-2">
                                 <i class="fa fa-check text-muted"></i>
                             </div>
-                            <div class="text-success font-size-h1 font-w700">3,500</div>
+                            <div class="text-success font-size-h1 font-w700"><?php echo e($Device->where('condition', '=', 'Delivered')->count()); ?></div>
                             <div class="text-black mb-3"><?php echo e(__('Completed Orders')); ?></div>
                             
                         </div>
@@ -541,7 +421,7 @@
                             <div class="item rounded-lg bg-body-dark mx-auto my-2">
                                 <i class="fa fa-exclamation-triangle text-muted"></i>
                             </div>
-                            <div class="text-danger font-size-h1 font-w700">75</div>
+                            <div class="text-danger font-size-h1 font-w700"><?php echo e($Device->where('condition', '=', 'Refund')->count()); ?></div>
                             <div class="text-black mb-3"><?php echo e(__('Delayed Requests')); ?></div>
                             
                         </div>
