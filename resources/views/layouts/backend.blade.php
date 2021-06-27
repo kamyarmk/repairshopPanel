@@ -654,24 +654,25 @@
                             <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
                                 <div class="p-2">
                                     <a class="dropdown-item" href="/settings">
-                                        <i class="far fa-fw fa-user mr-1"></i> Profile
+                                        <i class="far fa-fw fa-user mr-1"></i> {{ __('Profile') }}
                                     </a>
                                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                                        <span><i class="far fa-fw fa-envelope mr-1"></i> Inbox</span>
+                                        <span><i class="far fa-fw fa-envelope mr-1"></i> {{ __('Inbox') }}</span>
                                         <span class="badge badge-primary">3</span>
                                     </a>
                                     <a class="dropdown-item" href="/settings">
-                                        <i class="far fa-fw fa-file-alt mr-1"></i> Billing
+                                        <i class="far fa-fw fa-file-alt mr-1"></i> {{ __('Billing') }}
                                     </a>
                                     <a class="dropdown-item" href="/settings">
-                                        <i class="far fa-fw fa-shield-alt mr-1"></i> Security
+                                        <!-- TODO : Security Icon -->
+                                        <i class="far fa-fw fa-shield-alt mr-1"></i> {{ __('Security') }}
                                     </a>
 
                                     <div role="separator" class="dropdown-divider"></div>
                                     <form action="/logout" method="POST">
                                         @csrf
                                         <button class="dropdown-item">
-                                            <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Sign Out    
+                                            <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> {{ __('Sign Out') }}    
                                         </button>
                                     </form>
                                 </div>

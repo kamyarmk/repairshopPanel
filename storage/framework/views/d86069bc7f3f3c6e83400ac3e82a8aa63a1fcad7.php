@@ -134,11 +134,6 @@
             </div>
         </div>
 
-        <h2 class="h2 mb-3">
-            <?php echo e(__('Invoice Reports')); ?>
-
-        </h2>
-
         <div class="row row-deck">
             <div class="col-md-6 col-xl-3">
                 <a class="block block-rounded block-link-shadow bg-primary" href="javascript:void(0)">

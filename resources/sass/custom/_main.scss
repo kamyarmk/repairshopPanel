@@ -56,8 +56,11 @@ body.fa{
         letter-spacing: 0 !important;
     }
     .nav-main-link{
-        padding-left: 2rem;
         padding-right: unset;
+        .nav-main-link-badge{
+            margin-left: unset;
+            margin-right: 0.625rem;
+        }
     }
     .nav-main-link .nav-main-link-icon{
         margin-left: 0.625rem;
@@ -101,9 +104,17 @@ body.fa{
     .dropdown-item{
         text-align: right;
     }
-    .dropdown-menu.show{
-        right: -24px;
-        left: unset !important;
+
+    .block-rounded{
+        .block-content{
+            a{
+                position: relative;
+                i.fa-arrow-right{
+                    position: absolute;
+                    right: -20px;
+                }
+            }
+        }
     }
 }
 

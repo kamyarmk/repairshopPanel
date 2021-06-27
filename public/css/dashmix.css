@@ -27391,8 +27391,11 @@ body.fa * {
   letter-spacing: 0 !important;
 }
 body.fa .nav-main-link {
-  padding-left: 2rem;
   padding-right: unset;
+}
+body.fa .nav-main-link .nav-main-link-badge {
+  margin-left: unset;
+  margin-right: 0.625rem;
 }
 body.fa .nav-main-link .nav-main-link-icon {
   margin-left: 0.625rem;
@@ -27431,9 +27434,12 @@ body.fa .text-right {
 body.fa .dropdown-item {
   text-align: right;
 }
-body.fa .dropdown-menu.show {
-  right: -24px;
-  left: unset !important;
+body.fa .block-rounded .block-content a {
+  position: relative;
+}
+body.fa .block-rounded .block-content a i.fa-arrow-right {
+  position: absolute;
+  right: -20px;
 }
 
 .content-header .btn {

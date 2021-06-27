@@ -165,5 +165,9 @@
     "Last 30 days": "30 روز گذشته",
     "Income": "درآمد",
     "Customer": "مشتری",
-    "Staff": "کاربر"
+    "Staff": "کاربر",
+    "Inbox": "صندوق",
+    "Billing": "حساب داری",
+    "Security": "امنیت",
+    "Sign Out": "خروج"
 }
