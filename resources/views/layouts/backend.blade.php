@@ -36,7 +36,7 @@
         <!-- Scripts -->
         <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
     </head>
-    <body 
+    <body
         @if(session()->get('locale') == 'fa')
             class="fa"
         @endif
@@ -827,8 +827,7 @@
         <script src="{{ mix('js/dashmix.app.js') }}"></script>
         
 
-        <!-- Laravel Scaffolding JS -->
-        <!-- <script src="{{ mix('/js/laravel.app.js') }}"></script> -->
+        
 
         <!-- Page JS Plugins -->
         <script src="{{ asset('js/plugins/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
@@ -863,6 +862,9 @@
 
         <!-- Page JS Helpers (jQuery Sparkline plugin) -->
         <script>jQuery(function(){Dashmix.helpers('sparkline');});</script>
+
+        <!-- Laravel Scaffolding JS -->
+        <script src="{{ mix('/js/laravel.app.js') }}"></script>
 
         <script>
             let tour = new Tour({

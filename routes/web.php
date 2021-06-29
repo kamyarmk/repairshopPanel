@@ -113,3 +113,9 @@ Route::get('/settings', [App\Http\Controllers\Dashboard\Settings\SettingsControl
 
 
 Route::get('/update', [App\Http\Controllers\Dashboard\DashboardController::class, 'updater'])->name('updater');
+
+// TODO : Make the Vue Data Gathering for the Dashboard
+
+// Vue Routes
+Route::get('/vue', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue'])->name('vue');
+Route::get('/vue/{from}', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue'])->name('vue.id');

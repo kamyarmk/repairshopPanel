@@ -63,4 +63,60 @@ class DashboardController extends Controller
             echo $buffer . '</br />';
         });
     }
+
+    public function vue(Request $request, $from = 0){
+        $TotalIncome = 0;
+        $TotalLastIncome = 0;
+        $timezone = $from != 0 ? $from : '4';
+        $tilldate = '0';
+
+        if($from == '1'){
+            $tilldate = Carbon::now()->getTimestamp();
+        }elseif($from == '4'){
+            $tilldate = Carbon::now()->getTimestamp();
+        }else{
+            $tilldate = Carbon::now()->subWeek($from / 2)->getTimestamp();
+        }
+
+        $invoices = invoices::where('created_at', '>', Carbon::now()->subWeek($timezone)->getTimestamp())
+                            ->where('created_at', '<', $tilldate)
+                            ->orderBy('created_at', 'desc')
+                            ->get();
+        $invoicesLastMonths = invoices::where('created_at', '<', Carbon::now()->subWeek($timezone)->getTimestamp())
+                                        ->where('created_at', '>', Carbon::now()->subWeek($timezone + $timezone)->getTimestamp())
+                                        ->orderBy('created_at', 'desc')
+                                        ->get();
+        
+        foreach($invoices as $invoice){
+            $TotalIncome += $invoice->Price;
+        }
+        foreach($invoicesLastMonths as $invoicesLastMonth){
+            $TotalLastIncome += $invoicesLastMonth->Price;
+        }
+
+        $devices = registered_devices::with('devices', 'user')->where('created_at', '>', Carbon::now()->subWeek($timezone)->getTimestamp())->get();
+        $deviceLastMonth = registered_devices::with('devices', 'user')->where('created_at', '<', Carbon::now()->subWeek($timezone)->getTimestamp())->get();
+
+        $data = [
+            'acceptedDevices' => $devices->where('condition', '=', 'Open')->count(),
+            'deliveredDevices' => $devices->where('condition', '=', 'Delivered')->count(),
+            'notDeliveredDevices' => $devices->where('condition', '=', 'Refund')->count(),
+
+            'invoiceWaiting' => $invoices->where('Condition', '=', 'Waiting')->count(),
+            'invoiceReadToPay' => $invoices->where('Condition', '=', 'Ready')->count(),
+            'invoicePaid' => $invoices->where('Condition', '=', 'Paid')->count(),
+            'invoiceOverDue' => $invoices->where('Condition', '=', 'Over')->count(),
+            
+            'TotalIncome' => $TotalIncome,
+
+            'Grow' => round(((($TotalIncome - $TotalLastIncome) / $TotalIncome ) * 100), 2),
+            'GrowAccepted' => round(((($devices->where('condition', '=', 'Open')->count() - $deviceLastMonth->where('condition', '=', 'Open')->count()) / $devices->where('condition', '=', 'Open')->count() ) * 100), 2),
+            'GrowDelivered' => round(((($devices->where('condition', '=', 'Delivered')->count() - $deviceLastMonth->where('condition', '=', 'Delivered')->count()) / $devices->where('condition', '=', 'Delivered')->count() ) * 100), 2),
+            'GrowNotDelivered' => round(((($devices->where('condition', '=', 'Refund')->count() - $deviceLastMonth->where('condition', '=', 'Refund')->count()) / $devices->where('condition', '=', 'Refund')->count() ) * 100), 2),
+
+            'timezone' => $invoices
+        ];
+
+        return $data;
+    }
 }

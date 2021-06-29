@@ -33,7 +33,7 @@ mix
     .js('resources/js/pages/tables_datatables.js', 'public/js/pages/tables_datatables.js').vue()
 
     /* Tools */
-    .browserSync('localhost:8000')
+    .browserSync('127.0.0.1:8000')
     .disableNotifications()
 
     /* Options */

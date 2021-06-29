@@ -36,7 +36,7 @@
         <!-- Scripts -->
         <script>window.Laravel = <?php echo json_encode(['csrfToken' => csrf_token(),]); ?>;</script>
     </head>
-    <body 
+    <body
         <?php if(session()->get('locale') == 'fa'): ?>
             class="fa"
         <?php endif; ?>
@@ -666,6 +666,7 @@
 
                                     </a>
                                     <a class="dropdown-item" href="/settings">
+                                        <!-- TODO : Security Icon -->
                                         <i class="far fa-fw fa-shield-alt mr-1"></i> <?php echo e(__('Security')); ?>
 
                                     </a>
@@ -831,8 +832,7 @@
         <script src="<?php echo e(mix('js/dashmix.app.js')); ?>"></script>
         
 
-        <!-- Laravel Scaffolding JS -->
-        <!-- <script src="<?php echo e(mix('/js/laravel.app.js')); ?>"></script> -->
+        
 
         <!-- Page JS Plugins -->
         <script src="<?php echo e(asset('js/plugins/jquery-sparkline/jquery.sparkline.min.js')); ?>"></script>
@@ -867,6 +867,9 @@
 
         <!-- Page JS Helpers (jQuery Sparkline plugin) -->
         <script>jQuery(function(){Dashmix.helpers('sparkline');});</script>
+
+        <!-- Laravel Scaffolding JS -->
+        <script src="<?php echo e(mix('/js/laravel.app.js')); ?>"></script>
 
         <script>
             let tour = new Tour({

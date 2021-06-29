@@ -14,23 +14,7 @@
                     <?php echo e(__('Welcome')); ?>, <?php echo e(Auth::user()->user_name); ?>!.
                 </p>
             </div>
-            <div class="mt-4 mt-md-0">
-                <a class="btn btn-sm btn-alt-primary" href="javascript:void(0)">
-                    <i class="fa fa-cog"></i>
-                </a>
-                <div class="dropdown d-inline-block">
-                    <button type="button" class="btn btn-sm btn-alt-primary px-3" id="dropdown-analytics-overview" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo e(__('Last 30 days')); ?> <i class="fa fa-fw fa-angle-down"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right font-size-sm" aria-labelledby="dropdown-analytics-overview">
-                        <a class="dropdown-item" href="javascript:void(0)"><?php echo e(__('This Week')); ?></a>
-                        <a class="dropdown-item" href="javascript:void(0)"><?php echo e(__('Previous Week')); ?></a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0)"><?php echo e(__('This Month')); ?></a>
-                        <a class="dropdown-item" href="javascript:void(0)"><?php echo e(__('Previous Month')); ?></a>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </div>
     <!-- END Hero -->
@@ -38,180 +22,27 @@
     <!-- Page Content -->
     <div class="content">
         <!-- Overview -->
-        <div class="row row-deck">
-            <div class="col-sm-6 col-xl-3">
-                <div class="block block-rounded text-center d-flex flex-column">
-                    <div class="block-content block-content-full flex-grow-1">
-                        <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-wallet text-muted"></i>
-                        </div>
-                        
-                        <div class="text-primary font-size-h1 font-w700 ">$<?php echo e($TotalIncome); ?></div>
-                        <div class="text-muted mb-3"><?php echo e(__('Income')); ?></div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
-                            <i class="fa fa-caret-up mr-1"></i>
-                            <?php echo e($Grow); ?>%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                        <a class="font-w500" href="/invoice/list">
-                            <?php echo e(__('See the')); ?> <?php echo e(__(' Reports')); ?>
+        <main-datas
+            last30day="<?php echo e(__('Last 30 days')); ?>"
+            this-week="<?php echo e(__('This Week')); ?>"
+            prev-week="<?php echo e(__('Previous Week')); ?>"
+            this-month="<?php echo e(__('This Month')); ?>"
+            prev-month="<?php echo e(__('Previous Month')); ?>"
+            
+            Income="<?php echo e(__('Income')); ?>"
+            see-report="<?php echo e(__('See the')); ?> <?php echo e(__(' Reports')); ?>"
+            accepted="<?php echo e(__('Accepted Devices')); ?>"
+            checkit="<?php echo e(__('Check it out')); ?>"
+            Delivered="<?php echo e(__('Delivered')); ?>"
+            view="<?php echo e(__('View All')); ?>"
+            not-delivered="<?php echo e(__('Not Delivered')); ?>"
 
-                            <i class="fa fa-arrow-right ml-1 opacity-25"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-3">
-                <div class="block block-rounded text-center d-flex flex-column">
-                    <div class="block-content block-content-full flex-grow-1">
-                        <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-hand-holding-medical text-muted"></i>
-                        </div>
-                        <div class="text-warning font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Open')->count()); ?></div>
-                        <div class="text-muted mb-3"><?php echo e(__('Accepted Devices')); ?></div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
-                            <i class="fa fa-caret-down mr-1"></i>
-                            <!-- TODO: Accepted -->
-                            2.3%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                        <a class="font-w500" href="/project/list">
-                            <?php echo e(__('Check it out')); ?>
+            Waiting="<?php echo e(__('Waiting')); ?>"
+            Ready="<?php echo e(__('Ready To pay')); ?>"
+            Paid="<?php echo e(__('Paid')); ?>"
+            over-due="<?php echo e(__('Over Due')); ?>"
 
-                            <i class="fa fa-arrow-right ml-1 opacity-25"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-3">
-                <div class="block block-rounded text-center d-flex flex-column">
-                    <div class="block-content block-content-full flex-grow-1">
-                        <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-thumbs-up text-muted"></i>
-                        </div>
-                        
-                        <div class="text-success font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Delivered')->count()); ?></div>
-                        <div class="text-muted mb-3"><?php echo e(__('Delivered')); ?></div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
-                            <i class="fa fa-caret-up mr-1"></i>
-                            <!-- TODO: Delivered -->
-                            7.9%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                        <a class="font-w500" href="/project/list">
-                            <?php echo e(__('View All')); ?>
-
-                            <i class="fa fa-arrow-right ml-1 opacity-25"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xl-3">
-                <div class="block block-rounded text-center d-flex flex-column">
-                    <div class="block-content block-content-full">
-                        <div class="item rounded-lg bg-body-dark mx-auto my-3">
-                            <i class="fa fa-clock text-muted"></i>
-                        </div>
-                        <div class="text-danger font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Refund')->count()); ?></div>
-                        <div class="text-muted mb-3"><?php echo e(__('Not Delivered')); ?></div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
-                            <i class="fa fa-caret-down mr-1"></i>
-                            <!-- TODO: Not Delivered -->
-                            0.3%
-                        </div>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm">
-                        <a class="font-w500" href="/project/list">
-                            <?php echo e(__('View All')); ?>
-
-                            <i class="fa fa-arrow-right ml-1 opacity-25"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-deck">
-            <div class="col-md-6 col-xl-3">
-                <a class="block block-rounded block-link-shadow bg-primary" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div>
-                            <i class="fa fa-2x fa-clock text-white"></i>
-                        </div>
-                        <div class="ml-3 text-right">
-                            <p class="text-white font-size-h3 font-w300 mb-0">
-                                <?php echo e($Invoices->where('Condition', '=', 'Waiting')->count()); ?>
-
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                <?php echo e(__('Waiting')); ?>
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <a class="block block-rounded block-link-shadow bg-warning" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div class="mr-3">
-                            <p class="text-white font-size-h3 font-w300 mb-0">
-                                <?php echo e($Invoices->where('Condition', '=', 'Ready')->count()); ?>
-
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                <?php echo e(__('Ready To pay')); ?>
-
-                            </p>
-                        </div>
-                        <div>
-                            <i class="fa fa-2x fa-exclamation-triangle text-white"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <a class="block block-rounded block-link-shadow bg-success" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div>
-                            <i class="far fa-2x fa-thumbs-up text-white"></i>
-                        </div>
-                        <div class="ml-3 text-right">
-                            <p class="text-white font-size-h3 font-w300 mb-0">
-                                <?php echo e($Invoices->where('Condition', '=', 'Paid')->count()); ?>
-
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                <?php echo e(__('Paid')); ?>
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6 col-xl-3">
-                <a class="block block-rounded block-link-shadow bg-danger" href="javascript:void(0)">
-                    <div class="block-content block-content-full d-flex align-items-center justify-content-between">
-                        <div class="mr-3">
-                            <p class="text-white font-size-h3 font-w300 mb-0">
-                                <?php echo e($Invoices->where('Condition', '=', 'Over')->count()); ?>
-
-                            </p>
-                            <p class="text-white-75 mb-0">
-                                <?php echo e(__('Over Due')); ?>
-
-                            </p>
-                        </div>
-                        <div>
-                            <i class="fa fa-2x fa-thumbs-down text-white"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+        ></main-datas>
 
         <!-- END Overview -->
 
