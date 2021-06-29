@@ -119,4 +119,21 @@ class DashboardController extends Controller
 
         return $data;
     }
+
+    public function vue_deviceListing(Request $request){
+        
+        if(isset($request['Condition']) AND $request['Condition'] != 'viewAll'){
+            $devices = registered_devices::with('devices', 'user')
+                    ->where('condition', '=', $request['Condition'])
+                    ->orderBy('created_at', 'desc')
+                    ->limit(10)
+                    ->get();
+        }else{
+            $devices = registered_devices::with('devices', 'user')
+                    ->orderBy('created_at', 'desc')
+                    ->limit(10)
+                    ->get();
+        }
+        return $devices;
+    }
 }

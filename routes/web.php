@@ -119,3 +119,4 @@ Route::get('/update', [App\Http\Controllers\Dashboard\DashboardController::class
 // Vue Routes
 Route::get('/vue', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue'])->name('vue');
 Route::get('/vue/{from}', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue'])->name('vue.id');
+Route::get('/vue/dashboard/deviceListing', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue_deviceListing'])->name('vue.deviceListing');

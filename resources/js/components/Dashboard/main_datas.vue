@@ -236,7 +236,6 @@
                     .get('/vue/' + timeZone )
                     .then(response => (this.info = response))
                 this.Grow = this.info.data.Grow
-                console.log(this.info.data.timezone);
             }
         },
         mounted() {

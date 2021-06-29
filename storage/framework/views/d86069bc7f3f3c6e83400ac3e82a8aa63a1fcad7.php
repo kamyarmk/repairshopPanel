@@ -136,88 +136,20 @@
         <div class="row">
             <div class="col-md-9">
                 <!--  Latest Orders -->
-                <div class="block block-rounded block-mode-loading-refresh">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            <?php echo e(__('Latest Orders')); ?>
+                <dash_device_list
+                Latest-orders="<?php echo e(__('Latest Orders')); ?>"
 
-                        </h3>
-                        <!-- TODO: Lates Devices -->
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                            <div class="dropdown">
-                                <button type="button" class="btn-block-option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="si si-chemistry"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-dot-circle opacity-50 mr-1"></i> <?php echo e(__('Pending')); ?>
+                Pending="<?php echo e(__('Open')); ?>"
+                Canceled="<?php echo e(__('Delivered')); ?>"
+                Completed="<?php echo e(__('Refund')); ?>"
+                View-all="<?php echo e(__('View All')); ?>"
 
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-times-circle opacity-50 mr-1"></i> <?php echo e(__('Canceled')); ?>
-
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-check-circle opacity-50 mr-1"></i> <?php echo e(__('Completed')); ?>
-
-                                    </a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-eye opacity-50 mr-1"></i> <?php echo e(__('View All')); ?>
-
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-content">
-                        <table class="table table-striped table-hover table-borderless table-vcenter font-size-sm">
-                            <thead>
-                                <tr class="text-uppercase">
-                                    <th><?php echo e(__('Device')); ?></th>
-                                    <th class="d-none d-xl-table-cell"><?php echo e(__('Date')); ?></th>
-                                    <th><?php echo e(__('Status')); ?></th>
-                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;"><?php echo e(__('User')); ?></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $__currentLoopData = $DevicesList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Device): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <td>
-                                            <span class="font-w600"><?php echo e($Device->devices->device_name); ?></span>
-                                        </td>
-                                        <td class="d-none d-xl-table-cell">
-                                            <span class="font-size-sm text-muted"><?php echo e(date('m/d/Y', strtotime($Device->created_at))); ?></span>
-                                        </td>
-                                        <td>
-                                            <span class="font-w600 text-warning"><?php echo e($Device->condition); ?></span>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell text-right font-w500">
-                                            <?php echo e($Device->user->first_name); ?> <?php echo e($Device->user->last_name); ?>
-
-                                        </td>
-                                        <td class="text-center text-nowrap font-w500">
-                                            <a href="/project/edit/<?php echo e($Device->id); ?>">
-                                                View
-                                            </a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
-                        <a class="font-w500" href="/project/list">
-                            <?php echo e(__('View All')); ?> <?php echo e(__('Orders')); ?>
-
-                            <i class="fa fa-arrow-right ml-1 opacity-25"></i>
-                        </a>
-                    </div>
-                </div>
+                Device="<?php echo e(__('Device')); ?>"
+                Device-date="<?php echo e(__('Date')); ?>"
+                Status="<?php echo e(__('Status')); ?>"
+                User="<?php echo e(__('User')); ?>"
+                View-all="<?php echo e(__('View All')); ?> <?php echo e(__('Orders')); ?>"
+                ></dash_device_list>
                 <!-- END Latest Orders -->
             </div>
             <div class="col-md-3 d-flex flex-column">
@@ -228,7 +160,7 @@
                             <div class="item rounded-lg bg-body-dark mx-auto my-2">
                                 <i class="fa fa-check text-muted"></i>
                             </div>
-                            <div class="text-success font-size-h1 font-w700"><?php echo e($Device->where('condition', '=', 'Delivered')->count()); ?></div>
+                            <div class="text-success font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Delivered')->count()); ?></div>
                             <div class="text-black mb-3"><?php echo e(__('Completed Orders')); ?></div>
                             
                         </div>
@@ -247,7 +179,7 @@
                             <div class="item rounded-lg bg-body-dark mx-auto my-2">
                                 <i class="fa fa-exclamation-triangle text-muted"></i>
                             </div>
-                            <div class="text-danger font-size-h1 font-w700"><?php echo e($Device->where('condition', '=', 'Refund')->count()); ?></div>
+                            <div class="text-danger font-size-h1 font-w700"><?php echo e($Devices->where('condition', '=', 'Refund')->count()); ?></div>
                             <div class="text-black mb-3"><?php echo e(__('Delayed Requests')); ?></div>
                             
                         </div>

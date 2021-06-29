@@ -134,81 +134,20 @@
         <div class="row">
             <div class="col-md-9">
                 <!--  Latest Orders -->
-                <div class="block block-rounded block-mode-loading-refresh">
-                    <div class="block-header block-header-default">
-                        <h3 class="block-title">
-                            {{ __('Latest Orders') }}
-                        </h3>
-                        <!-- TODO: Lates Devices -->
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                <i class="si si-refresh"></i>
-                            </button>
-                            <div class="dropdown">
-                                <button type="button" class="btn-block-option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="si si-chemistry"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-dot-circle opacity-50 mr-1"></i> {{ __('Pending') }}
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-times-circle opacity-50 mr-1"></i> {{ __('Canceled') }}
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="far fa-fw fa-check-circle opacity-50 mr-1"></i> {{ __('Completed') }}
-                                    </a>
-                                    <div role="separator" class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)">
-                                        <i class="fa fa-fw fa-eye opacity-50 mr-1"></i> {{ __('View All') }}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-content">
-                        <table class="table table-striped table-hover table-borderless table-vcenter font-size-sm">
-                            <thead>
-                                <tr class="text-uppercase">
-                                    <th>{{ __('Device') }}</th>
-                                    <th class="d-none d-xl-table-cell">{{ __('Date') }}</th>
-                                    <th>{{ __('Status') }}</th>
-                                    <th class="d-none d-sm-table-cell text-right" style="width: 120px;">{{ __('User') }}</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($DevicesList as $Device)
-                                    <tr>
-                                        <td>
-                                            <span class="font-w600">{{ $Device->devices->device_name }}</span>
-                                        </td>
-                                        <td class="d-none d-xl-table-cell">
-                                            <span class="font-size-sm text-muted">{{ date('m/d/Y', strtotime($Device->created_at)) }}</span>
-                                        </td>
-                                        <td>
-                                            <span class="font-w600 text-warning">{{ $Device->condition }}</span>
-                                        </td>
-                                        <td class="d-none d-sm-table-cell text-right font-w500">
-                                            {{ $Device->user->first_name }} {{ $Device->user->last_name }}
-                                        </td>
-                                        <td class="text-center text-nowrap font-w500">
-                                            <a href="/project/edit/{{ $Device->id }}">
-                                                View
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="block-content block-content-full block-content-sm bg-body-light font-size-sm text-center">
-                        <a class="font-w500" href="/project/list">
-                            {{ __('View All') }} {{ __('Orders') }}
-                            <i class="fa fa-arrow-right ml-1 opacity-25"></i>
-                        </a>
-                    </div>
-                </div>
+                <dash_device_list
+                Latest-orders="{{ __('Latest Orders') }}"
+
+                Pending="{{__('Open')}}"
+                Canceled="{{__('Delivered')}}"
+                Completed="{{__('Refund')}}"
+                View-all="{{__('View All')}}"
+
+                Device="{{__('Device')}}"
+                Device-date="{{__('Date')}}"
+                Status="{{__('Status')}}"
+                User="{{__('User')}}"
+                View-all="{{ __('View All') }} {{ __('Orders') }}"
+                ></dash_device_list>
                 <!-- END Latest Orders -->
             </div>
             <div class="col-md-3 d-flex flex-column">
@@ -219,7 +158,7 @@
                             <div class="item rounded-lg bg-body-dark mx-auto my-2">
                                 <i class="fa fa-check text-muted"></i>
                             </div>
-                            <div class="text-success font-size-h1 font-w700">{{ $Device->where('condition', '=', 'Delivered')->count() }}</div>
+                            <div class="text-success font-size-h1 font-w700">{{ $Devices->where('condition', '=', 'Delivered')->count() }}</div>
                             <div class="text-black mb-3">{{ __('Completed Orders') }}</div>
                             
                         </div>
@@ -237,7 +176,7 @@
                             <div class="item rounded-lg bg-body-dark mx-auto my-2">
                                 <i class="fa fa-exclamation-triangle text-muted"></i>
                             </div>
-                            <div class="text-danger font-size-h1 font-w700">{{ $Device->where('condition', '=', 'Refund')->count() }}</div>
+                            <div class="text-danger font-size-h1 font-w700">{{ $Devices->where('condition', '=', 'Refund')->count() }}</div>
                             <div class="text-black mb-3">{{ __('Delayed Requests') }}</div>
                             
                         </div>

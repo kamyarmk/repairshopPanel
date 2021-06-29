@@ -7,6 +7,10 @@
 // require('./bootstrap');
 
 window.Vue = require('vue').default;
+import Vue from 'vue'
+import VueMoment from 'vue-moment';
+
+Vue.use(VueMoment)
 
 /**
  * The following block of code may be used to automatically register your
@@ -23,6 +27,7 @@ window.Vue = require('vue').default;
 
 // DashBoard Datas
 Vue.component('main-datas', require('./components/Dashboard/main_datas.vue').default);
+Vue.component('dash_device_list', require('./components/Dashboard/device_list.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
