@@ -120,3 +120,5 @@ Route::get('/update', [App\Http\Controllers\Dashboard\DashboardController::class
 Route::get('/vue', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue'])->name('vue');
 Route::get('/vue/{from}', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue'])->name('vue.id');
 Route::get('/vue/dashboard/deviceListing', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue_deviceListing'])->name('vue.deviceListing');
+Route::get('/vue/dashboard/chart', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue_chart'])->name('vue.chart');
+Route::get('/vue/header/search', [App\Http\Controllers\Dashboard\DashboardController::class, 'vue_search'])->name('vue.search');

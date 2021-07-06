@@ -44,5 +44,23 @@ class Registered_Devices extends Seeder
                 'updated_at' => $currentDate
             ]);
         }
+        for($i =0; $i < 30; $i++){
+            $currentDate = rand(Carbon::now()->getTimestamp(), Carbon::now()->subWeek(1)->getTimestamp());
+            DB::table('registered_devices')->insert([
+                'user_id' => rand(2, 5),
+                'devices_id' => rand(1,5),
+                'color_id' => rand(1,17),
+                'storage_id' => rand(1,6),
+                'IMEI' => Str::random(25),
+                'problems' => $problems[rand(0,4)],
+                'device_desc' => Str::random(3),
+                'device_otherinfo' => Str::random(25),
+                'condition' => $conditions[array_rand($conditions, 1)],
+                'device_password' => Str::random(10),
+                'deadline' => $currentDate,
+                'created_at' => $currentDate,
+                'updated_at' => $currentDate
+            ]);
+        }
     }
 }

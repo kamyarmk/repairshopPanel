@@ -56,7 +56,7 @@ body.fa{
         letter-spacing: 0 !important;
     }
     .nav-main-link{
-        padding-right: unset;
+        padding-right: 8px;
         .nav-main-link-badge{
             margin-left: unset;
             margin-right: 0.625rem;
@@ -66,7 +66,16 @@ body.fa{
         margin-left: 0.625rem;
         margin-right: unset;
     }
-
+    .content-header{
+        .dropdown-default-hero-primary{
+            left: unset !important;
+            right: -27px;
+            *{
+                font-size: 14px;
+            }
+        }
+    }
+    
     .nav-main-link.nav-main-link-submenu::before, .nav-main-link.nav-main-link-submenu::after{
         left: 0.625rem;
         right: unset;
@@ -74,7 +83,7 @@ body.fa{
     .nav-main-submenu{
         .nav-main-link{
             padding-right: 2rem;
-            padding-left: 0;
+            
         }
     }
     .btn{
@@ -114,7 +123,16 @@ body.fa{
                     right: -20px;
                 }
             }
+            .font-size-h1.font-w700{
+                padding-bottom: 20px
+            }
+            .infoPlace{
+                padding-bottom: 20px
+            }
         }
+    }
+    .invoice_info_text{
+        font-size: 11px;
     }
 }
 
@@ -122,5 +140,54 @@ body.fa{
 .content-header{
     .btn{
         font-size: 14px;
+    }
+}
+
+#page-header-search{
+    .content-header{
+        position: relative;
+        .search-results{
+            position: absolute;
+            width: 100%;
+            height: 0;
+            top: 68px;
+            left: 0;
+            right: 0;
+            .holder{
+                display: none;
+            }
+        }
+        .search-results.active{
+            height: 300px;
+            padding: 25px;    
+            background-color: rgba(255, 255, 255, 1);  
+            box-shadow: 1px 1px 5px black;
+            border-radius: 0 0 6px 5px;
+            overflow-y: scroll;
+            .holder{    
+                display: block;
+                .sections{
+                    margin-bottom: 40px;
+                    .row{
+                        position: relative;
+                        border-bottom: 1px solid #c9c9c9;
+
+                        div:nth-child(1){
+                            border-right: 1px solid #c9c9c9;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;   
+                        }
+                    }
+                    .divider{
+                        width: 100%;
+                        height: 1px;
+                        display: block;
+                        background: black;
+                    }
+                }
+                
+            }
+        }
     }
 }

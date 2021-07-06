@@ -27391,7 +27391,7 @@ body.fa * {
   letter-spacing: 0 !important;
 }
 body.fa .nav-main-link {
-  padding-right: unset;
+  padding-right: 8px;
 }
 body.fa .nav-main-link .nav-main-link-badge {
   margin-left: unset;
@@ -27401,13 +27401,19 @@ body.fa .nav-main-link .nav-main-link-icon {
   margin-left: 0.625rem;
   margin-right: unset;
 }
+body.fa .content-header .dropdown-default-hero-primary {
+  left: unset !important;
+  right: -27px;
+}
+body.fa .content-header .dropdown-default-hero-primary * {
+  font-size: 14px;
+}
 body.fa .nav-main-link.nav-main-link-submenu::before, body.fa .nav-main-link.nav-main-link-submenu::after {
   left: 0.625rem;
   right: unset;
 }
 body.fa .nav-main-submenu .nav-main-link {
   padding-right: 2rem;
-  padding-left: 0;
 }
 body.fa .btn {
   font-family: "IRANSans";
@@ -27441,7 +27447,61 @@ body.fa .block-rounded .block-content a i.fa-arrow-right {
   position: absolute;
   right: -20px;
 }
+body.fa .block-rounded .block-content .font-size-h1.font-w700 {
+  padding-bottom: 20px;
+}
+body.fa .block-rounded .block-content .infoPlace {
+  padding-bottom: 20px;
+}
+body.fa .invoice_info_text {
+  font-size: 11px;
+}
 
 .content-header .btn {
   font-size: 14px;
+}
+
+#page-header-search .content-header {
+  position: relative;
+}
+#page-header-search .content-header .search-results {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 68px;
+  left: 0;
+  right: 0;
+}
+#page-header-search .content-header .search-results .holder {
+  display: none;
+}
+#page-header-search .content-header .search-results.active {
+  height: 300px;
+  padding: 25px;
+  background-color: white;
+  box-shadow: 1px 1px 5px black;
+  border-radius: 0 0 6px 5px;
+  overflow-y: scroll;
+}
+#page-header-search .content-header .search-results.active .holder {
+  display: block;
+}
+#page-header-search .content-header .search-results.active .holder .sections {
+  margin-bottom: 40px;
+}
+#page-header-search .content-header .search-results.active .holder .sections .row {
+  position: relative;
+  border-bottom: 1px solid #c9c9c9;
+}
+#page-header-search .content-header .search-results.active .holder .sections .row div:nth-child(1) {
+  border-right: 1px solid #c9c9c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-header-search .content-header .search-results.active .holder .sections .divider {
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: black;
 }

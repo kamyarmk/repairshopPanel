@@ -147,10 +147,10 @@
     "Accepted Devices": "دستگاه های پذیرفته شده",
     "Check it out": "بررسی کنید",
     "Not Delivered": "تحویل داده نشده است",
-    "Waiting": "در انتظار",
-    "Ready To pay": "آماده پرداخت",
-    "Paid": "پرداخت شده",
-    "Over Due": "سررسید",
+    "Waiting": "فاکتور در انتظار تعیین هزینه ",
+    "Ready To pay": "فاکتور در انتظار پرداخت ",
+    "Paid": "فاکتور پرداخت شده",
+    "Over Due": "فاکتور از سررسید گذشته",
     "Store Growth": "رشد فروشگاه",
     "Your Income Over Week": "درآمد شما در طول هفته",
     "Requests Per Week": "درخواست در هر هفته",
@@ -169,5 +169,6 @@
     "Inbox": "صندوق",
     "Billing": "حساب داری",
     "Security": "امنیت",
-    "Sign Out": "خروج"
+    "Sign Out": "خروج",
+    "Search or hit ESC..":"جستجو..."
 }

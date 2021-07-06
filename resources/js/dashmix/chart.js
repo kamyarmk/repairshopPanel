@@ -9,7 +9,23 @@ export default class pageDashboard {
      * Chart.js, for more examples you can check out http://www.chartjs.org/docs
      *
      */
-    static initChartsBars() {
+    static initChartsBars(
+        fd,
+        sd,
+        td,
+        fod,
+        fid,
+        sid,
+        sev,
+
+        ffd,
+        ssd,
+        ttd,
+        ffod,
+        ffid,
+        ssid,
+        ssev,
+        ) {
         // Set Global Chart.js configuration
         Chart.defaults.global.defaultFontColor              = '#495057';
         Chart.defaults.scale.gridLines.color                = 'transparent';
@@ -37,13 +53,13 @@ export default class pageDashboard {
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
                     pointHoverBorderColor: 'rgba(6, 101, 208, 1)',
-                    data: [ chartBarsCon.data('fd'), 
-                            chartBarsCon.data('sd'), 
-                            chartBarsCon.data('td'), 
-                            chartBarsCon.data('fod'), 
-                            chartBarsCon.data('fid'), 
-                            chartBarsCon.data('sid'), 
-                            chartBarsCon.data('sev')]
+                    data: [ fd, 
+                            sd, 
+                            td, 
+                            fod, 
+                            fid, 
+                            sid, 
+                            sev]
                 },
                 {
                     label: chartBarsCon.data('income'),
@@ -54,13 +70,13 @@ export default class pageDashboard {
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
                     pointHoverBorderColor: 'rgba(130, 181, 75, 1)',
-                    data: [ chartBarsCon.data('ffd'), 
-                            chartBarsCon.data('ssd'), 
-                            chartBarsCon.data('ttd'), 
-                            chartBarsCon.data('ffod'), 
-                            chartBarsCon.data('ffid'), 
-                            chartBarsCon.data('ssid'), 
-                            chartBarsCon.data('ssev')]
+                    data: [ ffd, 
+                            ssd, 
+                            ttd, 
+                            ffod, 
+                            ffid, 
+                            ssid, 
+                            ssev]
                 }
             ]
         };
@@ -88,10 +104,42 @@ export default class pageDashboard {
      * Init functionality
      *
      */
-    static init() {
-        this.initChartsBars();
+    static init(
+        fd,
+        sd,
+        td,
+        fod,
+        fid,
+        sid,
+        sev,
+
+        ffd,
+        ssd,
+        ttd,
+        ffod,
+        ffid,
+        ssid,
+        ssev,
+    ) {
+        this.initChartsBars(
+            fd,
+            sd,
+            td,
+            fod,
+            fid,
+            sid,
+            sev,
+
+            ffd,
+            ssd,
+            ttd,
+            ffod,
+            ffid,
+            ssid,
+            ssev,
+        );
     }
 }
 
 // Initialize when page loads
-jQuery(() => { pageDashboard.init(); });
+// jQuery(() => { pageDashboard.init(); });

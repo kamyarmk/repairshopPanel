@@ -37,4 +37,6 @@ return array(
     'b6b991a57620e2fb6b2f66f03fe9ddc2' => $vendorDir . '/symfony/string/Resources/functions.php',
     'ed962a97bd972bc82007176b647d4e36' => $vendorDir . '/facade/ignition/src/helpers.php',
     'e4e590a9b5afe940db71ee1662c02677' => $vendorDir . '/morilog/jalali/src/helpers.php',
+    '979dffec6fa5205cabd2c2cd1e9e6b3a' => $vendorDir . '/algolia/algoliasearch-client-php/src/Http/Psr7/functions.php',
+    '6783aef8c489bbc166eee2536fe605d5' => $vendorDir . '/algolia/algoliasearch-client-php/src/functions.php',
 );

@@ -47,89 +47,20 @@
         <!-- END Overview -->
 
         <!-- Store Growth -->
-        <div class="block block-rounded">
-            <div class="block-header block-header-default">
-                <h3 class="block-title">
-                    <?php echo e(__('Store Growth')); ?>
-
-                </h3>
-                <div class="block-options">
-                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                        <i class="si si-refresh"></i>
-                    </button>
-                    <button type="button" class="btn-block-option">
-                        <i class="si si-wrench"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="block-content block-content-full">
-                <div class="row">
-                    <div class="col-md-5 col-xl-4 d-md-flex align-items-md-center">
-                        <div class="p-md-2 p-lg-3">
-                            <div class="py-3">
-                                <div class="text-black font-size-h1 font-w700">$1,430</div>
-                                <div class="font-w600"><?php echo e(__('Your Income Over Week')); ?></div>
-                                <div class="py-3 d-flex align-items-center">
-                                    <div class="bg-success-lighter p-2 rounded mr-3">
-                                        <i class="fa fa-fw fa-arrow-up text-success"></i>
-                                    </div>
-                                    <p class="mb-0">
-                                        You have a <span class="font-w600 text-success">12% customer growth</span> in the last 30 days. This is amazing, keep it up!
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="py-3">
-                                <div class="text-black font-size-h1 font-w700">65</div>
-                                <div class="font-w600"><?php echo e(__('Requests Per Week')); ?></div>
-                                <div class="py-3 d-flex align-items-center">
-                                    <div class="bg-success-lighter p-2 rounded mr-3">
-                                        <i class="fa fa-fw fa-arrow-up text-success"></i>
-                                    </div>
-                                    <p class="mb-0">
-                                        You’ve managed to add <span class="font-w600 text-success">12% more products</span> in the last 30 days. Store’s portfolio is growing!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-xl-8 d-md-flex align-items-md-center">
-                        <div class="p-md-2 p-lg-3 w-100">
-                            <!-- Bars Chart Container -->
-                            <!-- Chart.js Chart is initialized in js/pages/be_pages_dashboard.min.js which was auto compiled from _js/pages/be_pages_dashboard.js -->
-                            <!-- For more info and examples you can check out http://www.chartjs.org/docs/ -->
-                            <canvas class="js-chartjs-analytics-bars"
-                                data-mon="<?php echo e(__('Mon')); ?>"
-                                data-tue="<?php echo e(__('Tue')); ?>"
-                                data-wed="<?php echo e(__('Wed')); ?>"
-                                data-thu="<?php echo e(__('Thu')); ?>"
-                                data-fri="<?php echo e(__('Fri')); ?>"
-                                data-sat="<?php echo e(__('Sat')); ?>"
-                                data-sun="<?php echo e(__('Sun')); ?>"
-
-                                data-device="<?php echo e(__('Devices')); ?>"
-                                data-income="<?php echo e(__('Incomes')); ?>"
-
-                                data-fd="73"
-                                data-sd="68"
-                                data-td="69"
-                                data-fod="53"
-                                data-fid="60"
-                                data-sid="72"
-                                data-sev="82"
-
-                                data-ffd="62"
-                                data-ssd="32"
-                                data-ttd="59"
-                                data-ffod="55"
-                                data-ffid="52"
-                                data-ssid="56"
-                                data-ssev="73"
-                            ></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <dash_chart
+            store-growth="<?php echo e(__('Store Growth')); ?>"
+            Your-income-over-week="<?php echo e(__('Your Income Over Week')); ?>"
+            Requests-per-week="<?php echo e(__('Requests Per Week')); ?>"
+            Mon="<?php echo e(__('Mon')); ?>"
+            Tue="<?php echo e(__('Tue')); ?>"
+            Wed="<?php echo e(__('Wed')); ?>"
+            Thu="<?php echo e(__('Thu')); ?>"
+            Fri="<?php echo e(__('Fri')); ?>"
+            Sat="<?php echo e(__('Sat')); ?>"
+            Sun="<?php echo e(__('Sun')); ?>"
+            Devices="<?php echo e(__('Devices')); ?>"
+            Incomes="<?php echo e(__('Incomes')); ?>"
+        ></dash_chart>
         <!-- END Store Growth -->
 
         <!-- Latest Orders + Stats -->

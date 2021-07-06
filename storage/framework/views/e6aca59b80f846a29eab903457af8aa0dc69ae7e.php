@@ -594,7 +594,7 @@
                     <div class="row">
                         <!-- Toggle Sidebar -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                        <div class="co-1">
+                        <div class="co-md-1">
                             <button type="button" class="btn btn-dual" data-toggle="layout" data-action="sidebar_toggle">
                                 <i class="fa fa-fw fa-bars"></i>
                             </button>
@@ -603,7 +603,7 @@
 
                         <!-- Open Search Section -->
                         <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        <div class="col-6">
+                        <div class="col-md-4">
                             <button type="button" class="btn btn-dual" data-toggle="layout" data-action="header_search_on">
                                 <i class="fa fa-fw fa-search"></i> <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('Search')); ?></span>
                             </button>
@@ -611,7 +611,7 @@
                         
                         <!-- END Open Search Section -->
                         <!-- Quick Device Add Button -->
-                        <div class="col-4">
+                        <div class="col-md-3">
                             <div class="dropdown">
                                 <button type="button" class="btn btn-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('Add New')); ?></span>
@@ -624,6 +624,19 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-3">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" id="dropdown-default-hero-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="ml-1 d-none d-sm-inline-block"><?php echo e(__('Language')); ?></span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-default-hero-primary" style="">
+                                    <a class="dropdown-item" href="/language/en"><?php echo e(__('English')); ?></a>
+                                    <a class="dropdown-item" href="/language/fa"><?php echo e(__('Persian')); ?></a>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!-- Quick Device Add Button -->
 
                         
@@ -773,22 +786,11 @@
                 <!-- END Header Content -->
 
                 <!-- Header Search -->
-                <div id="page-header-search" class="overlay-header bg-primary">
-                    <div class="content-header">
-                        <form class="w-100" action="/dashboard" method="POST">
-                            <?php echo csrf_field(); ?>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                    <button type="button" class="btn btn-primary" data-toggle="layout" data-action="header_search_off">
-                                        <i class="fa fa-fw fa-times-circle"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control border-0" placeholder="Search or hit ESC.." id="page-header-search-input" name="page-header-search-input">
-                            </div>
-                        </form>
-                   </div>
-                </div>
+                
+                <header_search
+                    csrf="<?php echo e(csrf_token()); ?>"
+                    placeholder="<?php echo e(__('Search or hit ESC..')); ?>"
+                ></header_search>
                 <!-- END Header Search -->
 
                 <!-- Header Loader -->
@@ -842,7 +844,7 @@
         <!-- <script src="<?php echo e(asset('js/pages/be_pages_dashboard_v1.min.js')); ?>"></script> -->
         <!-- Page JS Code -->
         <!-- public/ -->
-        <script src="<?php echo e(asset('js/chart.app.js')); ?>"></script>
+        <!-- <script src="<?php echo e(asset('js/chart.app.js')); ?>"></script> -->
 
 
         <!-- Page JS Plugins -->
@@ -870,6 +872,7 @@
 
         <!-- Laravel Scaffolding JS -->
         <script src="<?php echo e(mix('/js/laravel.app.js')); ?>"></script>
+        <script src="<?php echo e(mix('/js/laravel.header.js')); ?>"></script>
 
         <script>
             let tour = new Tour({

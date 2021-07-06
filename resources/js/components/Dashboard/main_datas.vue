@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row" style=" justify-content: flex-end; margin-top: -60px; margin-bottom: 60px; margin-right: 5px;">
+        <div class="row" style="justify-content: flex-end;margin-top: -60px;margin-bottom: 60px;margin-right: -5px;margin-left: -5px;">
             <div class="mt-4 mt-md-0">
                 <a class="btn btn-sm btn-alt-primary" href="javascript:void(0)">
                     <i class="fa fa-cog"></i>
@@ -27,10 +27,10 @@
                             <i class="fa fa-wallet text-muted"></i>
                         </div>
                         
-                        <div class="text-primary font-size-h1 font-w700 ">${{ info.data.TotalIncome  }}</div>
-                        <div class="text-muted mb-3">{{ Income }}</div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
-                            <i class="fa fa-caret-up mr-1"></i>
+                        <div class="text-primary font-size-h1 font-w700 ">${{ formatNumbers(info.data.TotalIncome) }}</div>
+                        <div class="text-muted mb-3 infoPlace">{{ Income }}</div>
+                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600" :class="{'text-success bg-success-lighter': this.info.data.Grow >= 0 , 'text-danger bg-danger-lighter': this.info.data.Grow < 0}">
+                            <i class="fa mr-1" :class="{'fa-caret-up': this.info.data.Grow > 0 , 'fa-caret-down': this.info.data.Grow < 0}"></i>
                             {{ this.info.data.Grow }}%
                         </div>
                     </div>
@@ -48,10 +48,10 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-hand-holding-medical text-muted"></i>
                         </div>
-                        <div class="text-warning font-size-h1 font-w700">{{ info.data.acceptedDevices  }}</div>
-                        <div class="text-muted mb-3">{{ accepted }}</div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
-                            <i class="fa fa-caret-down mr-1"></i>
+                        <div class="text-warning font-size-h1 font-w700">{{ formatNumbers(info.data.acceptedDevices) }}</div>
+                        <div class="text-muted mb-3 infoPlace">{{ accepted }}</div>
+                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600" :class="{'text-success bg-success-lighter': info.data.GrowAccepted >= 0 , 'text-danger bg-danger-lighter': info.data.GrowAccepted < 0}">
+                            <i class="fa mr-1" :class="{'fa-caret-up': info.data.GrowAccepted > 0 , 'fa-caret-down': info.data.GrowAccepted < 0}"></i>
                             {{ info.data.GrowAccepted }}%
                         </div>
                     </div>
@@ -70,10 +70,10 @@
                             <i class="fa fa-thumbs-up text-muted"></i>
                         </div>
                         
-                        <div class="text-success font-size-h1 font-w700">{{ info.data.deliveredDevices  }}</div>
-                        <div class="text-muted mb-3">{{ Delivered }}</div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-success bg-success-lighter">
-                            <i class="fa fa-caret-up mr-1"></i>
+                        <div class="text-success font-size-h1 font-w700">{{ formatNumbers(info.data.deliveredDevices)  }}</div>
+                        <div class="text-muted mb-3 infoPlace">{{ Delivered }}</div>
+                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600" :class="{'text-success bg-success-lighter': info.data.GrowDelivered >= 0 , 'text-danger bg-danger-lighter': info.data.GrowDelivered < 0}">
+                            <i class="fa mr-1" :class="{'fa-caret-up': info.data.GrowDelivered > 0 , 'fa-caret-down': info.data.GrowDelivered < 0}"></i>
                             {{ info.data.GrowDelivered }}%
                         </div>
                     </div>
@@ -91,10 +91,10 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-clock text-muted"></i>
                         </div>
-                        <div class="text-danger font-size-h1 font-w700">{{ info.data.notDeliveredDevices  }}</div>
-                        <div class="text-muted mb-3">{{ notDelivered }}</div>
-                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600 text-danger bg-danger-lighter">
-                            <i class="fa fa-caret-down mr-1"></i>
+                        <div class="text-danger font-size-h1 font-w700">{{ formatNumbers(info.data.notDeliveredDevices)  }}</div>
+                        <div class="text-muted mb-3 infoPlace">{{ notDelivered }}</div>
+                        <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600" :class="{'text-success bg-success-lighter': info.data.GrowNotDelivered >= 0 , 'text-danger bg-danger-lighter': info.data.GrowNotDelivered < 0}">
+                            <i class="fa mr-1" :class="{'fa-caret-up': info.data.GrowNotDelivered > 0 , 'fa-caret-up': info.data.GrowNotDelivered < 0}"></i>
                             {{ info.data.GrowNotDelivered }}%
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                             <p class="text-white font-size-h3 font-w300 mb-0">
                                 {{ info.data.invoiceWaiting  }}
                             </p>
-                            <p class="text-white-75 mb-0">
+                            <p class="text-white-75 mb-0 invoice_info_text">
                                 {{ Waiting }}
                             </p>
                         </div>
@@ -133,7 +133,7 @@
                             <p class="text-white font-size-h3 font-w300 mb-0">
                                 {{ info.data.invoiceReadToPay  }}
                             </p>
-                            <p class="text-white-75 mb-0">
+                            <p class="text-white-75 mb-0 invoice_info_text">
                                 {{ Ready }}
                             </p>
                         </div>
@@ -153,7 +153,7 @@
                             <p class="text-white font-size-h3 font-w300 mb-0">
                                 {{ info.data.invoicePaid  }}
                             </p>
-                            <p class="text-white-75 mb-0">
+                            <p class="text-white-75 mb-0 invoice_info_text">
                                 {{ Paid }}
                             </p>
                         </div>
@@ -167,7 +167,7 @@
                             <p class="text-white font-size-h3 font-w300 mb-0">
                                 {{ info.data.invoiceOverDue  }}
                             </p>
-                            <p class="text-white-75 mb-0">
+                            <p class="text-white-75 mb-0 invoice_info_text">
                                 {{ overDue }}
                             </p>
                         </div>
@@ -236,6 +236,13 @@
                     .get('/vue/' + timeZone )
                     .then(response => (this.info = response))
                 this.Grow = this.info.data.Grow
+            },
+            formatNumbers(number){
+                return (
+                        Number(number)
+                            .toString()
+                            .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+                        );
             }
         },
         mounted() {

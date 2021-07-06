@@ -1,5 +1,6 @@
 {
     "/js/laravel.app.js": "/js/laravel.app.js",
+    "/js/laravel.header.js": "/js/laravel.header.js",
     "/js/dashmix.app.js": "/js/dashmix.app.js",
     "/js/chart.app.js": "/js/chart.app.js",
     "/js/dataTables.app.js": "/js/dataTables.app.js",

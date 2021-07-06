@@ -66,6 +66,7 @@ return array(
     'League\\CommonMark\\' => array($vendorDir . '/league/commonmark/src'),
     'Laravel\\Ui\\' => array($vendorDir . '/laravel/ui/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
+    'Laravel\\Scout\\' => array($vendorDir . '/laravel/scout/src'),
     'Laravel\\Sail\\' => array($vendorDir . '/laravel/sail/src'),
     'Laravel\\Envoy\\' => array($vendorDir . '/laravel/envoy/src'),
     'Laratrust\\' => array($vendorDir . '/santigarcor/laratrust/src'),
@@ -103,4 +104,5 @@ return array(
     'Assert\\' => array($vendorDir . '/beberlei/assert/lib/Assert'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),
     'App\\' => array($baseDir . '/app'),
+    'Algolia\\AlgoliaSearch\\' => array($vendorDir . '/algolia/algoliasearch-client-php/src'),
 );

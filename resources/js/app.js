@@ -28,6 +28,7 @@ Vue.use(VueMoment)
 // DashBoard Datas
 Vue.component('main-datas', require('./components/Dashboard/main_datas.vue').default);
 Vue.component('dash_device_list', require('./components/Dashboard/device_list.vue').default);
+Vue.component('dash_chart', require('./components/Dashboard/chart.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

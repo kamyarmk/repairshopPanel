@@ -64,7 +64,7 @@ var pageDashboard = /*#__PURE__*/function () {
      * Chart.js, for more examples you can check out http://www.chartjs.org/docs
      *
      */
-    function initChartsBars() {
+    function initChartsBars(fd, sd, td, fod, fid, sid, sev, ffd, ssd, ttd, ffod, ffid, ssid, ssev) {
       // Set Global Chart.js configuration
       Chart.defaults.global.defaultFontColor = '#495057';
       Chart.defaults.scale.gridLines.color = 'transparent';
@@ -88,7 +88,7 @@ var pageDashboard = /*#__PURE__*/function () {
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(6, 101, 208, 1)',
-          data: [chartBarsCon.data('fd'), chartBarsCon.data('sd'), chartBarsCon.data('td'), chartBarsCon.data('fod'), chartBarsCon.data('fid'), chartBarsCon.data('sid'), chartBarsCon.data('sev')]
+          data: [fd, sd, td, fod, fid, sid, sev]
         }, {
           label: chartBarsCon.data('income'),
           fill: true,
@@ -98,7 +98,7 @@ var pageDashboard = /*#__PURE__*/function () {
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(130, 181, 75, 1)',
-          data: [chartBarsCon.data('ffd'), chartBarsCon.data('ssd'), chartBarsCon.data('ttd'), chartBarsCon.data('ffod'), chartBarsCon.data('ffid'), chartBarsCon.data('ssid'), chartBarsCon.data('ssev')]
+          data: [ffd, ssd, ttd, ffod, ffid, ssid, ssev]
         }]
       }; // Init Chart
 
@@ -126,18 +126,16 @@ var pageDashboard = /*#__PURE__*/function () {
 
   }, {
     key: "init",
-    value: function init() {
-      this.initChartsBars();
+    value: function init(fd, sd, td, fod, fid, sid, sev, ffd, ssd, ttd, ffod, ffid, ssid, ssev) {
+      this.initChartsBars(fd, sd, td, fod, fid, sid, sev, ffd, ssd, ttd, ffod, ffid, ssid, ssev);
     }
   }]);
 
   return pageDashboard;
 }(); // Initialize when page loads
+// jQuery(() => { pageDashboard.init(); });
 
 
 
-jQuery(function () {
-  pageDashboard.init();
-});
 /******/ })()
 ;
