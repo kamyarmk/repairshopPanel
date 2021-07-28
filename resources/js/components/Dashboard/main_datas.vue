@@ -26,8 +26,7 @@
                         <div class="item rounded-lg bg-body-dark mx-auto my-3">
                             <i class="fa fa-wallet text-muted"></i>
                         </div>
-                        
-                        <div class="text-primary font-size-h1 font-w700 ">${{ formatNumbers(info.data.TotalIncome) }}</div>
+                        <div class="text-primary font-size-h1 font-w700 fitInBox ">${{ formatNumbers(info.data.TotalIncome) }}</div>
                         <div class="text-muted mb-3 infoPlace">{{ Income }}</div>
                         <div class="d-inline-block px-3 py-1 rounded-lg font-size-sm font-w600" :class="{'text-success bg-success-lighter': this.info.data.Grow >= 0 , 'text-danger bg-danger-lighter': this.info.data.Grow < 0}">
                             <i class="fa mr-1" :class="{'fa-caret-up': this.info.data.Grow > 0 , 'fa-caret-down': this.info.data.Grow < 0}"></i>
@@ -183,6 +182,7 @@
 
 <script>
     import axios from 'axios'
+    
     export default {
         props:{
             last30day: String,
@@ -225,15 +225,27 @@
         },
         created(){
             axios
-                .get('/vue')
+                .get('/vue', {
+                        params: {
+                            "week" : this.$store.state.daysCount
+                        }
+                    })
                 .then(response => (this.info = response))
             this.Grow = this.info.data.Grow
         },
         methods: {
             SetTime(timeZone, timeZoneText){
+
+                this.$store.state.daysCount = timeZone
+                
                 this.timeZoneText = this[timeZoneText]
+
                 axios
-                    .get('/vue/' + timeZone )
+                    .get('/vue/' , {
+                        params: {
+                            "week" : timeZone
+                        }
+                    })
                     .then(response => (this.info = response))
                 this.Grow = this.info.data.Grow
             },

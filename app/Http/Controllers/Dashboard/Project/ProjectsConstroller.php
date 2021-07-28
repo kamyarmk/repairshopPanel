@@ -28,7 +28,8 @@ class ProjectsConstroller extends Controller
 
     public function index(Request $request)
     {
-        $Devices = registered_devices::with('Devices', 'Users')->paginate(5);
+        $Devices = registered_devices::all();
+
         return view('project.list')->with([
             'Devices' => $Devices
         ]);
@@ -51,6 +52,7 @@ class ProjectsConstroller extends Controller
 
     public function store(Request $request)
     {
+        // TODO: Go back with a Session Ke
         $validator = Validator::make($request->all(), [
             'user_id' => ['required'],
             'devices_id' => ['required'],
@@ -92,81 +94,117 @@ class ProjectsConstroller extends Controller
 
     public function edit(Request $request)
     {
-
+        // TODO: Add Funtion for the Project
+        // TODO: Go back with a Session KeY
         return view('project.edit');
     }
 
     public function details(Request $request)
     {
-
+        // TODO: Add Funtion for the Project
+        // TODO: Go back with a Session KeY
         return view('project.details');
     }
 
     public function category(Request $request)
     {
-
+        // TODO: Add Funtion for the Project
+        // TODO: Go back with a Session KeY
         return view('project.category.list');
     }
     //Categories Add and Edit
         public function categoryAdd(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.category.add');
         }
         public function categoryEdit(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.category.add');
         }
 
     public function variable(Request $request)
     {
-
+        // TODO: Add Funtion for the Project
+        // TODO: Go back with a Session KeY
         return view('project.variable.list');
     }
     //Categories Add and Edit
         public function variableAdd(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.variable.add');
         }
         public function variableEdit(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.variable.add');
         }
     
     //QC Reports
         public function qc(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.qc.list');
         }
         public function qcAdd(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.qc.add');
         }
         public function qcEdit(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.qc.add');
         }
     //Problems Reports
         public function problems(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.problems.list');
         }
 
         public function problemsAdd(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.problems.add');
         }
         public function problemsEdit(Request $request)
         {
-
+            // TODO: Add Funtion for the Project
+            // TODO: Go back with a Session KeY
             return view('project.problems.add');
+        }
+
+
+        public function vue_deviceListing(Request $request){
+
+            // we have the following requests :
+            //     Condition : For applying the Filter on the Condiotions
+            //     perPage : For how many in a Page
+
+
+            // Check Wich Condition To Apply
+            if(isset($request['Condition']) AND $request['Condition'] != 'viewAll'){
+                $devices = registered_devices::with('devices', 'user')
+                        ->where('condition', '=', $request['Condition'])
+                        ->paginate(( isset($request['perPage']) ?  isset($request['perPage']) : 5));
+            }else{
+                $devices = registered_devices::with('devices', 'user')
+                        ->paginate(( isset($request['perPage']) ?  isset($request['perPage']) : 5));
+            }
+        
+            
+            return response()->json($devices);
         }
 }

@@ -18,6 +18,9 @@
         <link rel="icon" sizes="192x192" type="image/png" href="{{ asset('media/favicons/favicon-192x192.png') }}">
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('media/favicons/apple-touch-icon-180x180.png') }}">
 
+        <!-- TextFit JS Plugins -->
+        <script src="{{ asset('js/textFit.app.js') }}"></script>
+
         <!-- Fonts and Styles -->
         @yield('css_before')
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
@@ -677,8 +680,7 @@
                                         <i class="far fa-fw fa-file-alt mr-1"></i> {{ __('Billing') }}
                                     </a>
                                     <a class="dropdown-item" href="/settings">
-                                        <!-- TODO : Security Icon -->
-                                        <i class="far fa-fw fa-shield-alt mr-1"></i> {{ __('Security') }}
+                                        <i class="fas fa-fw fa-shield-alt mr-1"></i> {{ __('Security') }}
                                     </a>
 
                                     <div role="separator" class="dropdown-divider"></div>
@@ -803,6 +805,26 @@
 
             <!-- Main Container -->
             <main id="main-container">
+                @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissable" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h3 class="alert-heading font-size-h4 my-2">Success</h3>
+                    <p class="mb-0">Action has been made Successfully</p>
+                </div>
+                @endif
+                @if (isset($errors) && count($errors) > 0)
+                <div class="alert alert-danger alert-dismissable" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h3 class="alert-heading font-size-h4 my-2">Error</h3>
+                    @foreach($errors->all() as $error)
+                        <p class="mb-0">{{ $error }}</p>
+                    @endforeach
+                </div>
+                @endif
                 @yield('content')
             </main>
             <!-- END Main Container -->
@@ -870,6 +892,8 @@
         <script src="{{ mix('/js/laravel.header.js') }}"></script>
 
         <script>
+            // textFit(document.getElementsByClassName("fitInBox"));
+
             let tour = new Tour({
             framework: 'bootstrap4',
             storage: false, // set storage to true to show the tour once

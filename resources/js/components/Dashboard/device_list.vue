@@ -4,7 +4,6 @@
             <h3 class="block-title">
                 {{ LatestOrders }}
             </h3>
-            <!-- TODO: Lates Devices -->
             <div class="block-options">
                 <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo" @click="refreshKey()">
                     <i class="si si-refresh"></i>
@@ -77,6 +76,7 @@
 <script>
     import axios from 'axios'
     import VueMoment from 'vue-moment'
+    import { mapState } from 'vuex';
     // import moment from 'moment-timezone'
 
     export default {
@@ -97,20 +97,32 @@
         data(){
             return{
                 DeviceList: [],
-                condition: ""
+                condition: "viewAll"
+            }
+        },
+        computed: mapState(['daysCount']),
+        watch:{
+            daysCount(newCount, oldCount){
+                this.getDevices(this.condition);
             }
         },
         created(){
             axios
-                .get('/vue/dashboard/deviceListing')
+                .get('/vue/dashboard/deviceListing', {
+                        params: {
+                            "week" : this.$store.state.daysCount
+                        }
+                    })
                 .then(response => (this.DeviceList = response))
         },
         methods: {
             getDevices(Condition){
+                this.condition = Condition
                 axios
                     .get('/vue/dashboard/deviceListing', {
                         params: {
-                            "Condition" : Condition
+                            "Condition" : Condition,
+                            "week" : String(this.$store.state.daysCount)
                         }
                     })
                     .then(response => (this.DeviceList = response))

@@ -23,6 +23,7 @@ class CustomersController extends Controller
 
     public function index(Request $request)
     {
+        // TODO: Vue Oriented Update
         $users_list = User::with('registered_devices')->where('department_id', '!=', '1')->paginate(5);
         $registered_devices_list = registered_devices::all();
         
@@ -34,7 +35,8 @@ class CustomersController extends Controller
 
     public function add(Request $request)
     {
-
+        // TODO: Add Funtion for the Users
+        // TODO: Go back with a Session Key
         return view('customer.add');
     }
 
@@ -48,6 +50,7 @@ class CustomersController extends Controller
 
     public function update(Request $request, $id)
     {
+        // TODO: Go back with a Session Key
         $validator = Validator::make($request->all(), [
             'first_name' => ['required'],
             'last_name' => ['required'],

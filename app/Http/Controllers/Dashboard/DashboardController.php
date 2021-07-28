@@ -42,7 +42,6 @@ class DashboardController extends Controller
 
         $devices = registered_devices::with('devices', 'user')->where('created_at', '>', Carbon::now()->subWeek(4)->getTimestamp())->get();
         $devicesList = registered_devices::with('devices', 'user')->where('created_at', '>', Carbon::now()->subWeek(4)->getTimestamp())->limit(10)->get();
-        //TODO : Count the Precntages From the Home design
 
         return view('dashboard')->with([
             'Devices' => $devices,
@@ -64,18 +63,18 @@ class DashboardController extends Controller
         });
     }
 
-    public function vue(Request $request, $from = 0){
+    public function vue(Request $request){
         $TotalIncome = 0;
         $TotalLastIncome = 0;
-        $timezone = $from != 0 ? $from : '4';
+        $timezone = $request['week'];
         $tilldate = '1';
 
-        if($from == '1'){
+        if($request['week'] == '1'){
             $tilldate = Carbon::now()->getTimestamp();
-        }elseif($from == '4'){
+        }elseif($request['week']== '4'){
             $tilldate = Carbon::now()->getTimestamp();
         }else{
-            $tilldate = Carbon::now()->subWeek($from / 2)->getTimestamp();
+            $tilldate = Carbon::now()->subWeek($request['week'] / 2)->getTimestamp();
         }
 
         $invoices = invoices::where('created_at', '>', Carbon::now()->subWeek($timezone)->getTimestamp())
@@ -149,18 +148,29 @@ class DashboardController extends Controller
         $TotalIncome = 0;
         $TotalLastIncome = 0;
 
-        $invoices = invoices::where('created_at', '>', Carbon::now()->subWeek(1)->getTimestamp())
+        if($request['week'] == '1'){
+            $tilldate = Carbon::now()->getTimestamp();
+        }elseif($request['week']== '4'){
+            $tilldate = 3;
+        }else{
+            $tilldate = Carbon::now()->subWeek($request['week'] / 2)->getTimestamp();
+        }
+
+        $invoices = invoices::where('created_at', '>', Carbon::now()->subWeek($request['week'])->getTimestamp())
+                            ->where('created_at', '<', Carbon::now()->subWeek($tilldate)->getTimestamp())
                             ->orderBy('created_at', 'desc')
                             ->get();
-        $invoicesLastMonths = invoices::where('created_at', '<', Carbon::now()->subWeek(1)->getTimestamp())
-                                        ->where('created_at', '>', Carbon::now()->subWeek(2)->getTimestamp())
+        $invoicesLastMonths = invoices::where('created_at', '<', Carbon::now()->subWeek($request['week'] + $request['week'])->getTimestamp())
+                                        ->where('created_at', '>', Carbon::now()->subWeek($request['week'])->getTimestamp())
                                         ->orderBy('created_at', 'desc')
                                         ->get();
 
-        $devices = registered_devices::with('devices', 'user')->where('created_at', '>', Carbon::now()->subWeek(1)->getTimestamp())->get();
+        $devices = registered_devices::with('devices', 'user')->where('created_at', '>', Carbon::now()->subWeek($request['week'])->getTimestamp())
+                                        ->where('created_at', '<', Carbon::now()->subWeek($tilldate)->getTimestamp())
+                                        ->get();
         $deviceLastMonth = registered_devices::with('devices', 'user')->
-                                                where('created_at', '<', Carbon::now()->subWeek(1)->getTimestamp())
-                                                ->where('created_at', '>', Carbon::now()->subWeek(2)->getTimestamp())
+                                                where('created_at', '<', Carbon::now()->subWeek($request['week'] + $request['week'])->getTimestamp())
+                                                ->where('created_at', '>', Carbon::now()->subWeek($request['week'])->getTimestamp())
                                                 ->get();
         
         foreach($invoices as $invoice){
@@ -260,11 +270,13 @@ class DashboardController extends Controller
         if(isset($request['Condition']) AND $request['Condition'] != 'viewAll'){
             $devices = registered_devices::with('devices', 'user')
                     ->where('condition', '=', $request['Condition'])
+                    ->where('created_at', '>', Carbon::now()->subWeek($request['week'])->getTimestamp())
                     ->orderBy('created_at', 'desc')
                     ->limit(10)
                     ->get();
         }else{
             $devices = registered_devices::with('devices', 'user')
+                    ->where('created_at', '>', Carbon::now()->subWeek($request['week'])->getTimestamp())
                     ->orderBy('created_at', 'desc')
                     ->limit(10)
                     ->get();

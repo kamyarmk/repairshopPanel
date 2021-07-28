@@ -1,6 +1,8 @@
+// TODO: Translations
 <template>
 <div class="block block-rounded">
     <div class="block-header block-header-default">
+        <input type="hidden" v-model="dayCounter" />
         <h3 class="block-title">
             <!-- {{ __('Store Growth') }} -->
             {{ storeGrowth }}
@@ -27,7 +29,7 @@
                                 <i class="fa fa-fw fa-arrow-up text-success"></i>
                             </div>
                             <p class="mb-0">
-                                You have a <span class="font-w600 text-success">{{ incomeGrow }}% customer growth</span> in the last 30 days. This is amazing, keep it up!
+                                You have a <span class="font-w600" :class="{'text-success': incomeGrow >= 0 , 'text-danger': incomeGrow < 0}">{{ incomeGrow }}% customer growth</span> in the last 30 days. This is amazing, keep it up!
                             </p>
                         </div>
                     </div>
@@ -40,7 +42,7 @@
                                 <i class="fa fa-fw fa-arrow-up text-success"></i>
                             </div>
                             <p class="mb-0">
-                                You’ve managed to add <span class="font-w600 text-success">{{ deviceGrow }}% more products</span> in the last 30 days. Store’s portfolio is growing!
+                                You’ve managed to add <span class="font-w600 text-success" :class="{'text-success': deviceGrow >= 0 , 'text-danger': deviceGrow < 0}">{{ deviceGrow }}% more products</span> in the last 30 days. Store’s portfolio is growing!
                             </p>
                         </div>
                     </div>
@@ -83,6 +85,8 @@
 <script>
     import axios from 'axios'
     import pageDashboard from '../../dashmix/chart'
+import Vue from 'vue'
+import { mapState } from 'vuex';
 
     export default {
         props:[
@@ -108,6 +112,7 @@
                 incomeGrow: '0',
                 totalDevices: '0',
                 deviceGrow: '0',
+                dayCounter: this.$store.state.daysCount,
                 info: {
                     data: {
 
@@ -116,6 +121,7 @@
             }
         },
         created(){
+            console.log(this.$daysCount)
             axios
                 .get('/vue/dashboard/chart')
                 .then(response => (
@@ -143,13 +149,23 @@
                 .then(this.gotData = true).then()
             
     },
+    computed: mapState(['daysCount']),
+    watch:{
+        daysCount(newCount, oldCount){
+            this.updateDatas(newCount);
+        }
+    },
         methods: {
             change(newInfo){
                 this.info = newInfo
             },
             updateDatas(){
                 axios
-                .get('/vue/dashboard/chart')
+                .get('/vue/dashboard/chart', {
+                        params: {
+                            "week" : this.$store.state.daysCount
+                        }
+                    })
                 .then(response => (
                     this.info = response,
                     jQuery(() => { pageDashboard.init(
@@ -175,7 +191,7 @@
             }
         },
         mounted() {
-            console.log('Component mounted.')
+
         }
     }
 </script>
