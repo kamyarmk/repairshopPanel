@@ -22,98 +22,111 @@ class CustomersController extends Controller
     }
 
     public function index(Request $request)
-    {
-        // TODO: Vue Oriented Update
-        $users_list = User::with('registered_devices')->where('department_id', '!=', '1')->paginate(5);
-        $registered_devices_list = registered_devices::all();
-        
-        return view('customer.list')->with(
-            ['customers' => $users_list,
-            'registered_devices' => $registered_devices_list]
-        );
-    }
+        {
+            // TODO: Vue Oriented Update
+            $users_list = User::with('registered_devices')->where('department_id', '=', '2')->get();
+            $registered_devices_list = registered_devices::all();
+            
+            return view('customer.list')->with(
+                ['customers' => $users_list,
+                'registered_devices' => $registered_devices_list]
+            );
+        }
 
     public function add(Request $request)
-    {
-        // TODO: Add Funtion for the Users
-        // TODO: Go back with a Session Key
-        return view('customer.add');
-    }
+        {
+            // TODO: Add Funtion for the Users
+            // TODO: Go back with a Session Key
+            return view('customer.add');
+        }
 
     public function edit(Request $request, $id)
-    {
-        $customer = User::with('registered_devices')->find($id);
-        return view('customer.add')->with([
-            'customer' => $customer
-        ]);
-    }
+        {
+            $customer = User::with('registered_devices')->find($id);
+            return view('customer.add')->with([
+                'customer' => $customer
+            ]);
+        }
 
     public function update(Request $request, $id)
-    {
-        // TODO: Go back with a Session Key
-        $validator = Validator::make($request->all(), [
-            'first_name' => ['required'],
-            'last_name' => ['required'],
-            'email' => ['required'],
-            'address_one' => ['required'],
-            'city' => ['required'],
-            'postal_code' => ['required'],
-            'phone_number' => ['required'],
-        ]);
+        {
+            // TODO: Go back with a Session Key
+            $validator = Validator::make($request->all(), [
+                'first_name' => ['required'],
+                'last_name' => ['required'],
+                'email' => ['required'],
+                'address_one' => ['required'],
+                'city' => ['required'],
+                'postal_code' => ['required'],
+                'phone_number' => ['required'],
+            ]);
 
-        if ($validator->fails()) {
-            return redirect('customer/edit/' . $id)
-                        ->withErrors($validator)
-                        ->withInput();
+            if ($validator->fails()) {
+                return redirect('customer/edit/' . $id)
+                            ->withErrors($validator)
+                            ->withInput();
+            }
+            User::find($id)->update([
+                'first_name' => $request['first_name'],
+                'last_name' => $request['last_name'],
+                'email' => $request['email'],
+                'job_title' => $request['job_title'],
+                'address_one' => $request['address_one'],
+                'address_two' => $request['address_two'],
+                'city' => $request['city'],
+                'postal_code' => $request['postal_code'],
+                'phone_number' => $request['phone_number'],
+            ]);
+            
+
+            return redirect('customer/edit/' . $id)->with(
+                'success' , '1'
+            );
         }
-        User::find($id)->update([
-            'first_name' => $request['first_name'],
-            'last_name' => $request['last_name'],
-            'email' => $request['email'],
-            'job_title' => $request['job_title'],
-            'address_one' => $request['address_one'],
-            'address_two' => $request['address_two'],
-            'city' => $request['city'],
-            'postal_code' => $request['postal_code'],
-            'phone_number' => $request['phone_number'],
-        ]);
-        
 
-        return redirect('customer/edit/' . $id);
-    }
+    public function create(Request $request)
+        {
+            $validator = Validator::make($request->all(), [
+                'first_name' => ['required'],
+                'last_name' => ['required'],
+                'email' => ['required'],
+                'address_one' => ['required'],
+                'city' => ['required'],
+                'postal_code' => ['required'],
+                'phone_number' => ['required'],
+            ]);
 
-    public function create(Request $request){
-        $validator = Validator::make($request->all(), [
-            'first_name' => ['required'],
-            'last_name' => ['required'],
-            'email' => ['required'],
-            'address_one' => ['required'],
-            'city' => ['required'],
-            'postal_code' => ['required'],
-            'phone_number' => ['required'],
-        ]);
+            if ($validator->fails()) {
+                return  response()->json(['errors'=>$validator->errors()],422);
+            }
+            
 
-        if ($validator->fails()) {
-            return  response()->json(['errors'=>$validator->errors()],422);
+            $user = User::create([
+                'user_name' => $request['first_name'] . '_' . $request['last_name'],
+                'first_name' => $request['first_name'],
+                'last_name' => $request['last_name'],
+                'email' => $request['email'],
+                'job_title' => $request['job_title'],
+                'address_one' => $request['address_one'],
+                'address_two' => $request['address_two'],
+                'city' => $request['city'],
+                'postal_code' => $request['postal_code'],
+                'phone_number' => $request['phone_number'],
+                'phone_number' => $request['phone_number'],
+                'department_id' => '2',
+                'password' => Hash::make($request['password']) 
+            ]);
+
+            return redirect('/customer/list')->with(
+                'success' , '1'
+            );
         }
-        
 
-        $user = User::create([
-            'user_name' => $request['first_name'] . '_' . $request['last_name'],
-            'first_name' => $request['first_name'],
-            'last_name' => $request['last_name'],
-            'email' => $request['email'],
-            'job_title' => $request['job_title'],
-            'address_one' => $request['address_one'],
-            'address_two' => $request['address_two'],
-            'city' => $request['city'],
-            'postal_code' => $request['postal_code'],
-            'phone_number' => $request['phone_number'],
-            'phone_number' => $request['phone_number'],
-            'department_id' => '2',
-            'password' => Hash::make($request['password']) 
-        ]);
-
-        return redirect('/customer/list');
-    }
+    public function vue_listing(Request $request)
+        {
+            $users_list = User::with('Department')
+                ->where('department_id', '=', '2')
+                ->paginate(( isset($request['perPage']) ?  isset($request['perPage']) : 5));    
+            return response()->json($users_list);
+        }
 }

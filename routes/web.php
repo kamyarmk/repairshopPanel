@@ -38,7 +38,9 @@ use Illuminate\Support\Facades\Route;
     Route::put('/admins/edit/{id}', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'edit'])->name('admin.edit');
     Route::get('/admins/department', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'department'])->name('admin.department');
     Route::get('/admins/department/edit/{id}', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'departmentEdit'])->name('department.edit');
+    Route::put('/admins/department/edit/{id}', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'departmentEdit'])->name('department.edit');
     Route::get('/admins/department/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'departmentAdd'])->name('department.edit');
+    Route::post('/admins/department/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'departmentAdd'])->name('department.edit');
 
 //Customer Route
     Route::get('/customer/list', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'index'])->name('customer.list');
@@ -127,3 +129,4 @@ use Illuminate\Support\Facades\Route;
 // Vue Routs For Listing
     Route::get('/vue/projects/deviceListing', [App\Http\Controllers\Dashboard\Project\ProjectsConstroller::class, 'vue_deviceListing'])->name('vue.project.deviceListing');
     Route::get('/vue/admins/adminsListing', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'vue_listing'])->name('vue.admins.listing');
+    Route::get('/vue/admins/customerListing', [App\Http\Controllers\Dashboard\Customer\CustomersController::class, 'vue_listing'])->name('vue.customer.listing');

@@ -21,7 +21,12 @@
     <div class="content">
         <div class="block block-rounded">
             <div class="block-content">
-                <form action="be_pages_projects_edit.html" method="POST" enctype="multipart/form-data" onsubmit="return false;">
+                <form method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @if($type == 'Edit')
+                        <input name="_method" type="hidden" value="PUT">
+                    @endif
+                    <input type="hidden" name="update" value="1">
                     <!-- User Profile -->
                     <h2 class="content-heading pt-0">
                         <i class="fa fa-fw fa-user-circle text-muted mr-1"></i> {{ __('User Profile') }}
@@ -35,17 +40,17 @@
                         <div class="col-lg-8 col-xl-5">
                             <div class="form-group">
                                 <label for="dm-profile-edit-name">{{ __('Name') }}</label>
-                                <input type="text" class="form-control" id="dm-profile-edit-name" name="dm-profile-edit-name" 
-                                    @if(isset($department))
-                                        value="{{ $department->department_name }}"
+                                <input type="text" class="form-control" id="dm-profile-edit-name" name="department_name" 
+                                    @if(isset($departments))
+                                        value="{{ $departments->department_name }}"
                                     @endif
                                 >
                             </div>
                             <div class="form-group">
                                 <label for="dm-profile-edit-email">{{ __('Symbol') }}</label>
-                                <input type="email" class="form-control" id="dm-profile-edit-email" name="dm-profile-edit-email" 
-                                    @if(isset($department))
-                                        value="{{ $department->department_level }}"
+                                <input type="text" class="form-control" id="dm-profile-edit-email" name="department_symbol" 
+                                    @if(isset($departments))
+                                        value="{{ $departments->department_level }}"
                                     @endif
                                 >
                             </div>

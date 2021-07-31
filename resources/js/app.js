@@ -53,6 +53,7 @@ Vue.component('dash_chart', require('./components/Dashboard/chart.vue').default)
 // Listing Datas
 Vue.component('listing_projects', require('./components/Lists/projects.vue').default);
 Vue.component('listing_admins', require('./components/Lists/users.vue').default);
+Vue.component('listing_customers', require('./components/Lists/customers.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
