@@ -24,7 +24,11 @@
             <div class="block-content">
                 <form  method="POST" enctype="multipart/form-data" >
                     @csrf
+                    @if($type == 'Edit')
+                    <input name="_method" type="hidden" value="PUT">
+                    @endif
                     <!-- User Profile -->
+                    <input type="hidden" name="update" value="1">
                     <h2 class="content-heading pt-0">
                         <i class="fa fa-fw fa-user-circle text-muted mr-1"></i> User Profile
                     </h2>

@@ -86,15 +86,57 @@ class AdminsController extends Controller
 
     public function edit(Request $request, $id)
         {
-            // TODO: Edit Funtion for the Users
-            // TODO: Go back with a Session Key
-            $user = User::with('Department')->find($id);
-            $departmetns_list = Department::all();
-            return view('admin.add')->with([
-                'User' => $user,
-                'Departments' => $departmetns_list,
-                'type'=> 'Edit'
-            ]);
+            if(isset($request['update'])){
+                $validator = Validator::make($request->all(), [
+                    'user_name' => ['required'],
+                    'first_name' => ['required'],
+                    'last_name' => ['required'],
+                    'email' => ['required'],
+                    'job_title' => ['required'],
+                    'department_id' => ['required'],
+                    'address_one' => ['required'],
+                    'address_two' => ['required'],
+                    'city' => ['required'],
+                    'postal_code' => ['required'],
+                    'phone_number' => ['required'],
+                    'password' => 'confirmed|min:6',
+                ]);
+                if ($validator->fails()) {
+                    
+                    return redirect('/admins/edit/' . $id )
+                                ->withErrors($validator)
+                                ->withInput();
+                }
+                $user = User::find($id);
+                $user->user_name = $request['user_name'];
+                $user->first_name = $request['first_name'];
+                $user->last_name = $request['last_name'];
+                $user->email = $request['email'];
+                $user->job_title = $request['job_title'];
+                $user->department_id = $request['department_id'];
+                $user->address_one = $request['address_one'];
+                $user->address_two = $request['address_two'];
+                $user->city = $request['city'];
+                $user->postal_code = $request['postal_code'];
+                $user->phone_number = $request['phone_number'];
+                if($request['password'] != null){
+                    $user->password = $request['password'];
+                }
+                $user->save();
+                // LablePrint($registeredDevice);
+
+                return redirect('/admins/list')->with(
+                    'success' , '1'
+                );
+            }else{
+                $user = User::with('Department')->find($id);
+                $departmetns_list = Department::all();
+                return view('admin.add')->with([
+                    'User' => $user,
+                    'Departments' => $departmetns_list,
+                    'type'=> 'Edit'
+                ]);
+            }
         }
 
     public function department(Request $request)

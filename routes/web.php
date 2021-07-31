@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/admins/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'add'])->name('admin.add');
     Route::post('/admins/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'add'])->name('admin.post');
     Route::get('/admins/edit/{id}', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'edit'])->name('admin.edit');
+    Route::put('/admins/edit/{id}', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'edit'])->name('admin.edit');
     Route::get('/admins/department', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'department'])->name('admin.department');
     Route::get('/admins/department/edit/{id}', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'departmentEdit'])->name('department.edit');
     Route::get('/admins/department/add', [App\Http\Controllers\Dashboard\Admins\AdminsController::class, 'departmentAdd'])->name('department.edit');
