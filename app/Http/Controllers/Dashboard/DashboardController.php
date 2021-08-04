@@ -47,7 +47,7 @@ class DashboardController extends Controller
             'Devices' => $devices,
             'Invoices' => $invoices,
             'TotalIncome' => $TotalIncome,
-            'Grow' => ((($TotalIncome - $TotalLastIncome) / $TotalIncome ) * 100),
+            'Grow' => (((($TotalIncome == 0 ? 1 : $TotalIncome) - ($TotalLastIncome == 0 ? 1 : $TotalLastIncome)) / ($TotalIncome == 0 ? 1 : $TotalIncome) ) * 100),
             'DevicesList' => $devicesList
         ]);
     }
